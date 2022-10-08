@@ -26,11 +26,10 @@ Model WMS {
     }
 
     /// Base class for all tiles that can contain a Watercraft
-    Node Shippable {
+    abstract Node Shippable {
         has_watercraft: boolean; // TODO: Init to false
     }
 
-    // TODO: Check if this is the proper inheritance syntax
     Node Segment[0..*]: Shippable {
         // TODO: Edge - Need to decide on how to do this
     }
