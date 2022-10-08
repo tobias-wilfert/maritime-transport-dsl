@@ -3,18 +3,32 @@
 /// Water Modeling System
 Model WMS {
     
+    /// Base class for all Nodes that can contain a Watercraft
+    abstract Node Shippable {
+        has_watercraft: boolean; // TODO: Init to false
+    }
+
+    // TODO: Not yet supper sure about this, 
+    // since I guess we need restrict the #connections :thinking:
+
+    /// Base class for all Nodes that have an out-connection
+    abstract Node InNode {
+        in_connection: OutNode;
+    }
+
+    /// Base class for all Nodes that have an in-connection
+    abstract Node OutNode {
+        out_connection: InNode;
+    }
+
     // There can be inf many Sinks, but #Sinks == #Sources
     // TODO: Add a constraint for this
-    Node Sink[0..*] {
-        // TODO: Edge - Need to decide on how to do this
-
+    Node Sink[0..*]: InNode {
         /// Counter of how many Watercraft this has consumed so far.
         counter: int; // TODO: Init to 0
     }
 
-    Node Source[0..*] {
-        // TODO: Edge - Need to decide on how to do this
-
+    Node Source[0..*]: OutNode {
         /// Counter of how many Watercraft this has generated so far
         counter: int; // TODO: Init to 0
         /// Number of steps that the need to be waited till another
@@ -25,20 +39,13 @@ Model WMS {
         cooldown: int;
     }
 
-    /// Base class for all tiles that can contain a Watercraft
-    abstract Node Shippable {
-        has_watercraft: boolean; // TODO: Init to false
-    }
+    Node Segment[0..*]: Shippable, InNode, OutNode {}
 
-    Node Segment[0..*]: Shippable {
-        // TODO: Edge - Need to decide on how to do this
-    }
-
-    Node Confluence[0..*]: Shippable {
+    Node Confluence[0..*]: Shippable, InNode, OutNode {
         /// Indicates if it is the turn to check the first direction
         first_turn: boolean;
 
-        // TODO: Edge1 - Need to decide on how to do this
-        // TODO: Edge2 - Need to decide on how to do this
+        // TODO: Think if we want one big set or rather
+        // two smaller sets with each one connection
     }
 }
