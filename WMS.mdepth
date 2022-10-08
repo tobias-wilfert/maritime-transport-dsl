@@ -1,0 +1,45 @@
+// TODO: See if we can somehow get unsigned int
+
+/// Water Modeling System
+Model WMS {
+    
+    // There can be inf many Sinks, but #Sinks == #Sources
+    // TODO: Add a constraint for this
+    Node Sink[0..*] {
+        // TODO: Edge - Need to decide on how to do this
+
+        /// Counter of how many Watercraft this has consumed so far.
+        counter: int; // TODO: Init to 0
+    }
+
+    Node Source[0..*] {
+        // TODO: Edge - Need to decide on how to do this
+
+        /// Counter of how many Watercraft this has generated so far
+        counter: int; // TODO: Init to 0
+        /// Number of steps that the need to be waited till another
+        /// Watercraft is generated 
+        rate: int;
+        /// Counter for the Rate that goes to 0, if it hits zero a new
+        /// Watercraft can be spawned and the counter resets
+        cooldown: int;
+    }
+
+    /// Base class for all tiles that can contain a Watercraft
+    Node Shippable {
+        has_watercraft: boolean // TODO: Init to false
+    }
+
+    // TODO: Check if this is the proper inheritance syntax
+    Model Segment[0..*]: Shippable {
+        // TODO: Edge - Need to decide on how to do this
+    }
+
+    Model Confluence[0..*]: Shippable {
+        /// Indicates if it is the turn to check the first direction
+        first_turn: boolean;
+
+        // TODO: Edge1 - Need to decide on how to do this
+        // TODO: Edge2 - Need to decide on how to do this
+    }
+}
