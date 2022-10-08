@@ -1,8 +1,5 @@
-// TODO: See if we can somehow get unsigned int
-
 /// Water Modeling System
 Model WMS {
-    
     /// Base class for all Nodes that can contain a Watercraft
     abstract Node Shippable {
         has_watercraft: boolean; // TODO: Init to false
@@ -13,19 +10,19 @@ Model WMS {
 
     /// Base class for all Nodes that have an out-connection
     abstract Node InNode {
-        in_connection: OutNode;
+        in_connection: OutNode[*]; // Fix for now
     }
 
     /// Base class for all Nodes that have an in-connection
     abstract Node OutNode {
-        out_connection: InNode;
+        out_connection: InNode[*];
     }
 
-    // There can be inf many Sinks, but #Sinks == #Sources
-    // TODO: Add a constraint for this
     Node Sink[0..*]: InNode {
         /// Counter of how many Watercraft this has consumed so far.
-        counter: int; // TODO: Init to 0
+        counter: int;
+
+        C_counter: $ self.counter >= 0 $ /// Counter needs to be positive
     }
 
     Node Source[0..*]: OutNode {
@@ -37,6 +34,11 @@ Model WMS {
         /// Counter for the Rate that goes to 0, if it hits zero a new
         /// Watercraft can be spawned and the counter resets
         cooldown: int;
+
+        C_counter: $ self.counter >= 0 $ /// Counter needs to be positive
+        C_rate: $ self.rate > 0 $ /// Rate needs to be strictly positive
+        C_cooldown_lower_bound: $ self.cooldown >= 0 $ /// Cooldown need to be positive
+        C_cooldown_upper_bound: $ self.cooldown <= self.rate $ /// Cooldown can not exceed rate
     }
 
     Node Segment[0..*]: Shippable, InNode, OutNode {}
@@ -47,5 +49,15 @@ Model WMS {
 
         // TODO: Think if we want one big set or rather
         // two smaller sets with each one connection
+    }
+    
+    // TODO: Add more constraints
+    // Need check for the edges
+    // Need check to make sure #Sink == #Source
+}
+
+WMS WMS_TETS {
+    Sink sink {
+        counter = 0;
     }
 }
