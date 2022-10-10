@@ -2,62 +2,93 @@
 Model WMS {
     /// Base class for all Nodes that can contain a Watercraft
     abstract Node Shippable {
-        has_watercraft: boolean; // TODO: Init to false
+        has_watercraft: boolean = false;
     }
 
     // TODO: Not yet supper sure about this, 
     // since I guess we need restrict the #connections :thinking:
 
-    /// Base class for all Nodes that have an out-connection
+    /// Base class for all Nodes that have one out-connection
     abstract Node InNode {
-        in_connection: OutNode[*]; // Fix for now
+        in0: OutNode;
+        //------------
+        // constraints
+        C_in0_not_self: $ self.in0 <> self $
+        C_outNode_connection_match: $ self.in0.out0 == self $
     }
 
-    /// Base class for all Nodes that have an in-connection
+    /// Base class for all Nodes that have one in-connection
     abstract Node OutNode {
-        out_connection: InNode[*];
+        out0: InNode;
+        //------------
+        // constraints
+        C_out0_not_self: $ self.out0 <> self $
+        C_inNode_connection_match: $ self.out0.in0 == self $
     }
 
     Node Sink[0..*]: InNode {
         /// Counter of how many Watercraft this has consumed so far.
-        counter: int;
-
+        counter: int = 0;
+        //------------
+        // constraints
         C_counter: $ self.counter >= 0 $ /// Counter needs to be positive
     }
 
     Node Source[0..*]: OutNode {
         /// Counter of how many Watercraft this has generated so far
-        counter: int; // TODO: Init to 0
+        counter: int = 0;
         /// Number of steps that the need to be waited till another
         /// Watercraft is generated 
         rate: int;
         /// Counter for the Rate that goes to 0, if it hits zero a new
         /// Watercraft can be spawned and the counter resets
-        cooldown: int;
-
+        cooldown: int = 0;
+        //------------
+        // constraints
         C_counter: $ self.counter >= 0 $ /// Counter needs to be positive
         C_rate: $ self.rate > 0 $ /// Rate needs to be strictly positive
         C_cooldown_lower_bound: $ self.cooldown >= 0 $ /// Cooldown need to be positive
         C_cooldown_upper_bound: $ self.cooldown <= self.rate $ /// Cooldown can not exceed rate
     }
 
-    Node Segment[0..*]: Shippable, InNode, OutNode {}
+    Node Segment[0..*]: Shippable, InNode, OutNode {
+        //------------
+        // constraints
+        C_in_is_not_out: $ self.in0 <> self.out0 $
+    }
 
     Node Confluence[0..*]: Shippable, InNode, OutNode {
         /// Indicates if it is the turn to check the first direction
         first_turn: boolean;
-
-        // TODO: Think if we want one big set or rather
-        // two smaller sets with each one connection
+        in1: OutNode;
+        out1: InNode;
+        //------------
+        // constraints
+        // pairwise non-equality between in/out
+        C_in1_is_not_out1: $ self.in1 <> self.out1 $
+        C_in0_is_not_out1: $ self.in0 <> self.out1 $
+        C_in1_is_not_out0: $ self.in1 <> self.out0 $
+        // no in/out to itself
+        C_in1_not_self: $ self.in1 <> self $
+        C_out1_not_self: $ self.out1 <> self $
+        // TODO add same check as basic in-out logic for in1 out1  
     }
-    
-    // TODO: Add more constraints
+
+    //================================================
+    // model-level constraints
     // Need check for the edges
+    
     // Need check to make sure #Sink == #Source
+    C_equal_sinks_and_sources: $ Source.all().size() == Sink.all().size()  $
 }
 
-WMS WMS_TETS {
-    Sink sink {
-        counter = 0;
+WMS WMS_TEST {
+    Source source0 {
+        rate = 1;
+        out0 = sink0;
+    }
+
+    Sink sink0 {
+        in0 = source0;
     }
 }

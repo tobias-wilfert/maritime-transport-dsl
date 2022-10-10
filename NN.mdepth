@@ -1,0 +1,80 @@
+// the meta-model
+Model Nauti{
+    // top-level abstraction
+    abstract Node Tile {
+        identifier : int;
+        //------------
+        // constraints
+    }
+
+    // tiles that are countable
+    abstract Node Countable{
+        counter : int;
+        //------------
+        // constraints
+        C_counter_non_negative: $ self.counter >= 0 $
+    }
+    Node Sink : Countable{
+        in0 : int;
+        //------------
+        // constraints
+        C_in0_not_self: $ self.in0 <> self.identifier $
+        
+    }
+    Node Source : Countable{
+        out0 : int;
+        rate : int;
+        cooldown : int;
+        //------------
+        // constraints
+        C_out0_not_self: $ self.out0 <> self.identifier $
+        C_rate_non_negative: $ self.rate > 0 $
+        C_cooldown_non_negative: $ self.cooldown >= 0 $
+
+    }
+
+    // tiles that can have a ship on them - default for segments?
+    Node Shippable : Tile{
+        boat: boolean = false;
+        in0 : int;
+        out0 : int;
+        //------------
+        // constraints
+        C_in0_is_not_out0: $ self.in0 <> self.out0 $
+        // no in/out to itself
+        C_in0_not_self: $ self.in0 <> self.identifier $
+        C_out0_not_self: $ self.out0 <> self.identifier $
+
+    }
+    Node Confluence : Shippable{ // has additional in1 out1
+        direction : int;
+        in1 : int;
+        out1 : int;
+        //------------
+        // constraints
+        // pairwise non-equality between in/out
+        C_in1_is_not_out1: $ self.in1 <> self.out1 $
+        C_in0_is_not_out1: $ self.in0 <> self.out1 $
+        C_in1_is_not_out0: $ self.in1 <> self.out0 $
+        // no in/out to itself
+        C_in1_not_self: $ self.in1 <> self.identifier $
+        C_out1_not_self: $ self.out1 <> self.identifier $
+    }
+
+    // TODO add constraints for connecting tiles HERE vvv
+}
+
+// the instance of the meta-model
+Nauti nauti{
+    Shippable s0 {
+        identifier = 1;
+        in0 = 0;
+        out0 = 2;
+    }
+
+    Shippable s1 {
+        identifier = 1;
+        in0 = 1;
+        out0 = 2;
+    }
+}
