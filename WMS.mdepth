@@ -65,6 +65,7 @@ Model WMS {
     Node Confluence[0..*]: Shippable, InNode, OutNode {
         /// Indicates if it is the turn to check the first direction
         in0_turn: boolean = true;
+        boat_orientation: boolean = false;
         in1: OutNode;
         out1: InNode;
         //------------
@@ -86,6 +87,8 @@ Model WMS {
     //================================================
     // Model-level constraints:
     // Need check for the edges
+    // Check that the amount of ships that are spawend matches with the amount of ships that are underway
+    // and the amount of ships that have been consumed
     
     /// #Source needs to match the #Sink
     C_equal_sinks_and_sources: $ Source.all().size() == Sink.all().size() $
@@ -94,26 +97,20 @@ Model WMS {
 WMS WMS_TEST {
     Source source0 {
         rate = 1;
-        out0 = confluence0;
+        out0 = segment0;
     }
 
-    Source source1 {
-        rate = 1;
-        out0 = confluence0;
-    }
-
-    Confluence confluence0 {
+    Segment segment0 {
         in0 = source0;
-        in1 = source1;
+        out0 = segement1;
+    }
+
+    Segment segement1 {
+        in0 = segment0;
         out0 = sink0;
-        out1 = sink1;
     }
 
     Sink sink0 {
-        in0 = confluence0;
-    }
-
-    Sink sink1 {
-        in0 = confluence0;
+        in0 = segement1;
     }
 }

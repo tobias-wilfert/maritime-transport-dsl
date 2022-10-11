@@ -1,0 +1,78 @@
+operation main(){
+    ('Running main...').println('>> ');
+
+    // Just to see if the Model gets laoded correctly
+    var sinks =  Sink.all();
+    var sources =  Source.all();
+    var segments =  Segment.all();
+    var confluences =  Confluence.all();
+
+    // TODO: Maybe style this differently
+    ('The state of the model:').println('>> ');
+    ('There are ' + sinks.size() + ' sinks').println('>> ');
+    ('There are ' + sources.size() + ' sources').println('>> ');
+    ('There are ' + segments.size() + ' segments').println('>> ');
+    ('There are ' + confluences.size() + ' confluences').println('>> ');
+
+    // Find the amout of ships that have been spwaned and consuemd
+    var ships_spawned = 0;
+    for(source: Source in sources){
+        ships_spawned = ships_spawned + source.counter;
+    }
+    (ships_spawned + ' ships have been spawned').println('>> ');
+
+    var ships_consumed = 0;
+    for(sink: Sink in sinks){
+        ships_consumed = ships_consumed + sink.counter;
+    }
+    (ships_consumed + ' ships have been consumed').println('>> ');
+
+    // Very basic mechanics for now
+    // ---    
+    // This would evenetually need to happen for sinks and a bit more
+    var cur = sinks[0].in0;
+    while(not cur.isTypeOf(Source)){
+
+        if(cur.isTypeOf(Segment)){
+            var prev = cur.out0; // Check what the next node is
+
+            if(cur.has_watercraft){ // If the cur node has a boat try to move it
+                if(prev.isTypeOf(Segment) and not prev.has_watercraft){
+                    prev.has_watercraft = true;
+                    cur.has_watercraft = false;
+                }
+                if(prev.isTypeOf(Sink)){
+                    cur.has_watercraft = false;
+                    prev.counter = prev.counter + 1;
+                }
+                if(prev.isTypeOf(Confluence)){
+                    // TODO: Confluence
+                }
+            }
+        }else{
+            // TODO: Confluence
+        }
+        // Advance the pointer
+        cur = cur.in0;
+    }
+    // --- 
+    // We know at this point that cur is a Source
+    var prev = cur.out0;
+    // We are ready to spawn a ship
+    if(cur.cooldown == 0){
+        if(prev.isTypeOf(Segment) and not prev.has_watercraft){
+            prev.has_watercraft = true;
+            cur.counter = cur.counter + 1;
+        }
+        if(prev.isTypeOf(Sink)){
+            prev.counter = prev.counter + 1;
+            cur.counter = cur.counter + 1;
+        }
+        if(prev.isTypeOf(Confluence)){
+            // TODO: Confluence
+        }
+        cur.cooldown = cur.rate;
+    }else{
+        cur.cooldown = cur.cooldown - 1;
+    }
+}
