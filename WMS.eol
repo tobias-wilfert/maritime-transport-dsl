@@ -1,3 +1,11 @@
+/// Converts a boolean into an integer
+operation Boolean toInt(): Integer{
+    if(self){
+        return 1;
+    }else{
+        return 0;
+    }
+}
 operation main(){
     ('Running main...').println('>> ');
 
@@ -15,16 +23,13 @@ operation main(){
     ('There are ' + confluences.size() + ' confluences').println('>> ');
 
     // Find the amout of ships that have been spwaned and consuemd
-    var ships_spawned = 0;
-    for(source: Source in sources){
-        ships_spawned = ships_spawned + source.counter;
-    }
+    var ships_spawned = sources.collect(s | s.counter).sum();
     (ships_spawned + ' ships have been spawned').println('>> ');
 
-    var ships_consumed = 0;
-    for(sink: Sink in sinks){
-        ships_consumed = ships_consumed + sink.counter;
-    }
+    var ships_in_transit = Shippable.all().collect(s | s.has_watercraft.toInt()).sum();
+    (ships_in_transit + ' ships are in transit').println('>> ');
+
+    var ships_consumed = sinks.collect(s | s.counter).sum();
     (ships_consumed + ' ships have been consumed').println('>> ');
 
     // Very basic mechanics for now
