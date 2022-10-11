@@ -5,32 +5,37 @@ Model WMS {
         has_watercraft: boolean = false;
     }
 
-    // TODO: Not yet supper sure about this, 
-    // since I guess we need restrict the #connections :thinking:
-
     /// Base class for all Nodes that have one out-connection
     abstract Node InNode {
         in0: OutNode;
         //------------
-        // constraints
-        C_in0_not_self: $ self.in0 <> self $
-        C_outNode_connection_match: $ self.in0.out0 == self $
+        // constraints:
+        C_in0_not_self: $ self.in0 <> self $ /// In connection should not connect to self
+        /// The in connection needs to match, that is:
+        /// a - The out0 connection of the the node that is referenced by the in0 is this node
+        /// b - The node that is referenced by in0 is a Confluence and its out1 is pointing to this node
+        /// Note: These scenarios are exclusice and shouldn't be true at the same time
+        C_outNode_connection_match: $ (self.in0.out0 == self) xor (self.in0.isKindOf(Confluence) and self.in0.out1 == self) $
     }
 
     /// Base class for all Nodes that have one in-connection
     abstract Node OutNode {
         out0: InNode;
         //------------
-        // constraints
-        C_out0_not_self: $ self.out0 <> self $
-        C_inNode_connection_match: $ self.out0.in0 == self $
+        // constraints:
+        C_out0_not_self: $ self.out0 <> self $ /// The out connection should not connect to self
+        /// The out connection needs to match, that is:
+        /// a - The in0 connection of the the node that is referenced by the out0 is this node
+        /// b - The node that is referenced by out0 is a Confluence and its in1 is pointing to this node
+        /// Note: These scenarios are exclusice and shouldn't be true at the same time
+        C_inNode_connection_match: $ (self.out0.in0 == self) xor (self.out0.isKindOf(Confluence) and self.out0.in1 == self) $
     }
 
     Node Sink[0..*]: InNode {
         /// Counter of how many Watercraft this has consumed so far.
         counter: int = 0;
         //------------
-        // constraints
+        // constraints:
         C_counter: $ self.counter >= 0 $ /// Counter needs to be positive
     }
 
@@ -44,7 +49,7 @@ Model WMS {
         /// Watercraft can be spawned and the counter resets
         cooldown: int = 0;
         //------------
-        // constraints
+        // constraints:
         C_counter: $ self.counter >= 0 $ /// Counter needs to be positive
         C_rate: $ self.rate > 0 $ /// Rate needs to be strictly positive
         C_cooldown_lower_bound: $ self.cooldown >= 0 $ /// Cooldown need to be positive
@@ -53,42 +58,62 @@ Model WMS {
 
     Node Segment[0..*]: Shippable, InNode, OutNode {
         //------------
-        // constraints
-        C_in_is_not_out: $ self.in0 <> self.out0 $
+        // onstraints:
+        C_in_is_not_out: $ self.in0 <> self.out0 $ /// The node that is references by the in and out should not be the same
     }
 
     Node Confluence[0..*]: Shippable, InNode, OutNode {
         /// Indicates if it is the turn to check the first direction
-        first_turn: boolean;
+        in0_turn: boolean = true;
         in1: OutNode;
         out1: InNode;
         //------------
-        // constraints
-        // pairwise non-equality between in/out
+        // constraints:
+        // Pairwise non-equality between in/out
         C_in1_is_not_out1: $ self.in1 <> self.out1 $
         C_in0_is_not_out1: $ self.in0 <> self.out1 $
         C_in1_is_not_out0: $ self.in1 <> self.out0 $
-        // no in/out to itself
+        C_in0_is_not_in1:  $ self.in0 <> self.in1 $
+        C_out0_is_not_out1: $ self.out0 <> self.out1 $
+        /// No in/out to itself
         C_in1_not_self: $ self.in1 <> self $
         C_out1_not_self: $ self.out1 <> self $
-        // TODO add same check as basic in-out logic for in1 out1  
+        /// Similar to the checks is InNode and OutNode just for in1 and out 1
+        C_outNode_connection_match: $ (self.in1.out0 == self) xor (self.in1.isKindOf(Confluence) and self.in1.out1 == self) $
+        C_inNode_connection_match: $ (self.out1.in0 == self) xor (self.out1.isKindOf(Confluence) and self.out1.in1 == self) $
     }
 
     //================================================
-    // model-level constraints
+    // Model-level constraints:
     // Need check for the edges
     
-    // Need check to make sure #Sink == #Source
-    C_equal_sinks_and_sources: $ Source.all().size() == Sink.all().size()  $
+    /// #Source needs to match the #Sink
+    C_equal_sinks_and_sources: $ Source.all().size() == Sink.all().size() $
 }
 
 WMS WMS_TEST {
     Source source0 {
         rate = 1;
+        out0 = confluence0;
+    }
+
+    Source source1 {
+        rate = 1;
+        out0 = confluence0;
+    }
+
+    Confluence confluence0 {
+        in0 = source0;
+        in1 = source1;
         out0 = sink0;
+        out1 = sink1;
     }
 
     Sink sink0 {
-        in0 = source0;
+        in0 = confluence0;
+    }
+
+    Sink sink1 {
+        in0 = confluence0;
     }
 }
