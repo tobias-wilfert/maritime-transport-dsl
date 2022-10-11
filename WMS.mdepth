@@ -87,9 +87,9 @@ Model WMS {
     //================================================
     // Model-level constraints:
     // Need check for the edges
-    // Check that the amount of ships that are spawend matches with the amount of ships that are underway
-    // and the amount of ships that have been consumed
     
+    /// Check that no watercrafts are lost along the way
+    C_no_watercraft_loss: $ Source.all().collect(s | s.counter).sum() == (Sink.all().collect(s | s.counter).sum() + Shippable.all().select(s | s.has_watercraft).size()) $
     /// #Source needs to match the #Sink
     C_equal_sinks_and_sources: $ Source.all().size() == Sink.all().size() $
 }

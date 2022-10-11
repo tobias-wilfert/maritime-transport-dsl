@@ -1,11 +1,3 @@
-/// Converts a boolean into an integer
-operation Boolean toInt(): Integer{
-    if(self){
-        return 1;
-    }else{
-        return 0;
-    }
-}
 operation main(){
     ('Running main...').println('>> ');
 
@@ -26,7 +18,7 @@ operation main(){
     var ships_spawned = sources.collect(s | s.counter).sum();
     (ships_spawned + ' ships have been spawned').println('>> ');
 
-    var ships_in_transit = Shippable.all().collect(s | s.has_watercraft.toInt()).sum();
+    var ships_in_transit = Shippable.all().select(s | s.has_watercraft).size();
     (ships_in_transit + ' ships are in transit').println('>> ');
 
     var ships_consumed = sinks.collect(s | s.counter).sum();
