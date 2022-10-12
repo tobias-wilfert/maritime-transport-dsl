@@ -1,0 +1,92 @@
+@startuml
+namespace WMS_TEST{
+class sink0<< (0, orchid) Sink >>
+sink0 : counter=0
+class sink1<< (0, orchid) Sink >>
+sink1 : counter=0
+class confluence<< (0, orchid) Confluence >>
+confluence : last_direction=false
+confluence : has_watercraft=false
+class source0<< (0, orchid) Source >>
+source0 : rate=1
+source0 : cooldown=1
+source0 : counter=0
+class source1<< (0, orchid) Source >>
+source1 : rate=1
+source1 : cooldown=1
+source1 : counter=0
+class segment0<< (0, orchid) Segment >>
+segment0 : has_watercraft=false
+class segment1<< (0, orchid) Segment >>
+segment1 : has_watercraft=false
+class segment2<< (0, orchid) Segment >>
+segment2 : has_watercraft=false
+class segment3<< (0, orchid) Segment >>
+segment3 : has_watercraft=false
+sink0 --> "in0" segment2
+sink1 --> "in0" segment3
+confluence --> "out0" segment2
+confluence --> "out1" segment3
+confluence --> "in0" segment0
+confluence --> "in1" segment1
+source0 --> "out0" segment0
+source1 --> "out0" segment1
+segment0 --> "out0" confluence
+segment0 --> "in0" source0
+segment1 --> "out0" confluence
+segment1 --> "in0" source1
+segment2 --> "out0" sink0
+segment2 --> "in0" confluence
+segment3 --> "out0" sink1
+segment3 --> "in0" confluence
+}
+namespace WMS{
+abstract class Shippable<< (1, orchid) Node >>
+Shippable : has_watercraft@1 : boolean=false
+abstract class InNode<< (1, orchid) Node >>
+InNode : C_in0_not_self@1() <<constraint>>
+InNode : C_outNode_connection_match@1() <<constraint>>
+abstract class OutNode<< (1, orchid) Node >>
+OutNode : C_out0_not_self@1() <<constraint>>
+OutNode : C_inNode_connection_match@1() <<constraint>>
+class Sink<< (1, orchid) Node >>
+Sink : counter@1 : int=0
+Sink : C_counter@1() <<constraint>>
+class Source<< (1, orchid) Node >>
+Source : rate@1 : int
+Source : cooldown@1 : int=1
+Source : counter@1 : int=0
+Source : C_counter@1() <<constraint>>
+Source : C_rate@1() <<constraint>>
+Source : C_cooldown_lower_bound@1() <<constraint>>
+Source : C_cooldown_upper_bound@1() <<constraint>>
+class Segment<< (1, orchid) Node >>
+Segment : C_in_is_not_out@1() <<constraint>>
+class Confluence<< (1, orchid) Node >>
+Confluence : last_direction@1 : boolean=false
+Confluence : C_in1_is_not_out1@1() <<constraint>>
+Confluence : C_in0_is_not_out1@1() <<constraint>>
+Confluence : C_in1_is_not_out0@1() <<constraint>>
+Confluence : C_in0_is_not_in1@1() <<constraint>>
+Confluence : C_out0_is_not_out1@1() <<constraint>>
+Confluence : C_in1_not_self@1() <<constraint>>
+Confluence : C_out1_not_self@1() <<constraint>>
+Confluence : C_outNode_connection_match@1() <<constraint>>
+Confluence : C_inNode_connection_match@1() <<constraint>>
+InNode --> "in0 1..1" OutNode
+OutNode --> "out0 1..1" InNode
+InNode <|--  Sink
+OutNode <|--  Source
+Shippable <|--  Segment
+InNode <|--  Segment
+OutNode <|--  Segment
+Shippable <|--  Confluence
+InNode <|--  Confluence
+OutNode <|--  Confluence
+Confluence --> "out1 1..1" InNode
+Confluence --> "in1 1..1" OutNode
+}
+
+WMS <.. WMS_TEST : <<ontological instace>>
+
+@enduml

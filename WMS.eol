@@ -30,15 +30,14 @@ operation simulate_from(cur, seen_confluences){
                     cur.counter = cur.counter + 1; // Boat is consumed
                 }
                 // If double marked do both simulations further
-                // TODO: Do logic here
                 if(seen_confluences.count(prev) == 1){
+                    // don't do anything if 2nd time, handle in confluence itself
                     (':)').println('[prefix: String]');
                 }else{
                     seen_confluences.add(prev);
                     (':|').println('[prefix: String]');
+                    break;
                 }
-
-                // TODO: logic Stop else and mark them
             }
         }
         if(cur.isTypeOf(Segment) and not cur.has_watercraft){
@@ -61,22 +60,60 @@ operation simulate_from(cur, seen_confluences){
                 ('Moved from ' + prev + ' to ' + cur).println('| ');
             }
             if(prev.isTypeOf(Confluence)){
-                // TODO:
-
-                // This is just to see something
+                var our_direction = prev.out1 == cur; // The direction we come from
+                // If there is a watercraft and it points our direction pull it
+                if(prev.has_watercraft and (prev.last_direction == our_direction)){
+                    prev.has_watercraft = false;
+                    cur.has_watercraft = true; // Boat is moved
+                    ('Moved from ' + prev + ' to ' + cur).println('| ');
+                }
+                // If double marked do both simulations further
                 if(seen_confluences.count(prev) == 1){
+                    // don't do anything if 2nd time, handle in confluence itself
                     (':)').println('[prefix: String]');
                 }else{
                     seen_confluences.add(prev);
                     (':|').println('[prefix: String]');
+                    break;
                 }
-
             }
         }
         if(cur.isTypeOf(Confluence)){
-            // TODO:
+            if(not cur.has_watercraft){
+                var mode = cur.last_direction; // boolean to mark last direction (or current direction)
+                // mode = false means last direction was 0 → look in direction 1 first
+                // change where to look first depending on Mode
+                var prev0 = cur.in0;
+                var prev1 = cur.in1;
+                if(mode){
+                    // check in0
+                    if(prev0.has_watercraft){
+                        prev0.has_watercraft = false;
+                        cur.has_watercraft = true;
+                        cur.last_direction = false;
+                    }else{
+                        if(prev1.has_watercraft){
+                            prev1.has_watercraft = false;
+                            cur.has_watercraft = true;
+                        }
+                    }
+                }else{
+                    if(prev1.has_watercraft){
+                        prev1.has_watercraft = false;
+                        cur.has_watercraft = true;
+                        cur.last_direction = true;
+                    }else{
+                        if(prev0.has_watercraft){
+                            prev0.has_watercraft = false;
+                            cur.has_watercraft = true;
+                        }
+                    }
+                }
+                // TODO simulate both input-tiles by calling this function, and passing in1; we continue on in0 as our previous
+                // after call, we return/break this function because all predecessors were checked already
+                simulate_from(prev1, seen_confluences);
+            }
         }
-
         cur = prev;
     }
 }
