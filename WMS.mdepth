@@ -45,14 +45,14 @@ Model WMS {
         /// Number of steps that the need to be waited till another
         /// Watercraft is generated 
         rate: int;
-        /// Counter for the Rate that goes to 0, if it hits zero a new
+        /// Counter for the Rate that goes to 1, if it hits zero a new
         /// Watercraft can be spawned and the counter resets
-        cooldown: int = 0;
+        cooldown: int = 1;
         //------------
         // constraints:
         C_counter: $ self.counter >= 0 $ /// Counter needs to be positive
         C_rate: $ self.rate > 0 $ /// Rate needs to be strictly positive
-        C_cooldown_lower_bound: $ self.cooldown >= 0 $ /// Cooldown need to be positive
+        C_cooldown_lower_bound: $ self.cooldown >= 1 $ /// Cooldown need to be positive
         C_cooldown_upper_bound: $ self.cooldown <= self.rate $ /// Cooldown can not exceed rate
     }
 
@@ -64,8 +64,7 @@ Model WMS {
 
     Node Confluence[0..*]: Shippable, InNode, OutNode {
         /// Indicates if it is the turn to check the first direction
-        in0_turn: boolean = true;
-        boat_orientation: boolean = false;
+        last_direction: boolean = false; // Is false if the last watercraft came from in0 else it is true
         in1: OutNode;
         out1: InNode;
         //------------
@@ -100,17 +99,43 @@ WMS WMS_TEST {
         out0 = segment0;
     }
 
-    Segment segment0 {
-        in0 = source0;
-        out0 = segement1;
+    Source source1 {
+        rate = 1;
+        out0 = segment1;
     }
 
-    Segment segement1 {
-        in0 = segment0;
+    Segment segment0 {
+        in0 = source0;
+        out0 = confluence;
+    }
+
+    Segment segment1 {
+        in0 = source1;
+        out0 = confluence;
+    }
+
+    Segment segment2 {
+        in0 = confluence;
         out0 = sink0;
     }
 
+    Segment segment3 {
+        in0 = confluence;
+        out0 = sink1;
+    }
+
+    Confluence confluence {
+        in0 = segment0;
+        in1 = segment1;
+        out0 = segment2;
+        out1 = segment3;
+    }
+
     Sink sink0 {
-        in0 = segement1;
+        in0 = segment2;
+    }
+
+    Sink sink1 {
+        in0 = segment3;
     }
 }

@@ -1,63 +1,88 @@
-// Very basic mechanics for now 
-// Might be interesting to have a version of this that takes a node as input
-// The idea would than be that we call that function on all sinks
-// the function runs till it reacehs a source or hits a confluence,
-// if the boat on the confluence faces the direction we come from move it
-// (this step becomes iffy if we work with turns)
-// But the general idea is that if we simulate in the direction that is allowed to go on the confluence
-// than keep on simulating if the field is empty else stop
-// also tell the other branch that it is allowed to further simulate in that case
-operation simulate(){
-    // This would evenetually need to happen for sinks and a bit more
-    var cur = Sink.all()[0].in0;
+// TODO: Add prints so that we see what is happening
+operation simulate_from(cur, seen_confluences){
     while(not cur.isTypeOf(Source)){
+        var prev = cur.in0;
 
-        if(cur.isTypeOf(Segment)){
-            var prev = cur.out0; // Check what the next node is
-
-            if(cur.has_watercraft){ // If the cur node has a boat try to move it
-                if(prev.isTypeOf(Segment) and not prev.has_watercraft){
-                    prev.has_watercraft = true;
-                    cur.has_watercraft = false;
-                }
-                if(prev.isTypeOf(Sink)){
-                    cur.has_watercraft = false;
-                    prev.counter = prev.counter + 1;
-                }
-                if(prev.isTypeOf(Confluence)){
-                    // TODO: Confluence
+        if(cur.isTypeOf(Sink)){
+            // Try to pull onto us
+            if(prev.isTypeOf(Source)){
+                // Check if we can spawn
+                if(prev.cooldown == 1){
+                    prev.counter = prev.counter + 1; // Boat was spawned
+                    cur.counter = cur.counter + 1; // Boat is consumed
+                    prev.cooldown = prev.rate; // Reset cooldown
+                    ('Moved from ' + prev + ' to ' + cur + ' (destroyed)').println('| ');
+                }else{
+                    prev.cooldown = prev.cooldown - 1; // Decrease cooldown 
+                    ('Decreased cooldowm from ' + prev + ' to: ' + prev.cooldown).println('| ');
                 }
             }
-        }else{
-            // TODO: Confluence
+            if(prev.isTypeOf(Segment) and prev.has_watercraft){
+                prev.has_watercraft = false;
+                cur.counter = cur.counter + 1; // Boat is consumed
+                ('Moved from ' + prev + ' to ' + cur + ' (destroyed)').println('| ');
+            }
+            if(prev.isTypeOf(Confluence)){
+                var our_direction = prev.out1 == cur; // The direction we come from
+                // If there is a watercraft and it points our direction pull it
+                if(prev.has_watercraft and (prev.last_direction == our_direction)){
+                    prev.has_watercraft = false;
+                    cur.counter = cur.counter + 1; // Boat is consumed
+                }
+                // If double marked do both simulations further
+                // TODO: Do logic here
+                if(seen_confluences.count(prev) == 1){
+                    (':)').println('[prefix: String]');
+                }else{
+                    seen_confluences.add(prev);
+                    (':|').println('[prefix: String]');
+                }
+
+                // TODO: logic Stop else and mark them
+            }
         }
-        // Advance the pointer
-        cur = cur.in0;
-    }
-    // --- 
-    // We know at this point that cur is a Source
-    var prev = cur.out0;
-    // We are ready to spawn a ship
-    if(cur.cooldown == 0){
-        if(prev.isTypeOf(Segment) and not prev.has_watercraft){
-            prev.has_watercraft = true;
-            cur.counter = cur.counter + 1;
+        if(cur.isTypeOf(Segment) and not cur.has_watercraft){
+            // Try to pull onto us
+            if(prev.isTypeOf(Source)){
+                // Check if we can spawn
+                if(prev.cooldown == 1){
+                    prev.counter = prev.counter + 1; // Boat was spawned
+                    cur.has_watercraft = true;
+                    prev.cooldown = prev.rate; // Reset cooldown
+                    ('Moved from ' + prev + ' to ' + cur).println('| ');
+                }else{
+                    prev.cooldown = prev.cooldown - 1; // Decrease cooldown 
+                    ('Decreased cooldowm from ' + prev + ' to: ' + prev.cooldown).println('| ');
+                }
+            }
+            if(prev.isTypeOf(Segment) and prev.has_watercraft){
+                prev.has_watercraft = false;
+                cur.has_watercraft = true;
+                ('Moved from ' + prev + ' to ' + cur).println('| ');
+            }
+            if(prev.isTypeOf(Confluence)){
+                // TODO:
+
+                // This is just to see something
+                if(seen_confluences.count(prev) == 1){
+                    (':)').println('[prefix: String]');
+                }else{
+                    seen_confluences.add(prev);
+                    (':|').println('[prefix: String]');
+                }
+
+            }
         }
-        if(prev.isTypeOf(Sink)){
-            prev.counter = prev.counter + 1;
-            cur.counter = cur.counter + 1;
+        if(cur.isTypeOf(Confluence)){
+            // TODO:
         }
-        if(prev.isTypeOf(Confluence)){
-            // TODO: Confluence
-        }
-        cur.cooldown = cur.rate;
-    }else{
-        cur.cooldown = cur.cooldown - 1;
+
+        cur = prev;
     }
 }
 
 operation main(){
-    ('Running main...').println('| ');
+    ('-----Step------').println('*');
 
     // Just to see if the Model gets laoded correctly
     var sinks =  Sink.all();
@@ -65,22 +90,27 @@ operation main(){
     var segments =  Segment.all();
     var confluences =  Confluence.all();
 
-    // TODO: Maybe style this differently
     ('The state of the model:').println('| ');
-    ('There are ' + sinks.size() + ' sinks').println('| ');
-    ('There are ' + sources.size() + ' sources').println('| ');
-    ('There are ' + segments.size() + ' segments').println('| ');
-    ('There are ' + confluences.size() + ' confluences').println('| ');
+    ('There are ' + sinks.size() + ' sink(s)').println('| ');
+    ('There are ' + sources.size() + ' source(s)').println('| ');
+    ('There are ' + segments.size() + ' segment(s)').println('| ');
+    ('There are ' + confluences.size() + ' confluence(s)').println('| ');
 
+    var seen_confluences: Set(Confluence);
+    ('---Simulation--').println('*');
+    for(sink: Sink in sinks){
+        simulate_from(sink, seen_confluences);
+    }
+    
+    ('----Summary----').println('*');
     // Find the amout of ships that have been spwaned and consuemd
-    var ships_spawned = sources.collect(s | s.counter).sum();
-    (ships_spawned + ' ships have been spawned').println('| ');
+    var ships_spawned = sources.collect(s | s.counter).sum().floor();
+    (ships_spawned + ' ship(s) have been spawned').println('| ');
 
     var ships_in_transit = Shippable.all().select(s | s.has_watercraft).size();
-    (ships_in_transit + ' ships are in transit').println('| ');
+    (ships_in_transit + ' ship(s) are in transit').println('| ');
 
-    var ships_consumed = sinks.collect(s | s.counter).sum();
-    (ships_consumed + ' ships have been consumed').println('| ');
-
-    simulate();
+    var ships_consumed = sinks.collect(s | s.counter).sum().floor();
+    (ships_consumed + ' ship(s) have been consumed').println('| ');
+     ('---------------').println('*');
 }
