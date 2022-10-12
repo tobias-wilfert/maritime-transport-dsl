@@ -28,14 +28,12 @@ operation simulate_from(cur, seen_confluences){
                 if(prev.has_watercraft and (prev.last_direction == our_direction)){
                     prev.has_watercraft = false;
                     cur.counter = cur.counter + 1; // Boat is consumed
+                    ('Moved from ' + prev + ' to ' + cur + ' (destroyed)').println('| ');
                 }
-                // If double marked do both simulations further
-                if(seen_confluences.count(prev) == 1){
-                    // don't do anything if 2nd time, handle in confluence itself
-                    (':)').println('[prefix: String]');
-                }else{
+                
+                // If it is the first time we encounter a confluence mark it
+                if(seen_confluences.count(prev) == 0){
                     seen_confluences.add(prev);
-                    (':|').println('[prefix: String]');
                     break;
                 }
             }
@@ -67,13 +65,10 @@ operation simulate_from(cur, seen_confluences){
                     cur.has_watercraft = true; // Boat is moved
                     ('Moved from ' + prev + ' to ' + cur).println('| ');
                 }
-                // If double marked do both simulations further
-                if(seen_confluences.count(prev) == 1){
-                    // don't do anything if 2nd time, handle in confluence itself
-                    (':)').println('[prefix: String]');
-                }else{
+
+                // If it is the first time we encounter a confluence mark it
+                if(seen_confluences.count(prev) == 0){
                     seen_confluences.add(prev);
-                    (':|').println('[prefix: String]');
                     break;
                 }
             }
@@ -91,10 +86,12 @@ operation simulate_from(cur, seen_confluences){
                         prev0.has_watercraft = false;
                         cur.has_watercraft = true;
                         cur.last_direction = false;
+                        ('Moved from ' + prev0 + ' to ' + cur).println('| ');
                     }else{
                         if(prev1.has_watercraft){
                             prev1.has_watercraft = false;
                             cur.has_watercraft = true;
+                            ('Moved from ' + prev1 + ' to ' + cur).println('| ');
                         }
                     }
                 }else{
@@ -102,10 +99,12 @@ operation simulate_from(cur, seen_confluences){
                         prev1.has_watercraft = false;
                         cur.has_watercraft = true;
                         cur.last_direction = true;
+                        ('Moved from ' + prev1 + ' to ' + cur).println('| ');
                     }else{
                         if(prev0.has_watercraft){
                             prev0.has_watercraft = false;
                             cur.has_watercraft = true;
+                            ('Moved from ' + prev0 + ' to ' + cur).println('| ');
                         }
                     }
                 }
