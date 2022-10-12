@@ -1,12 +1,15 @@
 /// Water Modeling System
 Model WMS {
+    /// Base class for all Nodes so thay we can have a collection of them for the sequence
+    abstract Node AnyNode{}
+
     /// Base class for all Nodes that can contain a Watercraft
     abstract Node Shippable {
         has_watercraft: boolean = false;
     }
 
     /// Base class for all Nodes that have one out-connection
-    abstract Node InNode {
+    abstract Node InNode:  AnyNode {
         in0: OutNode;
         //------------
         // constraints:
@@ -19,7 +22,7 @@ Model WMS {
     }
 
     /// Base class for all Nodes that have one in-connection
-    abstract Node OutNode {
+    abstract Node OutNode: AnyNode {
         out0: InNode;
         //------------
         // constraints:
@@ -91,6 +94,16 @@ Model WMS {
     C_no_watercraft_loss: $ Source.all().collect(s | s.counter).sum() == (Sink.all().collect(s | s.counter).sum() + Shippable.all().select(s | s.has_watercraft).size()) $
     /// #Source needs to match the #Sink
     C_equal_sinks_and_sources: $ Source.all().size() == Sink.all().size() $
+
+    Node Schedule[1]{
+        list: AnyNode[*];
+        //------------
+        // constraints:
+        /// All nodes need to be in the schedule, that is the amount of unique entries needs to be
+        /// equal to the amount of AnyNodes in the Model
+        C_all_states_in_schedule: $ self.list.asSet().size() == AnyNode.all().size() $
+    }
+   
 }
 
 WMS WMS_TEST {
@@ -137,5 +150,9 @@ WMS WMS_TEST {
 
     Sink sink1 {
         in0 = segment3;
+    }
+    
+    Schedule schedule {
+        list = [sink0, segment2, sink1, segment3, confluence, segment1, segment0, source0, source1];
     }
 }
