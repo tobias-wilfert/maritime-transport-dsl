@@ -1,119 +1,96 @@
-// TODO: Add prints so that we see what is happening
-operation simulate_from(cur, seen_confluences){
-    while(not cur.isTypeOf(Source)){
-        var prev = cur.in0;
+/// Take the watercraft if possible, if not possible return false
+operation Source move_watercraft_to(node): Boolean {
+    if(self.cooldown == 1){
+        self.counter = self.counter + 1; // New boat has been spawend
+        self.cooldown = self.rate; // Reset cooldown
+        return true;
+    }else{
+        self.cooldown = self.cooldown - 1; // Decrease cooldown 
+        ('Decreased cooldowm from ' + self + ' to: ' + self.cooldown).println('| ');
+        return false;
+    }
+}
 
-        if(cur.isTypeOf(Sink)){
-            // Try to pull onto us
-            if(prev.isTypeOf(Source)){
-                // Check if we can spawn
-                if(prev.cooldown == 1){
-                    prev.counter = prev.counter + 1; // Boat was spawned
-                    cur.counter = cur.counter + 1; // Boat is consumed
-                    prev.cooldown = prev.rate; // Reset cooldown
-                    ('Moved from ' + prev + ' to ' + cur + ' (destroyed)').println('| ');
-                }else{
-                    prev.cooldown = prev.cooldown - 1; // Decrease cooldown 
-                    ('Decreased cooldowm from ' + prev + ' to: ' + prev.cooldown).println('| ');
-                }
-            }
-            if(prev.isTypeOf(Segment) and prev.has_watercraft){
-                prev.has_watercraft = false;
-                cur.counter = cur.counter + 1; // Boat is consumed
-                ('Moved from ' + prev + ' to ' + cur + ' (destroyed)').println('| ');
-            }
-            if(prev.isTypeOf(Confluence)){
-                var our_direction = prev.out1 == cur; // The direction we come from
-                // If there is a watercraft and it points our direction pull it
-                if(prev.has_watercraft and (prev.last_direction == our_direction)){
-                    prev.has_watercraft = false;
-                    cur.counter = cur.counter + 1; // Boat is consumed
-                    ('Moved from ' + prev + ' to ' + cur + ' (destroyed)').println('| ');
-                }
-                
-                // If it is the first time we encounter a confluence mark it
-                if(seen_confluences.count(prev) == 0){
-                    seen_confluences.add(prev);
-                    break;
-                }
-            }
-        }
-        if(cur.isTypeOf(Segment) and not cur.has_watercraft){
-            // Try to pull onto us
-            if(prev.isTypeOf(Source)){
-                // Check if we can spawn
-                if(prev.cooldown == 1){
-                    prev.counter = prev.counter + 1; // Boat was spawned
-                    cur.has_watercraft = true;
-                    prev.cooldown = prev.rate; // Reset cooldown
-                    ('Moved from ' + prev + ' to ' + cur).println('| ');
-                }else{
-                    prev.cooldown = prev.cooldown - 1; // Decrease cooldown 
-                    ('Decreased cooldowm from ' + prev + ' to: ' + prev.cooldown).println('| ');
-                }
-            }
-            if(prev.isTypeOf(Segment) and prev.has_watercraft){
-                prev.has_watercraft = false;
-                cur.has_watercraft = true;
-                ('Moved from ' + prev + ' to ' + cur).println('| ');
-            }
-            if(prev.isTypeOf(Confluence)){
-                var our_direction = prev.out1 == cur; // The direction we come from
-                // If there is a watercraft and it points our direction pull it
-                if(prev.has_watercraft and (prev.last_direction == our_direction)){
-                    prev.has_watercraft = false;
-                    cur.has_watercraft = true; // Boat is moved
-                    ('Moved from ' + prev + ' to ' + cur).println('| ');
-                }
+operation Segment move_watercraft_to(node): Boolean {
+    if(self.has_watercraft){
+        self.has_watercraft = false;
+        return true;
+    }else{
+        return false;
+    }
+}
 
-                // If it is the first time we encounter a confluence mark it
-                if(seen_confluences.count(prev) == 0){
-                    seen_confluences.add(prev);
-                    break;
-                }
-            }
-        }
-        if(cur.isTypeOf(Confluence)){
-            if(not cur.has_watercraft){
-                var mode = cur.last_direction; // boolean to mark last direction (or current direction)
-                // mode = false means last direction was 0 → look in direction 1 first
-                // change where to look first depending on Mode
-                var prev0 = cur.in0;
-                var prev1 = cur.in1;
-                if(mode){
-                    // check in0
-                    if(prev0.has_watercraft){
-                        prev0.has_watercraft = false;
-                        cur.has_watercraft = true;
-                        cur.last_direction = false;
-                        ('Moved from ' + prev0 + ' to ' + cur).println('| ');
-                    }else{
-                        if(prev1.has_watercraft){
-                            prev1.has_watercraft = false;
-                            cur.has_watercraft = true;
-                            ('Moved from ' + prev1 + ' to ' + cur).println('| ');
-                        }
-                    }
-                }else{
-                    if(prev1.has_watercraft){
-                        prev1.has_watercraft = false;
-                        cur.has_watercraft = true;
-                        cur.last_direction = true;
-                        ('Moved from ' + prev1 + ' to ' + cur).println('| ');
-                    }else{
-                        if(prev0.has_watercraft){
-                            prev0.has_watercraft = false;
-                            cur.has_watercraft = true;
-                            ('Moved from ' + prev0 + ' to ' + cur).println('| ');
-                        }
-                    }
-                }
-                // TODO simulate both input-tiles by calling this function, and passing in1; we continue on in0 as our previous
-                // after call, we return/break this function because all predecessors were checked already
-                simulate_from(prev1, seen_confluences);
-            }
-        }
-        cur = prev;
+operation Confluence move_watercraft_to(node): Boolean {
+    var direction = self.out1 == node; // Direction this function was called from
+    
+    // If there is a watercraft and it points int he right direction
+    if(self.has_watercraft and (self.last_direction == direction)){
+        self.has_watercraft = false;
+        return true;
+    }else{
+        return false;
+    }
+}
+
+/// Simulate a microstep on the node
+operation Source micro_step() {
+    // Do nothing in a source
+}
+
+operation Segment micro_step() {
+    // If there is no space no need to micro step
+    if(self.has_watercraft){ return; }
+
+    var predecessor = self.in0;
+    if(predecessor.move_watercraft_to(self)){
+        self.has_watercraft = true;
+        ('Moved from ' + predecessor + ' to ' + self).println('| ');
+    }
+}
+
+operation Confluence micro_step() {
+    // If there is no space no need to micro step
+    if(self.has_watercraft){ return; }
+
+    var predecessor0 = self.in0;
+    var predecessor1 = self.in1;
+    var mode = self.last_direction; // boolean to mark last direction (or current direction)
+    // mode = false means last direction was 0 → look in direction 1 first
+    // change where to look first depending on Mode
+    
+    if(not mode){
+        var temp = predecessor0;
+        predecessor0 = predecessor1;
+        predecessor1 = temp;
+    }
+
+    if(predecessor0.move_watercraft_to(self)){
+        self.has_watercraft = true;
+        self.last_direction = not self.last_direction; // Flip the direction
+        ('Moved from ' + predecessor0 + ' to ' + self).println('| ');
+        return;
+    }
+    if(predecessor1.move_watercraft_to(self)){
+        self.has_watercraft = true;
+        ('Moved from ' + predecessor1 + ' to ' + self).println('| ');
+        return;
+    }
+}
+
+operation Sink micro_step() {
+    var predecessor = self.in0;
+
+    if(predecessor.move_watercraft_to(self)){
+        self.counter = self.counter + 1; // Consumed a Boat
+        ('Moved from ' + predecessor + ' to ' + self + ' (destroyed)').println('| ');
+    }
+}
+
+/// Grab the order from the Schedule and micro step all nodes in that order
+operation simulate(){
+    var schedule = Schedule.all()[0].list;
+    for(node in schedule){
+        node.micro_step();
     }
 }
 
@@ -132,11 +109,8 @@ operation main(){
     ('There are ' + segments.size() + ' segment(s)').println('| ');
     ('There are ' + confluences.size() + ' confluence(s)').println('| ');
 
-    var seen_confluences: Set(Confluence);
     ('---Simulation--').println('*');
-    for(sink: Sink in sinks){
-        simulate_from(sink, seen_confluences);
-    }
+    simulate();
     
     ('----Summary----').println('*');
     // Find the amout of ships that have been spwaned and consuemd
