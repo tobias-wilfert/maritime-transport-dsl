@@ -1,3 +1,4 @@
 load "WMS"
 verify
 load eol "WMS"
+verify
