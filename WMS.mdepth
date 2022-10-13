@@ -102,6 +102,7 @@ Model WMS {
         /// All nodes need to be in the schedule, that is the amount of unique entries needs to be
         /// equal to the amount of AnyNodes in the Model
         C_all_states_in_schedule: $ self.list.asSet().size() == AnyNode.all().size() $
+        C_no_dublicates: $ self.list.size() == self.list.asSet().size() $
     }
    
 }
