@@ -6,29 +6,39 @@ class sink1<< (0, orchid) Sink >>
 sink1 : counter=0
 class confluence<< (0, orchid) Confluence >>
 confluence : last_direction=false
-confluence : has_watercraft=false
+confluence : has_watercraft=true
+class schedule<< (0, orchid) Schedule >>
 class source0<< (0, orchid) Source >>
 source0 : rate=1
 source0 : cooldown=1
-source0 : counter=0
+source0 : counter=1
 class source1<< (0, orchid) Source >>
 source1 : rate=1
 source1 : cooldown=1
-source1 : counter=0
+source1 : counter=1
 class segment0<< (0, orchid) Segment >>
-segment0 : has_watercraft=false
+segment0 : has_watercraft=true
 class segment1<< (0, orchid) Segment >>
-segment1 : has_watercraft=false
+segment1 : has_watercraft=true
 class segment2<< (0, orchid) Segment >>
 segment2 : has_watercraft=false
 class segment3<< (0, orchid) Segment >>
-segment3 : has_watercraft=false
+segment3 : has_watercraft=true
 sink0 --> "in0" segment2
 sink1 --> "in0" segment3
 confluence --> "out0" segment2
 confluence --> "out1" segment3
 confluence --> "in0" segment0
 confluence --> "in1" segment1
+schedule --> "list" sink0
+schedule --> "list" segment2
+schedule --> "list" sink1
+schedule --> "list" segment3
+schedule --> "list" confluence
+schedule --> "list" segment1
+schedule --> "list" segment0
+schedule --> "list" source0
+schedule --> "list" source1
 source0 --> "out0" segment0
 source1 --> "out0" segment1
 segment0 --> "out0" confluence
@@ -41,6 +51,7 @@ segment3 --> "out0" sink1
 segment3 --> "in0" confluence
 }
 namespace WMS{
+abstract class AnyNode<< (1, orchid) Node >>
 abstract class Shippable<< (1, orchid) Node >>
 Shippable : has_watercraft@1 : boolean=false
 abstract class InNode<< (1, orchid) Node >>
@@ -73,7 +84,12 @@ Confluence : C_in1_not_self@1() <<constraint>>
 Confluence : C_out1_not_self@1() <<constraint>>
 Confluence : C_outNode_connection_match@1() <<constraint>>
 Confluence : C_inNode_connection_match@1() <<constraint>>
+class Schedule<< (1, orchid) Node >>
+Schedule : C_all_states_in_schedule@1() <<constraint>>
+Schedule : C_no_dublicates@1() <<constraint>>
+AnyNode <|--  InNode
 InNode --> "in0 1..1" OutNode
+AnyNode <|--  OutNode
 OutNode --> "out0 1..1" InNode
 InNode <|--  Sink
 OutNode <|--  Source
@@ -85,6 +101,7 @@ InNode <|--  Confluence
 OutNode <|--  Confluence
 Confluence --> "out1 1..1" InNode
 Confluence --> "in1 1..1" OutNode
+Schedule --> "list *" AnyNode
 }
 
 WMS <.. WMS_TEST : <<ontological instace>>

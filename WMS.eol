@@ -6,7 +6,7 @@ operation Source move_watercraft_to(node): Boolean {
         return true;
     }else{
         self.cooldown = self.cooldown - 1; // Decrease cooldown 
-        ('Decreased cooldowm from ' + self + ' to: ' + self.cooldown).println('| ');
+        ('Decreased cooldown from ' + self + ' to: ' + self.cooldown).println('| ');
         return false;
     }
 }
@@ -23,7 +23,7 @@ operation Segment move_watercraft_to(node): Boolean {
 operation Confluence move_watercraft_to(node): Boolean {
     var direction = self.out1 == node; // Direction this function was called from
     
-    // If there is a watercraft and it points int he right direction
+    // If there is a watercraft and it points in the right direction
     if(self.has_watercraft and (self.last_direction == direction)){
         self.has_watercraft = false;
         return true;
@@ -97,7 +97,7 @@ operation simulate(){
 operation main(){
     ('-----Step------').println('*');
 
-    // Just to see if the Model gets laoded correctly
+    // Just to see if the Model gets loaded correctly
     var sinks =  Sink.all();
     var sources =  Source.all();
     var segments =  Segment.all();
@@ -113,7 +113,7 @@ operation main(){
     simulate();
     
     ('----Summary----').println('*');
-    // Find the amout of ships that have been spwaned and consuemd
+    // Find the amount of ships that have been spawned and consuemd
     var ships_spawned = sources.collect(s | s.counter).sum().floor();
     (ships_spawned + ' ship(s) have been spawned').println('| ');
 
