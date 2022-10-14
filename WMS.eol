@@ -12,7 +12,7 @@ operation Source move_watercraft_to(node): Boolean {
 }
 
 operation Segment move_watercraft_to(node): Boolean {
-    if(self.has_watercraft){
+    if(self.has_watercraft and not self.got_this_step){
         self.has_watercraft = false;
         return true;
     }else{
@@ -24,7 +24,7 @@ operation Confluence move_watercraft_to(node): Boolean {
     var direction = self.out1 == node; // Direction this function was called from
     
     // If there is a watercraft and it points in the right direction
-    if(self.has_watercraft and (self.last_direction == direction)){
+    if(self.has_watercraft and (self.last_direction == direction) and not self.got_this_step){
         self.has_watercraft = false;
         return true;
     }else{
@@ -44,6 +44,7 @@ operation Segment micro_step() {
     var predecessor = self.in0;
     if(predecessor.move_watercraft_to(self)){
         self.has_watercraft = true;
+        self.got_this_step = true;
         ('Moved from ' + predecessor + ' to ' + self).println('| ');
     }
 }
@@ -66,12 +67,14 @@ operation Confluence micro_step() {
 
     if(predecessor0.move_watercraft_to(self)){
         self.has_watercraft = true;
+        self.got_this_step = true;
         self.last_direction = not self.last_direction; // Flip the direction
         ('Moved from ' + predecessor0 + ' to ' + self).println('| ');
         return;
     }
     if(predecessor1.move_watercraft_to(self)){
         self.has_watercraft = true;
+        self.got_this_step = true;
         ('Moved from ' + predecessor1 + ' to ' + self).println('| ');
         return;
     }
@@ -110,6 +113,10 @@ operation main(){
     ('There are ' + confluences.size() + ' confluence(s)').println('| ');
 
     ('---Simulation--').println('*');
+    // re-set got_this_step for each node in shippable
+    for(node in Shippable.all){
+        node.got_this_step = false;
+    }
     simulate();
     
     ('----Summary----').println('*');

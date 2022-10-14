@@ -6,6 +6,7 @@ Model WMS {
     /// Base class for all Nodes that can contain a Watercraft
     abstract Node Shippable {
         has_watercraft: boolean = false;
+        got_this_step: boolean = false;
     }
 
     /// Base class for all Nodes that have one out-connection
@@ -111,7 +112,7 @@ Model WMS {
 // Longer line - scheduling 2
 WMS WMS_TEST {
     Source source0 {
-        rate = 2;
+        rate = 1;
         out0 = segment0;
     }
 
