@@ -5,8 +5,6 @@ operation Source move_watercraft_to(node): Boolean {
         self.cooldown = self.rate; // Reset cooldown
         return true;
     }else{
-        self.cooldown = self.cooldown - 1; // Decrease cooldown 
-        ('Decreased cooldown from ' + self + ' to: ' + self.cooldown).println('| ');
         return false;
     }
 }
@@ -34,7 +32,11 @@ operation Confluence move_watercraft_to(node): Boolean {
 
 /// Simulate a microstep on the node
 operation Source micro_step() {
-    // Do nothing in a source
+    // reduce cooldown of source
+    if(self.cooldown > 1){
+        self.cooldown = self.cooldown - 1; // Decrease cooldown 
+        ('Decreased cooldown from ' + self + ' to: ' + self.cooldown).println('| ');
+    }
 }
 
 operation Segment micro_step() {
