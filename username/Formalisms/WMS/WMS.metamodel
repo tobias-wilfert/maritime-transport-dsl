@@ -1,9 +1,694 @@
 {
-	"types": {},
-	"constraints": [],
+	"types": {
+		"InNode": [],
+		"OutNode": [],
+		"in0": [],
+		"out0": [],
+		"AnyNode": [],
+		"Shippable": [
+			{
+				"name": "got_watercraft",
+				"type": "boolean",
+				"default": "false"
+			}
+		],
+		"Source": [
+			{
+				"name": "rate",
+				"type": "int",
+				"default": ""
+			},
+			{
+				"name": "cooldown",
+				"type": "int",
+				"default": "1"
+			},
+			{
+				"name": "counter",
+				"type": "int",
+				"default": "0"
+			}
+		],
+		"Sink": [
+			{
+				"name": "counter",
+				"type": "int",
+				"default": "0"
+			}
+		],
+		"Segment": [
+			{
+				"name": "got_watercraft",
+				"type": "boolean",
+				"default": "false"
+			}
+		],
+		"Confluence": [
+			{
+				"name": "last_direction",
+				"type": "boolean",
+				"default": "false"
+			},
+			{
+				"name": "got_watercraft",
+				"type": "boolean",
+				"default": "false"
+			}
+		],
+		"out1": [],
+		"in1": []
+	},
+	"constraints": [
+		{
+			"name": "noAbstractInstances",
+			"event": "pre-create",
+			"code": "false",
+			"targetType": "InNode"
+		},
+		{
+			"name": "noAbstractInstances",
+			"event": "pre-create",
+			"code": "false",
+			"targetType": "OutNode"
+		},
+		{
+			"name": "TODO_need_constraints_for_this_again",
+			"event": "validate",
+			"targetType": "*",
+			"code": "true"
+		},
+		{
+			"name": "noAbstractInstances",
+			"event": "pre-create",
+			"code": "false",
+			"targetType": "AnyNode"
+		},
+		{
+			"name": "noAbstractInstances",
+			"event": "pre-create",
+			"code": "false",
+			"targetType": "Shippable"
+		}
+	],
 	"actions": [],
-	"cardinalities": {},
-	"legalConnections": {},
-	"connectorTypes": {},
-	"types2parentTypes": {}
+	"cardinalities": {
+		"InNode": [
+			{
+				"dir": "out",
+				"type": "in0",
+				"min": "1",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "out1",
+				"min": "1",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "out0",
+				"min": "1",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "in0",
+				"min": "1",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "out0",
+				"min": "1",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "in1",
+				"min": "1",
+				"max": "1"
+			}
+		],
+		"OutNode": [
+			{
+				"dir": "in",
+				"type": "in0",
+				"min": "1",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "out0",
+				"min": "1",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "in1",
+				"min": "1",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "in0",
+				"min": "1",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "out1",
+				"min": "1",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "out0",
+				"min": "1",
+				"max": "1"
+			}
+		],
+		"in0": [
+			{
+				"dir": "in",
+				"type": "InNode",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "OutNode",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "Source",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "Sink",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "Segment",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "Segment",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "Confluence",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "Confluence",
+				"min": "0",
+				"max": "1"
+			}
+		],
+		"out0": [
+			{
+				"dir": "in",
+				"type": "OutNode",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "InNode",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "Source",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "Sink",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "Segment",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "Segment",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "Confluence",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "Confluence",
+				"min": "0",
+				"max": "1"
+			}
+		],
+		"AnyNode": [],
+		"Shippable": [
+			{
+				"dir": "in",
+				"type": "in0",
+				"min": "1",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "out0",
+				"min": "1",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "in1",
+				"min": "1",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "in0",
+				"min": "1",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "out1",
+				"min": "1",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "out0",
+				"min": "1",
+				"max": "1"
+			}
+		],
+		"Source": [
+			{
+				"dir": "in",
+				"type": "in0",
+				"min": "1",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "out0",
+				"min": "1",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "in1",
+				"min": "1",
+				"max": "1"
+			}
+		],
+		"Sink": [
+			{
+				"dir": "out",
+				"type": "in0",
+				"min": "1",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "out1",
+				"min": "1",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "out0",
+				"min": "1",
+				"max": "1"
+			}
+		],
+		"Segment": [
+			{
+				"dir": "in",
+				"type": "in0",
+				"min": "1",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "out0",
+				"min": "1",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "in1",
+				"min": "1",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "in0",
+				"min": "1",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "out1",
+				"min": "1",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "out0",
+				"min": "1",
+				"max": "1"
+			}
+		],
+		"Confluence": [
+			{
+				"dir": "out",
+				"type": "out1",
+				"min": "1",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "in1",
+				"min": "1",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "in0",
+				"min": "1",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "out0",
+				"min": "1",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "in1",
+				"min": "1",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "in0",
+				"min": "1",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "out1",
+				"min": "1",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "out0",
+				"min": "1",
+				"max": "1"
+			}
+		],
+		"out1": [
+			{
+				"dir": "in",
+				"type": "Confluence",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "InNode",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "Sink",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "Segment",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "Confluence",
+				"min": "0",
+				"max": "1"
+			}
+		],
+		"in1": [
+			{
+				"dir": "in",
+				"type": "Confluence",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "OutNode",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "Source",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "Segment",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "Confluence",
+				"min": "0",
+				"max": "1"
+			}
+		]
+	},
+	"legalConnections": {
+		"InNode": {
+			"OutNode": [
+				"in0"
+			],
+			"Source": [
+				"in0"
+			],
+			"Segment": [
+				"in0",
+				"out0"
+			],
+			"Confluence": [
+				"in0",
+				"out0"
+			],
+			"InNode": [
+				"out0"
+			],
+			"Sink": [
+				"out0"
+			]
+		},
+		"OutNode": {
+			"InNode": [
+				"out0"
+			],
+			"Sink": [
+				"out0"
+			],
+			"Segment": [
+				"out0",
+				"in0"
+			],
+			"Confluence": [
+				"out0",
+				"in0"
+			],
+			"OutNode": [
+				"in0"
+			],
+			"Source": [
+				"in0"
+			]
+		},
+		"Shippable": {
+			"InNode": [
+				"out0"
+			],
+			"Sink": [
+				"out0"
+			],
+			"Segment": [
+				"out0",
+				"in0"
+			],
+			"Confluence": [
+				"out0",
+				"in0"
+			],
+			"OutNode": [
+				"in0"
+			],
+			"Source": [
+				"in0"
+			]
+		},
+		"Source": {
+			"InNode": [
+				"out0"
+			],
+			"Sink": [
+				"out0"
+			],
+			"Segment": [
+				"out0"
+			],
+			"Confluence": [
+				"out0"
+			]
+		},
+		"Sink": {
+			"OutNode": [
+				"in0"
+			],
+			"Source": [
+				"in0"
+			],
+			"Segment": [
+				"in0"
+			],
+			"Confluence": [
+				"in0"
+			]
+		},
+		"Segment": {
+			"InNode": [
+				"out0"
+			],
+			"Sink": [
+				"out0"
+			],
+			"Segment": [
+				"out0",
+				"in0"
+			],
+			"Confluence": [
+				"out0",
+				"in0"
+			],
+			"OutNode": [
+				"in0"
+			],
+			"Source": [
+				"in0"
+			]
+		},
+		"Confluence": {
+			"InNode": [
+				"out1",
+				"out0"
+			],
+			"Sink": [
+				"out1",
+				"out0"
+			],
+			"Segment": [
+				"out1",
+				"in1",
+				"out0",
+				"in0"
+			],
+			"Confluence": [
+				"out1",
+				"in1",
+				"out0",
+				"in0"
+			],
+			"OutNode": [
+				"in1",
+				"in0"
+			],
+			"Source": [
+				"in1",
+				"in0"
+			]
+		}
+	},
+	"connectorTypes": {
+		"in0": "visual",
+		"out0": "visual",
+		"out1": "visual",
+		"in1": "visual"
+	},
+	"types2parentTypes": {
+		"InNode": [
+			"AnyNode"
+		],
+		"OutNode": [
+			"AnyNode"
+		],
+		"in0": [],
+		"out0": [],
+		"TODO_need_constraints_for_this_again": [],
+		"AnyNode": [],
+		"Shippable": [],
+		"Source": [
+			"AnyNode",
+			"OutNode"
+		],
+		"Sink": [
+			"AnyNode",
+			"InNode"
+		],
+		"Segment": [
+			"AnyNode",
+			"AnyNode",
+			"InNode",
+			"OutNode",
+			"Shippable"
+		],
+		"Confluence": [
+			"AnyNode",
+			"AnyNode",
+			"OutNode",
+			"InNode",
+			"Shippable"
+		],
+		"out1": [],
+		"in1": []
+	}
 }
