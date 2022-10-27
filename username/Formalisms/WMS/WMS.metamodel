@@ -2,8 +2,6 @@
 	"types": {
 		"InNode": [],
 		"OutNode": [],
-		"in0": [],
-		"out0": [],
 		"AnyNode": [],
 		"Shippable": [
 			{
@@ -55,8 +53,9 @@
 				"default": "false"
 			}
 		],
-		"out1": [],
-		"in1": []
+		"connection0": [],
+		"connection2": [],
+		"connection1": []
 	},
 	"constraints": [
 		{
@@ -94,176 +93,52 @@
 	"cardinalities": {
 		"InNode": [
 			{
-				"dir": "out",
-				"type": "in0",
-				"min": "1",
+				"dir": "in",
+				"type": "connection0",
+				"min": "0",
 				"max": "1"
 			},
 			{
 				"dir": "in",
-				"type": "out1",
-				"min": "1",
-				"max": "1"
-			},
-			{
-				"dir": "in",
-				"type": "out0",
-				"min": "1",
-				"max": "1"
-			},
-			{
-				"dir": "in",
-				"type": "in0",
-				"min": "1",
+				"type": "connection2",
+				"min": "0",
 				"max": "1"
 			},
 			{
 				"dir": "out",
-				"type": "out0",
-				"min": "1",
+				"type": "connection0",
+				"min": "0",
 				"max": "1"
 			},
 			{
-				"dir": "in",
-				"type": "in1",
-				"min": "1",
+				"dir": "out",
+				"type": "connection1",
+				"min": "0",
 				"max": "1"
 			}
 		],
 		"OutNode": [
 			{
-				"dir": "in",
-				"type": "in0",
-				"min": "1",
-				"max": "1"
-			},
-			{
 				"dir": "out",
-				"type": "out0",
-				"min": "1",
-				"max": "1"
-			},
-			{
-				"dir": "in",
-				"type": "in1",
-				"min": "1",
-				"max": "1"
-			},
-			{
-				"dir": "out",
-				"type": "in0",
-				"min": "1",
-				"max": "1"
-			},
-			{
-				"dir": "in",
-				"type": "out1",
-				"min": "1",
-				"max": "1"
-			},
-			{
-				"dir": "in",
-				"type": "out0",
-				"min": "1",
-				"max": "1"
-			}
-		],
-		"in0": [
-			{
-				"dir": "in",
-				"type": "InNode",
+				"type": "connection0",
 				"min": "0",
 				"max": "1"
 			},
 			{
 				"dir": "out",
-				"type": "OutNode",
-				"min": "0",
-				"max": "1"
-			},
-			{
-				"dir": "out",
-				"type": "Source",
+				"type": "connection1",
 				"min": "0",
 				"max": "1"
 			},
 			{
 				"dir": "in",
-				"type": "Sink",
+				"type": "connection0",
 				"min": "0",
 				"max": "1"
 			},
 			{
 				"dir": "in",
-				"type": "Segment",
-				"min": "0",
-				"max": "1"
-			},
-			{
-				"dir": "out",
-				"type": "Segment",
-				"min": "0",
-				"max": "1"
-			},
-			{
-				"dir": "out",
-				"type": "Confluence",
-				"min": "0",
-				"max": "1"
-			},
-			{
-				"dir": "in",
-				"type": "Confluence",
-				"min": "0",
-				"max": "1"
-			}
-		],
-		"out0": [
-			{
-				"dir": "in",
-				"type": "OutNode",
-				"min": "0",
-				"max": "1"
-			},
-			{
-				"dir": "out",
-				"type": "InNode",
-				"min": "0",
-				"max": "1"
-			},
-			{
-				"dir": "in",
-				"type": "Source",
-				"min": "0",
-				"max": "1"
-			},
-			{
-				"dir": "out",
-				"type": "Sink",
-				"min": "0",
-				"max": "1"
-			},
-			{
-				"dir": "out",
-				"type": "Segment",
-				"min": "0",
-				"max": "1"
-			},
-			{
-				"dir": "in",
-				"type": "Segment",
-				"min": "0",
-				"max": "1"
-			},
-			{
-				"dir": "in",
-				"type": "Confluence",
-				"min": "0",
-				"max": "1"
-			},
-			{
-				"dir": "out",
-				"type": "Confluence",
+				"type": "connection2",
 				"min": "0",
 				"max": "1"
 			}
@@ -271,171 +146,173 @@
 		"AnyNode": [],
 		"Shippable": [
 			{
-				"dir": "in",
-				"type": "in0",
-				"min": "1",
+				"dir": "out",
+				"type": "connection0",
+				"min": "0",
 				"max": "1"
 			},
 			{
 				"dir": "out",
-				"type": "out0",
-				"min": "1",
+				"type": "connection1",
+				"min": "0",
 				"max": "1"
 			},
 			{
 				"dir": "in",
-				"type": "in1",
-				"min": "1",
-				"max": "1"
-			},
-			{
-				"dir": "out",
-				"type": "in0",
-				"min": "1",
+				"type": "connection0",
+				"min": "0",
 				"max": "1"
 			},
 			{
 				"dir": "in",
-				"type": "out1",
-				"min": "1",
-				"max": "1"
-			},
-			{
-				"dir": "in",
-				"type": "out0",
-				"min": "1",
+				"type": "connection2",
+				"min": "0",
 				"max": "1"
 			}
 		],
 		"Source": [
 			{
-				"dir": "in",
-				"type": "in0",
-				"min": "1",
+				"dir": "out",
+				"type": "connection0",
+				"min": "0",
 				"max": "1"
 			},
 			{
 				"dir": "out",
-				"type": "out0",
-				"min": "1",
-				"max": "1"
-			},
-			{
-				"dir": "in",
-				"type": "in1",
-				"min": "1",
+				"type": "connection1",
+				"min": "0",
 				"max": "1"
 			}
 		],
 		"Sink": [
 			{
-				"dir": "out",
-				"type": "in0",
-				"min": "1",
+				"dir": "in",
+				"type": "connection0",
+				"min": "0",
 				"max": "1"
 			},
 			{
 				"dir": "in",
-				"type": "out1",
-				"min": "1",
-				"max": "1"
-			},
-			{
-				"dir": "in",
-				"type": "out0",
-				"min": "1",
+				"type": "connection2",
+				"min": "0",
 				"max": "1"
 			}
 		],
 		"Segment": [
 			{
-				"dir": "in",
-				"type": "in0",
-				"min": "1",
+				"dir": "out",
+				"type": "connection0",
+				"min": "0",
 				"max": "1"
 			},
 			{
 				"dir": "out",
-				"type": "out0",
-				"min": "1",
+				"type": "connection1",
+				"min": "0",
 				"max": "1"
 			},
 			{
 				"dir": "in",
-				"type": "in1",
-				"min": "1",
-				"max": "1"
-			},
-			{
-				"dir": "out",
-				"type": "in0",
-				"min": "1",
+				"type": "connection0",
+				"min": "0",
 				"max": "1"
 			},
 			{
 				"dir": "in",
-				"type": "out1",
-				"min": "1",
-				"max": "1"
-			},
-			{
-				"dir": "in",
-				"type": "out0",
-				"min": "1",
+				"type": "connection2",
+				"min": "0",
 				"max": "1"
 			}
 		],
 		"Confluence": [
 			{
-				"dir": "out",
-				"type": "out1",
-				"min": "1",
-				"max": "1"
-			},
-			{
-				"dir": "out",
-				"type": "in1",
-				"min": "1",
-				"max": "1"
-			},
-			{
 				"dir": "in",
-				"type": "in0",
+				"type": "connection1",
 				"min": "1",
 				"max": "1"
 			},
 			{
 				"dir": "out",
-				"type": "out0",
-				"min": "1",
-				"max": "1"
-			},
-			{
-				"dir": "in",
-				"type": "in1",
+				"type": "connection2",
 				"min": "1",
 				"max": "1"
 			},
 			{
 				"dir": "out",
-				"type": "in0",
-				"min": "1",
+				"type": "connection0",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "connection1",
+				"min": "0",
 				"max": "1"
 			},
 			{
 				"dir": "in",
-				"type": "out1",
-				"min": "1",
+				"type": "connection0",
+				"min": "0",
 				"max": "1"
 			},
 			{
 				"dir": "in",
-				"type": "out0",
-				"min": "1",
+				"type": "connection2",
+				"min": "0",
 				"max": "1"
 			}
 		],
-		"out1": [
+		"connection0": [
+			{
+				"dir": "in",
+				"type": "OutNode",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "InNode",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "Source",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "Sink",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "Segment",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "Segment",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "Confluence",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "Confluence",
+				"min": "0",
+				"max": "1"
+			}
+		],
+		"connection2": [
 			{
 				"dir": "in",
 				"type": "Confluence",
@@ -467,33 +344,33 @@
 				"max": "1"
 			}
 		],
-		"in1": [
+		"connection1": [
 			{
 				"dir": "in",
-				"type": "Confluence",
-				"min": "0",
-				"max": "1"
-			},
-			{
-				"dir": "out",
 				"type": "OutNode",
 				"min": "0",
 				"max": "1"
 			},
 			{
 				"dir": "out",
+				"type": "Confluence",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
 				"type": "Source",
 				"min": "0",
 				"max": "1"
 			},
 			{
-				"dir": "out",
+				"dir": "in",
 				"type": "Segment",
 				"min": "0",
 				"max": "1"
 			},
 			{
-				"dir": "out",
+				"dir": "in",
 				"type": "Confluence",
 				"min": "0",
 				"max": "1"
@@ -502,157 +379,104 @@
 	},
 	"legalConnections": {
 		"InNode": {
-			"OutNode": [
-				"in0"
-			],
-			"Source": [
-				"in0"
-			],
-			"Segment": [
-				"in0",
-				"out0"
-			],
-			"Confluence": [
-				"in0",
-				"out0"
-			],
 			"InNode": [
-				"out0"
+				"connection0"
 			],
 			"Sink": [
-				"out0"
+				"connection0"
+			],
+			"Segment": [
+				"connection0"
+			],
+			"Confluence": [
+				"connection0",
+				"connection1"
 			]
 		},
 		"OutNode": {
 			"InNode": [
-				"out0"
+				"connection0"
 			],
 			"Sink": [
-				"out0"
+				"connection0"
 			],
 			"Segment": [
-				"out0",
-				"in0"
+				"connection0"
 			],
 			"Confluence": [
-				"out0",
-				"in0"
-			],
-			"OutNode": [
-				"in0"
-			],
-			"Source": [
-				"in0"
+				"connection0",
+				"connection1"
 			]
 		},
 		"Shippable": {
 			"InNode": [
-				"out0"
+				"connection0"
 			],
 			"Sink": [
-				"out0"
+				"connection0"
 			],
 			"Segment": [
-				"out0",
-				"in0"
+				"connection0"
 			],
 			"Confluence": [
-				"out0",
-				"in0"
-			],
-			"OutNode": [
-				"in0"
-			],
-			"Source": [
-				"in0"
+				"connection0",
+				"connection1"
 			]
 		},
 		"Source": {
 			"InNode": [
-				"out0"
+				"connection0"
 			],
 			"Sink": [
-				"out0"
+				"connection0"
 			],
 			"Segment": [
-				"out0"
+				"connection0"
 			],
 			"Confluence": [
-				"out0"
-			]
-		},
-		"Sink": {
-			"OutNode": [
-				"in0"
-			],
-			"Source": [
-				"in0"
-			],
-			"Segment": [
-				"in0"
-			],
-			"Confluence": [
-				"in0"
+				"connection0",
+				"connection1"
 			]
 		},
 		"Segment": {
 			"InNode": [
-				"out0"
+				"connection0"
 			],
 			"Sink": [
-				"out0"
+				"connection0"
 			],
 			"Segment": [
-				"out0",
-				"in0"
+				"connection0"
 			],
 			"Confluence": [
-				"out0",
-				"in0"
-			],
-			"OutNode": [
-				"in0"
-			],
-			"Source": [
-				"in0"
+				"connection0",
+				"connection1"
 			]
 		},
 		"Confluence": {
 			"InNode": [
-				"out1",
-				"out0"
+				"connection2",
+				"connection0"
 			],
 			"Sink": [
-				"out1",
-				"out0"
+				"connection2",
+				"connection0"
 			],
 			"Segment": [
-				"out1",
-				"in1",
-				"out0",
-				"in0"
+				"connection2",
+				"connection0"
 			],
 			"Confluence": [
-				"out1",
-				"in1",
-				"out0",
-				"in0"
-			],
-			"OutNode": [
-				"in1",
-				"in0"
-			],
-			"Source": [
-				"in1",
-				"in0"
+				"connection2",
+				"connection0",
+				"connection1"
 			]
 		}
 	},
 	"connectorTypes": {
-		"in0": "visual",
-		"out0": "visual",
-		"out1": "visual",
-		"in1": "visual"
+		"connection0": "visual",
+		"connection2": "visual",
+		"connection1": "visual"
 	},
 	"types2parentTypes": {
 		"InNode": [
@@ -661,8 +485,6 @@
 		"OutNode": [
 			"AnyNode"
 		],
-		"in0": [],
-		"out0": [],
 		"TODO_need_constraints_for_this_again": [],
 		"AnyNode": [],
 		"Shippable": [],
@@ -688,7 +510,8 @@
 			"InNode",
 			"Shippable"
 		],
-		"out1": [],
-		"in1": []
+		"connection0": [],
+		"connection2": [],
+		"connection1": []
 	}
 }

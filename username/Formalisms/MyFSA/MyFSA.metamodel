@@ -1,0 +1,102 @@
+{
+	"types": {
+		"State": [
+			{
+				"name": "initial",
+				"type": "boolean",
+				"default": false
+			},
+			{
+				"name": "final",
+				"type": "boolean",
+				"default": false
+			},
+			{
+				"name": "name",
+				"type": "string",
+				"default": ""
+			}
+		],
+		"transition": [
+			{
+				"name": "symbol",
+				"type": "int",
+				"default": 0
+			}
+		]
+	},
+	"constraints": [
+		{
+			"name": "C_name_not_empty",
+			"event": "validate",
+			"code": "getAllNodes(['/Formalisms/MyFSA/MyFSA/State']).every(state => getAttr('name', state).length > 0)",
+			"targetType": "State"
+		},
+		{
+			"name": "GC_one_initial",
+			"event": "validate",
+			"targetType": "*",
+			"code": "getAllNodes(['/Formalisms/MyFSA/MyFSA/State']).filter(state => getAttr(\"initial\", state)).length === 1"
+		},
+		{
+			"name": "GC_at_least_one_final",
+			"event": "validate",
+			"targetType": "*",
+			"code": "getAllNodes(['/Formalisms/MyFSA/MyFSA/State']).some(state => getAttr(\"final\", state))"
+		},
+		{
+			"name": "GC_every_final_state_reachable",
+			"event": "validate",
+			"targetType": "*",
+			"code": "(() => {\n  const allStates = getAllNodes(['/Formalisms/MyFSA/MyFSA/State']); // array of state-ids\n  const initialState = allStates.find(stateId => getAttr('initial', stateId)); // state id\n  const finalStates = allStates.filter(stateId => getAttr('final', stateId)); // array of state-ids\n\n  console.log(\"initialState:\",initialState);\n  console.log(\"finalStates:\",finalStates);\n  \n  let reachable = [initialState];\n  while (true) {\n    console.log(\"iteration... reachable=\",reachable);\n    const alsoReachable = reachable.map(stateId => {\n      const outgoingTransitions = getNeighbors('out', '/Formalisms/MyFSA/MyFSA/transition', stateId); // array of transition-ids\n      console.log(\"state\",stateId,\"has outgoing\",outgoingTransitions);\n      // Every link in AToMPM has exactly one input and one output. We take the first output to get the state that the outgoing transition points to:\n      const targets = outgoingTransitions.map(transitionId => getNeighbors('out', '/Formalisms/MyFSA/MyFSA/State', transitionId)[0]); // array of state-ids\n      console.log(\"state\",stateId,\"has targets\",targets);\n      // We're only interested in states that were not in 'reachable' yet:\n      return targets.filter(stateId => !reachable.includes(stateId));\n    });\n    // alsoReachable is an array of arrays of state-ids. We flatten it:\n    const flattened = [].concat(...alsoReachable); // array of state-ids\n\n    console.log(\"flattened:\",flattened);\n\n    if (flattened.length === 0) {\n      break; // done: we've found all reachable states :)\n    }\n\n    // finally, we remove duplicated elements by turning it into a Set:\n    const dupsRemoved = new Set(flattened);\n   \n    // and repeat:\n    reachable = reachable.concat(...dupsRemoved);\n  }\n\n  console.log(\"done! reachable=\",reachable);\n\n  // and here, we finally check if every final state is reachable:\n  return finalStates.every(stateId => reachable.includes(stateId));\n})();"
+		}
+	],
+	"actions": [],
+	"cardinalities": {
+		"State": [
+			{
+				"dir": "out",
+				"type": "transition",
+				"min": 0,
+				"max": "inf"
+			},
+			{
+				"dir": "in",
+				"type": "transition",
+				"min": "0",
+				"max": "inf"
+			}
+		],
+		"transition": [
+			{
+				"dir": "in",
+				"type": "State",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "State",
+				"min": "0",
+				"max": "1"
+			}
+		]
+	},
+	"legalConnections": {
+		"State": {
+			"State": [
+				"transition"
+			]
+		}
+	},
+	"connectorTypes": {
+		"transition": "visual"
+	},
+	"types2parentTypes": {
+		"State": [],
+		"transition": [],
+		"GC_one_initial": [],
+		"GC_at_least_one_final": [],
+		"GC_every_final_state_reachable": []
+	}
+}

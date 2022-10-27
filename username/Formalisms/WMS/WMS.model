@@ -9,7 +9,7 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						374,
+						373,
 						495
 					]
 				},
@@ -703,574 +703,6 @@
 				},
 				"$type": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon"
 			},
-			"2": {
-				"link-style": {
-					"type": "map<string,string>",
-					"value": {
-						"stroke": "#000000",
-						"stroke-dasharray": "",
-						"stroke-opacity": 1,
-						"stroke-width": 2
-					}
-				},
-				"arrowHead": {
-					"type": "ENUM(circle-black,circle-black-large,circle-white,circle-white-large,diamond-black,diamond-black-large,diamond-white,diamond-white-large,triangle-black,triangle-black-large,triangle-white,triangle-white-large,arrow-black,arrow-black-large,arrow-empty,arrow-empty-large,custom)",
-					"value": "custom"
-				},
-				"arrowTail": {
-					"type": "ENUM(circle-black,circle-black-large,circle-white,circle-white-large,diamond-black,diamond-black-large,diamond-white,diamond-white-large,triangle-black,triangle-black-large,triangle-white,triangle-white-large,arrow-black,arrow-black-large,arrow-empty,arrow-empty-large,custom)",
-					"value": "arrow-black"
-				},
-				"typename": {
-					"type": "string",
-					"value": "AssociationLink"
-				},
-				"position": {
-					"type": "list<double>",
-					"value": [
-						730.9997426366299,
-						554.4999988954362
-					]
-				},
-				"orientation": {
-					"type": "double",
-					"value": 0
-				},
-				"scale": {
-					"type": "list<double>",
-					"value": [
-						1,
-						1
-					]
-				},
-				"mapper": {
-					"type": "code",
-					"value": "/* specify code that evaluates to an associative array of the form {...,csattr:val,...} */"
-				},
-				"parser": {
-					"type": "code",
-					"value": "/* specify code that evaluates to an associative array of the form {...,attr:val,...} */"
-				},
-				"$contents": {
-					"type": "map<string,*>",
-					"value": {
-						"nodes": {
-							"71": {
-								"textContent": {
-									"type": "string",
-									"value": "in0"
-								},
-								"style": {
-									"type": "map<string,string>",
-									"value": {
-										"font-size": "20px",
-										"font-style": "normal",
-										"font-weight": "normal",
-										"line-height": "100%",
-										"letter-spacing": "0px",
-										"word-spacing": "0px",
-										"fill": "#000000",
-										"fill-opacity": "1",
-										"stroke": "none",
-										"font-family": "Sans"
-									}
-								},
-								"mapper": {
-									"type": "code",
-									"value": "({'textContent':getAttr('name')})"
-								},
-								"parser": {
-									"type": "code",
-									"value": "({'name':getAttr('textContent')})"
-								},
-								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Text",
-								"position": {
-									"type": "list<double>",
-									"value": [
-										"0;-36.514163676966064,0%",
-										"0;-28.619479453880672,0%"
-									]
-								},
-								"orientation": {
-									"type": "double",
-									"value": "0;0.1872403442896337"
-								},
-								"scale": {
-									"type": "list<double>",
-									"value": [
-										1,
-										1
-									]
-								},
-								"$linkDecoratorInfo": {
-									"type": "map<string,double>",
-									"value": {
-										"xratio": 0.3803680981595092,
-										"yoffset": -28.5
-									}
-								}
-							},
-							"74": {
-								"textContent": {
-									"type": "string",
-									"value": "1"
-								},
-								"style": {
-									"type": "map<string,string>",
-									"value": {
-										"font-size": "20px",
-										"font-style": "normal",
-										"font-weight": "normal",
-										"line-height": "100%",
-										"letter-spacing": "0px",
-										"word-spacing": "0px",
-										"fill": "#000000",
-										"fill-opacity": "1",
-										"stroke": "none",
-										"font-family": "Sans"
-									}
-								},
-								"mapper": {
-									"type": "code",
-									"value": "/* specify code that evaluates to an associative array of the form {...,csattr:val,...} */\nvar clazz = getNeighbors('>'),\n    mult = '';\nif (clazz.length > 0) {\n    clazz = clazz[0];\n    var cardinalities = getAttr('cardinalities', clazz), card;\n    for (i = 0; i < cardinalities.length; i++) {\n        if (cardinalities[i]['type'] == getAttr('name') && cardinalities[i]['dir'] == 'in') {\n            card = cardinalities[i];\n            break;\n        }\n    }\n    if (card) {\n        var min = card['min'],\n            max = card['max'];\n        if (min == '')\n            min = '0';\n        if (max == '' || max == 'Infinity')\n            max = '*';\n        if (min == '0' && max == '*')\n            mult = '*';\n        else if (min == max)\n            mult = max;\n        else mult = min + '..' + max;\n    }\n}\nif (mult == '')\n    mult = '*';\n({'textContent': mult})"
-								},
-								"parser": {
-									"type": "code",
-									"value": "/* specify code that evaluates to an associative array of the form {...,attr:val,...} */"
-								},
-								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Text",
-								"position": {
-									"type": "list<double>",
-									"value": [
-										"0;-134.14343523555408,0%",
-										"0;-25.93851317337078,0%"
-									]
-								},
-								"orientation": {
-									"type": "double",
-									"value": "0;0.1872403442896337"
-								},
-								"scale": {
-									"type": "list<double>",
-									"value": [
-										1,
-										1
-									]
-								},
-								"$linkDecoratorInfo": {
-									"type": "map<string,double>",
-									"value": {
-										"xratio": 0.06134969325153374,
-										"yoffset": -25.5
-									}
-								}
-							},
-							"77": {
-								"textContent": {
-									"type": "string",
-									"value": "1"
-								},
-								"style": {
-									"type": "map<string,string>",
-									"value": {
-										"font-size": "20px",
-										"font-style": "normal",
-										"font-weight": "normal",
-										"line-height": "100%",
-										"letter-spacing": "0px",
-										"word-spacing": "0px",
-										"fill": "#000000",
-										"fill-opacity": "1",
-										"stroke": "none",
-										"font-family": "Sans"
-									}
-								},
-								"mapper": {
-									"type": "code",
-									"value": "/* specify code that evaluates to an associative array of the form {...,csattr:val,...} */\nvar clazz = getNeighbors('<'),\n    mult = '';\nif (clazz.length > 0) {\n    clazz = clazz[0];\n    var cardinalities = getAttr('cardinalities', clazz), card;\n    for (i = 0; i < cardinalities.length; i++) {\n        if (cardinalities[i]['type'] == getAttr('name') && cardinalities[i]['dir'] == 'out') {\n            card = cardinalities[i];\n            break;\n        }\n    }\n    if (card) {\n        var min = card['min'],\n            max = card['max'];\n        if (min == '')\n            min = '0';\n        if (max == '' || max == 'Infinity')\n            max = '*';\n        if (min == '0' && max == '*')\n            mult = '*';\n        else if (min == max)\n            mult = max;\n        else mult = min + '..' + max;\n    }\n}\nif (mult == '')\n    mult = '*';\n({'textContent': mult})"
-								},
-								"parser": {
-									"type": "code",
-									"value": "/* specify code that evaluates to an associative array of the form {...,attr:val,...} */"
-								},
-								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Text",
-								"position": {
-									"type": "list<double>",
-									"value": [
-										"0;153.07653957169669,99.9994660221836%",
-										"0;-22.999875619776958,0.32679546836917606%"
-									]
-								},
-								"orientation": {
-									"type": "double",
-									"value": "0;0.1872403442896337"
-								},
-								"scale": {
-									"type": "list<double>",
-									"value": [
-										1,
-										1
-									]
-								},
-								"$linkDecoratorInfo": {
-									"type": "map<string,double>",
-									"value": {
-										"xratio": 1.0245398773006136,
-										"yoffset": -23.5
-									}
-								}
-							},
-							"140": {
-								"segments": {
-									"type": "string",
-									"value": "m0,0 l20,8 l-20,8"
-								},
-								"style": {
-									"type": "map<string,string>",
-									"value": {
-										"stroke": "#000000",
-										"fill": "#000000",
-										"fill-opacity": 0,
-										"stroke-width": 1,
-										"opacity": 1
-									}
-								},
-								"mapper": {
-									"type": "code",
-									"value": ""
-								},
-								"parser": {
-									"type": "code",
-									"value": "/* specify code that evaluates to an associative array of the form {...,attr:val,...} */"
-								},
-								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Path",
-								"position": {
-									"type": "list<double>",
-									"value": [
-										"0;153.02588627409943,99.9994660221836%",
-										"0;-7.499958386338449,0.32679546836917606%"
-									]
-								},
-								"orientation": {
-									"type": "double",
-									"value": "0;0.1872403442896337"
-								},
-								"scale": {
-									"type": "list<double>",
-									"value": [
-										1,
-										1
-									]
-								},
-								"$linkDecoratorInfo": {
-									"type": "map<string,double>",
-									"value": {
-										"xratio": 1,
-										"yoffset": -8
-									}
-								}
-							}
-						},
-						"edges": []
-					}
-				},
-				"$asuri": {
-					"type": "string",
-					"value": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram/Association/2.instance"
-				},
-				"$segments": {
-					"type": "map<string,list<string>>",
-					"value": {
-						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/0.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/AssociationLink/2.instance": "M578,554L730.9997426366299,554.4999988954362",
-						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/AssociationLink/2.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/1.instance": "M730.9997426366299,554.4999988954362L883.9994852732598,554.9999977908724"
-					}
-				},
-				"$type": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/AssociationLink"
-			},
-			"3": {
-				"link-style": {
-					"type": "map<string,string>",
-					"value": {
-						"stroke": "#000000",
-						"stroke-dasharray": "",
-						"stroke-opacity": 1,
-						"stroke-width": 2
-					}
-				},
-				"arrowHead": {
-					"type": "ENUM(circle-black,circle-black-large,circle-white,circle-white-large,diamond-black,diamond-black-large,diamond-white,diamond-white-large,triangle-black,triangle-black-large,triangle-white,triangle-white-large,arrow-black,arrow-black-large,arrow-empty,arrow-empty-large,custom)",
-					"value": "custom"
-				},
-				"arrowTail": {
-					"type": "ENUM(circle-black,circle-black-large,circle-white,circle-white-large,diamond-black,diamond-black-large,diamond-white,diamond-white-large,triangle-black,triangle-black-large,triangle-white,triangle-white-large,arrow-black,arrow-black-large,arrow-empty,arrow-empty-large,custom)",
-					"value": "arrow-black"
-				},
-				"typename": {
-					"type": "string",
-					"value": "AssociationLink"
-				},
-				"position": {
-					"type": "list<double>",
-					"value": [
-						731.0002306508876,
-						597
-					]
-				},
-				"orientation": {
-					"type": "double",
-					"value": 0
-				},
-				"scale": {
-					"type": "list<double>",
-					"value": [
-						1,
-						1
-					]
-				},
-				"mapper": {
-					"type": "code",
-					"value": "/* specify code that evaluates to an associative array of the form {...,csattr:val,...} */"
-				},
-				"parser": {
-					"type": "code",
-					"value": "/* specify code that evaluates to an associative array of the form {...,attr:val,...} */"
-				},
-				"$contents": {
-					"type": "map<string,*>",
-					"value": {
-						"nodes": {
-							"71": {
-								"textContent": {
-									"type": "string",
-									"value": "out0"
-								},
-								"style": {
-									"type": "map<string,string>",
-									"value": {
-										"font-size": "20px",
-										"font-style": "normal",
-										"font-weight": "normal",
-										"line-height": "100%",
-										"letter-spacing": "0px",
-										"word-spacing": "0px",
-										"fill": "#000000",
-										"fill-opacity": "1",
-										"stroke": "none",
-										"font-family": "Sans"
-									}
-								},
-								"mapper": {
-									"type": "code",
-									"value": "({'textContent':getAttr('name')})"
-								},
-								"parser": {
-									"type": "code",
-									"value": "({'name':getAttr('textContent')})"
-								},
-								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Text",
-								"position": {
-									"type": "list<double>",
-									"value": [
-										"0;36.901966969344926,0%",
-										"0;28.73867068827724,0%"
-									]
-								},
-								"orientation": {
-									"type": "double",
-									"value": "0;-179.6303543881096"
-								},
-								"scale": {
-									"type": "list<double>",
-									"value": [
-										1,
-										1
-									]
-								},
-								"$linkDecoratorInfo": {
-									"type": "map<string,double>",
-									"value": {
-										"xratio": 0.3803680981595092,
-										"yoffset": -28.5
-									}
-								}
-							},
-							"74": {
-								"textContent": {
-									"type": "string",
-									"value": "1"
-								},
-								"style": {
-									"type": "map<string,string>",
-									"value": {
-										"font-size": "20px",
-										"font-style": "normal",
-										"font-weight": "normal",
-										"line-height": "100%",
-										"letter-spacing": "0px",
-										"word-spacing": "0px",
-										"fill": "#000000",
-										"fill-opacity": "1",
-										"stroke": "none",
-										"font-family": "Sans"
-									}
-								},
-								"mapper": {
-									"type": "code",
-									"value": "/* specify code that evaluates to an associative array of the form {...,csattr:val,...} */\nvar clazz = getNeighbors('>'),\n    mult = '';\nif (clazz.length > 0) {\n    clazz = clazz[0];\n    var cardinalities = getAttr('cardinalities', clazz), card;\n    for (i = 0; i < cardinalities.length; i++) {\n        if (cardinalities[i]['type'] == getAttr('name') && cardinalities[i]['dir'] == 'in') {\n            card = cardinalities[i];\n            break;\n        }\n    }\n    if (card) {\n        var min = card['min'],\n            max = card['max'];\n        if (min == '')\n            min = '0';\n        if (max == '' || max == 'Infinity')\n            max = '*';\n        if (min == '0' && max == '*')\n            mult = '*';\n        else if (min == max)\n            mult = max;\n        else mult = min + '..' + max;\n    }\n}\nif (mult == '')\n    mult = '*';\n({'textContent': mult})"
-								},
-								"parser": {
-									"type": "code",
-									"value": "/* specify code that evaluates to an associative array of the form {...,attr:val,...} */"
-								},
-								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Text",
-								"position": {
-									"type": "list<double>",
-									"value": [
-										"0;135.8168797917765,0%",
-										"0;26.376769931293552,0%"
-									]
-								},
-								"orientation": {
-									"type": "double",
-									"value": "0;-179.6303543881096"
-								},
-								"scale": {
-									"type": "list<double>",
-									"value": [
-										1,
-										1
-									]
-								},
-								"$linkDecoratorInfo": {
-									"type": "map<string,double>",
-									"value": {
-										"xratio": 0.06134969325153374,
-										"yoffset": -25.5
-									}
-								}
-							},
-							"77": {
-								"textContent": {
-									"type": "string",
-									"value": "1"
-								},
-								"style": {
-									"type": "map<string,string>",
-									"value": {
-										"font-size": "20px",
-										"font-style": "normal",
-										"font-weight": "normal",
-										"line-height": "100%",
-										"letter-spacing": "0px",
-										"word-spacing": "0px",
-										"fill": "#000000",
-										"fill-opacity": "1",
-										"stroke": "none",
-										"font-family": "Sans"
-									}
-								},
-								"mapper": {
-									"type": "code",
-									"value": "/* specify code that evaluates to an associative array of the form {...,csattr:val,...} */\nvar clazz = getNeighbors('<'),\n    mult = '';\nif (clazz.length > 0) {\n    clazz = clazz[0];\n    var cardinalities = getAttr('cardinalities', clazz), card;\n    for (i = 0; i < cardinalities.length; i++) {\n        if (cardinalities[i]['type'] == getAttr('name') && cardinalities[i]['dir'] == 'out') {\n            card = cardinalities[i];\n            break;\n        }\n    }\n    if (card) {\n        var min = card['min'],\n            max = card['max'];\n        if (min == '')\n            min = '0';\n        if (max == '' || max == 'Infinity')\n            max = '*';\n        if (min == '0' && max == '*')\n            mult = '*';\n        else if (min == max)\n            mult = max;\n        else mult = min + '..' + max;\n    }\n}\nif (mult == '')\n    mult = '*';\n({'textContent': mult})"
-								},
-								"parser": {
-									"type": "code",
-									"value": "/* specify code that evaluates to an associative array of the form {...,attr:val,...} */"
-								},
-								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Text",
-								"position": {
-									"type": "list<double>",
-									"value": [
-										"0;-155.1513793227183,-99.99791889332037%",
-										"0;22.499510939930246,-0.645148823854659%"
-									]
-								},
-								"orientation": {
-									"type": "double",
-									"value": "0;-179.6303543881096"
-								},
-								"scale": {
-									"type": "list<double>",
-									"value": [
-										1,
-										1
-									]
-								},
-								"$linkDecoratorInfo": {
-									"type": "map<string,double>",
-									"value": {
-										"xratio": 1.0245398773006136,
-										"yoffset": -23.5
-									}
-								}
-							},
-							"140": {
-								"segments": {
-									"type": "string",
-									"value": "m0,0 l20,8 l-20,8"
-								},
-								"style": {
-									"type": "map<string,string>",
-									"value": {
-										"stroke": "#000000",
-										"fill": "#000000",
-										"fill-opacity": 0,
-										"stroke-width": 1,
-										"opacity": 1
-									}
-								},
-								"mapper": {
-									"type": "code",
-									"value": ""
-								},
-								"parser": {
-									"type": "code",
-									"value": "/* specify code that evaluates to an associative array of the form {...,attr:val,...} */"
-								},
-								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Path",
-								"position": {
-									"type": "list<double>",
-									"value": [
-										"0;-155.05138125502071,-99.99791889332037%",
-										"0;6.999833511465681,-0.645148823854659%"
-									]
-								},
-								"orientation": {
-									"type": "double",
-									"value": "0;-179.6303543881096"
-								},
-								"scale": {
-									"type": "list<double>",
-									"value": [
-										1,
-										1
-									]
-								},
-								"$linkDecoratorInfo": {
-									"type": "map<string,double>",
-									"value": {
-										"xratio": 1,
-										"yoffset": -8
-									}
-								}
-							}
-						},
-						"edges": []
-					}
-				},
-				"$asuri": {
-					"type": "string",
-					"value": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram/Association/3.instance"
-				},
-				"$segments": {
-					"type": "map<string,list<string>>",
-					"value": {
-						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/1.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/AssociationLink/3.instance": "M886,598L731.0002306508875,597",
-						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/AssociationLink/3.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/0.instance": "M731.0002306508875,597L576.0004613017752,596"
-					}
-				},
-				"$type": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/AssociationLink"
-			},
 			"4": {
 				"typename": {
 					"type": "string",
@@ -1279,8 +711,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						508,
-						433
+						1444,
+						435
 					]
 				},
 				"orientation": {
@@ -1738,8 +1170,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						478.91568567738864,
-						356.4059772952019
+						477.9999999999999,
+						422.5
 					]
 				},
 				"orientation": {
@@ -1791,8 +1223,8 @@
 								"position": {
 									"type": "list<double>",
 									"value": [
-										"0;154.0834052564519,99.9999999999996%",
-										"0;-23.405991055393315,-0.000008935241946555872%"
+										"0;154.99909093384065,99.9999999999996%",
+										"0;-89.5000137601914,-0.000008935241946555872%"
 									]
 								},
 								"orientation": {
@@ -1825,8 +1257,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/0.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink/8.instance": "M477.9999999999999,502L478.91568567738847,356.405977295202",
-						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink/8.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/5.instance": "M478.91568567738847,356.405977295202L478.99999999999994,343L632.9990918273647,342.99998623980855"
+						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/0.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink/8.instance": "M476.9999999999999,502L477.9999999999999,422.5",
+						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink/8.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/5.instance": "M477.9999999999999,422.5L478.99999999999994,343L632.9990918273647,342.99998623980855"
 					}
 				},
 				"$type": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink"
@@ -3198,13 +2630,13 @@
 								"position": {
 									"type": "list<double>",
 									"value": [
-										"0;136.49279470685514,99.97567929055653%",
-										"0;-88.94006979586368,2.2053458667034875%"
+										"0;135.49442750369764,99.97531778079181%",
+										"0;-88.9400336448872,2.221673835128266%"
 									]
 								},
 								"orientation": {
 									"type": "double",
-									"value": "0;1.2636725516582878"
+									"value": "0;1.2730300811568722"
 								},
 								"scale": {
 									"type": "list<double>",
@@ -3233,7 +2665,7 @@
 					"type": "map<string,list<string>>",
 					"value": {
 						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/19.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink/20.instance": "M248,860L248.72685839192593,641.9424824222223",
-						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink/20.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/0.instance": "M248.72685839192593,641.9424824222223L249,560L384.9991185121107,562.9999805554143"
+						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink/20.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/0.instance": "M248.72685839192593,641.9424824222223L249,560L383.9991185121107,562.9999805554143"
 					}
 				},
 				"$type": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink"
@@ -4319,7 +3751,7 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						474.999998520782,
+						474.499998520782,
 						789.000446723828
 					]
 				},
@@ -4372,13 +3804,13 @@
 								"position": {
 									"type": "list<double>",
 									"value": [
-										"0;-8.999830490432032,0.5847859849748753%",
-										"0;-171.0580318746696,-99.9982901121403%"
+										"0;-9.499958731325648,0.2923963097062688%",
+										"0;-171.02879290714282,-99.99957252107666%"
 									]
 								},
 								"orientation": {
 									"type": "double",
-									"value": "0;-89.66494040170875"
+									"value": "0;-89.83246901636636"
 								},
 								"scale": {
 									"type": "list<double>",
@@ -4406,8 +3838,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/22.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink/26.instance": "M474,960L474.999998520782,789.000446723828",
-						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink/26.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/0.instance": "M474.999998520782,789.000446723828L475.99999704156403,618.0008934476558"
+						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/22.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink/26.instance": "M474,960L474.499998520782,789.000446723828",
+						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink/26.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/0.instance": "M474.499998520782,789.000446723828L474.99999704156403,618.0008934476558"
 					}
 				},
 				"$type": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink"
@@ -4555,7 +3987,7 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						682.500226154224,
+						682.000226154224,
 						791.5002415554079
 					]
 				},
@@ -4608,13 +4040,13 @@
 								"position": {
 									"type": "list<double>",
 									"value": [
-										"0;-146.29742517914474,-62.6072149861417%",
-										"0;-166.239036945978,-77.97651333368935%"
+										"0;-146.7863946979694,-62.74435090443119%",
+										"0;-166.22532335414905,-77.8662085219359%"
 									]
 								},
 								"orientation": {
 									"type": "double",
-									"value": "0;-128.76092373992836"
+									"value": "0;-128.861760111573"
 								},
 								"scale": {
 									"type": "list<double>",
@@ -4642,13 +4074,13 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/21.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink/30.instance": "M821,964L682.500226154224,791.5002415554079",
-						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink/30.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/0.instance": "M682.500226154224,791.5002415554079L544.0004523084482,619.0004831108157"
+						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/21.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink/30.instance": "M821,964L682.000226154224,791.5002415554079",
+						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink/30.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/0.instance": "M682.000226154224,791.5002415554079L543.0004523084482,619.0004831108157"
 					}
 				},
 				"$type": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink"
 			},
-			"31": {
+			"34": {
 				"link-style": {
 					"type": "map<string,string>",
 					"value": {
@@ -4673,8 +4105,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						524.5,
-						788.5
+						732.5,
+						556.5
 					]
 				},
 				"orientation": {
@@ -4703,7 +4135,7 @@
 							"71": {
 								"textContent": {
 									"type": "string",
-									"value": "out1"
+									"value": "connection0"
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -4732,13 +4164,13 @@
 								"position": {
 									"type": "list<double>",
 									"value": [
-										"0;-28.6195130421861,0%",
-										"0;41.19069529315084,0%"
+										"0;39.34017204351812,0%",
+										"0;28.857728007279206,0%"
 									]
 								},
 								"orientation": {
 									"type": "double",
-									"value": "0;-89.83392574186892"
+									"value": "0;-179.48071712341087"
 								},
 								"scale": {
 									"type": "list<double>",
@@ -4787,13 +4219,13 @@
 								"position": {
 									"type": "list<double>",
 									"value": [
-										"0;-25.938543326157514,0%",
-										"0;151.26049108020436,0%"
+										"0;144.96219321440742,0%",
+										"0;26.81490407631759,0%"
 									]
 								},
 								"orientation": {
 									"type": "double",
-									"value": "0;-89.83392574186892"
+									"value": "0;-179.48071712341087"
 								},
 								"scale": {
 									"type": "list<double>",
@@ -4813,7 +4245,7 @@
 							"77": {
 								"textContent": {
 									"type": "string",
-									"value": "1"
+									"value": "0..1"
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -4842,13 +4274,13 @@
 								"position": {
 									"type": "list<double>",
 									"value": [
-										"0;-22.99990354898148,0.28985385484878223%",
-										"0;-172.56733350087995,-99.99957992283183%"
+										"0;-165.7121669718224,-99.99589295207586%",
+										"0;21.99904223241242,-0.9063071868767558%"
 									]
 								},
 								"orientation": {
 									"type": "double",
-									"value": "0;-89.83392574186892"
+									"value": "0;-179.48071712341087"
 								},
 								"scale": {
 									"type": "list<double>",
@@ -4892,13 +4324,13 @@
 								"position": {
 									"type": "list<double>",
 									"value": [
-										"0;-7.4999686609425,0.28985385484878223%",
-										"0;-172.52240615337848,-99.99957992283183%"
+										"0;-165.57168935785649,-99.99589295207586%",
+										"0;6.499678824840657,-0.9063071868767558%"
 									]
 								},
 								"orientation": {
 									"type": "double",
-									"value": "0;-89.83392574186892"
+									"value": "0;-179.48071712341087"
 								},
 								"scale": {
 									"type": "list<double>",
@@ -4921,18 +4353,18 @@
 				},
 				"$asuri": {
 					"type": "string",
-					"value": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram/Association/31.instance"
+					"value": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram/Association/34.instance"
 				},
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/22.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/AssociationLink/31.instance": "M524,961L524.5,788.5",
-						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/AssociationLink/31.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/0.instance": "M524.5002166351546,788.4252608716438L524.999997732884,616.0007821550095"
+						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/1.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/AssociationLink/34.instance": "M898,558L732.5,556.5",
+						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/AssociationLink/34.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/0.instance": "M732.4252719055803,556.4993227060929L567.0008152170936,555.0000073886746"
 					}
 				},
 				"$type": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/AssociationLink"
 			},
-			"32": {
+			"35": {
 				"link-style": {
 					"type": "map<string,string>",
 					"value": {
@@ -4957,8 +4389,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						658.0320609481305,
-						657
+						499.0008645532183,
+						785.35000001661
 					]
 				},
 				"orientation": {
@@ -4987,7 +4419,7 @@
 							"71": {
 								"textContent": {
 									"type": "string",
-									"value": "in1"
+									"value": "connection2"
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -5016,13 +4448,13 @@
 								"position": {
 									"type": "list<double>",
 									"value": [
-										"0;-97.65303341781737,0%",
-										"0;-28.5,0%"
+										"0;-28.739656687011745,0%",
+										"0;41.49830331380758,0%"
 									]
 								},
 								"orientation": {
 									"type": "double",
-									"value": "0;0"
+									"value": "0;-89.6697686163205"
 								},
 								"scale": {
 									"type": "list<double>",
@@ -5042,7 +4474,7 @@
 							"74": {
 								"textContent": {
 									"type": "string",
-									"value": "1"
+									"value": "0..1"
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -5071,13 +4503,13 @@
 								"position": {
 									"type": "list<double>",
 									"value": [
-										"0;-134.36504886873604,0%",
-										"0;249.85387629971342,0%"
+										"0;-26.377741895866507,0%",
+										"0;152.21473251145255,0%"
 									]
 								},
 								"orientation": {
 									"type": "double",
-									"value": "0;-89.8090147756403"
+									"value": "0;-89.6697686163205"
 								},
 								"scale": {
 									"type": "list<double>",
@@ -5126,13 +4558,13 @@
 								"position": {
 									"type": "list<double>",
 									"value": [
-										"0;347.4679390518695,6.123233995736766e-15%",
-										"0;-36.99919065010954,-100%"
+										"0;-22.50047870880246,0.5763593028010643%",
+										"0;-173.48466680325703,-99.99833903597637%"
 									]
 								},
 								"orientation": {
 									"type": "double",
-									"value": "0;-90"
+									"value": "0;-89.66976861632045"
 								},
 								"scale": {
 									"type": "list<double>",
@@ -5176,13 +4608,13 @@
 								"position": {
 									"type": "list<double>",
 									"value": [
-										"0;362.9679390518695,6.123233995736766e-15%",
-										"0;-36.99919065010954,-100%"
+										"0;-7.000736158226175,0.5763593028010643%",
+										"0;-173.3953311113229,-99.99833903597637%"
 									]
 								},
 								"orientation": {
 									"type": "double",
-									"value": "0;-90"
+									"value": "0;-89.66976861632045"
 								},
 								"scale": {
 									"type": "list<double>",
@@ -5205,13 +4637,297 @@
 				},
 				"$asuri": {
 					"type": "string",
-					"value": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram/Association/32.instance"
+					"value": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram/Association/35.instance"
 				},
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/22.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/AssociationLink/32.instance": "M549,957L550,657L658.0320609481305,657",
-						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/AssociationLink/32.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/1.instance": "M658.0320609481305,657L1029,657L1029,620.0008093498905"
+						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/22.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/AssociationLink/35.instance": "M498,959L499.0008645532183,785.35000001661",
+						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/AssociationLink/35.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/0.instance": "M499.0004307817403,785.425259368049L499.9999955178703,612.0007776495112"
+					}
+				},
+				"$type": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/AssociationLink"
+			},
+			"36": {
+				"link-style": {
+					"type": "map<string,string>",
+					"value": {
+						"stroke": "#000000",
+						"stroke-dasharray": "",
+						"stroke-opacity": 1,
+						"stroke-width": 2
+					}
+				},
+				"arrowHead": {
+					"type": "ENUM(circle-black,circle-black-large,circle-white,circle-white-large,diamond-black,diamond-black-large,diamond-white,diamond-white-large,triangle-black,triangle-black-large,triangle-white,triangle-white-large,arrow-black,arrow-black-large,arrow-empty,arrow-empty-large,custom)",
+					"value": "custom"
+				},
+				"arrowTail": {
+					"type": "ENUM(circle-black,circle-black-large,circle-white,circle-white-large,diamond-black,diamond-black-large,diamond-white,diamond-white-large,triangle-black,triangle-black-large,triangle-white,triangle-white-large,arrow-black,arrow-black-large,arrow-empty,arrow-empty-large,custom)",
+					"value": "arrow-black"
+				},
+				"typename": {
+					"type": "string",
+					"value": "AssociationLink"
+				},
+				"position": {
+					"type": "list<double>",
+					"value": [
+						612.4706057391043,
+						649.0646911513395
+					]
+				},
+				"orientation": {
+					"type": "double",
+					"value": 0
+				},
+				"scale": {
+					"type": "list<double>",
+					"value": [
+						1,
+						1
+					]
+				},
+				"mapper": {
+					"type": "code",
+					"value": "/* specify code that evaluates to an associative array of the form {...,csattr:val,...} */"
+				},
+				"parser": {
+					"type": "code",
+					"value": "/* specify code that evaluates to an associative array of the form {...,attr:val,...} */"
+				},
+				"$contents": {
+					"type": "map<string,*>",
+					"value": {
+						"nodes": {
+							"71": {
+								"textContent": {
+									"type": "string",
+									"value": "connection1"
+								},
+								"style": {
+									"type": "map<string,string>",
+									"value": {
+										"font-size": "20px",
+										"font-style": "normal",
+										"font-weight": "normal",
+										"line-height": "100%",
+										"letter-spacing": "0px",
+										"word-spacing": "0px",
+										"fill": "#000000",
+										"fill-opacity": "1",
+										"stroke": "none",
+										"font-family": "Sans"
+									}
+								},
+								"mapper": {
+									"type": "code",
+									"value": "({'textContent':getAttr('name')})"
+								},
+								"parser": {
+									"type": "code",
+									"value": "({'name':getAttr('textContent')})"
+								},
+								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Text",
+								"position": {
+									"type": "list<double>",
+									"value": [
+										"0;88.18128465330415,0%",
+										"0;30.08325998754526,0%"
+									]
+								},
+								"orientation": {
+									"type": "double",
+									"value": "0;-178.97435392403483"
+								},
+								"scale": {
+									"type": "list<double>",
+									"value": [
+										1,
+										1
+									]
+								},
+								"$linkDecoratorInfo": {
+									"type": "map<string,double>",
+									"value": {
+										"xratio": 0.3803680981595092,
+										"yoffset": -28.5
+									}
+								}
+							},
+							"74": {
+								"textContent": {
+									"type": "string",
+									"value": "1"
+								},
+								"style": {
+									"type": "map<string,string>",
+									"value": {
+										"font-size": "20px",
+										"font-style": "normal",
+										"font-weight": "normal",
+										"line-height": "100%",
+										"letter-spacing": "0px",
+										"word-spacing": "0px",
+										"fill": "#000000",
+										"fill-opacity": "1",
+										"stroke": "none",
+										"font-family": "Sans"
+									}
+								},
+								"mapper": {
+									"type": "code",
+									"value": "/* specify code that evaluates to an associative array of the form {...,csattr:val,...} */\nvar clazz = getNeighbors('>'),\n    mult = '';\nif (clazz.length > 0) {\n    clazz = clazz[0];\n    var cardinalities = getAttr('cardinalities', clazz), card;\n    for (i = 0; i < cardinalities.length; i++) {\n        if (cardinalities[i]['type'] == getAttr('name') && cardinalities[i]['dir'] == 'in') {\n            card = cardinalities[i];\n            break;\n        }\n    }\n    if (card) {\n        var min = card['min'],\n            max = card['max'];\n        if (min == '')\n            min = '0';\n        if (max == '' || max == 'Infinity')\n            max = '*';\n        if (min == '0' && max == '*')\n            mult = '*';\n        else if (min == max)\n            mult = max;\n        else mult = min + '..' + max;\n    }\n}\nif (mult == '')\n    mult = '*';\n({'textContent': mult})"
+								},
+								"parser": {
+									"type": "code",
+									"value": "/* specify code that evaluates to an associative array of the form {...,attr:val,...} */"
+								},
+								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Text",
+								"position": {
+									"type": "list<double>",
+									"value": [
+										"0;324.6099693492175,0%",
+										"0;31.31551786066973,0%"
+									]
+								},
+								"orientation": {
+									"type": "double",
+									"value": "0;-178.97435392403483"
+								},
+								"scale": {
+									"type": "list<double>",
+									"value": [
+										1,
+										1
+									]
+								},
+								"$linkDecoratorInfo": {
+									"type": "map<string,double>",
+									"value": {
+										"xratio": 0.06134969325153374,
+										"yoffset": -25.5
+									}
+								}
+							},
+							"77": {
+								"textContent": {
+									"type": "string",
+									"value": "0..1"
+								},
+								"style": {
+									"type": "map<string,string>",
+									"value": {
+										"font-size": "20px",
+										"font-style": "normal",
+										"font-weight": "normal",
+										"line-height": "100%",
+										"letter-spacing": "0px",
+										"word-spacing": "0px",
+										"fill": "#000000",
+										"fill-opacity": "1",
+										"stroke": "none",
+										"font-family": "Sans"
+									}
+								},
+								"mapper": {
+									"type": "code",
+									"value": "/* specify code that evaluates to an associative array of the form {...,csattr:val,...} */\nvar clazz = getNeighbors('<'),\n    mult = '';\nif (clazz.length > 0) {\n    clazz = clazz[0];\n    var cardinalities = getAttr('cardinalities', clazz), card;\n    for (i = 0; i < cardinalities.length; i++) {\n        if (cardinalities[i]['type'] == getAttr('name') && cardinalities[i]['dir'] == 'out') {\n            card = cardinalities[i];\n            break;\n        }\n    }\n    if (card) {\n        var min = card['min'],\n            max = card['max'];\n        if (min == '')\n            min = '0';\n        if (max == '' || max == 'Infinity')\n            max = '*';\n        if (min == '0' && max == '*')\n            mult = '*';\n        else if (min == max)\n            mult = max;\n        else mult = min + '..' + max;\n    }\n}\nif (mult == '')\n    mult = '*';\n({'textContent': mult})"
+								},
+								"parser": {
+									"type": "code",
+									"value": "/* specify code that evaluates to an associative array of the form {...,attr:val,...} */"
+								},
+								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Text",
+								"position": {
+									"type": "list<double>",
+									"value": [
+										"0;-34.97073001134356,0.321541746151697%",
+										"0;309.85887892941923,99.99948305319124%"
+									]
+								},
+								"orientation": {
+									"type": "double",
+									"value": "0;89.81576983262498"
+								},
+								"scale": {
+									"type": "list<double>",
+									"value": [
+										1,
+										1
+									]
+								},
+								"$linkDecoratorInfo": {
+									"type": "map<string,double>",
+									"value": {
+										"xratio": 1.0245398773006136,
+										"yoffset": -23.5
+									}
+								}
+							},
+							"140": {
+								"segments": {
+									"type": "string",
+									"value": "m0,0 l20,8 l-20,8"
+								},
+								"style": {
+									"type": "map<string,string>",
+									"value": {
+										"stroke": "#000000",
+										"fill": "#000000",
+										"fill-opacity": 0,
+										"stroke-width": 1,
+										"opacity": 1
+									}
+								},
+								"mapper": {
+									"type": "code",
+									"value": ""
+								},
+								"parser": {
+									"type": "code",
+									"value": "/* specify code that evaluates to an associative array of the form {...,attr:val,...} */"
+								},
+								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Path",
+								"position": {
+									"type": "list<double>",
+									"value": [
+										"0;-50.47064988458817,0.321541746151697%",
+										"0;309.9087179000727,99.99948305319124%"
+									]
+								},
+								"orientation": {
+									"type": "double",
+									"value": "0;89.81576983262498"
+								},
+								"scale": {
+									"type": "list<double>",
+									"value": [
+										1,
+										1
+									]
+								},
+								"$linkDecoratorInfo": {
+									"type": "map<string,double>",
+									"value": {
+										"xratio": 1,
+										"yoffset": -8
+									}
+								}
+							}
+						},
+						"edges": []
+					}
+				},
+				"$asuri": {
+					"type": "string",
+					"value": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram/Association/36.instance"
+				},
+				"$segments": {
+					"type": "map<string,list<string>>",
+					"value": {
+						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/1.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/AssociationLink/36.instance": "M944,616L944,655L612.4706057391043,649.0646911513395",
+						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/AssociationLink/36.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/22.instance": "M612.4706057391043,649.0646911513395L553,648L553.9999972102607,958.9991323911044"
 					}
 				},
 				"$type": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/AssociationLink"
@@ -5245,21 +4961,15 @@
 					"type": "list<$CARDINALITY>",
 					"value": [
 						{
-							"dir": "out",
-							"type": "in0",
-							"min": "1",
+							"dir": "in",
+							"type": "connection0",
+							"min": "0",
 							"max": "1"
 						},
 						{
 							"dir": "in",
-							"type": "out1",
-							"min": "1",
-							"max": "1"
-						},
-						{
-							"dir": "in",
-							"type": "out0",
-							"min": "1",
+							"type": "connection2",
+							"min": "0",
 							"max": "1"
 						}
 					]
@@ -5291,21 +5001,15 @@
 					"type": "list<$CARDINALITY>",
 					"value": [
 						{
-							"dir": "in",
-							"type": "in0",
-							"min": "1",
+							"dir": "out",
+							"type": "connection0",
+							"min": "0",
 							"max": "1"
 						},
 						{
 							"dir": "out",
-							"type": "out0",
-							"min": "1",
-							"max": "1"
-						},
-						{
-							"dir": "in",
-							"type": "in1",
-							"min": "1",
+							"type": "connection1",
+							"min": "0",
 							"max": "1"
 						}
 					]
@@ -5315,60 +5019,6 @@
 					"value": true
 				},
 				"$type": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram/Class"
-			},
-			"2": {
-				"name": {
-					"type": "string",
-					"value": "in0"
-				},
-				"attributes": {
-					"type": "list<$ATTRIBUTE>",
-					"value": []
-				},
-				"constraints": {
-					"type": "list<$EVENT_HANDLER>",
-					"value": []
-				},
-				"actions": {
-					"type": "list<$EVENT_HANDLER>",
-					"value": []
-				},
-				"cardinalities": {
-					"type": "list<$CARDINALITY>",
-					"value": []
-				},
-				"linktype": {
-					"type": "ENUM(visual,containment)",
-					"value": "visual"
-				},
-				"$type": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram/Association"
-			},
-			"3": {
-				"name": {
-					"type": "string",
-					"value": "out0"
-				},
-				"attributes": {
-					"type": "list<$ATTRIBUTE>",
-					"value": []
-				},
-				"constraints": {
-					"type": "list<$EVENT_HANDLER>",
-					"value": []
-				},
-				"actions": {
-					"type": "list<$EVENT_HANDLER>",
-					"value": []
-				},
-				"cardinalities": {
-					"type": "list<$CARDINALITY>",
-					"value": []
-				},
-				"linktype": {
-					"type": "ENUM(visual,containment)",
-					"value": "visual"
-				},
-				"$type": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram/Association"
 			},
 			"4": {
 				"name": {
@@ -5587,14 +5237,14 @@
 					"type": "list<$CARDINALITY>",
 					"value": [
 						{
-							"dir": "out",
-							"type": "out1",
+							"dir": "in",
+							"type": "connection1",
 							"min": "1",
 							"max": "1"
 						},
 						{
 							"dir": "out",
-							"type": "in1",
+							"type": "connection2",
 							"min": "1",
 							"max": "1"
 						}
@@ -5624,10 +5274,10 @@
 			"30": {
 				"$type": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram/Inheritance"
 			},
-			"31": {
+			"34": {
 				"name": {
 					"type": "string",
-					"value": "out1"
+					"value": "connection0"
 				},
 				"attributes": {
 					"type": "list<$ATTRIBUTE>",
@@ -5651,10 +5301,37 @@
 				},
 				"$type": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram/Association"
 			},
-			"32": {
+			"35": {
 				"name": {
 					"type": "string",
-					"value": "in1"
+					"value": "connection2"
+				},
+				"attributes": {
+					"type": "list<$ATTRIBUTE>",
+					"value": []
+				},
+				"constraints": {
+					"type": "list<$EVENT_HANDLER>",
+					"value": []
+				},
+				"actions": {
+					"type": "list<$EVENT_HANDLER>",
+					"value": []
+				},
+				"cardinalities": {
+					"type": "list<$CARDINALITY>",
+					"value": []
+				},
+				"linktype": {
+					"type": "ENUM(visual,containment)",
+					"value": "visual"
+				},
+				"$type": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram/Association"
+			},
+			"36": {
+				"name": {
+					"type": "string",
+					"value": "connection1"
 				},
 				"attributes": {
 					"type": "list<$ATTRIBUTE>",
@@ -5680,22 +5357,6 @@
 			}
 		},
 		"edges": [
-			{
-				"src": "0",
-				"dest": "2"
-			},
-			{
-				"src": "2",
-				"dest": "1"
-			},
-			{
-				"src": "1",
-				"dest": "3"
-			},
-			{
-				"src": "3",
-				"dest": "0"
-			},
 			{
 				"src": "0",
 				"dest": "8"
@@ -5777,20 +5438,28 @@
 				"dest": "0"
 			},
 			{
-				"src": "22",
-				"dest": "31"
+				"src": "1",
+				"dest": "34"
 			},
 			{
-				"src": "31",
+				"src": "34",
 				"dest": "0"
 			},
 			{
 				"src": "22",
-				"dest": "32"
+				"dest": "35"
 			},
 			{
-				"src": "32",
-				"dest": "1"
+				"src": "35",
+				"dest": "0"
+			},
+			{
+				"src": "1",
+				"dest": "36"
+			},
+			{
+				"src": "36",
+				"dest": "22"
 			}
 		],
 		"metamodels": [
