@@ -4,13 +4,13 @@
 			"0": {
 				"typename": {
 					"type": "string",
-					"value": "SegmentIcon"
+					"value": "SinkIcon"
 				},
 				"position": {
 					"type": "list<double>",
 					"value": [
-						770,
-						403
+						754,
+						310
 					]
 				},
 				"orientation": {
@@ -36,7 +36,7 @@
 					"type": "map<string,*>",
 					"value": {
 						"nodes": {
-							"21": {
+							"16": {
 								"width": {
 									"type": "double",
 									"value": 100
@@ -74,7 +74,7 @@
 								"position": {
 									"type": "list<double>",
 									"value": [
-										49,
+										50,
 										23
 									]
 								},
@@ -90,10 +90,10 @@
 									]
 								}
 							},
-							"23": {
+							"18": {
 								"textContent": {
 									"type": "string",
-									"value": "Segment"
+									"value": "Sink"
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -120,8 +120,8 @@
 								"position": {
 									"type": "list<double>",
 									"value": [
-										61,
-										62
+										81,
+										60
 									]
 								},
 								"orientation": {
@@ -136,13 +136,13 @@
 									]
 								}
 							},
-							"24": {
+							"19": {
 								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Contain",
 								"position": {
 									"type": "list<double>",
 									"value": [
-										75.11966575244969,
-										48.72904902056655
+										75.2265625,
+										47.625
 									]
 								},
 								"orientation": {
@@ -169,21 +169,21 @@
 						},
 						"edges": [
 							{
-								"src": "21",
-								"dest": "24"
+								"src": "16",
+								"dest": "19"
 							},
 							{
-								"src": "24",
-								"dest": "23"
+								"src": "19",
+								"dest": "18"
 							}
 						]
 					}
 				},
 				"$asuri": {
 					"type": "string",
-					"value": "/Formalisms/WMS/WMS/Segment/0.instance"
+					"value": "/Formalisms/WMS/WMS/Sink/0.instance"
 				},
-				"$type": "/Formalisms/WMS/WMS.defaultIcons/SegmentIcon"
+				"$type": "/Formalisms/WMS/WMS.defaultIcons/SinkIcon"
 			}
 		},
 		"edges": [],
@@ -194,11 +194,11 @@
 	"asm": {
 		"nodes": {
 			"0": {
-				"got_watercraft": {
-					"type": "boolean",
-					"value": "false"
+				"counter": {
+					"type": "int",
+					"value": -1
 				},
-				"$type": "/Formalisms/WMS/WMS/Segment"
+				"$type": "/Formalisms/WMS/WMS/Sink"
 			}
 		},
 		"edges": [],

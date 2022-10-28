@@ -802,8 +802,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						627,
-						274
+						625,
+						275
 					]
 				},
 				"orientation": {
@@ -1223,13 +1223,13 @@
 								"position": {
 									"type": "list<double>",
 									"value": [
-										"0;154.99909093384065,99.9999999999996%",
-										"0;-89.5000137601914,-0.000008935241946555872%"
+										"0;153.06487936516191,99.9978359765203%",
+										"0;-88.49979735784348,0.6578753779708442%"
 									]
 								},
 								"orientation": {
 									"type": "double",
-									"value": "0;-0.000005119516524659104"
+									"value": "0;0.376937545042614"
 								},
 								"scale": {
 									"type": "list<double>",
@@ -1258,7 +1258,7 @@
 					"type": "map<string,list<string>>",
 					"value": {
 						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/0.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink/8.instance": "M476.9999999999999,502L477.9999999999999,422.5",
-						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink/8.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/5.instance": "M477.9999999999999,422.5L478.99999999999994,343L632.9990918273647,342.99998623980855"
+						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink/8.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/5.instance": "M477.9999999999999,422.5L478.99999999999994,343L630.9990918273647,343.99998623980855"
 					}
 				},
 				"$type": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink"
@@ -1341,13 +1341,13 @@
 								"position": {
 									"type": "list<double>",
 									"value": [
-										"0;-117.99972515283434,-99.99999999999997%",
-										"0;-14.900026098512399,-0.00000213856054091037%"
+										"0;-119.91639451828746,-99.99652796021846%",
+										"0;-13.90037330249055,0.8333042069077687%"
 									]
 								},
 								"orientation": {
 									"type": "double",
-									"value": "0;-179.99999877469506"
+									"value": "0;179.52254633313035"
 								},
 								"scale": {
 									"type": "list<double>",
@@ -1376,7 +1376,7 @@
 					"type": "map<string,list<string>>",
 					"value": {
 						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/1.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink/13.instance": "M948,504L948,369.9000235750168",
-						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink/13.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/5.instance": "M948,369.9000235750168L948,345L830.0002750610217,344.9999974765044"
+						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink/13.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/5.instance": "M948,369.9000235750168L948,345L828.0002750610217,345.9999974765044"
 					}
 				},
 				"$type": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink"
@@ -4190,7 +4190,7 @@
 							"74": {
 								"textContent": {
 									"type": "string",
-									"value": "1"
+									"value": "0..1"
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -4935,7 +4935,8 @@
 		},
 		"edges": [],
 		"metamodels": [
-			"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons"
+			"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons",
+			"/Formalisms/WMS/WMS.defaultIcons"
 		]
 	},
 	"asm": {
@@ -5046,7 +5047,13 @@
 				},
 				"constraints": {
 					"type": "list<$EVENT_HANDLER>",
-					"value": []
+					"value": [
+						{
+							"name": "printTestOnVerify",
+							"event": "validate",
+							"code": "print('Hello World');false;"
+						}
+					]
 				},
 				"actions": {
 					"type": "list<$EVENT_HANDLER>",
@@ -5164,7 +5171,13 @@
 				},
 				"constraints": {
 					"type": "list<$EVENT_HANDLER>",
-					"value": []
+					"value": [
+						{
+							"name": "sink_counter_positive",
+							"event": "verify",
+							"code": "print(getAttr('counter'));getAttr('counter') >= 0"
+						}
+					]
 				},
 				"actions": {
 					"type": "list<$EVENT_HANDLER>",
@@ -5285,7 +5298,13 @@
 				},
 				"constraints": {
 					"type": "list<$EVENT_HANDLER>",
-					"value": []
+					"value": [
+						{
+							"name": "no_self_loop_connection0",
+							"event": "post-create",
+							"code": "print(getNeighbors('*','*'));getNeighbors('*','*').length ===  2"
+						}
+					]
 				},
 				"actions": {
 					"type": "list<$EVENT_HANDLER>",
@@ -5312,7 +5331,13 @@
 				},
 				"constraints": {
 					"type": "list<$EVENT_HANDLER>",
-					"value": []
+					"value": [
+						{
+							"name": "no_self_loop_connection2",
+							"event": "post-create",
+							"code": "getNeighbors('*','*').length ===  2"
+						}
+					]
 				},
 				"actions": {
 					"type": "list<$EVENT_HANDLER>",
@@ -5339,7 +5364,13 @@
 				},
 				"constraints": {
 					"type": "list<$EVENT_HANDLER>",
-					"value": []
+					"value": [
+						{
+							"name": "no_self_loop_connection1",
+							"event": "post-create",
+							"code": "getNeighbors('*','*').length ===  2"
+						}
+					]
 				},
 				"actions": {
 					"type": "list<$EVENT_HANDLER>",
@@ -5463,7 +5494,8 @@
 			}
 		],
 		"metamodels": [
-			"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram"
+			"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram",
+			"/Formalisms/WMS/WMS"
 		]
 	}
 }

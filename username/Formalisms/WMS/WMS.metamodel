@@ -59,10 +59,22 @@
 	},
 	"constraints": [
 		{
+			"name": "printTestOnVerify",
+			"event": "validate",
+			"code": "print('Hello World');false;",
+			"targetType": "InNode"
+		},
+		{
 			"name": "noAbstractInstances",
 			"event": "pre-create",
 			"code": "false",
 			"targetType": "InNode"
+		},
+		{
+			"name": "printTestOnVerify",
+			"event": "validate",
+			"code": "print('Hello World');false;",
+			"targetType": "OutNode"
 		},
 		{
 			"name": "noAbstractInstances",
@@ -77,16 +89,76 @@
 			"code": "true"
 		},
 		{
-			"name": "noAbstractInstances",
-			"event": "pre-create",
-			"code": "false",
+			"name": "printTestOnVerify",
+			"event": "validate",
+			"code": "print('Hello World');false;",
 			"targetType": "AnyNode"
 		},
 		{
 			"name": "noAbstractInstances",
 			"event": "pre-create",
 			"code": "false",
+			"targetType": "AnyNode"
+		},
+		{
+			"name": "printTestOnVerify",
+			"event": "validate",
+			"code": "print('Hello World');false;",
 			"targetType": "Shippable"
+		},
+		{
+			"name": "noAbstractInstances",
+			"event": "pre-create",
+			"code": "false",
+			"targetType": "Shippable"
+		},
+		{
+			"name": "printTestOnVerify",
+			"event": "validate",
+			"code": "print('Hello World');false;",
+			"targetType": "Source"
+		},
+		{
+			"name": "sink_counter_positive",
+			"event": "verify",
+			"code": "print(getAttr('counter'));getAttr('counter') >= 0",
+			"targetType": "Sink"
+		},
+		{
+			"name": "printTestOnVerify",
+			"event": "validate",
+			"code": "print('Hello World');false;",
+			"targetType": "Sink"
+		},
+		{
+			"name": "printTestOnVerify",
+			"event": "validate",
+			"code": "print('Hello World');false;",
+			"targetType": "Segment"
+		},
+		{
+			"name": "printTestOnVerify",
+			"event": "validate",
+			"code": "print('Hello World');false;",
+			"targetType": "Confluence"
+		},
+		{
+			"name": "no_self_loop_connection0",
+			"event": "post-create",
+			"code": "print(getNeighbors('*','*'));getNeighbors('*','*').length ===  2",
+			"targetType": "connection0"
+		},
+		{
+			"name": "no_self_loop_connection2",
+			"event": "post-create",
+			"code": "getNeighbors('*','*').length ===  2",
+			"targetType": "connection2"
+		},
+		{
+			"name": "no_self_loop_connection1",
+			"event": "post-create",
+			"code": "getNeighbors('*','*').length ===  2",
+			"targetType": "connection1"
 		}
 	],
 	"actions": [],
