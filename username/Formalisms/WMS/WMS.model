@@ -703,97 +703,6 @@
 				},
 				"$type": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon"
 			},
-			"4": {
-				"typename": {
-					"type": "string",
-					"value": "GlobalConstraintIcon"
-				},
-				"position": {
-					"type": "list<double>",
-					"value": [
-						1265,
-						366
-					]
-				},
-				"orientation": {
-					"type": "double",
-					"value": 0
-				},
-				"scale": {
-					"type": "list<double>",
-					"value": [
-						1,
-						1
-					]
-				},
-				"mapper": {
-					"type": "code",
-					"value": ""
-				},
-				"parser": {
-					"type": "code",
-					"value": ""
-				},
-				"$contents": {
-					"type": "map<string,*>",
-					"value": {
-						"nodes": {
-							"11": {
-								"textContent": {
-									"type": "string",
-									"value": "check TODO_need_constraints_for_this_again on validate"
-								},
-								"style": {
-									"type": "map<string,string>",
-									"value": {
-										"stroke": "#00ff70",
-										"stroke-dasharray": "",
-										"fill": "#00ff70",
-										"fill-opacity": 0.75,
-										"font-size": "20px",
-										"stroke-width": 1,
-										"arrow-start": "none",
-										"arrow-end": "none"
-									}
-								},
-								"mapper": {
-									"type": "code",
-									"value": "({'textContent' : 'check '+getAttr('name')+' on '+(getAttr('event') || 'validate')})\n"
-								},
-								"parser": {
-									"type": "code",
-									"value": ""
-								},
-								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Text",
-								"position": {
-									"type": "list<double>",
-									"value": [
-										0,
-										-1
-									]
-								},
-								"orientation": {
-									"type": "double",
-									"value": 0
-								},
-								"scale": {
-									"type": "list<double>",
-									"value": [
-										1,
-										1
-									]
-								}
-							}
-						},
-						"edges": []
-					}
-				},
-				"$asuri": {
-					"type": "string",
-					"value": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram/GlobalConstraint/4.instance"
-				},
-				"$type": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/GlobalConstraintIcon"
-			},
 			"5": {
 				"typename": {
 					"type": "string",
@@ -5749,21 +5658,6 @@
 				},
 				"$type": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram/Class"
 			},
-			"4": {
-				"name": {
-					"type": "string",
-					"value": "TODO_need_constraints_for_this_again"
-				},
-				"event": {
-					"type": "$EVENT",
-					"value": "validate"
-				},
-				"code": {
-					"type": "code",
-					"value": "true;"
-				},
-				"$type": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram/GlobalConstraint"
-			},
 			"5": {
 				"name": {
 					"type": "string",
@@ -5781,7 +5675,23 @@
 				},
 				"constraints": {
 					"type": "list<$EVENT_HANDLER>",
-					"value": []
+					"value": [
+						{
+							"name": "in_out_cycle",
+							"event": "post-connect",
+							"code": "var _out = getNeighbors('out', '*'); _out = _out.map(x => getNeighbors('in', '*', x)[0]); var _in = getNeighbors('in', '*'); _in = _in.map(x => getNeighbors('out', '*', x)[0]); var a = _out.filter(x => _in.includes(x));print(a); a.length == 0"
+						},
+						{
+							"name": "out_cycle",
+							"event": "post-connect",
+							"code": "var _out = getNeighbors('out','*'); _out = _out.map(x => getNeighbors('in', '*', x)[0]); _out.length === new Set(_out).size"
+						},
+						{
+							"name": "in_cycle",
+							"event": "post-connect",
+							"code": "var _in = getNeighbors('in', '*'); _in = _in.map(x => getNeighbors('out', '*', x)[0]); _in.length === new Set(_in).size"
+						}
+					]
 				},
 				"actions": {
 					"type": "list<$EVENT_HANDLER>",
@@ -6079,7 +5989,7 @@
 						{
 							"name": "no_self_loop_connection0",
 							"event": "post-create",
-							"code": "print(getNeighbors('*','*'));getNeighbors('*','*').length ===  2"
+							"code": "getNeighbors('*','*').length ===  2"
 						}
 					]
 				},
