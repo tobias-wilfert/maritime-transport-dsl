@@ -1,13 +1,36 @@
 {
 	"types": {
-		"InNode": [],
-		"OutNode": [],
-		"AnyNode": [],
+		"InNode": [
+			{
+				"name": "pId",
+				"type": "int",
+				"default": "0"
+			}
+		],
+		"OutNode": [
+			{
+				"name": "pId",
+				"type": "int",
+				"default": "0"
+			}
+		],
+		"AnyNode": [
+			{
+				"name": "pId",
+				"type": "int",
+				"default": "0"
+			}
+		],
 		"Shippable": [
 			{
 				"name": "got_watercraft",
 				"type": "boolean",
 				"default": "false"
+			},
+			{
+				"name": "pId",
+				"type": "int",
+				"default": "0"
 			}
 		],
 		"Source": [
@@ -25,11 +48,21 @@
 				"name": "counter",
 				"type": "int",
 				"default": "0"
+			},
+			{
+				"name": "pId",
+				"type": "int",
+				"default": "0"
 			}
 		],
 		"Sink": [
 			{
 				"name": "counter",
+				"type": "int",
+				"default": "0"
+			},
+			{
+				"name": "pId",
 				"type": "int",
 				"default": "0"
 			}
@@ -39,6 +72,11 @@
 				"name": "got_watercraft",
 				"type": "boolean",
 				"default": "false"
+			},
+			{
+				"name": "pId",
+				"type": "int",
+				"default": "0"
 			}
 		],
 		"Confluence": [
@@ -51,6 +89,11 @@
 				"name": "got_watercraft",
 				"type": "boolean",
 				"default": "false"
+			},
+			{
+				"name": "pId",
+				"type": "int",
+				"default": "0"
 			}
 		],
 		"connection0": [],
@@ -87,6 +130,60 @@
 			"event": "pre-create",
 			"code": "false",
 			"targetType": "Shippable"
+		},
+		{
+			"name": "counter_positive",
+			"event": "post-edit",
+			"code": "getAttr('counter') >= 0",
+			"targetType": "Source"
+		},
+		{
+			"name": "rate_strickly_positive",
+			"event": "post-edit",
+			"code": "getAttr('rate') > 0",
+			"targetType": "Source"
+		},
+		{
+			"name": "cooldown_lower_bound",
+			"event": "post-edit",
+			"code": "getAttr('cooldown') >= 1",
+			"targetType": "Source"
+		},
+		{
+			"name": "cooldown_upper_bound",
+			"event": "post-edit",
+			"code": "getAttr('cooldown') <= getAttr('rate')",
+			"targetType": "Source"
+		},
+		{
+			"name": "source_connection_bound",
+			"event": "post-connect",
+			"code": "getNeighbors('out','*').length <= 1",
+			"targetType": "Source"
+		},
+		{
+			"name": "counter_positive",
+			"event": "post-edit",
+			"code": "getAttr('counter') >= 0",
+			"targetType": "Sink"
+		},
+		{
+			"name": "sink_connection_bound",
+			"event": "post-connect",
+			"code": "getNeighbors('in','*').length <= 1",
+			"targetType": "Sink"
+		},
+		{
+			"name": "segment_connection_bound",
+			"event": "post-connect",
+			"code": "getNeighbors('out','*').length <= 1 && getNeighbors('in','*').length <= 1",
+			"targetType": "Segment"
+		},
+		{
+			"name": "confluence_connection_bound",
+			"event": "post-connect",
+			"code": "getNeighbors('out','*').length <= 2 && getNeighbors('in','*').length <= 2",
+			"targetType": "Confluence"
 		},
 		{
 			"name": "no_self_loop_connection0",

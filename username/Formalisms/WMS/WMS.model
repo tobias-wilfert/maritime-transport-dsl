@@ -976,7 +976,7 @@
 							"99": {
 								"textContent": {
 									"type": "string",
-									"value": ""
+									"value": "+ pId : int = 0"
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -5680,7 +5680,13 @@
 				},
 				"attributes": {
 					"type": "list<$ATTRIBUTE>",
-					"value": []
+					"value": [
+						{
+							"name": "pId",
+							"type": "int",
+							"default": "0"
+						}
+					]
 				},
 				"constraints": {
 					"type": "list<$EVENT_HANDLER>",
@@ -5766,7 +5772,33 @@
 				},
 				"constraints": {
 					"type": "list<$EVENT_HANDLER>",
-					"value": []
+					"value": [
+						{
+							"name": "counter_positive",
+							"event": "post-edit",
+							"code": "getAttr('counter') >= 0"
+						},
+						{
+							"name": "rate_strickly_positive",
+							"event": "post-edit",
+							"code": "getAttr('rate') > 0"
+						},
+						{
+							"name": "cooldown_lower_bound",
+							"event": "post-edit",
+							"code": "getAttr('cooldown') >= 1"
+						},
+						{
+							"name": "cooldown_upper_bound",
+							"event": "post-edit",
+							"code": "getAttr('cooldown') <= getAttr('rate')"
+						},
+						{
+							"name": "source_connection_bound",
+							"event": "post-connect",
+							"code": "getNeighbors('out','*').length <= 1"
+						}
+					]
 				},
 				"actions": {
 					"type": "list<$EVENT_HANDLER>",
@@ -5802,7 +5834,18 @@
 				},
 				"constraints": {
 					"type": "list<$EVENT_HANDLER>",
-					"value": []
+					"value": [
+						{
+							"name": "counter_positive",
+							"event": "post-edit",
+							"code": "getAttr('counter') >= 0"
+						},
+						{
+							"name": "sink_connection_bound",
+							"event": "post-connect",
+							"code": "getNeighbors('in','*').length <= 1"
+						}
+					]
 				},
 				"actions": {
 					"type": "list<$EVENT_HANDLER>",
@@ -5832,7 +5875,13 @@
 				},
 				"constraints": {
 					"type": "list<$EVENT_HANDLER>",
-					"value": []
+					"value": [
+						{
+							"name": "segment_connection_bound",
+							"event": "post-connect",
+							"code": "getNeighbors('out','*').length <= 1 && getNeighbors('in','*').length <= 1"
+						}
+					]
 				},
 				"actions": {
 					"type": "list<$EVENT_HANDLER>",
@@ -5865,7 +5914,13 @@
 				},
 				"constraints": {
 					"type": "list<$EVENT_HANDLER>",
-					"value": []
+					"value": [
+						{
+							"name": "confluence_connection_bound",
+							"event": "post-connect",
+							"code": "getNeighbors('out','*').length <= 2 && getNeighbors('in','*').length <= 2"
+						}
+					]
 				},
 				"actions": {
 					"type": "list<$EVENT_HANDLER>",
