@@ -5568,6 +5568,97 @@
 					"value": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram/GlobalConstraint/44.instance"
 				},
 				"$type": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/GlobalConstraintIcon"
+			},
+			"45": {
+				"typename": {
+					"type": "string",
+					"value": "GlobalConstraintIcon"
+				},
+				"position": {
+					"type": "list<double>",
+					"value": [
+						1275,
+						713
+					]
+				},
+				"orientation": {
+					"type": "double",
+					"value": 0
+				},
+				"scale": {
+					"type": "list<double>",
+					"value": [
+						1,
+						1
+					]
+				},
+				"mapper": {
+					"type": "code",
+					"value": ""
+				},
+				"parser": {
+					"type": "code",
+					"value": ""
+				},
+				"$contents": {
+					"type": "map<string,*>",
+					"value": {
+						"nodes": {
+							"11": {
+								"textContent": {
+									"type": "string",
+									"value": "check GC_all_unique_ids on validate"
+								},
+								"style": {
+									"type": "map<string,string>",
+									"value": {
+										"stroke": "#00ff70",
+										"stroke-dasharray": "",
+										"fill": "#00ff70",
+										"fill-opacity": 0.75,
+										"font-size": "20px",
+										"stroke-width": 1,
+										"arrow-start": "none",
+										"arrow-end": "none"
+									}
+								},
+								"mapper": {
+									"type": "code",
+									"value": "({'textContent' : 'check '+getAttr('name')+' on '+(getAttr('event') || 'validate')})\n"
+								},
+								"parser": {
+									"type": "code",
+									"value": ""
+								},
+								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Text",
+								"position": {
+									"type": "list<double>",
+									"value": [
+										0,
+										-1
+									]
+								},
+								"orientation": {
+									"type": "double",
+									"value": 0
+								},
+								"scale": {
+									"type": "list<double>",
+									"value": [
+										1,
+										1
+									]
+								}
+							}
+						},
+						"edges": []
+					}
+				},
+				"$asuri": {
+					"type": "string",
+					"value": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram/GlobalConstraint/45.instance"
+				},
+				"$type": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/GlobalConstraintIcon"
 			}
 		},
 		"edges": [],
@@ -5779,7 +5870,7 @@
 							"code": "getAttr('counter') >= 0"
 						},
 						{
-							"name": "rate_strickly_positive",
+							"name": "rate_strictly_positive",
 							"event": "post-edit",
 							"code": "getAttr('rate') > 0"
 						},
@@ -6077,7 +6168,7 @@
 				},
 				"code": {
 					"type": "code",
-					"value": "var allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);\nvar noNegatives = true;\nfor(const sink of allSinks){\n    if(getAttr('counter',sink) < 0){\n        noNegatives = false;\n        print('Sink with id:' + sink + ' has negative counter');\n    }\n}\nnoNegatives;"
+					"value": "var allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);\nvar noNegatives = true;\nfor(const sink of allSinks){\n    if(getAttr('counter',sink) < 0){\n        noNegatives = false;\n        print('Sink with id:' + getAttr('pId',sink) + ' has negative counter');\n    }\n}\nnoNegatives;"
 				},
 				"$type": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram/GlobalConstraint"
 			},
@@ -6092,7 +6183,7 @@
 				},
 				"code": {
 					"type": "code",
-					"value": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);\nvar noNegatives = true;\nfor(const source of allSources){\n    if(getAttr('counter',source) < 0){\n        noNegatives = false;\n        print('Source with id:' + source + ' has negative counter');\n    }\n}\nnoNegatives;"
+					"value": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);\nvar noNegatives = true;\nfor(const source of allSources){\n    if(getAttr('counter',source) < 0){\n        noNegatives = false;\n        print('Source with id:' + getAttr('pId',source) + ' has negative counter');\n    }\n}\nnoNegatives;"
 				},
 				"$type": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram/GlobalConstraint"
 			},
@@ -6107,7 +6198,7 @@
 				},
 				"code": {
 					"type": "code",
-					"value": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);\nvar noNegatives = true;\nfor(const source of allSources){\n    if(getAttr('rate',source) <= 0){\n        noNegatives = false;\n        print('Source with id:' + source + ' has non-positive rate');\n    }\n}\nnoNegatives;"
+					"value": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);\nvar noNegatives = true;\nfor(const source of allSources){\n    if(getAttr('rate',source) <= 0){\n        noNegatives = false;\n        print('Source with id:' + getAttr('pId',source) + ' has non-positive rate');\n    }\n}\nnoNegatives;"
 				},
 				"$type": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram/GlobalConstraint"
 			},
@@ -6122,7 +6213,7 @@
 				},
 				"code": {
 					"type": "code",
-					"value": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);\nvar noRateExceeded = true;\nfor(const source of allSources){\n    if(getAttr('cooldown',source) > getAttr('rate',source)){\n        noRateExceeded = false;\n        print('Source with id:' + source + ' has cooldown greater than rate');\n    }\n}\nnoRateExceeded;"
+					"value": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);\nvar noRateExceeded = true;\nfor(const source of allSources){\n    if(getAttr('cooldown',source) > getAttr('rate',source)){\n        noRateExceeded = false;\n        print('Source with id:' + getAttr('pId',source) + ' has cooldown greater than rate');\n    }\n}\nnoRateExceeded;"
 				},
 				"$type": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram/GlobalConstraint"
 			},
@@ -6137,7 +6228,7 @@
 				},
 				"code": {
 					"type": "code",
-					"value": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);\nvar noSmallCooldown = true;\nfor(const source of allSources){\n    if(getAttr('cooldown',source) < 1){\n        noSmallCooldown = false;\n        print('Source with id:' + source + ' has cooldown less than 1');\n    }\n}\nnoSmallCooldown;"
+					"value": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);\nvar noSmallCooldown = true;\nfor(const source of allSources){\n    if(getAttr('cooldown',source) < 1){\n        noSmallCooldown = false;\n        print('Source with id:' + getAttr('pId',source) + ' has cooldown less than 1');\n    }\n}\nnoSmallCooldown;"
 				},
 				"$type": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram/GlobalConstraint"
 			},
@@ -6168,6 +6259,21 @@
 				"code": {
 					"type": "code",
 					"value": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);\nvar allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);\nvar allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);\nvar allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);\n\nvar generatedCount = 0;\nfor(source of allSources){\n    generatedCount += parseInt(getAttr('counter',source));\n}\nprint('Generated watercraft: ' + generatedCount);\n\nvar destroyedCount = 0;\nfor(sink of allSinks){\n    destroyedCount += parseInt(getAttr('counter',sink));\n}\nprint('Destroyed watercraft: ' + destroyedCount);\n\nvar onTiles = 0;\nfor(segment of allSegments){\n    if(getAttr('got_watercraft',segment) == true){\n        onTiles += 1;\n    }\n}\n\nfor(confluence of allConfluences){\n    if(getAttr('got_watercraft',confluence) == true){\n        onTiles += 1;\n    }\n}\nprint('On tiles: ' + onTiles);\n\ngeneratedCount === destroyedCount + onTiles;"
+				},
+				"$type": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram/GlobalConstraint"
+			},
+			"45": {
+				"name": {
+					"type": "string",
+					"value": "GC_all_unique_ids"
+				},
+				"event": {
+					"type": "$EVENT",
+					"value": "validate"
+				},
+				"code": {
+					"type": "code",
+					"value": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);\nvar allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);\nvar allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);\nvar allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);\n\nvar allTiles = allSources.concat(allSinks,allSegments,allConfluences)\n// print(allTiles);\n\nvar seenIDs = new Set();\nvar onlyUnique = true;\nfor(tile of allTiles){\n    var id = getAttr('pId',tile);\n    if(seenIDs.has(id)){\n        onlyUnique = false;\n        print('Double entry on id ' + id)\n    }else{\n        seenIDs.add(id);\n    }\n}\n\nonlyUnique"
 				},
 				"$type": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram/GlobalConstraint"
 			}
