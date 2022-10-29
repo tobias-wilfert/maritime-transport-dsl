@@ -802,8 +802,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						625,
-						275
+						621,
+						272
 					]
 				},
 				"orientation": {
@@ -1223,13 +1223,13 @@
 								"position": {
 									"type": "list<double>",
 									"value": [
-										"0;153.06487936516191,99.9978359765203%",
-										"0;-88.49979735784348,0.6578753779708442%"
+										"0;148.86396727089289,99.9908702603584%",
+										"0;-91.4991007862273,-1.3512455647194606%"
 									]
 								},
 								"orientation": {
 									"type": "double",
-									"value": "0;0.376937545042614"
+									"value": "0;-0.774230241320464"
 								},
 								"scale": {
 									"type": "list<double>",
@@ -1258,7 +1258,7 @@
 					"type": "map<string,list<string>>",
 					"value": {
 						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/0.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink/8.instance": "M476.9999999999999,502L477.9999999999999,422.5",
-						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink/8.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/5.instance": "M477.9999999999999,422.5L478.99999999999994,343L630.9990918273647,343.99998623980855"
+						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink/8.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/5.instance": "M477.9999999999999,422.5L478.99999999999994,343L626.9990918273647,340.99998623980855"
 					}
 				},
 				"$type": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink"
@@ -1341,13 +1341,13 @@
 								"position": {
 									"type": "list<double>",
 									"value": [
-										"0;-119.91639451828746,-99.99652796021846%",
-										"0;-13.90037330249055,0.8333042069077687%"
+										"0;-124.16099484723054,-99.98699516271718%",
+										"0;-16.9013265822407,-1.6126990825227898%"
 									]
 								},
 								"orientation": {
 									"type": "double",
-									"value": "0;179.52254633313035"
+									"value": "0;-179.0759514321167"
 								},
 								"scale": {
 									"type": "list<double>",
@@ -1376,7 +1376,7 @@
 					"type": "map<string,list<string>>",
 					"value": {
 						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/1.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink/13.instance": "M948,504L948,369.9000235750168",
-						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink/13.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/5.instance": "M948,369.9000235750168L948,345L828.0002750610217,345.9999974765044"
+						"/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink/13.instance--/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/ClassIcon/5.instance": "M948,369.9000235750168L948,345L824.0002750610217,342.9999974765044"
 					}
 				},
 				"$type": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram.umlIcons/InheritanceLink"
@@ -5785,7 +5785,13 @@
 				},
 				"actions": {
 					"type": "list<$EVENT_HANDLER>",
-					"value": []
+					"value": [
+						{
+							"name": "setuppId",
+							"event": "post-create",
+							"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);/*newline*/var allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);/*newline*/var allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);/*newline*/var allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);/*newline*/var allTiles = allSources.concat(allSinks,allSegments,allConfluences);/*newline*/var highestId = -1;/*newline*/for(tile of allTiles){/*newline*/    var id = getAttr('pId',tile);/*newline*/    if(id > highestId){/*newline*/        highestId = id;/*newline*/    }/*newline*/}/*newline*/setAttr('pId',highestId+1);/*newline*/true"
+						}
+					]
 				},
 				"cardinalities": {
 					"type": "list<$CARDINALITY>",
