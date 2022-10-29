@@ -14,7 +14,7 @@
 			{
 				"name": "rate",
 				"type": "int",
-				"default": ""
+				"default": "1"
 			},
 			{
 				"name": "cooldown",
@@ -59,22 +59,10 @@
 	},
 	"constraints": [
 		{
-			"name": "printTestOnVerify",
-			"event": "validate",
-			"code": "print('Hello World');false;",
-			"targetType": "InNode"
-		},
-		{
 			"name": "noAbstractInstances",
 			"event": "pre-create",
 			"code": "false",
 			"targetType": "InNode"
-		},
-		{
-			"name": "printTestOnVerify",
-			"event": "validate",
-			"code": "print('Hello World');false;",
-			"targetType": "OutNode"
 		},
 		{
 			"name": "noAbstractInstances",
@@ -86,13 +74,7 @@
 			"name": "TODO_need_constraints_for_this_again",
 			"event": "validate",
 			"targetType": "*",
-			"code": "true"
-		},
-		{
-			"name": "printTestOnVerify",
-			"event": "validate",
-			"code": "print('Hello World');false;",
-			"targetType": "AnyNode"
+			"code": "true;"
 		},
 		{
 			"name": "noAbstractInstances",
@@ -101,46 +83,10 @@
 			"targetType": "AnyNode"
 		},
 		{
-			"name": "printTestOnVerify",
-			"event": "validate",
-			"code": "print('Hello World');false;",
-			"targetType": "Shippable"
-		},
-		{
 			"name": "noAbstractInstances",
 			"event": "pre-create",
 			"code": "false",
 			"targetType": "Shippable"
-		},
-		{
-			"name": "printTestOnVerify",
-			"event": "validate",
-			"code": "print('Hello World');false;",
-			"targetType": "Source"
-		},
-		{
-			"name": "sink_counter_positive",
-			"event": "verify",
-			"code": "print(getAttr('counter'));getAttr('counter') >= 0",
-			"targetType": "Sink"
-		},
-		{
-			"name": "printTestOnVerify",
-			"event": "validate",
-			"code": "print('Hello World');false;",
-			"targetType": "Sink"
-		},
-		{
-			"name": "printTestOnVerify",
-			"event": "validate",
-			"code": "print('Hello World');false;",
-			"targetType": "Segment"
-		},
-		{
-			"name": "printTestOnVerify",
-			"event": "validate",
-			"code": "print('Hello World');false;",
-			"targetType": "Confluence"
 		},
 		{
 			"name": "no_self_loop_connection0",
@@ -159,6 +105,48 @@
 			"event": "post-create",
 			"code": "getNeighbors('*','*').length ===  2",
 			"targetType": "connection1"
+		},
+		{
+			"name": "GC_sink_counters_positive",
+			"event": "validate",
+			"targetType": "*",
+			"code": "var allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);\nvar noNegatives = true;\nfor(const sink of allSinks){\n    if(getAttr('counter',sink) < 0){\n        noNegatives = false;\n        print('Sink with id:' + sink + ' has negative counter');\n    }\n}\nnoNegatives;"
+		},
+		{
+			"name": "GC_source_counters_positive",
+			"event": "validate",
+			"targetType": "*",
+			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);\nvar noNegatives = true;\nfor(const source of allSources){\n    if(getAttr('counter',source) < 0){\n        noNegatives = false;\n        print('Source with id:' + source + ' has negative counter');\n    }\n}\nnoNegatives;"
+		},
+		{
+			"name": "GC_source_rates_positive",
+			"event": "validate",
+			"targetType": "*",
+			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);\nvar noNegatives = true;\nfor(const source of allSources){\n    if(getAttr('rate',source) <= 0){\n        noNegatives = false;\n        print('Source with id:' + source + ' has non-positive rate');\n    }\n}\nnoNegatives;"
+		},
+		{
+			"name": "GC_source_cooldown_upperbound",
+			"event": "validate",
+			"targetType": "*",
+			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);\nvar noRateExceeded = true;\nfor(const source of allSources){\n    if(getAttr('cooldown',source) > getAttr('rate',source)){\n        noRateExceeded = false;\n        print('Source with id:' + source + ' has cooldown greater than rate');\n    }\n}\nnoRateExceeded;"
+		},
+		{
+			"name": "GC_source_cooldown_lowerbound",
+			"event": "validate",
+			"targetType": "*",
+			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);\nvar noSmallCooldown = true;\nfor(const source of allSources){\n    if(getAttr('cooldown',source) < 1){\n        noSmallCooldown = false;\n        print('Source with id:' + source + ' has cooldown less than 1');\n    }\n}\nnoSmallCooldown;"
+		},
+		{
+			"name": "GC_equal_sources_and_sinks",
+			"event": "",
+			"targetType": "*",
+			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);\nvar allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);\nallSources.length == allSinks.length;"
+		},
+		{
+			"name": "GC_no_watercraft_loss",
+			"event": "",
+			"targetType": "*",
+			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);\nvar allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);\nvar allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);\nvar allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);\n\nvar generatedCount = 0;\nfor(source of allSources){\n    generatedCount += parseInt(getAttr('counter',source));\n}\nprint('Generated watercraft: ' + generatedCount);\n\nvar destroyedCount = 0;\nfor(sink of allSinks){\n    destroyedCount += parseInt(getAttr('counter',sink));\n}\nprint('Destroyed watercraft: ' + destroyedCount);\n\nvar onTiles = 0;\nfor(segment of allSegments){\n    if(getAttr('got_watercraft',segment) == true){\n        onTiles += 1;\n    }\n}\n\nfor(confluence of allConfluences){\n    if(getAttr('got_watercraft',confluence) == true){\n        onTiles += 1;\n    }\n}\nprint('On tiles: ' + onTiles);\n\ngeneratedCount === destroyedCount + onTiles;"
 		}
 	],
 	"actions": [],
@@ -584,6 +572,13 @@
 		],
 		"connection0": [],
 		"connection2": [],
-		"connection1": []
+		"connection1": [],
+		"GC_sink_counters_positive": [],
+		"GC_source_counters_positive": [],
+		"GC_source_rates_positive": [],
+		"GC_source_cooldown_upperbound": [],
+		"GC_source_cooldown_lowerbound": [],
+		"GC_equal_sources_and_sinks": [],
+		"GC_no_watercraft_loss": []
 	}
 }
