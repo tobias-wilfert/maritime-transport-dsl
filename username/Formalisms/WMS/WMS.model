@@ -5679,17 +5679,17 @@
 						{
 							"name": "in_out_cycle",
 							"event": "post-connect",
-							"code": "var _out = getNeighbors('out', '*'); _out = _out.map(x => getNeighbors('in', '*', x)[0]); var _in = getNeighbors('in', '*'); _in = _in.map(x => getNeighbors('out', '*', x)[0]); var a = _out.filter(x => _in.includes(x));print(a); a.length == 0"
+							"code": "var _out = getNeighbors('out', '*'); _out = _out.map(x => getNeighbors('out', '*', x)[0]); var _in = getNeighbors('in', '*'); _in = _in.map(x => getNeighbors('in', '*', x)[0]); var a = _out.filter(x => _in.includes(x)); a.length == 0"
 						},
 						{
 							"name": "out_cycle",
 							"event": "post-connect",
-							"code": "var _out = getNeighbors('out','*'); _out = _out.map(x => getNeighbors('in', '*', x)[0]); _out.length === new Set(_out).size"
+							"code": "var _out = getNeighbors('out','*'); _out = _out.map(x => getNeighbors('out', '*', x)[0]); _out.length === new Set(_out).size"
 						},
 						{
 							"name": "in_cycle",
 							"event": "post-connect",
-							"code": "var _in = getNeighbors('in', '*'); _in = _in.map(x => getNeighbors('out', '*', x)[0]); _in.length === new Set(_in).size"
+							"code": "var _in = getNeighbors('in', '*'); _in = _in.map(x => getNeighbors('in', '*', x)[0]); _in.length === new Set(_in).size"
 						}
 					]
 				},
