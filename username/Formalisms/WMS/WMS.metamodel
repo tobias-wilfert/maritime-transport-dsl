@@ -394,49 +394,49 @@
 		{
 			"name": "setuppId",
 			"event": "post-create",
-			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);/*newline*/var allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);/*newline*/var allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);/*newline*/var allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);/*newline*/var allTiles = allSources.concat(allSinks,allSegments,allConfluences);/*newline*/var highestId = -1;/*newline*/for(tile of allTiles){/*newline*/    var id = getAttr('pId',tile);/*newline*/    if(id > highestId){/*newline*/        highestId = id;/*newline*/    }/*newline*/}/*newline*/setAttr('pId',highestId+1);/*newline*/true",
+			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);/*newline*/var allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);/*newline*/var allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);/*newline*/var allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);/*newline*/var allTiles = allSources.concat(allSinks,allSegments,allConfluences);/*newline*/var highestId = -1;/*newline*/for(tile of allTiles){/*newline*/    var id = getAttr('pId',tile);/*newline*/    if(id > highestId){/*newline*/        highestId = id;/*newline*/    }/*newline*/}/*newline*/setAttr('pId',Number(highestId)+1);/*newline*/true",
 			"targetType": "InNode"
 		},
 		{
 			"name": "setuppId",
 			"event": "post-create",
-			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);/*newline*/var allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);/*newline*/var allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);/*newline*/var allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);/*newline*/var allTiles = allSources.concat(allSinks,allSegments,allConfluences);/*newline*/var highestId = -1;/*newline*/for(tile of allTiles){/*newline*/    var id = getAttr('pId',tile);/*newline*/    if(id > highestId){/*newline*/        highestId = id;/*newline*/    }/*newline*/}/*newline*/setAttr('pId',highestId+1);/*newline*/true",
+			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);/*newline*/var allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);/*newline*/var allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);/*newline*/var allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);/*newline*/var allTiles = allSources.concat(allSinks,allSegments,allConfluences);/*newline*/var highestId = -1;/*newline*/for(tile of allTiles){/*newline*/    var id = getAttr('pId',tile);/*newline*/    if(id > highestId){/*newline*/        highestId = id;/*newline*/    }/*newline*/}/*newline*/setAttr('pId',Number(highestId)+1);/*newline*/true",
 			"targetType": "OutNode"
 		},
 		{
 			"name": "setuppId",
 			"event": "post-create",
-			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);/*newline*/var allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);/*newline*/var allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);/*newline*/var allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);/*newline*/var allTiles = allSources.concat(allSinks,allSegments,allConfluences);/*newline*/var highestId = -1;/*newline*/for(tile of allTiles){/*newline*/    var id = getAttr('pId',tile);/*newline*/    if(id > highestId){/*newline*/        highestId = id;/*newline*/    }/*newline*/}/*newline*/setAttr('pId',highestId+1);/*newline*/true",
+			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);/*newline*/var allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);/*newline*/var allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);/*newline*/var allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);/*newline*/var allTiles = allSources.concat(allSinks,allSegments,allConfluences);/*newline*/var highestId = -1;/*newline*/for(tile of allTiles){/*newline*/    var id = getAttr('pId',tile);/*newline*/    if(id > highestId){/*newline*/        highestId = id;/*newline*/    }/*newline*/}/*newline*/setAttr('pId',Number(highestId)+1);/*newline*/true",
 			"targetType": "AnyNode"
 		},
 		{
 			"name": "setuppId",
 			"event": "post-create",
-			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);/*newline*/var allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);/*newline*/var allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);/*newline*/var allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);/*newline*/var allTiles = allSources.concat(allSinks,allSegments,allConfluences);/*newline*/var highestId = -1;/*newline*/for(tile of allTiles){/*newline*/    var id = getAttr('pId',tile);/*newline*/    if(id > highestId){/*newline*/        highestId = id;/*newline*/    }/*newline*/}/*newline*/setAttr('pId',highestId+1);/*newline*/true",
+			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);/*newline*/var allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);/*newline*/var allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);/*newline*/var allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);/*newline*/var allTiles = allSources.concat(allSinks,allSegments,allConfluences);/*newline*/var highestId = -1;/*newline*/for(tile of allTiles){/*newline*/    var id = getAttr('pId',tile);/*newline*/    if(id > highestId){/*newline*/        highestId = id;/*newline*/    }/*newline*/}/*newline*/setAttr('pId',Number(highestId)+1);/*newline*/true",
 			"targetType": "Shippable"
 		},
 		{
 			"name": "setuppId",
 			"event": "post-create",
-			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);/*newline*/var allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);/*newline*/var allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);/*newline*/var allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);/*newline*/var allTiles = allSources.concat(allSinks,allSegments,allConfluences);/*newline*/var highestId = -1;/*newline*/for(tile of allTiles){/*newline*/    var id = getAttr('pId',tile);/*newline*/    if(id > highestId){/*newline*/        highestId = id;/*newline*/    }/*newline*/}/*newline*/setAttr('pId',highestId+1);/*newline*/true",
+			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);/*newline*/var allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);/*newline*/var allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);/*newline*/var allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);/*newline*/var allTiles = allSources.concat(allSinks,allSegments,allConfluences);/*newline*/var highestId = -1;/*newline*/for(tile of allTiles){/*newline*/    var id = getAttr('pId',tile);/*newline*/    if(id > highestId){/*newline*/        highestId = id;/*newline*/    }/*newline*/}/*newline*/setAttr('pId',Number(highestId)+1);/*newline*/true",
 			"targetType": "Source"
 		},
 		{
 			"name": "setuppId",
 			"event": "post-create",
-			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);/*newline*/var allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);/*newline*/var allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);/*newline*/var allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);/*newline*/var allTiles = allSources.concat(allSinks,allSegments,allConfluences);/*newline*/var highestId = -1;/*newline*/for(tile of allTiles){/*newline*/    var id = getAttr('pId',tile);/*newline*/    if(id > highestId){/*newline*/        highestId = id;/*newline*/    }/*newline*/}/*newline*/setAttr('pId',highestId+1);/*newline*/true",
+			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);/*newline*/var allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);/*newline*/var allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);/*newline*/var allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);/*newline*/var allTiles = allSources.concat(allSinks,allSegments,allConfluences);/*newline*/var highestId = -1;/*newline*/for(tile of allTiles){/*newline*/    var id = getAttr('pId',tile);/*newline*/    if(id > highestId){/*newline*/        highestId = id;/*newline*/    }/*newline*/}/*newline*/setAttr('pId',Number(highestId)+1);/*newline*/true",
 			"targetType": "Sink"
 		},
 		{
 			"name": "setuppId",
 			"event": "post-create",
-			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);/*newline*/var allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);/*newline*/var allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);/*newline*/var allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);/*newline*/var allTiles = allSources.concat(allSinks,allSegments,allConfluences);/*newline*/var highestId = -1;/*newline*/for(tile of allTiles){/*newline*/    var id = getAttr('pId',tile);/*newline*/    if(id > highestId){/*newline*/        highestId = id;/*newline*/    }/*newline*/}/*newline*/setAttr('pId',highestId+1);/*newline*/true",
+			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);/*newline*/var allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);/*newline*/var allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);/*newline*/var allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);/*newline*/var allTiles = allSources.concat(allSinks,allSegments,allConfluences);/*newline*/var highestId = -1;/*newline*/for(tile of allTiles){/*newline*/    var id = getAttr('pId',tile);/*newline*/    if(id > highestId){/*newline*/        highestId = id;/*newline*/    }/*newline*/}/*newline*/setAttr('pId',Number(highestId)+1);/*newline*/true",
 			"targetType": "Segment"
 		},
 		{
 			"name": "setuppId",
 			"event": "post-create",
-			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);/*newline*/var allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);/*newline*/var allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);/*newline*/var allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);/*newline*/var allTiles = allSources.concat(allSinks,allSegments,allConfluences);/*newline*/var highestId = -1;/*newline*/for(tile of allTiles){/*newline*/    var id = getAttr('pId',tile);/*newline*/    if(id > highestId){/*newline*/        highestId = id;/*newline*/    }/*newline*/}/*newline*/setAttr('pId',highestId+1);/*newline*/true",
+			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);/*newline*/var allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);/*newline*/var allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);/*newline*/var allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);/*newline*/var allTiles = allSources.concat(allSinks,allSegments,allConfluences);/*newline*/var highestId = -1;/*newline*/for(tile of allTiles){/*newline*/    var id = getAttr('pId',tile);/*newline*/    if(id > highestId){/*newline*/        highestId = id;/*newline*/    }/*newline*/}/*newline*/setAttr('pId',Number(highestId)+1);/*newline*/true",
 			"targetType": "Confluence"
 		}
 	],
