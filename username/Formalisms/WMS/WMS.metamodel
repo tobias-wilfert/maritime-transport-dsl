@@ -388,6 +388,12 @@
 			"event": "validate",
 			"targetType": "*",
 			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);\nvar allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);\nvar allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);\nvar allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);\n\nvar allTiles = allSources.concat(allSinks,allSegments,allConfluences)\n// print(allTiles);\n\nvar seenIDs = new Set();\nvar onlyUnique = true;\nfor(tile of allTiles){\n    var id = getAttr('pId',tile);\n    if(seenIDs.has(id)){\n        onlyUnique = false;\n        print('Double entry on id ' + id)\n    }else{\n        seenIDs.add(id);\n    }\n}\n\nonlyUnique"
+		},
+		{
+			"name": "GC_all_nodes_connected",
+			"event": "validate",
+			"targetType": "*",
+			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);\nvar allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);\nvar allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);\nvar allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);\n\nvalid = true\n\nfor (source in allSources){\n    if(getNeighbors('out', '*', source) != 1){\n        valid = false;\n        break;\n    }\n}\n\nfor (sink in allSinks){\n    if(getNeighbors('in', '*', sink) != 1){\n        valid = false;\n        break;\n    }\n}\n\nfor (segment in allSegments){\n    if(getNeighbors('in', '*', segment) != 1 || getNeighbors('out', '*', segment) != 1){\n        valid = false;\n        break;\n    }\n}\n\nfor (confluence in allConfluences){\n    if(getNeighbors('in', '*', confluence) != 2 || getNeighbors('out', '*', confluence) != 2){\n        valid = false;\n        break;\n    }\n}\n\nvalid"
 		}
 	],
 	"actions": [
@@ -869,6 +875,7 @@
 		"GC_source_cooldown_lowerbound": [],
 		"GC_equal_sources_and_sinks": [],
 		"GC_no_watercraft_loss": [],
-		"GC_all_unique_ids": []
+		"GC_all_unique_ids": [],
+		"GC_all_nodes_connected": []
 	}
 }
