@@ -314,7 +314,7 @@
 							"100": {
 								"textContent": {
 									"type": "string",
-									"value": "0"
+									"value": 3
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -1195,7 +1195,7 @@
 							"100": {
 								"textContent": {
 									"type": "string",
-									"value": "0"
+									"value": 3
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -3362,7 +3362,7 @@
 				},
 				"counter": {
 					"type": "int",
-					"value": "0"
+					"value": 3
 				},
 				"pId": {
 					"type": "int",
@@ -3419,7 +3419,7 @@
 				},
 				"counter": {
 					"type": "int",
-					"value": "0"
+					"value": 3
 				},
 				"pId": {
 					"type": "int",
