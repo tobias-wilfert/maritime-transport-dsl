@@ -1,0 +1,271 @@
+{
+	"types": {
+		"__pState": [
+			{
+				"name": "__pLabel",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pPivotIn",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pPivotOut",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pMatchSubtypes",
+				"type": "boolean",
+				"default": true
+			},
+			{
+				"name": "initial",
+				"type": "code",
+				"default": "\"[PYTHON]\"\n\"Example:\t result = True\"\n\"Example:\t result = getAttr()\"\n\n\"[JAVASCRIPT]\"\n\"Example:\t true\"\n\"Example:\t getAttr()\""
+			},
+			{
+				"name": "final",
+				"type": "code",
+				"default": "\"[PYTHON]\"\n\"Example:\t result = True\"\n\"Example:\t result = getAttr()\"\n\n\"[JAVASCRIPT]\"\n\"Example:\t true\"\n\"Example:\t getAttr()\""
+			},
+			{
+				"name": "name",
+				"type": "code",
+				"default": "\"[PYTHON]\"\n\"Example:\t result = True\"\n\"Example:\t result = getAttr()\"\n\n\"[JAVASCRIPT]\"\n\"Example:\t true\"\n\"Example:\t getAttr()\""
+			}
+		],
+		"__ptransition": [
+			{
+				"name": "__pLabel",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pPivotIn",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pPivotOut",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pMatchSubtypes",
+				"type": "boolean",
+				"default": true
+			},
+			{
+				"name": "symbol",
+				"type": "code",
+				"default": "\"[PYTHON]\"\n\"Example:\t result = True\"\n\"Example:\t result = getAttr()\"\n\n\"[JAVASCRIPT]\"\n\"Example:\t true\"\n\"Example:\t getAttr()\""
+			}
+		],
+		"__pInput": [
+			{
+				"name": "__pLabel",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pPivotIn",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pPivotOut",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pMatchSubtypes",
+				"type": "boolean",
+				"default": true
+			},
+			{
+				"name": "string",
+				"type": "code",
+				"default": "\"[PYTHON]\"\n\"Example:\t result = True\"\n\"Example:\t result = getAttr()\"\n\n\"[JAVASCRIPT]\"\n\"Example:\t true\"\n\"Example:\t getAttr()\""
+			}
+		],
+		"__pCurrentState": [
+			{
+				"name": "__pLabel",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pPivotIn",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pPivotOut",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pMatchSubtypes",
+				"type": "boolean",
+				"default": true
+			}
+		],
+		"__pCurrent": [
+			{
+				"name": "__pLabel",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pPivotIn",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pPivotOut",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pMatchSubtypes",
+				"type": "boolean",
+				"default": true
+			}
+		]
+	},
+	"constraints": [
+		{
+			"name": "C_name_not_empty",
+			"event": "validate",
+			"code": "/* comment next line to enable this constraint */\nthrow \"IgnoredConstraint\"\ngetAllNodes(['/Formalisms/MyFSA/MyFSA/State']).every(state => getAttr('name', state).length > 0)",
+			"targetType": "State"
+		},
+		{
+			"name": "GC_one_initial",
+			"event": "validate",
+			"targetType": "*",
+			"code": "/* comment next line to enable this constraint */\nthrow \"IgnoredConstraint\"\ngetAllNodes(['/Formalisms/MyFSA/MyFSA/State']).filter(state => getAttr(\"initial\", state)).length === 1"
+		},
+		{
+			"name": "GC_at_least_one_final",
+			"event": "validate",
+			"targetType": "*",
+			"code": "/* comment next line to enable this constraint */\nthrow \"IgnoredConstraint\"\ngetAllNodes(['/Formalisms/MyFSA/MyFSA/State']).some(state => getAttr(\"final\", state))"
+		},
+		{
+			"name": "GC_every_final_state_reachable",
+			"event": "validate",
+			"targetType": "*",
+			"code": "/* comment next line to enable this constraint */\nthrow \"IgnoredConstraint\"\n(() => {\n  const allStates = getAllNodes(['/Formalisms/MyFSA/MyFSA/State']); // array of state-ids\n  const initialState = allStates.find(stateId => getAttr('initial', stateId)); // state id\n  const finalStates = allStates.filter(stateId => getAttr('final', stateId)); // array of state-ids\n\n  console.log(\"initialState:\",initialState);\n  console.log(\"finalStates:\",finalStates);\n  \n  let reachable = [initialState];\n  while (true) {\n    console.log(\"iteration... reachable=\",reachable);\n    const alsoReachable = reachable.map(stateId => {\n      const outgoingTransitions = getNeighbors('out', '/Formalisms/MyFSA/MyFSA/transition', stateId); // array of transition-ids\n      console.log(\"state\",stateId,\"has outgoing\",outgoingTransitions);\n      // Every link in AToMPM has exactly one input and one output. We take the first output to get the state that the outgoing transition points to:\n      const targets = outgoingTransitions.map(transitionId => getNeighbors('out', '/Formalisms/MyFSA/MyFSA/State', transitionId)[0]); // array of state-ids\n      console.log(\"state\",stateId,\"has targets\",targets);\n      // We're only interested in states that were not in 'reachable' yet:\n      return targets.filter(stateId => !reachable.includes(stateId));\n    });\n    // alsoReachable is an array of arrays of state-ids. We flatten it:\n    const flattened = [].concat(...alsoReachable); // array of state-ids\n\n    console.log(\"flattened:\",flattened);\n\n    if (flattened.length === 0) {\n      break; // done: we've found all reachable states :)\n    }\n\n    // finally, we remove duplicated elements by turning it into a Set:\n    const dupsRemoved = new Set(flattened);\n   \n    // and repeat:\n    reachable = reachable.concat(...dupsRemoved);\n  }\n\n  console.log(\"done! reachable=\",reachable);\n\n  // and here, we finally check if every final state is reachable:\n  return finalStates.every(stateId => reachable.includes(stateId));\n})();"
+		},
+		{
+			"name": "",
+			"event": "validate",
+			"code": "/* comment next line to enable this constraint */\nthrow \"IgnoredConstraint\"\ngetAllNodes(['/Formalisms/MyFSA/MyFSA/Input']).length === 1",
+			"targetType": "Input"
+		},
+		{
+			"name": "GC_one_CurrentState",
+			"event": "validate",
+			"targetType": "*",
+			"code": "/* comment next line to enable this constraint */\nthrow \"IgnoredConstraint\"\ngetAllNodes(['/Formalisms/MyFSA/MyFSA/CurrentState']).length === 1"
+		}
+	],
+	"actions": [
+		{
+			"name": "distinctPLabels",
+			"event": "post-create",
+			"code": "if( getAttr(\"__pLabel\") == \"\" )\n{\n\tvar pLabels = getAllNodes().\n\t\t\t\t\t\t\tfilter( function(n) {return hasAttr(\"__pLabel\",n);} ).\n\t\t\t\t\t\t\t\tmap( function(n) {return getAttr(\"__pLabel\",n);} ),\n\t\t i\t\t\t= \"0\";\n\n\twhile( _utils.contains(pLabels,i) )\n\t\ti = String(parseInt(i)+1);\n\tsetAttr(\"__pLabel\",i);\n}",
+			"targetType": "*"
+		}
+	],
+	"cardinalities": {
+		"__pState": [
+			{
+				"dir": "out",
+				"type": "__ptransition",
+				"min": 0,
+				"max": "inf"
+			},
+			{
+				"dir": "in",
+				"type": "__ptransition",
+				"min": 0,
+				"max": "inf"
+			},
+			{
+				"dir": "in",
+				"type": "__pCurrent",
+				"min": 0,
+				"max": 1
+			}
+		],
+		"__ptransition": [
+			{
+				"dir": "in",
+				"type": "__pState",
+				"min": 0,
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "__pState",
+				"min": 0,
+				"max": "1"
+			}
+		],
+		"__pInput": [],
+		"__pCurrentState": [
+			{
+				"dir": "out",
+				"type": "__pCurrent",
+				"min": 0,
+				"max": 1
+			}
+		],
+		"__pCurrent": [
+			{
+				"dir": "in",
+				"type": "__pCurrentState",
+				"min": 0,
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "__pState",
+				"min": 0,
+				"max": "1"
+			}
+		]
+	},
+	"legalConnections": {
+		"__pState": {
+			"__pState": [
+				"__ptransition"
+			]
+		},
+		"__pCurrentState": {
+			"__pState": [
+				"__pCurrent"
+			]
+		}
+	},
+	"connectorTypes": {
+		"__ptransition": "visual",
+		"__pCurrent": "visual"
+	},
+	"types2parentTypes": {
+		"__pState": [],
+		"__ptransition": [],
+		"__pGC_one_initial": [],
+		"__pGC_at_least_one_final": [],
+		"__pGC_every_final_state_reachable": [],
+		"__pInput": [],
+		"__pCurrentState": [],
+		"__pGC_one_CurrentState": [],
+		"__pCurrent": []
+	}
+}
