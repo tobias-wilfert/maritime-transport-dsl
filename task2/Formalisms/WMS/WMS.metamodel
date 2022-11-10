@@ -43,6 +43,11 @@
 				"default": "false"
 			},
 			{
+				"name": "got_this_turn",
+				"type": "boolean",
+				"default": "false"
+			},
+			{
 				"name": "pId",
 				"type": "int",
 				"default": "0"
@@ -104,6 +109,11 @@
 				"default": "false"
 			},
 			{
+				"name": "got_this_turn",
+				"type": "boolean",
+				"default": "false"
+			},
+			{
 				"name": "pId",
 				"type": "int",
 				"default": "0"
@@ -122,6 +132,11 @@
 			},
 			{
 				"name": "got_watercraft",
+				"type": "boolean",
+				"default": "false"
+			},
+			{
+				"name": "got_this_turn",
 				"type": "boolean",
 				"default": "false"
 			},

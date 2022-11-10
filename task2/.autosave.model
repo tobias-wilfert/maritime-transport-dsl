@@ -2,11 +2,15 @@
 	"csm": {
 		"nodes": {},
 		"edges": [],
-		"metamodels": []
+		"metamodels": [
+			"/Formalisms/WMS/WMS.defaultIcons.pattern"
+		]
 	},
 	"asm": {
 		"nodes": {},
 		"edges": [],
-		"metamodels": []
+		"metamodels": [
+			"/Formalisms/WMS/WMS.pattern"
+		]
 	}
 }

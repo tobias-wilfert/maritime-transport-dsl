@@ -1472,7 +1472,7 @@
 							"99": {
 								"textContent": {
 									"type": "string",
-									"value": "+ got_watercraft : boolean = false"
+									"value": "+ got_watercraft : boolean = false\n+ got_this_turn : boolean = false"
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -5824,6 +5824,11 @@
 					"value": [
 						{
 							"name": "got_watercraft",
+							"type": "boolean",
+							"default": "false"
+						},
+						{
+							"name": "got_this_turn",
 							"type": "boolean",
 							"default": "false"
 						}

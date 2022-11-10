@@ -323,597 +323,7 @@
 				},
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/NACIcon"
 			},
-			"5": {
-				"typename": {
-					"type": "string",
-					"value": "__pAnyNodeIcon"
-				},
-				"position": {
-					"type": "list<double>",
-					"value": [
-						552,
-						248
-					]
-				},
-				"orientation": {
-					"type": "double",
-					"value": 0
-				},
-				"scale": {
-					"type": "list<double>",
-					"value": [
-						1,
-						1
-					]
-				},
-				"mapper": {
-					"type": "code",
-					"value": ""
-				},
-				"parser": {
-					"type": "code",
-					"value": ""
-				},
-				"$contents": {
-					"type": "map<string,*>",
-					"value": {
-						"nodes": {
-							"text": {
-								"textContent": {
-									"type": "string",
-									"value": "__pAnyNodeIcon"
-								},
-								"style": {
-									"type": "map<string,string>",
-									"value": {
-										"stroke": "#000000",
-										"stroke-dasharray": "",
-										"fill": "#000000",
-										"fill-opacity": "1",
-										"font-size": "13px"
-									}
-								},
-								"mapper": {
-									"type": "code",
-									"value": ""
-								},
-								"parser": {
-									"type": "code",
-									"value": ""
-								},
-								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Text",
-								"position": {
-									"type": "list<double>",
-									"value": [
-										10,
-										76
-									]
-								},
-								"orientation": {
-									"type": "double",
-									"value": 0
-								},
-								"scale": {
-									"type": "list<double>",
-									"value": [
-										1,
-										1
-									]
-								}
-							},
-							"rect": {
-								"width": {
-									"type": "double",
-									"value": 75
-								},
-								"height": {
-									"type": "double",
-									"value": 75
-								},
-								"cornerRadius": {
-									"type": "double",
-									"value": 15
-								},
-								"style": {
-									"type": "map<string,string>",
-									"value": {
-										"stroke": "#000000",
-										"fill": "#ffffff",
-										"fill-opacity": 0.75
-									}
-								},
-								"mapper": {
-									"type": "code",
-									"value": ""
-								},
-								"parser": {
-									"type": "code",
-									"value": ""
-								},
-								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Rectangle",
-								"position": {
-									"type": "list<double>",
-									"value": [
-										0,
-										0
-									]
-								},
-								"orientation": {
-									"type": "double",
-									"value": 0
-								},
-								"scale": {
-									"type": "list<double>",
-									"value": [
-										1,
-										1
-									]
-								}
-							},
-							"textBelowRect": {
-								"distance": {
-									"type": "double",
-									"value": 10
-								},
-								"alignment": {
-									"type": "ENUM(\"right\",\"left\",\"center\")",
-									"value": "center"
-								},
-								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Below",
-								"position": {
-									"type": "list<double>",
-									"value": [
-										5,
-										38
-									]
-								},
-								"orientation": {
-									"type": "double",
-									"value": 0
-								},
-								"scale": {
-									"type": "list<double>",
-									"value": [
-										1,
-										1
-									]
-								},
-								"link-style": {
-									"type": "map<string,string>",
-									"value": {
-										"stroke": "#00ff00",
-										"stroke-dasharray": "",
-										"stroke-opacity": 1,
-										"arrow-start": "none",
-										"arrow-end": "classic-wide-long"
-									}
-								}
-							},
-							"__pLabelText": {
-								"position": {
-									"type": "list<double>",
-									"value": [
-										0,
-										0
-									]
-								},
-								"orientation": {
-									"type": "double",
-									"value": 0
-								},
-								"scale": {
-									"type": "list<double>",
-									"value": [
-										1,
-										1
-									]
-								},
-								"textContent": {
-									"type": "string",
-									"value": "1"
-								},
-								"style": {
-									"type": "map<string,string>",
-									"value": {
-										"stroke": "#6000ff",
-										"fill": "#6000ff",
-										"font-size": "15px",
-										"opacity": "1"
-									}
-								},
-								"mapper": {
-									"type": "code",
-									"value": "({'textContent':getAttr('__pLabel')})"
-								},
-								"parser": {
-									"type": "code",
-									"value": "({'__pLabel':getAttr('textContent')})"
-								},
-								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Text"
-							}
-						},
-						"edges": [
-							{
-								"src": "text",
-								"dest": "textBelowRect"
-							},
-							{
-								"src": "textBelowRect",
-								"dest": "rect"
-							}
-						]
-					}
-				},
-				"$asuri": {
-					"type": "string",
-					"value": "/Formalisms/WMS/WMS.pattern/__pAnyNode/5.instance"
-				},
-				"$type": "/Formalisms/WMS/WMS.defaultIcons.pattern/__pAnyNodeIcon"
-			},
-			"7": {
-				"link-style": {
-					"type": "map<string,string>",
-					"value": {
-						"stroke": "#000000",
-						"stroke-dasharray": "",
-						"stroke-opacity": 0,
-						"stroke-width": 0
-					}
-				},
-				"arrowHead": {
-					"type": "ENUM(circle-black,circle-black-large,circle-white,circle-white-large,diamond-black,diamond-black-large,diamond-white,diamond-white-large,triangle-black,triangle-black-large,triangle-white,triangle-white-large,arrow-black,arrow-black-large,arrow-empty,arrow-empty-large,custom)",
-					"value": "custom"
-				},
-				"arrowTail": {
-					"type": "ENUM(circle-black,circle-black-large,circle-white,circle-white-large,diamond-black,diamond-black-large,diamond-white,diamond-white-large,triangle-black,triangle-black-large,triangle-white,triangle-white-large,arrow-black,arrow-black-large,arrow-empty,arrow-empty-large,custom)",
-					"value": "arrow-black"
-				},
-				"typename": {
-					"type": "string",
-					"value": "PatternContentsLink"
-				},
-				"position": {
-					"type": "list<double>",
-					"value": [
-						566.0533607115689,
-						259.3469338472363
-					]
-				},
-				"orientation": {
-					"type": "double",
-					"value": 0
-				},
-				"scale": {
-					"type": "list<double>",
-					"value": [
-						1,
-						1
-					]
-				},
-				"mapper": {
-					"type": "code",
-					"value": "/* specify code that evaluates to an associative array of the form {...,csattr:val,...} */"
-				},
-				"parser": {
-					"type": "code",
-					"value": "/* specify code that evaluates to an associative array of the form {...,attr:val,...} */"
-				},
-				"$contents": {
-					"type": "map<string,*>",
-					"value": {
-						"nodes": {},
-						"edges": []
-					}
-				},
-				"$asuri": {
-					"type": "string",
-					"value": "/Formalisms/__Transformations__/TransformationRule/TransformationRule/PatternContents/7.instance"
-				},
-				"$segments": {
-					"type": "map<string,list<string>>",
-					"value": {
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/LHSIcon/0.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/7.instance": "M525,225L566.0533607115689,259.3469338472363",
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/7.instance--/Formalisms/WMS/WMS.defaultIcons.pattern/__pAnyNodeIcon/5.instance": "M565.9953211047516,259.29837551970064L606.874781532112,293.49981722075944"
-					}
-				},
-				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink"
-			},
-			"8": {
-				"typename": {
-					"type": "string",
-					"value": "__pAnyNodeIcon"
-				},
-				"position": {
-					"type": "list<double>",
-					"value": [
-						1000,
-						249
-					]
-				},
-				"orientation": {
-					"type": "double",
-					"value": 0
-				},
-				"scale": {
-					"type": "list<double>",
-					"value": [
-						1,
-						1
-					]
-				},
-				"mapper": {
-					"type": "code",
-					"value": ""
-				},
-				"parser": {
-					"type": "code",
-					"value": ""
-				},
-				"$contents": {
-					"type": "map<string,*>",
-					"value": {
-						"nodes": {
-							"text": {
-								"textContent": {
-									"type": "string",
-									"value": "__pAnyNodeIcon"
-								},
-								"style": {
-									"type": "map<string,string>",
-									"value": {
-										"stroke": "#000000",
-										"stroke-dasharray": "",
-										"fill": "#000000",
-										"fill-opacity": "1",
-										"font-size": "13px"
-									}
-								},
-								"mapper": {
-									"type": "code",
-									"value": ""
-								},
-								"parser": {
-									"type": "code",
-									"value": ""
-								},
-								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Text",
-								"position": {
-									"type": "list<double>",
-									"value": [
-										10,
-										76
-									]
-								},
-								"orientation": {
-									"type": "double",
-									"value": 0
-								},
-								"scale": {
-									"type": "list<double>",
-									"value": [
-										1,
-										1
-									]
-								}
-							},
-							"rect": {
-								"width": {
-									"type": "double",
-									"value": 75
-								},
-								"height": {
-									"type": "double",
-									"value": 75
-								},
-								"cornerRadius": {
-									"type": "double",
-									"value": 15
-								},
-								"style": {
-									"type": "map<string,string>",
-									"value": {
-										"stroke": "#000000",
-										"fill": "#ffffff",
-										"fill-opacity": 0.75
-									}
-								},
-								"mapper": {
-									"type": "code",
-									"value": ""
-								},
-								"parser": {
-									"type": "code",
-									"value": ""
-								},
-								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Rectangle",
-								"position": {
-									"type": "list<double>",
-									"value": [
-										0,
-										0
-									]
-								},
-								"orientation": {
-									"type": "double",
-									"value": 0
-								},
-								"scale": {
-									"type": "list<double>",
-									"value": [
-										1,
-										1
-									]
-								}
-							},
-							"textBelowRect": {
-								"distance": {
-									"type": "double",
-									"value": 10
-								},
-								"alignment": {
-									"type": "ENUM(\"right\",\"left\",\"center\")",
-									"value": "center"
-								},
-								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Below",
-								"position": {
-									"type": "list<double>",
-									"value": [
-										5,
-										38
-									]
-								},
-								"orientation": {
-									"type": "double",
-									"value": 0
-								},
-								"scale": {
-									"type": "list<double>",
-									"value": [
-										1,
-										1
-									]
-								},
-								"link-style": {
-									"type": "map<string,string>",
-									"value": {
-										"stroke": "#00ff00",
-										"stroke-dasharray": "",
-										"stroke-opacity": 1,
-										"arrow-start": "none",
-										"arrow-end": "classic-wide-long"
-									}
-								}
-							},
-							"__pLabelText": {
-								"position": {
-									"type": "list<double>",
-									"value": [
-										0,
-										0
-									]
-								},
-								"orientation": {
-									"type": "double",
-									"value": 0
-								},
-								"scale": {
-									"type": "list<double>",
-									"value": [
-										1,
-										1
-									]
-								},
-								"textContent": {
-									"type": "string",
-									"value": "1"
-								},
-								"style": {
-									"type": "map<string,string>",
-									"value": {
-										"stroke": "#6000ff",
-										"fill": "#6000ff",
-										"font-size": "15px",
-										"opacity": "1"
-									}
-								},
-								"mapper": {
-									"type": "code",
-									"value": "({'textContent':getAttr('__pLabel')})"
-								},
-								"parser": {
-									"type": "code",
-									"value": "({'__pLabel':getAttr('textContent')})"
-								},
-								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Text"
-							}
-						},
-						"edges": [
-							{
-								"src": "text",
-								"dest": "textBelowRect"
-							},
-							{
-								"src": "textBelowRect",
-								"dest": "rect"
-							}
-						]
-					}
-				},
-				"$asuri": {
-					"type": "string",
-					"value": "/Formalisms/WMS/WMS.pattern/__pAnyNode/8.instance"
-				},
-				"$type": "/Formalisms/WMS/WMS.defaultIcons.pattern/__pAnyNodeIcon"
-			},
-			"9": {
-				"link-style": {
-					"type": "map<string,string>",
-					"value": {
-						"stroke": "#000000",
-						"stroke-dasharray": "",
-						"stroke-opacity": 0,
-						"stroke-width": 0
-					}
-				},
-				"arrowHead": {
-					"type": "ENUM(circle-black,circle-black-large,circle-white,circle-white-large,diamond-black,diamond-black-large,diamond-white,diamond-white-large,triangle-black,triangle-black-large,triangle-white,triangle-white-large,arrow-black,arrow-black-large,arrow-empty,arrow-empty-large,custom)",
-					"value": "custom"
-				},
-				"arrowTail": {
-					"type": "ENUM(circle-black,circle-black-large,circle-white,circle-white-large,diamond-black,diamond-black-large,diamond-white,diamond-white-large,triangle-black,triangle-black-large,triangle-white,triangle-white-large,arrow-black,arrow-black-large,arrow-empty,arrow-empty-large,custom)",
-					"value": "arrow-black"
-				},
-				"typename": {
-					"type": "string",
-					"value": "PatternContentsLink"
-				},
-				"position": {
-					"type": "list<double>",
-					"value": [
-						989.9371090158985,
-						259.7498656238586
-					]
-				},
-				"orientation": {
-					"type": "double",
-					"value": 0
-				},
-				"scale": {
-					"type": "list<double>",
-					"value": [
-						1,
-						1
-					]
-				},
-				"mapper": {
-					"type": "code",
-					"value": "/* specify code that evaluates to an associative array of the form {...,csattr:val,...} */"
-				},
-				"parser": {
-					"type": "code",
-					"value": "/* specify code that evaluates to an associative array of the form {...,attr:val,...} */"
-				},
-				"$contents": {
-					"type": "map<string,*>",
-					"value": {
-						"nodes": {},
-						"edges": []
-					}
-				},
-				"$asuri": {
-					"type": "string",
-					"value": "/Formalisms/__Transformations__/TransformationRule/TransformationRule/PatternContents/9.instance"
-				},
-				"$segments": {
-					"type": "map<string,list<string>>",
-					"value": {
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/RHSIcon/1.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/9.instance": "M925,225L989.9371090158985,259.7498656238586",
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/9.instance--/Formalisms/WMS/WMS.defaultIcons.pattern/__pAnyNodeIcon/8.instance": "M989.9371090158985,259.7498656238586L1054.874218031797,294.49973124771725"
-					}
-				},
-				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink"
-			},
-			"10": {
+			"14": {
 				"typename": {
 					"type": "string",
 					"value": "__pAnyNodeIcon"
@@ -922,7 +332,7 @@
 					"type": "list<double>",
 					"value": [
 						124,
-						255
+						247
 					]
 				},
 				"orientation": {
@@ -1136,11 +546,11 @@
 				},
 				"$asuri": {
 					"type": "string",
-					"value": "/Formalisms/WMS/WMS.pattern/__pAnyNode/10.instance"
+					"value": "/Formalisms/WMS/WMS.pattern/__pAnyNode/14.instance"
 				},
 				"$type": "/Formalisms/WMS/WMS.defaultIcons.pattern/__pAnyNodeIcon"
 			},
-			"11": {
+			"15": {
 				"link-style": {
 					"type": "map<string,string>",
 					"value": {
@@ -1165,8 +575,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						139.43597179730494,
-						262.6383007654841
+						139.4356130533328,
+						258.63837200986916
 					]
 				},
 				"orientation": {
@@ -1197,18 +607,18 @@
 				},
 				"$asuri": {
 					"type": "string",
-					"value": "/Formalisms/__Transformations__/TransformationRule/TransformationRule/PatternContents/11.instance"
+					"value": "/Formalisms/__Transformations__/TransformationRule/TransformationRule/PatternContents/15.instance"
 				},
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/NACIcon/2.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/11.instance": "M100,225L139.43597179730494,262.6383007654841",
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/11.instance--/Formalisms/WMS/WMS.defaultIcons.pattern/__pAnyNodeIcon/10.instance": "M139.43597179730494,262.6383007654841L178.87194359460986,300.27660153096815"
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/NACIcon/2.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/15.instance": "M100,225L139.4356130533328,258.63837200986916",
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/15.instance--/Formalisms/WMS/WMS.defaultIcons.pattern/__pAnyNodeIcon/14.instance": "M139.4356130533328,258.63837200986916L178.87122610666557,292.2767440197383"
 					}
 				},
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink"
 			},
-			"12": {
+			"16": {
 				"typename": {
 					"type": "string",
 					"value": "__pAnyNodeIcon"
@@ -1216,8 +626,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						122,
-						368
+						127,
+						361
 					]
 				},
 				"orientation": {
@@ -1431,11 +841,11 @@
 				},
 				"$asuri": {
 					"type": "string",
-					"value": "/Formalisms/WMS/WMS.pattern/__pAnyNode/12.instance"
+					"value": "/Formalisms/WMS/WMS.pattern/__pAnyNode/16.instance"
 				},
 				"$type": "/Formalisms/WMS/WMS.defaultIcons.pattern/__pAnyNodeIcon"
 			},
-			"13": {
+			"17": {
 				"link-style": {
 					"type": "map<string,string>",
 					"value": {
@@ -1460,8 +870,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						138.4359514977936,
-						319.1382661872637
+						140.93574184122104,
+						315.6382685693703
 					]
 				},
 				"orientation": {
@@ -1492,13 +902,603 @@
 				},
 				"$asuri": {
 					"type": "string",
-					"value": "/Formalisms/__Transformations__/TransformationRule/TransformationRule/PatternContents/13.instance"
+					"value": "/Formalisms/__Transformations__/TransformationRule/TransformationRule/PatternContents/17.instance"
 				},
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/NACIcon/2.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/13.instance": "M100,225L138.4359514977936,319.1382661872637",
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/13.instance--/Formalisms/WMS/WMS.defaultIcons.pattern/__pAnyNodeIcon/12.instance": "M138.4359514977936,319.1382661872637L176.8719029955872,413.2765323745274"
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/NACIcon/2.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/17.instance": "M100,225L140.93574184122104,315.6382685693703",
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/17.instance--/Formalisms/WMS/WMS.defaultIcons.pattern/__pAnyNodeIcon/16.instance": "M140.93574184122104,315.6382685693703L181.87148368244206,406.27653713874065"
+					}
+				},
+				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink"
+			},
+			"18": {
+				"typename": {
+					"type": "string",
+					"value": "__pAnyNodeIcon"
+				},
+				"position": {
+					"type": "list<double>",
+					"value": [
+						551,
+						253
+					]
+				},
+				"orientation": {
+					"type": "double",
+					"value": 0
+				},
+				"scale": {
+					"type": "list<double>",
+					"value": [
+						1,
+						1
+					]
+				},
+				"mapper": {
+					"type": "code",
+					"value": ""
+				},
+				"parser": {
+					"type": "code",
+					"value": ""
+				},
+				"$contents": {
+					"type": "map<string,*>",
+					"value": {
+						"nodes": {
+							"text": {
+								"textContent": {
+									"type": "string",
+									"value": "__pAnyNodeIcon"
+								},
+								"style": {
+									"type": "map<string,string>",
+									"value": {
+										"stroke": "#000000",
+										"stroke-dasharray": "",
+										"fill": "#000000",
+										"fill-opacity": "1",
+										"font-size": "13px"
+									}
+								},
+								"mapper": {
+									"type": "code",
+									"value": ""
+								},
+								"parser": {
+									"type": "code",
+									"value": ""
+								},
+								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Text",
+								"position": {
+									"type": "list<double>",
+									"value": [
+										10,
+										76
+									]
+								},
+								"orientation": {
+									"type": "double",
+									"value": 0
+								},
+								"scale": {
+									"type": "list<double>",
+									"value": [
+										1,
+										1
+									]
+								}
+							},
+							"rect": {
+								"width": {
+									"type": "double",
+									"value": 75
+								},
+								"height": {
+									"type": "double",
+									"value": 75
+								},
+								"cornerRadius": {
+									"type": "double",
+									"value": 15
+								},
+								"style": {
+									"type": "map<string,string>",
+									"value": {
+										"stroke": "#000000",
+										"fill": "#ffffff",
+										"fill-opacity": 0.75
+									}
+								},
+								"mapper": {
+									"type": "code",
+									"value": ""
+								},
+								"parser": {
+									"type": "code",
+									"value": ""
+								},
+								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Rectangle",
+								"position": {
+									"type": "list<double>",
+									"value": [
+										0,
+										0
+									]
+								},
+								"orientation": {
+									"type": "double",
+									"value": 0
+								},
+								"scale": {
+									"type": "list<double>",
+									"value": [
+										1,
+										1
+									]
+								}
+							},
+							"textBelowRect": {
+								"distance": {
+									"type": "double",
+									"value": 10
+								},
+								"alignment": {
+									"type": "ENUM(\"right\",\"left\",\"center\")",
+									"value": "center"
+								},
+								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Below",
+								"position": {
+									"type": "list<double>",
+									"value": [
+										5,
+										38
+									]
+								},
+								"orientation": {
+									"type": "double",
+									"value": 0
+								},
+								"scale": {
+									"type": "list<double>",
+									"value": [
+										1,
+										1
+									]
+								},
+								"link-style": {
+									"type": "map<string,string>",
+									"value": {
+										"stroke": "#00ff00",
+										"stroke-dasharray": "",
+										"stroke-opacity": 1,
+										"arrow-start": "none",
+										"arrow-end": "classic-wide-long"
+									}
+								}
+							},
+							"__pLabelText": {
+								"position": {
+									"type": "list<double>",
+									"value": [
+										0,
+										0
+									]
+								},
+								"orientation": {
+									"type": "double",
+									"value": 0
+								},
+								"scale": {
+									"type": "list<double>",
+									"value": [
+										1,
+										1
+									]
+								},
+								"textContent": {
+									"type": "string",
+									"value": "2"
+								},
+								"style": {
+									"type": "map<string,string>",
+									"value": {
+										"stroke": "#6000ff",
+										"fill": "#6000ff",
+										"font-size": "15px",
+										"opacity": "1"
+									}
+								},
+								"mapper": {
+									"type": "code",
+									"value": "({'textContent':getAttr('__pLabel')})"
+								},
+								"parser": {
+									"type": "code",
+									"value": "({'__pLabel':getAttr('textContent')})"
+								},
+								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Text"
+							}
+						},
+						"edges": [
+							{
+								"src": "text",
+								"dest": "textBelowRect"
+							},
+							{
+								"src": "textBelowRect",
+								"dest": "rect"
+							}
+						]
+					}
+				},
+				"$asuri": {
+					"type": "string",
+					"value": "/Formalisms/WMS/WMS.pattern/__pAnyNode/18.instance"
+				},
+				"$type": "/Formalisms/WMS/WMS.defaultIcons.pattern/__pAnyNodeIcon"
+			},
+			"19": {
+				"link-style": {
+					"type": "map<string,string>",
+					"value": {
+						"stroke": "#000000",
+						"stroke-dasharray": "",
+						"stroke-opacity": 0,
+						"stroke-width": 0
+					}
+				},
+				"arrowHead": {
+					"type": "ENUM(circle-black,circle-black-large,circle-white,circle-white-large,diamond-black,diamond-black-large,diamond-white,diamond-white-large,triangle-black,triangle-black-large,triangle-white,triangle-white-large,arrow-black,arrow-black-large,arrow-empty,arrow-empty-large,custom)",
+					"value": "custom"
+				},
+				"arrowTail": {
+					"type": "ENUM(circle-black,circle-black-large,circle-white,circle-white-large,diamond-black,diamond-black-large,diamond-white,diamond-white-large,triangle-black,triangle-black-large,triangle-white,triangle-white-large,arrow-black,arrow-black-large,arrow-empty,arrow-empty-large,custom)",
+					"value": "arrow-black"
+				},
+				"typename": {
+					"type": "string",
+					"value": "PatternContentsLink"
+				},
+				"position": {
+					"type": "list<double>",
+					"value": [
+						565.4359434363556,
+						261.638230804845
+					]
+				},
+				"orientation": {
+					"type": "double",
+					"value": 0
+				},
+				"scale": {
+					"type": "list<double>",
+					"value": [
+						1,
+						1
+					]
+				},
+				"mapper": {
+					"type": "code",
+					"value": "/* specify code that evaluates to an associative array of the form {...,csattr:val,...} */"
+				},
+				"parser": {
+					"type": "code",
+					"value": "/* specify code that evaluates to an associative array of the form {...,attr:val,...} */"
+				},
+				"$contents": {
+					"type": "map<string,*>",
+					"value": {
+						"nodes": {},
+						"edges": []
+					}
+				},
+				"$asuri": {
+					"type": "string",
+					"value": "/Formalisms/__Transformations__/TransformationRule/TransformationRule/PatternContents/19.instance"
+				},
+				"$segments": {
+					"type": "map<string,list<string>>",
+					"value": {
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/LHSIcon/0.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/19.instance": "M525,225L565.4359434363556,261.638230804845",
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/19.instance--/Formalisms/WMS/WMS.defaultIcons.pattern/__pAnyNodeIcon/18.instance": "M565.4359434363556,261.638230804845L605.8718868727112,298.27646160969005"
+					}
+				},
+				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink"
+			},
+			"20": {
+				"typename": {
+					"type": "string",
+					"value": "__pAnyNodeIcon"
+				},
+				"position": {
+					"type": "list<double>",
+					"value": [
+						1000,
+						251
+					]
+				},
+				"orientation": {
+					"type": "double",
+					"value": 0
+				},
+				"scale": {
+					"type": "list<double>",
+					"value": [
+						1,
+						1
+					]
+				},
+				"mapper": {
+					"type": "code",
+					"value": ""
+				},
+				"parser": {
+					"type": "code",
+					"value": ""
+				},
+				"$contents": {
+					"type": "map<string,*>",
+					"value": {
+						"nodes": {
+							"text": {
+								"textContent": {
+									"type": "string",
+									"value": "__pAnyNodeIcon"
+								},
+								"style": {
+									"type": "map<string,string>",
+									"value": {
+										"stroke": "#000000",
+										"stroke-dasharray": "",
+										"fill": "#000000",
+										"fill-opacity": "1",
+										"font-size": "13px"
+									}
+								},
+								"mapper": {
+									"type": "code",
+									"value": ""
+								},
+								"parser": {
+									"type": "code",
+									"value": ""
+								},
+								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Text",
+								"position": {
+									"type": "list<double>",
+									"value": [
+										10,
+										76
+									]
+								},
+								"orientation": {
+									"type": "double",
+									"value": 0
+								},
+								"scale": {
+									"type": "list<double>",
+									"value": [
+										1,
+										1
+									]
+								}
+							},
+							"rect": {
+								"width": {
+									"type": "double",
+									"value": 75
+								},
+								"height": {
+									"type": "double",
+									"value": 75
+								},
+								"cornerRadius": {
+									"type": "double",
+									"value": 15
+								},
+								"style": {
+									"type": "map<string,string>",
+									"value": {
+										"stroke": "#000000",
+										"fill": "#ffffff",
+										"fill-opacity": 0.75
+									}
+								},
+								"mapper": {
+									"type": "code",
+									"value": ""
+								},
+								"parser": {
+									"type": "code",
+									"value": ""
+								},
+								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Rectangle",
+								"position": {
+									"type": "list<double>",
+									"value": [
+										0,
+										0
+									]
+								},
+								"orientation": {
+									"type": "double",
+									"value": 0
+								},
+								"scale": {
+									"type": "list<double>",
+									"value": [
+										1,
+										1
+									]
+								}
+							},
+							"textBelowRect": {
+								"distance": {
+									"type": "double",
+									"value": 10
+								},
+								"alignment": {
+									"type": "ENUM(\"right\",\"left\",\"center\")",
+									"value": "center"
+								},
+								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Below",
+								"position": {
+									"type": "list<double>",
+									"value": [
+										5,
+										38
+									]
+								},
+								"orientation": {
+									"type": "double",
+									"value": 0
+								},
+								"scale": {
+									"type": "list<double>",
+									"value": [
+										1,
+										1
+									]
+								},
+								"link-style": {
+									"type": "map<string,string>",
+									"value": {
+										"stroke": "#00ff00",
+										"stroke-dasharray": "",
+										"stroke-opacity": 1,
+										"arrow-start": "none",
+										"arrow-end": "classic-wide-long"
+									}
+								}
+							},
+							"__pLabelText": {
+								"position": {
+									"type": "list<double>",
+									"value": [
+										0,
+										0
+									]
+								},
+								"orientation": {
+									"type": "double",
+									"value": 0
+								},
+								"scale": {
+									"type": "list<double>",
+									"value": [
+										1,
+										1
+									]
+								},
+								"textContent": {
+									"type": "string",
+									"value": "2"
+								},
+								"style": {
+									"type": "map<string,string>",
+									"value": {
+										"stroke": "#6000ff",
+										"fill": "#6000ff",
+										"font-size": "15px",
+										"opacity": "1"
+									}
+								},
+								"mapper": {
+									"type": "code",
+									"value": "({'textContent':getAttr('__pLabel')})"
+								},
+								"parser": {
+									"type": "code",
+									"value": "({'__pLabel':getAttr('textContent')})"
+								},
+								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Text"
+							}
+						},
+						"edges": [
+							{
+								"src": "text",
+								"dest": "textBelowRect"
+							},
+							{
+								"src": "textBelowRect",
+								"dest": "rect"
+							}
+						]
+					}
+				},
+				"$asuri": {
+					"type": "string",
+					"value": "/Formalisms/WMS/WMS.pattern/__pAnyNode/20.instance"
+				},
+				"$type": "/Formalisms/WMS/WMS.defaultIcons.pattern/__pAnyNodeIcon"
+			},
+			"21": {
+				"link-style": {
+					"type": "map<string,string>",
+					"value": {
+						"stroke": "#000000",
+						"stroke-dasharray": "",
+						"stroke-opacity": 0,
+						"stroke-width": 0
+					}
+				},
+				"arrowHead": {
+					"type": "ENUM(circle-black,circle-black-large,circle-white,circle-white-large,diamond-black,diamond-black-large,diamond-white,diamond-white-large,triangle-black,triangle-black-large,triangle-white,triangle-white-large,arrow-black,arrow-black-large,arrow-empty,arrow-empty-large,custom)",
+					"value": "custom"
+				},
+				"arrowTail": {
+					"type": "ENUM(circle-black,circle-black-large,circle-white,circle-white-large,diamond-black,diamond-black-large,diamond-white,diamond-white-large,triangle-black,triangle-black-large,triangle-white,triangle-white-large,arrow-black,arrow-black-large,arrow-empty,arrow-empty-large,custom)",
+					"value": "arrow-black"
+				},
+				"typename": {
+					"type": "string",
+					"value": "PatternContentsLink"
+				},
+				"position": {
+					"type": "list<double>",
+					"value": [
+						990.0677061323584,
+						260.7107461064296
+					]
+				},
+				"orientation": {
+					"type": "double",
+					"value": 0
+				},
+				"scale": {
+					"type": "list<double>",
+					"value": [
+						1,
+						1
+					]
+				},
+				"mapper": {
+					"type": "code",
+					"value": "/* specify code that evaluates to an associative array of the form {...,csattr:val,...} */"
+				},
+				"parser": {
+					"type": "code",
+					"value": "/* specify code that evaluates to an associative array of the form {...,attr:val,...} */"
+				},
+				"$contents": {
+					"type": "map<string,*>",
+					"value": {
+						"nodes": {},
+						"edges": []
+					}
+				},
+				"$asuri": {
+					"type": "string",
+					"value": "/Formalisms/__Transformations__/TransformationRule/TransformationRule/PatternContents/21.instance"
+				},
+				"$segments": {
+					"type": "map<string,list<string>>",
+					"value": {
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/RHSIcon/1.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/21.instance": "M925,225L990.0677061323584,260.7107461064296",
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/21.instance--/Formalisms/WMS/WMS.defaultIcons.pattern/__pAnyNodeIcon/20.instance": "M990.0673503838516,260.71055086296155L1054.8714471932174,296.27662173548134"
 					}
 				},
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink"
@@ -1537,66 +1537,7 @@
 				},
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule/NAC"
 			},
-			"5": {
-				"__pLabel": {
-					"type": "string",
-					"value": "1"
-				},
-				"__pPivotIn": {
-					"type": "string",
-					"value": ""
-				},
-				"__pPivotOut": {
-					"type": "string",
-					"value": ""
-				},
-				"__pMatchSubtypes": {
-					"type": "boolean",
-					"value": true
-				},
-				"pId": {
-					"type": "code",
-					"value": "result = True"
-				},
-				"has_stepped": {
-					"type": "code",
-					"value": "result = True"
-				},
-				"$type": "/Formalisms/WMS/WMS.pattern/__pAnyNode"
-			},
-			"7": {
-				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule/PatternContents"
-			},
-			"8": {
-				"__pLabel": {
-					"type": "string",
-					"value": "1"
-				},
-				"__pPivotIn": {
-					"type": "string",
-					"value": ""
-				},
-				"__pPivotOut": {
-					"type": "string",
-					"value": ""
-				},
-				"__pMatchSubtypes": {
-					"type": "boolean"
-				},
-				"pId": {
-					"type": "code",
-					"value": "result = getAttr()"
-				},
-				"has_stepped": {
-					"type": "code",
-					"value": "result = False"
-				},
-				"$type": "/Formalisms/WMS/WMS.pattern/__pAnyNode"
-			},
-			"9": {
-				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule/PatternContents"
-			},
-			"10": {
+			"14": {
 				"__pLabel": {
 					"type": "string",
 					"value": "2"
@@ -1623,10 +1564,10 @@
 				},
 				"$type": "/Formalisms/WMS/WMS.pattern/__pAnyNode"
 			},
-			"11": {
+			"15": {
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule/PatternContents"
 			},
-			"12": {
+			"16": {
 				"__pLabel": {
 					"type": "string",
 					"value": "1"
@@ -1653,42 +1594,101 @@
 				},
 				"$type": "/Formalisms/WMS/WMS.pattern/__pAnyNode"
 			},
-			"13": {
+			"17": {
+				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule/PatternContents"
+			},
+			"18": {
+				"__pLabel": {
+					"type": "string",
+					"value": "2"
+				},
+				"__pPivotIn": {
+					"type": "string",
+					"value": ""
+				},
+				"__pPivotOut": {
+					"type": "string",
+					"value": ""
+				},
+				"__pMatchSubtypes": {
+					"type": "boolean",
+					"value": true
+				},
+				"pId": {
+					"type": "code",
+					"value": "result = True"
+				},
+				"has_stepped": {
+					"type": "code",
+					"value": "result = True"
+				},
+				"$type": "/Formalisms/WMS/WMS.pattern/__pAnyNode"
+			},
+			"19": {
+				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule/PatternContents"
+			},
+			"20": {
+				"__pLabel": {
+					"type": "string",
+					"value": "2"
+				},
+				"__pPivotIn": {
+					"type": "string",
+					"value": ""
+				},
+				"__pPivotOut": {
+					"type": "string",
+					"value": ""
+				},
+				"__pMatchSubtypes": {
+					"type": "boolean"
+				},
+				"pId": {
+					"type": "code",
+					"value": "result = getAttr()"
+				},
+				"has_stepped": {
+					"type": "code",
+					"value": "result = False"
+				},
+				"$type": "/Formalisms/WMS/WMS.pattern/__pAnyNode"
+			},
+			"21": {
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule/PatternContents"
 			}
 		},
 		"edges": [
 			{
-				"src": "0",
-				"dest": "7"
+				"src": "2",
+				"dest": "15"
 			},
 			{
-				"src": "7",
-				"dest": "5"
+				"src": "15",
+				"dest": "14"
+			},
+			{
+				"src": "2",
+				"dest": "17"
+			},
+			{
+				"src": "17",
+				"dest": "16"
+			},
+			{
+				"src": "0",
+				"dest": "19"
+			},
+			{
+				"src": "19",
+				"dest": "18"
 			},
 			{
 				"src": "1",
-				"dest": "9"
+				"dest": "21"
 			},
 			{
-				"src": "9",
-				"dest": "8"
-			},
-			{
-				"src": "2",
-				"dest": "11"
-			},
-			{
-				"src": "11",
-				"dest": "10"
-			},
-			{
-				"src": "2",
-				"dest": "13"
-			},
-			{
-				"src": "13",
-				"dest": "12"
+				"src": "21",
+				"dest": "20"
 			}
 		],
 		"metamodels": [

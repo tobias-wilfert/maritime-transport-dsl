@@ -123,6 +123,11 @@
 				"default": "\"[PYTHON]\"\n\"Example:\t result = True\"\n\"Example:\t result = getAttr()\"\n\n\"[JAVASCRIPT]\"\n\"Example:\t true\"\n\"Example:\t getAttr()\""
 			},
 			{
+				"name": "got_this_turn",
+				"type": "code",
+				"default": "\"[PYTHON]\"\n\"Example:\t result = True\"\n\"Example:\t result = getAttr()\"\n\n\"[JAVASCRIPT]\"\n\"Example:\t true\"\n\"Example:\t getAttr()\""
+			},
+			{
 				"name": "pId",
 				"type": "code",
 				"default": "\"[PYTHON]\"\n\"Example:\t result = True\"\n\"Example:\t result = getAttr()\"\n\n\"[JAVASCRIPT]\"\n\"Example:\t true\"\n\"Example:\t getAttr()\""
@@ -244,6 +249,11 @@
 				"default": "\"[PYTHON]\"\n\"Example:\t result = True\"\n\"Example:\t result = getAttr()\"\n\n\"[JAVASCRIPT]\"\n\"Example:\t true\"\n\"Example:\t getAttr()\""
 			},
 			{
+				"name": "got_this_turn",
+				"type": "code",
+				"default": "\"[PYTHON]\"\n\"Example:\t result = True\"\n\"Example:\t result = getAttr()\"\n\n\"[JAVASCRIPT]\"\n\"Example:\t true\"\n\"Example:\t getAttr()\""
+			},
+			{
 				"name": "pId",
 				"type": "code",
 				"default": "\"[PYTHON]\"\n\"Example:\t result = True\"\n\"Example:\t result = getAttr()\"\n\n\"[JAVASCRIPT]\"\n\"Example:\t true\"\n\"Example:\t getAttr()\""
@@ -282,6 +292,11 @@
 			},
 			{
 				"name": "got_watercraft",
+				"type": "code",
+				"default": "\"[PYTHON]\"\n\"Example:\t result = True\"\n\"Example:\t result = getAttr()\"\n\n\"[JAVASCRIPT]\"\n\"Example:\t true\"\n\"Example:\t getAttr()\""
+			},
+			{
+				"name": "got_this_turn",
 				"type": "code",
 				"default": "\"[PYTHON]\"\n\"Example:\t result = True\"\n\"Example:\t result = getAttr()\"\n\n\"[JAVASCRIPT]\"\n\"Example:\t true\"\n\"Example:\t getAttr()\""
 			},
