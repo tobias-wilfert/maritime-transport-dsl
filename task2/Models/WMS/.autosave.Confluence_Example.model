@@ -169,7 +169,7 @@
 							"102": {
 								"textContent": {
 									"type": "string",
-									"value": "0"
+									"value": 9
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -437,7 +437,7 @@
 							"102": {
 								"textContent": {
 									"type": "string",
-									"value": "0"
+									"value": 10
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -805,7 +805,7 @@
 							"79": {
 								"src": {
 									"type": "string",
-									"value": "https://i.imgur.com/2fZoJLC.png"
+									"value": "https://i.imgur.com/OK2FHgj.png"
 								},
 								"width": {
 									"type": "double",
@@ -1778,7 +1778,7 @@
 							"98": {
 								"textContent": {
 									"type": "string",
-									"value": "1"
+									"value": 1
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -1854,7 +1854,7 @@
 							"100": {
 								"textContent": {
 									"type": "string",
-									"value": "0"
+									"value": 12
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -2207,7 +2207,7 @@
 							"98": {
 								"textContent": {
 									"type": "string",
-									"value": "1"
+									"value": 1
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -2283,7 +2283,7 @@
 							"100": {
 								"textContent": {
 									"type": "string",
-									"value": "0"
+									"value": 11
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -3354,7 +3354,7 @@
 			"76": {
 				"counter": {
 					"type": "int",
-					"value": "0"
+					"value": 9
 				},
 				"pId": {
 					"type": "int",
@@ -3369,7 +3369,7 @@
 			"77": {
 				"counter": {
 					"type": "int",
-					"value": "0"
+					"value": 10
 				},
 				"pId": {
 					"type": "int",
@@ -3384,11 +3384,11 @@
 			"78": {
 				"got_watercraft": {
 					"type": "boolean",
-					"value": "false"
+					"value": true
 				},
 				"got_this_turn": {
 					"type": "boolean",
-					"value": "false"
+					"value": false
 				},
 				"pId": {
 					"type": "int",
@@ -3403,11 +3403,11 @@
 			"79": {
 				"got_watercraft": {
 					"type": "boolean",
-					"value": "false"
+					"value": false
 				},
 				"got_this_turn": {
 					"type": "boolean",
-					"value": "false"
+					"value": false
 				},
 				"pId": {
 					"type": "int",
@@ -3422,15 +3422,15 @@
 			"80": {
 				"last_direction": {
 					"type": "boolean",
-					"value": "false"
+					"value": false
 				},
 				"got_watercraft": {
 					"type": "boolean",
-					"value": "false"
+					"value": true
 				},
 				"got_this_turn": {
 					"type": "boolean",
-					"value": "false"
+					"value": false
 				},
 				"pId": {
 					"type": "int",
@@ -3445,11 +3445,11 @@
 			"81": {
 				"got_watercraft": {
 					"type": "boolean",
-					"value": "false"
+					"value": true
 				},
 				"got_this_turn": {
 					"type": "boolean",
-					"value": "false"
+					"value": false
 				},
 				"pId": {
 					"type": "int",
@@ -3464,11 +3464,11 @@
 			"82": {
 				"got_watercraft": {
 					"type": "boolean",
-					"value": "false"
+					"value": true
 				},
 				"got_this_turn": {
 					"type": "boolean",
-					"value": "false"
+					"value": false
 				},
 				"pId": {
 					"type": "int",
@@ -3487,11 +3487,11 @@
 				},
 				"cooldown": {
 					"type": "int",
-					"value": "1"
+					"value": 1
 				},
 				"counter": {
 					"type": "int",
-					"value": "0"
+					"value": 12
 				},
 				"pId": {
 					"type": "int",
@@ -3510,11 +3510,11 @@
 				},
 				"cooldown": {
 					"type": "int",
-					"value": "1"
+					"value": 1
 				},
 				"counter": {
 					"type": "int",
-					"value": "0"
+					"value": 11
 				},
 				"pId": {
 					"type": "int",

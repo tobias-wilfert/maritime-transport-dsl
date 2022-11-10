@@ -1522,7 +1522,7 @@
 			"1": {
 				"Action": {
 					"type": "code",
-					"value": "pass"
+					"value": "if getAttr('$type', '2') == '/Formalisms/WMS/WMS/Segment' or getAttr('$type', '2') == '/Formalisms/WMS/WMS/Confluence':\n    setAttr('got_this_turn', False, '2')\n\npass"
 				},
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule/RHS"
 			},

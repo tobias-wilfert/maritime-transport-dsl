@@ -2598,7 +2598,7 @@
 			"1": {
 				"Action": {
 					"type": "code",
-					"value": "print(f\"Simulate the moving of the ship from {getAttr('pId', '2')} to {getAttr('pId', '1')}\")\npass"
+					"value": "print(f\"Simulate the moving of the ship from confluence {getAttr('pId', '2')} to {getAttr('pId', '1')}\")\n\nif not getAttr('got_watercraft', '1'):  # Check if the node has capacity\n    if getAttr('got_watercraft', '2') and getAttr('last_direction', '2') and not getAttr('got_this_turn', '2'): # Check if the confluence has a ship and if it points our direction\n        setAttr('got_watercraft', False, '2')  # Take the Watercraft\n        setAttr('got_watercraft', True, '1') # Take the watercraft\n        setAttr('got_this_turn', True, '1') # Indicate that we just got the ship\n\npass"
 				},
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule/RHS"
 			},
