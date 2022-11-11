@@ -2417,7 +2417,8 @@
 		"edges": [],
 		"metamodels": [
 			"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons",
-			"/Formalisms/WMS/WMS.defaultIcons.pattern"
+			"/Formalisms/WMS/WMS.defaultIcons.pattern",
+			"/Formalisms/__Transformations__/Transformation/MoTif.defaultIcons"
 		]
 	},
 	"asm": {
@@ -2732,7 +2733,8 @@
 		],
 		"metamodels": [
 			"/Formalisms/__Transformations__/TransformationRule/TransformationRule",
-			"/Formalisms/WMS/WMS.pattern"
+			"/Formalisms/WMS/WMS.pattern",
+			"/Formalisms/__Transformations__/Transformation/MoTif"
 		]
 	}
 }

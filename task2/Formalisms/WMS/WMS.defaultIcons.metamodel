@@ -235,7 +235,7 @@
 							},
 							"mapper": {
 								"type": "code",
-								"value": "/* specify code that evaluates to an associative array of the form {...,csattr:val,...} */"
+								"value": "/* specify code that evaluates to an associative array of the form {...,csattr:val,...} */\n// base case; not stepped\nvar src=\"https://i.imgur.com/lBcc7BL.png\";\nif (getAttr(\"has_stepped\")){\n  src=\"https://i.imgur.com/ct01dyT.png\"; // has stepped\n}\n({'src':src})"
 							},
 							"parser": {
 								"type": "code",
@@ -678,7 +678,7 @@
 							},
 							"mapper": {
 								"type": "code",
-								"value": "/* specify code that evaluates to an associative array of the form {...,csattr:val,...} */"
+								"value": "/* specify code that evaluates to an associative array of the form {...,csattr:val,...} */\n// base case; not stepped\nvar src=\"https://i.imgur.com/iz4PBFb.png\";\nif (getAttr(\"has_stepped\")){\n  src=\"https://i.imgur.com/kUGpy13.png\"; // has stepped\n}\n({'src':src})"
 							},
 							"parser": {
 								"type": "code",
@@ -953,7 +953,7 @@
 							},
 							"mapper": {
 								"type": "code",
-								"value": "/* specify code that evaluates to an associative array of the form {...,csattr:val,...} */\nvar src=\"https://i.imgur.com/OK2FHgj.png\";\nif (getAttr(\"got_watercraft\")){\n  src=\"https://i.imgur.com/2fZoJLC.png\";\n}\n({'src':src})"
+								"value": "/* specify code that evaluates to an associative array of the form {...,csattr:val,...} */\n// base case; not stepped and no watercraft\nvar src=\"https://i.imgur.com/OK2FHgj.png\";\nif (getAttr(\"got_watercraft\")){\n  if (getAttr(\"has_stepped\")){\n    if (getAttr(\"got_this_turn\")){\n      src=\"https://i.imgur.com/CBU596h.png\" // has NEW watercraft AND stepped\n    }else{\n      src=\"https://i.imgur.com/LZCToZI.png\" // has OLD watercraft AND stepped\n    }\n  }else{\n    src=\"https://i.imgur.com/2fZoJLC.png\"; // has watercraft and NOT stepped\n  }\n}else if (getAttr(\"has_stepped\")){\n  src=\"https://i.imgur.com/vFzQR5X.png\"; // has stepped and NO watercraft\n}\n({'src':src})"
 							},
 							"parser": {
 								"type": "code",
@@ -1070,52 +1070,6 @@
 				"type": "map<string,*>",
 				"default": {
 					"nodes": {
-						"53": {
-							"textContent": {
-								"type": "string",
-								"value": "Direction: "
-							},
-							"style": {
-								"type": "map<string,string>",
-								"value": {
-									"stroke": "#000000",
-									"stroke-dasharray": "",
-									"fill": "#000000",
-									"fill-opacity": 1,
-									"font-size": "20px",
-									"stroke-width": 1,
-									"arrow-start": "none",
-									"arrow-end": "none"
-								}
-							},
-							"mapper": {
-								"type": "code",
-								"value": "/* specify code that evaluates to an associative array of the form {...,csattr:val,...} */\n({textContent:'Direction: ' + getAttr(\"last_direction\")})\n"
-							},
-							"parser": {
-								"type": "code",
-								"value": "/* specify code that evaluates to an associative array of the form {...,attr:val,...} */"
-							},
-							"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Text",
-							"position": {
-								"type": "list<double>",
-								"value": [
-									30,
-									393
-								]
-							},
-							"orientation": {
-								"type": "double",
-								"value": 0
-							},
-							"scale": {
-								"type": "list<double>",
-								"value": [
-									1,
-									1
-								]
-							}
-						},
 						"84": {
 							"textContent": {
 								"type": "string",
@@ -1190,7 +1144,7 @@
 							},
 							"mapper": {
 								"type": "code",
-								"value": "/* specify code that evaluates to an associative array of the form {...,csattr:val,...} */\nvar src=\"https://i.imgur.com/zT4WGeM.png\";\nif (getAttr(\"got_watercraft\")){\n  src=\"https://i.imgur.com/Su7jbX2.png\";\n}\n({'src':src})"
+								"value": "/* specify code that evaluates to an associative array of the form {...,csattr:val,...} */\n// base case 0 - no WC not stepped not new,mode 0\nvar src=\"https://i.imgur.com/sUnpybU.png\";\nif (getAttr(\"last_direction\")){ // if TRUE mode is 1 (orange arrow)\n    src=\"https://i.imgur.com/qbbDu2J.png\";\n    if (getAttr(\"got_watercraft\")){\n        if (getAttr(\"has_stepped\")){\n          if (getAttr(\"got_this_turn\")){\n            src=\"https://i.imgur.com/i8ER886.png\" // has NEW watercraft AND stepped\n          }else{\n            src=\"https://i.imgur.com/hQhRArx.png\" // has OLD watercraft AND stepped\n          }\n        }else{\n          src=\"https://i.imgur.com/BqgQ5fd.png\"; // has watercraft and NOT stepped\n        }\n    }else if (getAttr(\"has_stepped\")){\n        src=\"https://i.imgur.com/siQUwKK.png\"; // has stepped and NO watercraft\n    }\n}else{ // ELSE mode is 0 (blue arrow)\n    if (getAttr(\"got_watercraft\")){\n        if (getAttr(\"has_stepped\")){\n          if (getAttr(\"got_this_turn\")){\n            src=\"https://i.imgur.com/JBsSLYE.png\" // has NEW watercraft AND stepped\n          }else{\n            src=\"https://i.imgur.com/cnxesKa.png\" // has OLD watercraft AND stepped\n          }\n        }else{\n          src=\"https://i.imgur.com/Bea57AF.png\"; // has watercraft and NOT stepped\n        }\n    }else if (getAttr(\"has_stepped\")){\n        src=\"https://i.imgur.com/RBkyITy.png\"; // has stepped and NO watercraft\n    }\n}\n({'src':src})"
 							},
 							"parser": {
 								"type": "code",
@@ -1245,36 +1199,6 @@
 									"stroke-width": 1
 								}
 							}
-						},
-						"88": {
-							"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Contain",
-							"position": {
-								"type": "list<double>",
-								"value": [
-									47.12109375,
-									212.5
-								]
-							},
-							"orientation": {
-								"type": "double",
-								"value": 0
-							},
-							"scale": {
-								"type": "list<double>",
-								"value": [
-									1,
-									1
-								]
-							},
-							"link-style": {
-								"type": "map<string,string>",
-								"value": {
-									"stroke": "#00ffff",
-									"stroke-dasharray": "",
-									"stroke-opacity": 0.1,
-									"stroke-width": 1
-								}
-							}
 						}
 					},
 					"edges": [
@@ -1285,14 +1209,6 @@
 						{
 							"src": "86",
 							"dest": "84"
-						},
-						{
-							"src": "85",
-							"dest": "88"
-						},
-						{
-							"src": "88",
-							"dest": "53"
 						}
 					]
 				}
