@@ -2254,7 +2254,7 @@
 			"1": {
 				"Action": {
 					"type": "code",
-					"value": "print(f\"Update the Source: {getAttr('pId', '1')}\")\n\nif int(getAttr('cooldown', '1')) == 1:\n    # setAttr('cooldown', int(getAttr('rate', '1')), '1') # Reset of the Cooldown\nelse:\n    setAttr('cooldown', int(getAttr('cooldown', '1')) - 1, '1') # Decrease the cooldown\n\npass"
+					"value": "print(f\"Update the Source: {getAttr('pId', '1')}\")\n\nif int(getAttr('cooldown', '1')) != 1:\n    setAttr('cooldown', int(getAttr('cooldown', '1')) - 1, '1') # Decrease the cooldown\n\npass"
 				},
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule/RHS"
 			},

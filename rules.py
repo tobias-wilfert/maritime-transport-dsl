@@ -150,11 +150,10 @@ if not getAttr('got_watercraft', '1'):  # Check if the node has capacity
 
 # Check if our cooldown is not 1
 # If so decrease
-if int(getAttr('cooldown', '1')) == 1:
-    setAttr('cooldown', int(getAttr('rate', '1')), '1') # Reset of the Cooldown
-else:
+if int(getAttr('cooldown', '1')) != 1:
     setAttr('cooldown', int(getAttr('cooldown', '1')) - 1, '1') # Decrease the cooldown
 
+pass
 
 # Goes into the Reset Nodes Rule
 if getAttr('$type', '2') == '/Formalisms/WMS/WMS/Segment' or getAttr('$type', '2') == '/Formalisms/WMS/WMS/Confluence':
