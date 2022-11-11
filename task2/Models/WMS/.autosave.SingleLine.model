@@ -1,7 +1,7 @@
 {
 	"csm": {
 		"nodes": {
-			"0": {
+			"32": {
 				"typename": {
 					"type": "string",
 					"value": "SourceIcon"
@@ -9,8 +9,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						148,
-						204
+						453,
+						194
 					]
 				},
 				"orientation": {
@@ -85,7 +85,7 @@
 							"55": {
 								"src": {
 									"type": "string",
-									"value": "https://i.imgur.com/ct01dyT.png"
+									"value": "https://i.imgur.com/lBcc7BL.png"
 								},
 								"width": {
 									"type": "double",
@@ -238,7 +238,7 @@
 							"98": {
 								"textContent": {
 									"type": "string",
-									"value": 1
+									"value": "1"
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -314,7 +314,7 @@
 							"100": {
 								"textContent": {
 									"type": "string",
-									"value": 12
+									"value": "0"
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -426,11 +426,11 @@
 				},
 				"$asuri": {
 					"type": "string",
-					"value": "/Formalisms/WMS/WMS/Source/0.instance"
+					"value": "/Formalisms/WMS/WMS/Source/32.instance"
 				},
 				"$type": "/Formalisms/WMS/WMS.defaultIcons/SourceIcon"
 			},
-			"1": {
+			"33": {
 				"typename": {
 					"type": "string",
 					"value": "SegmentIcon"
@@ -438,8 +438,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						806,
-						157
+						996,
+						142
 					]
 				},
 				"orientation": {
@@ -514,7 +514,7 @@
 							"79": {
 								"src": {
 									"type": "string",
-									"value": "https://i.imgur.com/CBU596h.png"
+									"value": "https://i.imgur.com/OK2FHgj.png"
 								},
 								"width": {
 									"type": "double",
@@ -610,11 +610,11 @@
 				},
 				"$asuri": {
 					"type": "string",
-					"value": "/Formalisms/WMS/WMS/Segment/1.instance"
+					"value": "/Formalisms/WMS/WMS/Segment/33.instance"
 				},
 				"$type": "/Formalisms/WMS/WMS.defaultIcons/SegmentIcon"
 			},
-			"2": {
+			"34": {
 				"typename": {
 					"type": "string",
 					"value": "SinkIcon"
@@ -622,8 +622,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1462,
-						96
+						1548,
+						119
 					]
 				},
 				"orientation": {
@@ -782,7 +782,7 @@
 							"102": {
 								"textContent": {
 									"type": "string",
-									"value": 12
+									"value": "0"
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -878,245 +878,9 @@
 				},
 				"$asuri": {
 					"type": "string",
-					"value": "/Formalisms/WMS/WMS/Sink/2.instance"
+					"value": "/Formalisms/WMS/WMS/Sink/34.instance"
 				},
 				"$type": "/Formalisms/WMS/WMS.defaultIcons/SinkIcon"
-			},
-			"3": {
-				"link-style": {
-					"type": "map<string,string>",
-					"value": {
-						"stroke": "#000000",
-						"stroke-dasharray": "",
-						"stroke-opacity": 1,
-						"stroke-width": 4
-					}
-				},
-				"arrowHead": {
-					"type": "ENUM(circle-black,circle-black-large,circle-white,circle-white-large,diamond-black,diamond-black-large,diamond-white,diamond-white-large,triangle-black,triangle-black-large,triangle-white,triangle-white-large,arrow-black,arrow-black-large,arrow-empty,arrow-empty-large,custom)",
-					"value": "custom"
-				},
-				"arrowTail": {
-					"type": "ENUM(circle-black,circle-black-large,circle-white,circle-white-large,diamond-black,diamond-black-large,diamond-white,diamond-white-large,triangle-black,triangle-black-large,triangle-white,triangle-white-large,arrow-black,arrow-black-large,arrow-empty,arrow-empty-large,custom)",
-					"value": "arrow-black"
-				},
-				"typename": {
-					"type": "string",
-					"value": "connection0Link"
-				},
-				"position": {
-					"type": "list<double>",
-					"value": [
-						724.1496183076944,
-						437.9862595431709
-					]
-				},
-				"orientation": {
-					"type": "double",
-					"value": 0
-				},
-				"scale": {
-					"type": "list<double>",
-					"value": [
-						1,
-						1
-					]
-				},
-				"mapper": {
-					"type": "code",
-					"value": "/* specify code that evaluates to an associative array of the form {...,csattr:val,...} */"
-				},
-				"parser": {
-					"type": "code",
-					"value": "/* specify code that evaluates to an associative array of the form {...,attr:val,...} */"
-				},
-				"$contents": {
-					"type": "map<string,*>",
-					"value": {
-						"nodes": {
-							"275": {
-								"segments": {
-									"type": "string",
-									"value": "m0,0 l20,8 l-20,8 l6,-8 z"
-								},
-								"style": {
-									"type": "map<string,string>",
-									"value": {
-										"stroke": "#000000",
-										"fill": "#000000",
-										"opacity": 1,
-										"stroke-width": 1
-									}
-								},
-								"mapper": {
-									"type": "code",
-									"value": ""
-								},
-								"parser": {
-									"type": "code",
-									"value": "/* specify code that evaluates to an associative array of the form {...,attr:val,...} */"
-								},
-								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Path",
-								"position": {
-									"type": "list<double>",
-									"value": [
-										"0;195.11808162672924,99.58094955201497%",
-										"0;-25.952672605963755,-9.14518924457278%"
-									]
-								},
-								"orientation": {
-									"type": "double",
-									"value": "0;-5.247138901616426"
-								},
-								"scale": {
-									"type": "list<double>",
-									"value": [
-										1,
-										1
-									]
-								},
-								"$linkDecoratorInfo": {
-									"type": "map<string,double>",
-									"value": {
-										"xratio": 1,
-										"yoffset": -8
-									}
-								}
-							}
-						},
-						"edges": []
-					}
-				},
-				"$asuri": {
-					"type": "string",
-					"value": "/Formalisms/WMS/WMS/connection0/3.instance"
-				},
-				"$segments": {
-					"type": "map<string,list<string>>",
-					"value": {
-						"/Formalisms/WMS/WMS.defaultIcons/SourceIcon/0.instance--/Formalisms/WMS/WMS.defaultIcons/connection0Link/3.instance": "M528,456L724.1496183076944,437.9862595431709",
-						"/Formalisms/WMS/WMS.defaultIcons/connection0Link/3.instance--/Formalisms/WMS/WMS.defaultIcons/SegmentIcon/1.instance": "M724.0745807337886,437.99315074893775L919.9993150739895,420.0000629013683"
-					}
-				},
-				"$type": "/Formalisms/WMS/WMS.defaultIcons/connection0Link"
-			},
-			"4": {
-				"link-style": {
-					"type": "map<string,string>",
-					"value": {
-						"stroke": "#000000",
-						"stroke-dasharray": "",
-						"stroke-opacity": 1,
-						"stroke-width": 4
-					}
-				},
-				"arrowHead": {
-					"type": "ENUM(circle-black,circle-black-large,circle-white,circle-white-large,diamond-black,diamond-black-large,diamond-white,diamond-white-large,triangle-black,triangle-black-large,triangle-white,triangle-white-large,arrow-black,arrow-black-large,arrow-empty,arrow-empty-large,custom)",
-					"value": "custom"
-				},
-				"arrowTail": {
-					"type": "ENUM(circle-black,circle-black-large,circle-white,circle-white-large,diamond-black,diamond-black-large,diamond-white,diamond-white-large,triangle-black,triangle-black-large,triangle-white,triangle-white-large,arrow-black,arrow-black-large,arrow-empty,arrow-empty-large,custom)",
-					"value": "arrow-black"
-				},
-				"typename": {
-					"type": "string",
-					"value": "connection0Link"
-				},
-				"position": {
-					"type": "list<double>",
-					"value": [
-						1408.649605249344,
-						384.9889473694417
-					]
-				},
-				"orientation": {
-					"type": "double",
-					"value": 0
-				},
-				"scale": {
-					"type": "list<double>",
-					"value": [
-						1,
-						1
-					]
-				},
-				"mapper": {
-					"type": "code",
-					"value": "/* specify code that evaluates to an associative array of the form {...,csattr:val,...} */"
-				},
-				"parser": {
-					"type": "code",
-					"value": "/* specify code that evaluates to an associative array of the form {...,attr:val,...} */"
-				},
-				"$contents": {
-					"type": "map<string,*>",
-					"value": {
-						"nodes": {
-							"275": {
-								"segments": {
-									"type": "string",
-									"value": "m0,0 l20,8 l-20,8 l6,-8 z"
-								},
-								"style": {
-									"type": "map<string,string>",
-									"value": {
-										"stroke": "#000000",
-										"fill": "#000000",
-										"opacity": 1,
-										"stroke-width": 1
-									}
-								},
-								"mapper": {
-									"type": "code",
-									"value": ""
-								},
-								"parser": {
-									"type": "code",
-									"value": "/* specify code that evaluates to an associative array of the form {...,attr:val,...} */"
-								},
-								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Path",
-								"position": {
-									"type": "list<double>",
-									"value": [
-										"0;188.7602638041344,99.72820949676425%",
-										"0;-21.96715180216728,-7.367783287359958%"
-									]
-								},
-								"orientation": {
-									"type": "double",
-									"value": "0;-4.225257510927583"
-								},
-								"scale": {
-									"type": "list<double>",
-									"value": [
-										1,
-										1
-									]
-								},
-								"$linkDecoratorInfo": {
-									"type": "map<string,double>",
-									"value": {
-										"xratio": 1,
-										"yoffset": -8
-									}
-								}
-							}
-						},
-						"edges": []
-					}
-				},
-				"$asuri": {
-					"type": "string",
-					"value": "/Formalisms/WMS/WMS/connection0/4.instance"
-				},
-				"$segments": {
-					"type": "map<string,list<string>>",
-					"value": {
-						"/Formalisms/WMS/WMS.defaultIcons/SegmentIcon/1.instance--/Formalisms/WMS/WMS.defaultIcons/connection0Link/4.instance": "M1219,399L1408.649605249344,384.9889473694417",
-						"/Formalisms/WMS/WMS.defaultIcons/connection0Link/4.instance--/Formalisms/WMS/WMS.defaultIcons/SinkIcon/2.instance": "M1408.574566411032,384.99449113586047L1597.9992917164673,371.00005232701557"
-					}
-				},
-				"$type": "/Formalisms/WMS/WMS.defaultIcons/connection0Link"
 			}
 		},
 		"edges": [],
@@ -1126,18 +890,18 @@
 	},
 	"asm": {
 		"nodes": {
-			"0": {
+			"32": {
 				"rate": {
 					"type": "int",
 					"value": "1"
 				},
 				"cooldown": {
 					"type": "int",
-					"value": 1
+					"value": "1"
 				},
 				"counter": {
 					"type": "int",
-					"value": 12
+					"value": "0"
 				},
 				"pId": {
 					"type": "int",
@@ -1145,18 +909,18 @@
 				},
 				"has_stepped": {
 					"type": "boolean",
-					"value": true
+					"value": false
 				},
 				"$type": "/Formalisms/WMS/WMS/Source"
 			},
-			"1": {
+			"33": {
 				"got_watercraft": {
 					"type": "boolean",
-					"value": true
+					"value": false
 				},
 				"got_this_turn": {
 					"type": "boolean",
-					"value": true
+					"value": false
 				},
 				"pId": {
 					"type": "int",
@@ -1164,14 +928,14 @@
 				},
 				"has_stepped": {
 					"type": "boolean",
-					"value": true
+					"value": false
 				},
 				"$type": "/Formalisms/WMS/WMS/Segment"
 			},
-			"2": {
+			"34": {
 				"counter": {
 					"type": "int",
-					"value": 12
+					"value": "0"
 				},
 				"pId": {
 					"type": "int",
@@ -1179,35 +943,12 @@
 				},
 				"has_stepped": {
 					"type": "boolean",
-					"value": true
+					"value": "false"
 				},
 				"$type": "/Formalisms/WMS/WMS/Sink"
-			},
-			"3": {
-				"$type": "/Formalisms/WMS/WMS/connection0"
-			},
-			"4": {
-				"$type": "/Formalisms/WMS/WMS/connection0"
 			}
 		},
-		"edges": [
-			{
-				"src": "0",
-				"dest": "3"
-			},
-			{
-				"src": "3",
-				"dest": "1"
-			},
-			{
-				"src": "1",
-				"dest": "4"
-			},
-			{
-				"src": "4",
-				"dest": "2"
-			}
-		],
+		"edges": [],
 		"metamodels": [
 			"/Formalisms/WMS/WMS"
 		]

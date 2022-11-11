@@ -1,7 +1,7 @@
 {
 	"csm": {
 		"nodes": {
-			"0": {
+			"32": {
 				"typename": {
 					"type": "string",
 					"value": "SourceIcon"
@@ -9,8 +9,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						148,
-						204
+						453,
+						194
 					]
 				},
 				"orientation": {
@@ -238,7 +238,7 @@
 							"98": {
 								"textContent": {
 									"type": "string",
-									"value": 1
+									"value": "1"
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -426,11 +426,11 @@
 				},
 				"$asuri": {
 					"type": "string",
-					"value": "/Formalisms/WMS/WMS/Source/0.instance"
+					"value": "/Formalisms/WMS/WMS/Source/32.instance"
 				},
 				"$type": "/Formalisms/WMS/WMS.defaultIcons/SourceIcon"
 			},
-			"1": {
+			"33": {
 				"typename": {
 					"type": "string",
 					"value": "SegmentIcon"
@@ -438,8 +438,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						806,
-						157
+						996,
+						142
 					]
 				},
 				"orientation": {
@@ -610,11 +610,11 @@
 				},
 				"$asuri": {
 					"type": "string",
-					"value": "/Formalisms/WMS/WMS/Segment/1.instance"
+					"value": "/Formalisms/WMS/WMS/Segment/33.instance"
 				},
 				"$type": "/Formalisms/WMS/WMS.defaultIcons/SegmentIcon"
 			},
-			"2": {
+			"34": {
 				"typename": {
 					"type": "string",
 					"value": "SinkIcon"
@@ -622,8 +622,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1462,
-						96
+						1548,
+						119
 					]
 				},
 				"orientation": {
@@ -782,7 +782,7 @@
 							"102": {
 								"textContent": {
 									"type": "string",
-									"value": 1
+									"value": "0"
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -878,11 +878,11 @@
 				},
 				"$asuri": {
 					"type": "string",
-					"value": "/Formalisms/WMS/WMS/Sink/2.instance"
+					"value": "/Formalisms/WMS/WMS/Sink/34.instance"
 				},
 				"$type": "/Formalisms/WMS/WMS.defaultIcons/SinkIcon"
 			},
-			"3": {
+			"35": {
 				"link-style": {
 					"type": "map<string,string>",
 					"value": {
@@ -907,8 +907,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						724.1496183076944,
-						437.9862595431709
+						1004.6499999773266,
+						432.50858585728804
 					]
 				},
 				"orientation": {
@@ -960,13 +960,13 @@
 								"position": {
 									"type": "list<double>",
 									"value": [
-										"0;195.11808162672924,99.58094955201497%",
-										"0;-25.952672605963755,-9.14518924457278%"
+										"0;148.8062557085807,99.83658595313285%",
+										"0;0.5044352659955393,5.714552057923453%"
 									]
 								},
 								"orientation": {
 									"type": "double",
-									"value": "0;-5.247138901616426"
+									"value": "0;3.2759818132341576"
 								},
 								"scale": {
 									"type": "list<double>",
@@ -989,18 +989,18 @@
 				},
 				"$asuri": {
 					"type": "string",
-					"value": "/Formalisms/WMS/WMS/connection0/3.instance"
+					"value": "/Formalisms/WMS/WMS/connection0/35.instance"
 				},
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/WMS/WMS.defaultIcons/SourceIcon/0.instance--/Formalisms/WMS/WMS.defaultIcons/connection0Link/3.instance": "M528,456L724.1496183076944,437.9862595431709",
-						"/Formalisms/WMS/WMS.defaultIcons/connection0Link/3.instance--/Formalisms/WMS/WMS.defaultIcons/SegmentIcon/1.instance": "M724.0745807337886,437.99315074893775L919.9993150739895,420.0000629013683"
+						"/Formalisms/WMS/WMS.defaultIcons/SourceIcon/32.instance--/Formalisms/WMS/WMS.defaultIcons/connection0Link/35.instance": "M856,424L1004.6499999773266,432.50858585728804",
+						"/Formalisms/WMS/WMS.defaultIcons/connection0Link/35.instance--/Formalisms/WMS/WMS.defaultIcons/SegmentIcon/33.instance": "M1004.574696966897,432.5042755839638L1152.9990915212734,440.9999479995342"
 					}
 				},
 				"$type": "/Formalisms/WMS/WMS.defaultIcons/connection0Link"
 			},
-			"4": {
+			"36": {
 				"link-style": {
 					"type": "map<string,string>",
 					"value": {
@@ -1025,8 +1025,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1408.649605249344,
-						384.9889473694417
+						1557,
+						401.5
 					]
 				},
 				"orientation": {
@@ -1078,13 +1078,13 @@
 								"position": {
 									"type": "list<double>",
 									"value": [
-										"0;188.7602638041344,99.72820949676425%",
-										"0;-21.96715180216728,-7.367783287359958%"
+										"0;177.78636463920407,99.51479001323356%",
+										"0;9.538741856064462,9.839032910912945%"
 									]
 								},
 								"orientation": {
 									"type": "double",
-									"value": "0;-4.225257510927583"
+									"value": "0;5.646485998362683"
 								},
 								"scale": {
 									"type": "list<double>",
@@ -1107,13 +1107,13 @@
 				},
 				"$asuri": {
 					"type": "string",
-					"value": "/Formalisms/WMS/WMS/connection0/4.instance"
+					"value": "/Formalisms/WMS/WMS/connection0/36.instance"
 				},
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/WMS/WMS.defaultIcons/SegmentIcon/1.instance--/Formalisms/WMS/WMS.defaultIcons/connection0Link/4.instance": "M1219,399L1408.649605249344,384.9889473694417",
-						"/Formalisms/WMS/WMS.defaultIcons/connection0Link/4.instance--/Formalisms/WMS/WMS.defaultIcons/SinkIcon/2.instance": "M1408.574566411032,384.99449113586047L1597.9992917164673,371.00005232701557"
+						"/Formalisms/WMS/WMS.defaultIcons/SegmentIcon/33.instance--/Formalisms/WMS/WMS.defaultIcons/connection0Link/36.instance": "M1380,384L1557,401.5",
+						"/Formalisms/WMS/WMS.defaultIcons/connection0Link/36.instance--/Formalisms/WMS/WMS.defaultIcons/SinkIcon/34.instance": "M1557.0745359234534,401.50736937096286L1733.999242006331,418.99992505712316"
 					}
 				},
 				"$type": "/Formalisms/WMS/WMS.defaultIcons/connection0Link"
@@ -1126,14 +1126,14 @@
 	},
 	"asm": {
 		"nodes": {
-			"0": {
+			"32": {
 				"rate": {
 					"type": "int",
 					"value": "1"
 				},
 				"cooldown": {
 					"type": "int",
-					"value": 1
+					"value": "1"
 				},
 				"counter": {
 					"type": "int",
@@ -1149,7 +1149,7 @@
 				},
 				"$type": "/Formalisms/WMS/WMS/Source"
 			},
-			"1": {
+			"33": {
 				"got_watercraft": {
 					"type": "boolean",
 					"value": false
@@ -1168,10 +1168,10 @@
 				},
 				"$type": "/Formalisms/WMS/WMS/Segment"
 			},
-			"2": {
+			"34": {
 				"counter": {
 					"type": "int",
-					"value": 1
+					"value": "0"
 				},
 				"pId": {
 					"type": "int",
@@ -1183,29 +1183,29 @@
 				},
 				"$type": "/Formalisms/WMS/WMS/Sink"
 			},
-			"3": {
+			"35": {
 				"$type": "/Formalisms/WMS/WMS/connection0"
 			},
-			"4": {
+			"36": {
 				"$type": "/Formalisms/WMS/WMS/connection0"
 			}
 		},
 		"edges": [
 			{
-				"src": "0",
-				"dest": "3"
+				"src": "32",
+				"dest": "35"
 			},
 			{
-				"src": "3",
-				"dest": "1"
+				"src": "35",
+				"dest": "33"
 			},
 			{
-				"src": "1",
-				"dest": "4"
+				"src": "33",
+				"dest": "36"
 			},
 			{
-				"src": "4",
-				"dest": "2"
+				"src": "36",
+				"dest": "34"
 			}
 		],
 		"metamodels": [
