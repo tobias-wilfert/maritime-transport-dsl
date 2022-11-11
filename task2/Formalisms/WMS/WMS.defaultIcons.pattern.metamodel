@@ -1238,52 +1238,6 @@
 				"type": "map<string,*>",
 				"default": {
 					"nodes": {
-						"53": {
-							"textContent": {
-								"type": "string",
-								"value": "Direction: "
-							},
-							"style": {
-								"type": "map<string,string>",
-								"value": {
-									"stroke": "#000000",
-									"stroke-dasharray": "",
-									"fill": "#000000",
-									"fill-opacity": 1,
-									"font-size": "20px",
-									"stroke-width": 1,
-									"arrow-start": "none",
-									"arrow-end": "none"
-								}
-							},
-							"mapper": {
-								"type": "code",
-								"value": "/* mapping and parsing code is disabled by default because pattern attribute values are code */"
-							},
-							"parser": {
-								"type": "code",
-								"value": "/* mapping and parsing code is disabled by default because pattern attribute values are code */"
-							},
-							"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Text",
-							"position": {
-								"type": "list<double>",
-								"value": [
-									30,
-									393
-								]
-							},
-							"orientation": {
-								"type": "double",
-								"value": 0
-							},
-							"scale": {
-								"type": "list<double>",
-								"value": [
-									1,
-									1
-								]
-							}
-						},
 						"84": {
 							"textContent": {
 								"type": "string",
@@ -1414,36 +1368,6 @@
 								}
 							}
 						},
-						"88": {
-							"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Contain",
-							"position": {
-								"type": "list<double>",
-								"value": [
-									47.12109375,
-									212.5
-								]
-							},
-							"orientation": {
-								"type": "double",
-								"value": 0
-							},
-							"scale": {
-								"type": "list<double>",
-								"value": [
-									1,
-									1
-								]
-							},
-							"link-style": {
-								"type": "map<string,string>",
-								"value": {
-									"stroke": "#00ffff",
-									"stroke-dasharray": "",
-									"stroke-opacity": 0.1,
-									"stroke-width": 1
-								}
-							}
-						},
 						"__pLabelText": {
 							"position": {
 								"type": "list<double>",
@@ -1495,14 +1419,6 @@
 						{
 							"src": "86",
 							"dest": "84"
-						},
-						{
-							"src": "85",
-							"dest": "88"
-						},
-						{
-							"src": "88",
-							"dest": "53"
 						}
 					]
 				}

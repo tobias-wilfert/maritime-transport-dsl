@@ -621,7 +621,7 @@
 							"79": {
 								"src": {
 									"type": "string",
-									"value": "https://i.imgur.com/OK2FHgj.png"
+									"value": "https://i.imgur.com/2fZoJLC.png"
 								},
 								"width": {
 									"type": "double",
@@ -989,7 +989,7 @@
 							"85": {
 								"src": {
 									"type": "string",
-									"value": "https://i.imgur.com/qbbDu2J.png"
+									"value": "https://i.imgur.com/BqgQ5fd.png"
 								},
 								"width": {
 									"type": "double",
@@ -1173,7 +1173,7 @@
 							"79": {
 								"src": {
 									"type": "string",
-									"value": "https://i.imgur.com/OK2FHgj.png"
+									"value": "https://i.imgur.com/2fZoJLC.png"
 								},
 								"width": {
 									"type": "double",
@@ -1586,7 +1586,7 @@
 							"100": {
 								"textContent": {
 									"type": "string",
-									"value": 0
+									"value": 2
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -2015,7 +2015,7 @@
 							"100": {
 								"textContent": {
 									"type": "string",
-									"value": 0
+									"value": 2
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -2569,7 +2569,7 @@
 							"79": {
 								"src": {
 									"type": "string",
-									"value": "https://i.imgur.com/OK2FHgj.png"
+									"value": "https://i.imgur.com/2fZoJLC.png"
 								},
 								"width": {
 									"type": "double",
@@ -3300,7 +3300,7 @@
 			"2": {
 				"got_watercraft": {
 					"type": "boolean",
-					"value": false
+					"value": true
 				},
 				"got_this_turn": {
 					"type": "boolean",
@@ -3342,7 +3342,7 @@
 				},
 				"got_watercraft": {
 					"type": "boolean",
-					"value": false
+					"value": true
 				},
 				"got_this_turn": {
 					"type": "boolean",
@@ -3361,7 +3361,7 @@
 			"5": {
 				"got_watercraft": {
 					"type": "boolean",
-					"value": false
+					"value": true
 				},
 				"got_this_turn": {
 					"type": "boolean",
@@ -3388,7 +3388,7 @@
 				},
 				"counter": {
 					"type": "int",
-					"value": 0
+					"value": 2
 				},
 				"pId": {
 					"type": "int",
@@ -3411,7 +3411,7 @@
 				},
 				"counter": {
 					"type": "int",
-					"value": 0
+					"value": 2
 				},
 				"pId": {
 					"type": "int",
@@ -3435,7 +3435,7 @@
 			"15": {
 				"got_watercraft": {
 					"type": "boolean",
-					"value": false
+					"value": true
 				},
 				"got_this_turn": {
 					"type": "boolean",
