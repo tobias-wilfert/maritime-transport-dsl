@@ -885,7 +885,7 @@
 							"99": {
 								"textContent": {
 									"type": "string",
-									"value": "+ pId : int = 0\n+ has_stepped : boolean = false"
+									"value": "+ pId : int = 0\n+ has_stepped : boolean"
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -1472,7 +1472,7 @@
 							"99": {
 								"textContent": {
 									"type": "string",
-									"value": "+ got_watercraft : boolean = false\n+ got_this_turn : boolean = false"
+									"value": "+ got_watercraft : boolean\n+ got_this_turn : boolean"
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -3112,7 +3112,7 @@
 							"99": {
 								"textContent": {
 									"type": "string",
-									"value": "+ last_direction : boolean = false"
+									"value": "+ last_direction : boolean"
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -5764,7 +5764,7 @@
 						{
 							"name": "has_stepped",
 							"type": "boolean",
-							"default": "false"
+							"default": false
 						}
 					]
 				},
@@ -5825,12 +5825,12 @@
 						{
 							"name": "got_watercraft",
 							"type": "boolean",
-							"default": "false"
+							"default": false
 						},
 						{
 							"name": "got_this_turn",
 							"type": "boolean",
-							"default": "false"
+							"default": false
 						}
 					]
 				},
@@ -6015,7 +6015,7 @@
 						{
 							"name": "last_direction",
 							"type": "boolean",
-							"default": "false"
+							"default": false
 						}
 					]
 				},
