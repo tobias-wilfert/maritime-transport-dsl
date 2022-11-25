@@ -158,3 +158,42 @@ pass
 # Goes into the Reset Nodes Rule
 if getAttr('$type', '2') == '/Formalisms/WMS/WMS/Segment' or getAttr('$type', '2') == '/Formalisms/WMS/WMS/Confluence':
     setAttr('got_this_turn', False, '2')
+
+
+# Check that there is no node with a smaller PID than the current
+# That has not yet stepped
+# print(f"Try to find blocing node {getAttr('pId', '0')} for node {getAttr('pId', '1')}")
+result = getAttr('has_stepped', '1') or (getAttr('pId', '0') < getAttr('pId', '1') and not getAttr('has_stepped', '0'))
+
+
+# Update post confluence
+
+# Just need to check the type
+print(f"Simulate the moving of the ship from confluence {getAttr('pId', '2')} to {getAttr('pId', '1')}")
+
+
+if getAttr('$type', '1') == '/Formalisms/WMS/WMS/Sink':  # Check if the node is a Sink$
+    if getAttr('got_watercraft', '2') and getAttr('last_direction', '2') and not getAttr('got_this_turn', '2'): # Check if the confluence has a ship and if it points our direction
+        setAttr('got_watercraft', False, '2')  # Take the Watercraft
+        setAttr('counter', int(getAttr('counter', '1')) + 1, '1') # Update the counter of 1
+elif getAttr('$type', '1') == '/Formalisms/WMS/WMS/Segment':  # Check if the node is a Segment
+    if not getAttr('got_watercraft', '1'):  # Check if the node has capacity
+        if getAttr('got_watercraft', '2') and getAttr('last_direction', '2') and not getAttr('got_this_turn', '2'): # Check if the confluence has a ship and if it points our direction
+            setAttr('got_watercraft', False, '2')  # Take the Watercraft
+            setAttr('got_watercraft', True, '1') # Take the watercraft
+            setAttr('got_this_turn', True, '1') # Indicate that we just got the ship
+
+
+elif getAttr('$type', '1') == '/Formalisms/WMS/WMS/Confluence':  # Check if the node is a Segment
+    if not getAttr('got_watercraft', '1'):  # Check if the node has capacity
+        if getAttr('got_watercraft', '2') and getAttr('last_direction', '2') and not getAttr('got_this_turn', '2'): # Check if the confluence has a ship and if it points our direction
+    pass
+
+
+if not getAttr('got_watercraft', '1'):  # Check if the node has capacity
+    if getAttr('got_watercraft', '2') and getAttr('last_direction', '2') and not getAttr('got_this_turn', '2'): # Check if the confluence has a ship and if it points our direction
+        setAttr('got_watercraft', False, '2')  # Take the Watercraft
+        setAttr('got_watercraft', True, '1') # Take the watercraft
+        setAttr('got_this_turn', True, '1') # Indicate that we just got the ship
+
+pass

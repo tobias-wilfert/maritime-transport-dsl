@@ -85,7 +85,7 @@
 							"55": {
 								"src": {
 									"type": "string",
-									"value": "https://i.imgur.com/lBcc7BL.png"
+									"value": "https://i.imgur.com/ct01dyT.png"
 								},
 								"width": {
 									"type": "double",
@@ -238,7 +238,7 @@
 							"98": {
 								"textContent": {
 									"type": "string",
-									"value": "1"
+									"value": 1
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -314,7 +314,7 @@
 							"100": {
 								"textContent": {
 									"type": "string",
-									"value": "0"
+									"value": 2
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -514,7 +514,7 @@
 							"79": {
 								"src": {
 									"type": "string",
-									"value": "https://i.imgur.com/OK2FHgj.png"
+									"value": "https://i.imgur.com/vFzQR5X.png"
 								},
 								"width": {
 									"type": "double",
@@ -698,7 +698,7 @@
 							"67": {
 								"src": {
 									"type": "string",
-									"value": "https://i.imgur.com/iz4PBFb.png"
+									"value": "https://i.imgur.com/kUGpy13.png"
 								},
 								"width": {
 									"type": "double",
@@ -782,7 +782,7 @@
 							"102": {
 								"textContent": {
 									"type": "string",
-									"value": "0"
+									"value": 2
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -1133,11 +1133,11 @@
 				},
 				"cooldown": {
 					"type": "int",
-					"value": "1"
+					"value": 1
 				},
 				"counter": {
 					"type": "int",
-					"value": "0"
+					"value": 2
 				},
 				"pId": {
 					"type": "int",
@@ -1145,7 +1145,7 @@
 				},
 				"has_stepped": {
 					"type": "boolean",
-					"value": false
+					"value": true
 				},
 				"$type": "/Formalisms/WMS/WMS/Source"
 			},
@@ -1164,14 +1164,14 @@
 				},
 				"has_stepped": {
 					"type": "boolean",
-					"value": false
+					"value": true
 				},
 				"$type": "/Formalisms/WMS/WMS/Segment"
 			},
 			"34": {
 				"counter": {
 					"type": "int",
-					"value": "0"
+					"value": 2
 				},
 				"pId": {
 					"type": "int",
@@ -1179,7 +1179,7 @@
 				},
 				"has_stepped": {
 					"type": "boolean",
-					"value": false
+					"value": true
 				},
 				"$type": "/Formalisms/WMS/WMS/Sink"
 			},
