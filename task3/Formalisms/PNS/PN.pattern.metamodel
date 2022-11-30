@@ -1,0 +1,385 @@
+{
+	"types": {
+		"__pPlace": [
+			{
+				"name": "__pLabel",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pPivotIn",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pPivotOut",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pMatchSubtypes",
+				"type": "boolean",
+				"default": true
+			},
+			{
+				"name": "tokens",
+				"type": "code",
+				"default": "\"[PYTHON]\"\n\"Example:\t result = True\"\n\"Example:\t result = getAttr()\"\n\n\"[JAVASCRIPT]\"\n\"Example:\t true\"\n\"Example:\t getAttr()\""
+			},
+			{
+				"name": "pname",
+				"type": "code",
+				"default": "\"[PYTHON]\"\n\"Example:\t result = True\"\n\"Example:\t result = getAttr()\"\n\n\"[JAVASCRIPT]\"\n\"Example:\t true\"\n\"Example:\t getAttr()\""
+			}
+		],
+		"__pTransition": [
+			{
+				"name": "__pLabel",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pPivotIn",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pPivotOut",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pMatchSubtypes",
+				"type": "boolean",
+				"default": true
+			},
+			{
+				"name": "tname",
+				"type": "code",
+				"default": "\"[PYTHON]\"\n\"Example:\t result = True\"\n\"Example:\t result = getAttr()\"\n\n\"[JAVASCRIPT]\"\n\"Example:\t true\"\n\"Example:\t getAttr()\""
+			}
+		],
+		"__pPlaceToTransition": [
+			{
+				"name": "__pLabel",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pPivotIn",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pPivotOut",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pMatchSubtypes",
+				"type": "boolean",
+				"default": true
+			},
+			{
+				"name": "weight",
+				"type": "code",
+				"default": "\"[PYTHON]\"\n\"Example:\t result = True\"\n\"Example:\t result = getAttr()\"\n\n\"[JAVASCRIPT]\"\n\"Example:\t true\"\n\"Example:\t getAttr()\""
+			}
+		],
+		"__pTransitionToPlace": [
+			{
+				"name": "__pLabel",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pPivotIn",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pPivotOut",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pMatchSubtypes",
+				"type": "boolean",
+				"default": true
+			},
+			{
+				"name": "weight",
+				"type": "code",
+				"default": "\"[PYTHON]\"\n\"Example:\t result = True\"\n\"Example:\t result = getAttr()\"\n\n\"[JAVASCRIPT]\"\n\"Example:\t true\"\n\"Example:\t getAttr()\""
+			}
+		],
+		"__pScheduledTransition": [
+			{
+				"name": "__pLabel",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pPivotIn",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pPivotOut",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pMatchSubtypes",
+				"type": "boolean",
+				"default": true
+			},
+			{
+				"name": "tname",
+				"type": "code",
+				"default": "\"[PYTHON]\"\n\"Example:\t result = True\"\n\"Example:\t result = getAttr()\"\n\n\"[JAVASCRIPT]\"\n\"Example:\t true\"\n\"Example:\t getAttr()\""
+			},
+			{
+				"name": "isCurrent",
+				"type": "code",
+				"default": "\"[PYTHON]\"\n\"Example:\t result = True\"\n\"Example:\t result = getAttr()\"\n\n\"[JAVASCRIPT]\"\n\"Example:\t true\"\n\"Example:\t getAttr()\""
+			}
+		],
+		"__pNext": [
+			{
+				"name": "__pLabel",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pPivotIn",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pPivotOut",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pMatchSubtypes",
+				"type": "boolean",
+				"default": true
+			}
+		],
+		"__pCapacityConstrainedPlace": [
+			{
+				"name": "__pLabel",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pPivotIn",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pPivotOut",
+				"type": "string",
+				"default": ""
+			},
+			{
+				"name": "__pMatchSubtypes",
+				"type": "boolean",
+				"default": true
+			},
+			{
+				"name": "capacity",
+				"type": "code",
+				"default": "\"[PYTHON]\"\n\"Example:\t result = True\"\n\"Example:\t result = getAttr()\"\n\n\"[JAVASCRIPT]\"\n\"Example:\t true\"\n\"Example:\t getAttr()\""
+			},
+			{
+				"name": "tokens",
+				"type": "code",
+				"default": "\"[PYTHON]\"\n\"Example:\t result = True\"\n\"Example:\t result = getAttr()\"\n\n\"[JAVASCRIPT]\"\n\"Example:\t true\"\n\"Example:\t getAttr()\""
+			},
+			{
+				"name": "pname",
+				"type": "code",
+				"default": "\"[PYTHON]\"\n\"Example:\t result = True\"\n\"Example:\t result = getAttr()\"\n\n\"[JAVASCRIPT]\"\n\"Example:\t true\"\n\"Example:\t getAttr()\""
+			}
+		]
+	},
+	"constraints": [
+		{
+			"name": "GC_ExactlyOneFirstTransition",
+			"event": "validate",
+			"targetType": "*",
+			"code": "/* comment next line to enable this constraint */\nthrow \"IgnoredConstraint\"\nconst allTs = getAllNodes(['/Formalisms/PNS/PN/ScheduledTransition']);\nconsole.log(\"allTs:\", allTs);\nconst allTsWithoutIncoming = allTs.filter(t => getNeighbors('in', '/Formalisms/PNS/PN/Next', t).length === 0);\nconsole.log(\"allTsWithoutIncoming:\", allTsWithoutIncoming);\nallTsWithoutIncoming.length === 1"
+		},
+		{
+			"name": "GC_ExactlyOneLastTransition",
+			"event": "validate",
+			"targetType": "*",
+			"code": "/* comment next line to enable this constraint */\nthrow \"IgnoredConstraint\"\nconst allTs = getAllNodes(['/Formalisms/PNS/PN/ScheduledTransition']);\nconsole.log(\"allTs:\", allTs);\nconst allTsWithoutOutgoing = allTs.filter(t => getNeighbors('out', '/Formalisms/PNS/PN/Next', t).length === 0);\nconsole.log(\"allTsWithoutOutgoing:\", allTsWithoutOutgoing);\nallTsWithoutOutgoing.length === 1"
+		}
+	],
+	"actions": [
+		{
+			"name": "distinctPLabels",
+			"event": "post-create",
+			"code": "if( getAttr(\"__pLabel\") == \"\" )\n{\n\tvar pLabels = getAllNodes().\n\t\t\t\t\t\t\tfilter( function(n) {return hasAttr(\"__pLabel\",n);} ).\n\t\t\t\t\t\t\t\tmap( function(n) {return getAttr(\"__pLabel\",n);} ),\n\t\t i\t\t\t= \"0\";\n\n\twhile( _utils.contains(pLabels,i) )\n\t\ti = String(parseInt(i)+1);\n\tsetAttr(\"__pLabel\",i);\n}",
+			"targetType": "*"
+		}
+	],
+	"cardinalities": {
+		"__pPlace": [
+			{
+				"dir": "out",
+				"type": "__pPlaceToTransition",
+				"min": 0,
+				"max": "Infinity"
+			},
+			{
+				"dir": "in",
+				"type": "__pTransitionToPlace",
+				"min": 0,
+				"max": "Infinity"
+			}
+		],
+		"__pTransition": [
+			{
+				"dir": "in",
+				"type": "__pPlaceToTransition",
+				"min": 0,
+				"max": "Infinity"
+			},
+			{
+				"dir": "out",
+				"type": "__pTransitionToPlace",
+				"min": 0,
+				"max": "Infinity"
+			}
+		],
+		"__pPlaceToTransition": [
+			{
+				"dir": "in",
+				"type": "__pPlace",
+				"min": 0,
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "__pTransition",
+				"min": 0,
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "__pCapacityConstrainedPlace",
+				"min": 0,
+				"max": "1"
+			}
+		],
+		"__pTransitionToPlace": [
+			{
+				"dir": "in",
+				"type": "__pTransition",
+				"min": 0,
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "__pPlace",
+				"min": 0,
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "__pCapacityConstrainedPlace",
+				"min": 0,
+				"max": "1"
+			}
+		],
+		"__pScheduledTransition": [
+			{
+				"dir": "out",
+				"type": "__pNext",
+				"min": 0,
+				"max": 1
+			},
+			{
+				"dir": "in",
+				"type": "__pNext",
+				"min": 0,
+				"max": 1
+			}
+		],
+		"__pNext": [
+			{
+				"dir": "in",
+				"type": "__pScheduledTransition",
+				"min": 0,
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "__pScheduledTransition",
+				"min": 0,
+				"max": "1"
+			}
+		],
+		"__pCapacityConstrainedPlace": [
+			{
+				"dir": "out",
+				"type": "__pPlaceToTransition",
+				"min": 0,
+				"max": "Infinity"
+			},
+			{
+				"dir": "in",
+				"type": "__pTransitionToPlace",
+				"min": 0,
+				"max": "Infinity"
+			}
+		]
+	},
+	"legalConnections": {
+		"__pPlace": {
+			"__pTransition": [
+				"__pPlaceToTransition"
+			]
+		},
+		"__pTransition": {
+			"__pPlace": [
+				"__pTransitionToPlace"
+			],
+			"__pCapacityConstrainedPlace": [
+				"__pTransitionToPlace"
+			]
+		},
+		"__pScheduledTransition": {
+			"__pScheduledTransition": [
+				"__pNext"
+			]
+		},
+		"__pCapacityConstrainedPlace": {
+			"__pTransition": [
+				"__pPlaceToTransition"
+			]
+		}
+	},
+	"connectorTypes": {
+		"__pPlaceToTransition": "visual",
+		"__pTransitionToPlace": "visual",
+		"__pNext": "visual"
+	},
+	"types2parentTypes": {
+		"__pPlace": [],
+		"__pTransition": [],
+		"__pPlaceToTransition": [],
+		"__pTransitionToPlace": [],
+		"__pScheduledTransition": [],
+		"__pNext": [],
+		"__pGC_ExactlyOneFirstTransition": [],
+		"__pGC_ExactlyOneLastTransition": [],
+		"__pCapacityConstrainedPlace": [
+			"__pPlace"
+		]
+	}
+}

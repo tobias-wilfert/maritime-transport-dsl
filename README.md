@@ -1,4 +1,4 @@
 # Waterway Modeling in metaDepth
 
-Password for task 2 is ' ' (space)
+Password for tasks 2 and 3 is ' ' (space)
 
