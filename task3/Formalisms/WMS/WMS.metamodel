@@ -1,0 +1,936 @@
+{
+	"types": {
+		"InNode": [
+			{
+				"name": "pId",
+				"type": "int",
+				"default": "0"
+			},
+			{
+				"name": "has_stepped",
+				"type": "boolean",
+				"default": false
+			}
+		],
+		"OutNode": [
+			{
+				"name": "pId",
+				"type": "int",
+				"default": "0"
+			},
+			{
+				"name": "has_stepped",
+				"type": "boolean",
+				"default": false
+			}
+		],
+		"AnyNode": [
+			{
+				"name": "pId",
+				"type": "int",
+				"default": "0"
+			},
+			{
+				"name": "has_stepped",
+				"type": "boolean",
+				"default": false
+			}
+		],
+		"Shippable": [
+			{
+				"name": "got_watercraft",
+				"type": "boolean",
+				"default": false
+			},
+			{
+				"name": "got_this_turn",
+				"type": "boolean",
+				"default": false
+			},
+			{
+				"name": "pId",
+				"type": "int",
+				"default": "0"
+			},
+			{
+				"name": "has_stepped",
+				"type": "boolean",
+				"default": false
+			}
+		],
+		"Source": [
+			{
+				"name": "rate",
+				"type": "int",
+				"default": "1"
+			},
+			{
+				"name": "cooldown",
+				"type": "int",
+				"default": "1"
+			},
+			{
+				"name": "counter",
+				"type": "int",
+				"default": "0"
+			},
+			{
+				"name": "pId",
+				"type": "int",
+				"default": "0"
+			},
+			{
+				"name": "has_stepped",
+				"type": "boolean",
+				"default": false
+			}
+		],
+		"Sink": [
+			{
+				"name": "counter",
+				"type": "int",
+				"default": "0"
+			},
+			{
+				"name": "pId",
+				"type": "int",
+				"default": "0"
+			},
+			{
+				"name": "has_stepped",
+				"type": "boolean",
+				"default": false
+			}
+		],
+		"Segment": [
+			{
+				"name": "got_watercraft",
+				"type": "boolean",
+				"default": false
+			},
+			{
+				"name": "got_this_turn",
+				"type": "boolean",
+				"default": false
+			},
+			{
+				"name": "pId",
+				"type": "int",
+				"default": "0"
+			},
+			{
+				"name": "has_stepped",
+				"type": "boolean",
+				"default": false
+			}
+		],
+		"Confluence": [
+			{
+				"name": "last_direction",
+				"type": "boolean",
+				"default": false
+			},
+			{
+				"name": "got_watercraft",
+				"type": "boolean",
+				"default": false
+			},
+			{
+				"name": "got_this_turn",
+				"type": "boolean",
+				"default": false
+			},
+			{
+				"name": "pId",
+				"type": "int",
+				"default": "0"
+			},
+			{
+				"name": "has_stepped",
+				"type": "boolean",
+				"default": false
+			}
+		],
+		"connection0": [],
+		"connection2": [],
+		"connection1": []
+	},
+	"constraints": [
+		{
+			"name": "in_out_cycle",
+			"event": "post-connect",
+			"code": "var _out = getNeighbors('out', '*'); _out = _out.map(x => getNeighbors('out', '*', x)[0]); var _in = getNeighbors('in', '*'); _in = _in.map(x => getNeighbors('in', '*', x)[0]); var a = _out.filter(x => _in.includes(x)); a.length == 0",
+			"targetType": "InNode"
+		},
+		{
+			"name": "out_cycle",
+			"event": "post-connect",
+			"code": "var _out = getNeighbors('out','*'); _out = _out.map(x => getNeighbors('out', '*', x)[0]); _out.length === new Set(_out).size",
+			"targetType": "InNode"
+		},
+		{
+			"name": "in_cycle",
+			"event": "post-connect",
+			"code": "var _in = getNeighbors('in', '*'); _in = _in.map(x => getNeighbors('in', '*', x)[0]); _in.length === new Set(_in).size",
+			"targetType": "InNode"
+		},
+		{
+			"name": "noAbstractInstances",
+			"event": "pre-create",
+			"code": "false",
+			"targetType": "InNode"
+		},
+		{
+			"name": "in_out_cycle",
+			"event": "post-connect",
+			"code": "var _out = getNeighbors('out', '*'); _out = _out.map(x => getNeighbors('out', '*', x)[0]); var _in = getNeighbors('in', '*'); _in = _in.map(x => getNeighbors('in', '*', x)[0]); var a = _out.filter(x => _in.includes(x)); a.length == 0",
+			"targetType": "OutNode"
+		},
+		{
+			"name": "out_cycle",
+			"event": "post-connect",
+			"code": "var _out = getNeighbors('out','*'); _out = _out.map(x => getNeighbors('out', '*', x)[0]); _out.length === new Set(_out).size",
+			"targetType": "OutNode"
+		},
+		{
+			"name": "in_cycle",
+			"event": "post-connect",
+			"code": "var _in = getNeighbors('in', '*'); _in = _in.map(x => getNeighbors('in', '*', x)[0]); _in.length === new Set(_in).size",
+			"targetType": "OutNode"
+		},
+		{
+			"name": "noAbstractInstances",
+			"event": "pre-create",
+			"code": "false",
+			"targetType": "OutNode"
+		},
+		{
+			"name": "in_out_cycle",
+			"event": "post-connect",
+			"code": "var _out = getNeighbors('out', '*'); _out = _out.map(x => getNeighbors('out', '*', x)[0]); var _in = getNeighbors('in', '*'); _in = _in.map(x => getNeighbors('in', '*', x)[0]); var a = _out.filter(x => _in.includes(x)); a.length == 0",
+			"targetType": "AnyNode"
+		},
+		{
+			"name": "out_cycle",
+			"event": "post-connect",
+			"code": "var _out = getNeighbors('out','*'); _out = _out.map(x => getNeighbors('out', '*', x)[0]); _out.length === new Set(_out).size",
+			"targetType": "AnyNode"
+		},
+		{
+			"name": "in_cycle",
+			"event": "post-connect",
+			"code": "var _in = getNeighbors('in', '*'); _in = _in.map(x => getNeighbors('in', '*', x)[0]); _in.length === new Set(_in).size",
+			"targetType": "AnyNode"
+		},
+		{
+			"name": "noAbstractInstances",
+			"event": "pre-create",
+			"code": "false",
+			"targetType": "AnyNode"
+		},
+		{
+			"name": "in_out_cycle",
+			"event": "post-connect",
+			"code": "var _out = getNeighbors('out', '*'); _out = _out.map(x => getNeighbors('out', '*', x)[0]); var _in = getNeighbors('in', '*'); _in = _in.map(x => getNeighbors('in', '*', x)[0]); var a = _out.filter(x => _in.includes(x)); a.length == 0",
+			"targetType": "Shippable"
+		},
+		{
+			"name": "out_cycle",
+			"event": "post-connect",
+			"code": "var _out = getNeighbors('out','*'); _out = _out.map(x => getNeighbors('out', '*', x)[0]); _out.length === new Set(_out).size",
+			"targetType": "Shippable"
+		},
+		{
+			"name": "in_cycle",
+			"event": "post-connect",
+			"code": "var _in = getNeighbors('in', '*'); _in = _in.map(x => getNeighbors('in', '*', x)[0]); _in.length === new Set(_in).size",
+			"targetType": "Shippable"
+		},
+		{
+			"name": "noAbstractInstances",
+			"event": "pre-create",
+			"code": "false",
+			"targetType": "Shippable"
+		},
+		{
+			"name": "counter_positive",
+			"event": "post-edit",
+			"code": "getAttr('counter') >= 0",
+			"targetType": "Source"
+		},
+		{
+			"name": "rate_strictly_positive",
+			"event": "post-edit",
+			"code": "getAttr('rate') > 0",
+			"targetType": "Source"
+		},
+		{
+			"name": "cooldown_lower_bound",
+			"event": "post-edit",
+			"code": "getAttr('cooldown') >= 1",
+			"targetType": "Source"
+		},
+		{
+			"name": "cooldown_upper_bound",
+			"event": "post-edit",
+			"code": "getAttr('cooldown') <= getAttr('rate')",
+			"targetType": "Source"
+		},
+		{
+			"name": "source_connection_bound",
+			"event": "post-connect",
+			"code": "getNeighbors('out','*').length <= 1",
+			"targetType": "Source"
+		},
+		{
+			"name": "in_out_cycle",
+			"event": "post-connect",
+			"code": "var _out = getNeighbors('out', '*'); _out = _out.map(x => getNeighbors('out', '*', x)[0]); var _in = getNeighbors('in', '*'); _in = _in.map(x => getNeighbors('in', '*', x)[0]); var a = _out.filter(x => _in.includes(x)); a.length == 0",
+			"targetType": "Source"
+		},
+		{
+			"name": "out_cycle",
+			"event": "post-connect",
+			"code": "var _out = getNeighbors('out','*'); _out = _out.map(x => getNeighbors('out', '*', x)[0]); _out.length === new Set(_out).size",
+			"targetType": "Source"
+		},
+		{
+			"name": "in_cycle",
+			"event": "post-connect",
+			"code": "var _in = getNeighbors('in', '*'); _in = _in.map(x => getNeighbors('in', '*', x)[0]); _in.length === new Set(_in).size",
+			"targetType": "Source"
+		},
+		{
+			"name": "counter_positive",
+			"event": "post-edit",
+			"code": "getAttr('counter') >= 0",
+			"targetType": "Sink"
+		},
+		{
+			"name": "sink_connection_bound",
+			"event": "post-connect",
+			"code": "getNeighbors('in','*').length <= 1",
+			"targetType": "Sink"
+		},
+		{
+			"name": "in_out_cycle",
+			"event": "post-connect",
+			"code": "var _out = getNeighbors('out', '*'); _out = _out.map(x => getNeighbors('out', '*', x)[0]); var _in = getNeighbors('in', '*'); _in = _in.map(x => getNeighbors('in', '*', x)[0]); var a = _out.filter(x => _in.includes(x)); a.length == 0",
+			"targetType": "Sink"
+		},
+		{
+			"name": "out_cycle",
+			"event": "post-connect",
+			"code": "var _out = getNeighbors('out','*'); _out = _out.map(x => getNeighbors('out', '*', x)[0]); _out.length === new Set(_out).size",
+			"targetType": "Sink"
+		},
+		{
+			"name": "in_cycle",
+			"event": "post-connect",
+			"code": "var _in = getNeighbors('in', '*'); _in = _in.map(x => getNeighbors('in', '*', x)[0]); _in.length === new Set(_in).size",
+			"targetType": "Sink"
+		},
+		{
+			"name": "segment_connection_bound",
+			"event": "post-connect",
+			"code": "getNeighbors('out','*').length <= 1 && getNeighbors('in','*').length <= 1",
+			"targetType": "Segment"
+		},
+		{
+			"name": "in_out_cycle",
+			"event": "post-connect",
+			"code": "var _out = getNeighbors('out', '*'); _out = _out.map(x => getNeighbors('out', '*', x)[0]); var _in = getNeighbors('in', '*'); _in = _in.map(x => getNeighbors('in', '*', x)[0]); var a = _out.filter(x => _in.includes(x)); a.length == 0",
+			"targetType": "Segment"
+		},
+		{
+			"name": "out_cycle",
+			"event": "post-connect",
+			"code": "var _out = getNeighbors('out','*'); _out = _out.map(x => getNeighbors('out', '*', x)[0]); _out.length === new Set(_out).size",
+			"targetType": "Segment"
+		},
+		{
+			"name": "in_cycle",
+			"event": "post-connect",
+			"code": "var _in = getNeighbors('in', '*'); _in = _in.map(x => getNeighbors('in', '*', x)[0]); _in.length === new Set(_in).size",
+			"targetType": "Segment"
+		},
+		{
+			"name": "confluence_connection_bound",
+			"event": "post-connect",
+			"code": "getNeighbors('out','*').length <= 2 && getNeighbors('in','*').length <= 2",
+			"targetType": "Confluence"
+		},
+		{
+			"name": "in_out_cycle",
+			"event": "post-connect",
+			"code": "var _out = getNeighbors('out', '*'); _out = _out.map(x => getNeighbors('out', '*', x)[0]); var _in = getNeighbors('in', '*'); _in = _in.map(x => getNeighbors('in', '*', x)[0]); var a = _out.filter(x => _in.includes(x)); a.length == 0",
+			"targetType": "Confluence"
+		},
+		{
+			"name": "out_cycle",
+			"event": "post-connect",
+			"code": "var _out = getNeighbors('out','*'); _out = _out.map(x => getNeighbors('out', '*', x)[0]); _out.length === new Set(_out).size",
+			"targetType": "Confluence"
+		},
+		{
+			"name": "in_cycle",
+			"event": "post-connect",
+			"code": "var _in = getNeighbors('in', '*'); _in = _in.map(x => getNeighbors('in', '*', x)[0]); _in.length === new Set(_in).size",
+			"targetType": "Confluence"
+		},
+		{
+			"name": "no_self_loop_connection0",
+			"event": "post-create",
+			"code": "getNeighbors('*','*').length ===  2",
+			"targetType": "connection0"
+		},
+		{
+			"name": "no_self_loop_connection2",
+			"event": "post-create",
+			"code": "getNeighbors('*','*').length ===  2",
+			"targetType": "connection2"
+		},
+		{
+			"name": "no_self_loop_connection1",
+			"event": "post-create",
+			"code": "getNeighbors('*','*').length ===  2",
+			"targetType": "connection1"
+		},
+		{
+			"name": "GC_sink_counters_positive",
+			"event": "validate",
+			"targetType": "*",
+			"code": "var allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);\nvar noNegatives = true;\nfor(const sink of allSinks){\n    if(getAttr('counter',sink) < 0){\n        noNegatives = false;\n        print('Sink with id:' + getAttr('pId',sink) + ' has negative counter');\n    }\n}\nnoNegatives;"
+		},
+		{
+			"name": "GC_source_counters_positive",
+			"event": "validate",
+			"targetType": "*",
+			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);\nvar noNegatives = true;\nfor(const source of allSources){\n    if(getAttr('counter',source) < 0){\n        noNegatives = false;\n        print('Source with id:' + getAttr('pId',source) + ' has negative counter');\n    }\n}\nnoNegatives;"
+		},
+		{
+			"name": "GC_source_rates_positive",
+			"event": "validate",
+			"targetType": "*",
+			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);\nvar noNegatives = true;\nfor(const source of allSources){\n    if(getAttr('rate',source) <= 0){\n        noNegatives = false;\n        print('Source with id:' + getAttr('pId',source) + ' has non-positive rate');\n    }\n}\nnoNegatives;"
+		},
+		{
+			"name": "GC_source_cooldown_upperbound",
+			"event": "validate",
+			"targetType": "*",
+			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);\nvar noRateExceeded = true;\nfor(const source of allSources){\n    if(getAttr('cooldown',source) > getAttr('rate',source)){\n        noRateExceeded = false;\n        print('Source with id:' + getAttr('pId',source) + ' has cooldown greater than rate');\n    }\n}\nnoRateExceeded;"
+		},
+		{
+			"name": "GC_source_cooldown_lowerbound",
+			"event": "validate",
+			"targetType": "*",
+			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);\nvar noSmallCooldown = true;\nfor(const source of allSources){\n    if(getAttr('cooldown',source) < 1){\n        noSmallCooldown = false;\n        print('Source with id:' + getAttr('pId',source) + ' has cooldown less than 1');\n    }\n}\nnoSmallCooldown;"
+		},
+		{
+			"name": "GC_equal_sources_and_sinks",
+			"event": "",
+			"targetType": "*",
+			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);\nvar allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);\nallSources.length == allSinks.length;"
+		},
+		{
+			"name": "GC_no_watercraft_loss",
+			"event": "",
+			"targetType": "*",
+			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);\nvar allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);\nvar allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);\nvar allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);\n\nvar generatedCount = 0;\nfor(source of allSources){\n    generatedCount += parseInt(getAttr('counter',source));\n}\nprint('Generated watercraft: ' + generatedCount);\n\nvar destroyedCount = 0;\nfor(sink of allSinks){\n    destroyedCount += parseInt(getAttr('counter',sink));\n}\nprint('Destroyed watercraft: ' + destroyedCount);\n\nvar onTiles = 0;\nfor(segment of allSegments){\n    if(getAttr('got_watercraft',segment) == true){\n        onTiles += 1;\n    }\n}\n\nfor(confluence of allConfluences){\n    if(getAttr('got_watercraft',confluence) == true){\n        onTiles += 1;\n    }\n}\nprint('On tiles: ' + onTiles);\n\ngeneratedCount === destroyedCount + onTiles;"
+		},
+		{
+			"name": "GC_all_unique_ids",
+			"event": "validate",
+			"targetType": "*",
+			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);\nvar allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);\nvar allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);\nvar allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);\n\nvar allTiles = allSources.concat(allSinks,allSegments,allConfluences)\n// print(allTiles);\n\nvar seenIDs = new Set();\nvar onlyUnique = true;\nfor(tile of allTiles){\n    var id = getAttr('pId',tile);\n    if(seenIDs.has(id)){\n        onlyUnique = false;\n        print('Double entry on id ' + id)\n    }else{\n        seenIDs.add(id);\n    }\n}\n\nonlyUnique"
+		},
+		{
+			"name": "GC_all_nodes_connected",
+			"event": "validate",
+			"targetType": "*",
+			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);\nvar allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);\nvar allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);\nvar allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);\nvalid = true;\n\nfor (var source of allSources){\n    if(getNeighbors('out', '*', source).length !== 1){\n        valid = false;\n        break;\n    }\n}\nfor (var sink of allSinks){\n    if(getNeighbors('in', '*', sink).length !== 1){\n        valid = false;\n        break;\n    }\n}\n\nfor (var segment of allSegments){\n    if(getNeighbors('in', '*', segment).length !== 1 || getNeighbors('out', '*', segment).length !== 1){\n        valid = false;\n        break;\n    }\n}\n\nfor (var confluence of allConfluences){\n    print('con')\n    if(getNeighbors('in', '*', confluence).length !== 2 || getNeighbors('out', '*', confluence).length !== 2){\n        valid = false;\n        break;\n    }\n}\n\nvalid"
+		}
+	],
+	"actions": [
+		{
+			"name": "setuppId",
+			"event": "post-create",
+			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);/*newline*/var allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);/*newline*/var allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);/*newline*/var allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);/*newline*/var allTiles = allSources.concat(allSinks,allSegments,allConfluences);/*newline*/var highestId = -1;/*newline*/for(tile of allTiles){/*newline*/    var id = getAttr('pId',tile);/*newline*/    if(id > highestId){/*newline*/        highestId = id;/*newline*/    }/*newline*/}/*newline*/setAttr('pId',Number(highestId)+1);/*newline*/true",
+			"targetType": "InNode"
+		},
+		{
+			"name": "setuppId",
+			"event": "post-create",
+			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);/*newline*/var allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);/*newline*/var allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);/*newline*/var allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);/*newline*/var allTiles = allSources.concat(allSinks,allSegments,allConfluences);/*newline*/var highestId = -1;/*newline*/for(tile of allTiles){/*newline*/    var id = getAttr('pId',tile);/*newline*/    if(id > highestId){/*newline*/        highestId = id;/*newline*/    }/*newline*/}/*newline*/setAttr('pId',Number(highestId)+1);/*newline*/true",
+			"targetType": "OutNode"
+		},
+		{
+			"name": "setuppId",
+			"event": "post-create",
+			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);/*newline*/var allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);/*newline*/var allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);/*newline*/var allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);/*newline*/var allTiles = allSources.concat(allSinks,allSegments,allConfluences);/*newline*/var highestId = -1;/*newline*/for(tile of allTiles){/*newline*/    var id = getAttr('pId',tile);/*newline*/    if(id > highestId){/*newline*/        highestId = id;/*newline*/    }/*newline*/}/*newline*/setAttr('pId',Number(highestId)+1);/*newline*/true",
+			"targetType": "AnyNode"
+		},
+		{
+			"name": "setuppId",
+			"event": "post-create",
+			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);/*newline*/var allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);/*newline*/var allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);/*newline*/var allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);/*newline*/var allTiles = allSources.concat(allSinks,allSegments,allConfluences);/*newline*/var highestId = -1;/*newline*/for(tile of allTiles){/*newline*/    var id = getAttr('pId',tile);/*newline*/    if(id > highestId){/*newline*/        highestId = id;/*newline*/    }/*newline*/}/*newline*/setAttr('pId',Number(highestId)+1);/*newline*/true",
+			"targetType": "Shippable"
+		},
+		{
+			"name": "setuppId",
+			"event": "post-create",
+			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);/*newline*/var allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);/*newline*/var allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);/*newline*/var allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);/*newline*/var allTiles = allSources.concat(allSinks,allSegments,allConfluences);/*newline*/var highestId = -1;/*newline*/for(tile of allTiles){/*newline*/    var id = getAttr('pId',tile);/*newline*/    if(id > highestId){/*newline*/        highestId = id;/*newline*/    }/*newline*/}/*newline*/setAttr('pId',Number(highestId)+1);/*newline*/true",
+			"targetType": "Source"
+		},
+		{
+			"name": "setuppId",
+			"event": "post-create",
+			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);/*newline*/var allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);/*newline*/var allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);/*newline*/var allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);/*newline*/var allTiles = allSources.concat(allSinks,allSegments,allConfluences);/*newline*/var highestId = -1;/*newline*/for(tile of allTiles){/*newline*/    var id = getAttr('pId',tile);/*newline*/    if(id > highestId){/*newline*/        highestId = id;/*newline*/    }/*newline*/}/*newline*/setAttr('pId',Number(highestId)+1);/*newline*/true",
+			"targetType": "Sink"
+		},
+		{
+			"name": "setuppId",
+			"event": "post-create",
+			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);/*newline*/var allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);/*newline*/var allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);/*newline*/var allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);/*newline*/var allTiles = allSources.concat(allSinks,allSegments,allConfluences);/*newline*/var highestId = -1;/*newline*/for(tile of allTiles){/*newline*/    var id = getAttr('pId',tile);/*newline*/    if(id > highestId){/*newline*/        highestId = id;/*newline*/    }/*newline*/}/*newline*/setAttr('pId',Number(highestId)+1);/*newline*/true",
+			"targetType": "Segment"
+		},
+		{
+			"name": "setuppId",
+			"event": "post-create",
+			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);/*newline*/var allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);/*newline*/var allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);/*newline*/var allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);/*newline*/var allTiles = allSources.concat(allSinks,allSegments,allConfluences);/*newline*/var highestId = -1;/*newline*/for(tile of allTiles){/*newline*/    var id = getAttr('pId',tile);/*newline*/    if(id > highestId){/*newline*/        highestId = id;/*newline*/    }/*newline*/}/*newline*/setAttr('pId',Number(highestId)+1);/*newline*/true",
+			"targetType": "Confluence"
+		}
+	],
+	"cardinalities": {
+		"InNode": [
+			{
+				"dir": "in",
+				"type": "connection0",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "connection2",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "connection0",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "connection1",
+				"min": "0",
+				"max": "1"
+			}
+		],
+		"OutNode": [
+			{
+				"dir": "out",
+				"type": "connection0",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "connection1",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "connection0",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "connection2",
+				"min": "0",
+				"max": "1"
+			}
+		],
+		"AnyNode": [],
+		"Shippable": [
+			{
+				"dir": "out",
+				"type": "connection0",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "connection1",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "connection0",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "connection2",
+				"min": "0",
+				"max": "1"
+			}
+		],
+		"Source": [
+			{
+				"dir": "out",
+				"type": "connection0",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "connection1",
+				"min": "0",
+				"max": "1"
+			}
+		],
+		"Sink": [
+			{
+				"dir": "in",
+				"type": "connection0",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "connection2",
+				"min": "0",
+				"max": "1"
+			}
+		],
+		"Segment": [
+			{
+				"dir": "out",
+				"type": "connection0",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "connection1",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "connection0",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "connection2",
+				"min": "0",
+				"max": "1"
+			}
+		],
+		"Confluence": [
+			{
+				"dir": "in",
+				"type": "connection1",
+				"min": "1",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "connection2",
+				"min": "1",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "connection0",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "connection1",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "connection0",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "connection2",
+				"min": "0",
+				"max": "1"
+			}
+		],
+		"connection0": [
+			{
+				"dir": "in",
+				"type": "OutNode",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "InNode",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "Source",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "Sink",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "Segment",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "Segment",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "Confluence",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "Confluence",
+				"min": "0",
+				"max": "1"
+			}
+		],
+		"connection2": [
+			{
+				"dir": "in",
+				"type": "Confluence",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "InNode",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "Sink",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "Segment",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "Confluence",
+				"min": "0",
+				"max": "1"
+			}
+		],
+		"connection1": [
+			{
+				"dir": "in",
+				"type": "OutNode",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "Confluence",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "Source",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "Segment",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "Confluence",
+				"min": "0",
+				"max": "1"
+			}
+		]
+	},
+	"legalConnections": {
+		"InNode": {
+			"InNode": [
+				"connection0"
+			],
+			"Sink": [
+				"connection0"
+			],
+			"Segment": [
+				"connection0"
+			],
+			"Confluence": [
+				"connection0",
+				"connection1"
+			]
+		},
+		"OutNode": {
+			"InNode": [
+				"connection0"
+			],
+			"Sink": [
+				"connection0"
+			],
+			"Segment": [
+				"connection0"
+			],
+			"Confluence": [
+				"connection0",
+				"connection1"
+			]
+		},
+		"Shippable": {
+			"InNode": [
+				"connection0"
+			],
+			"Sink": [
+				"connection0"
+			],
+			"Segment": [
+				"connection0"
+			],
+			"Confluence": [
+				"connection0",
+				"connection1"
+			]
+		},
+		"Source": {
+			"InNode": [
+				"connection0"
+			],
+			"Sink": [
+				"connection0"
+			],
+			"Segment": [
+				"connection0"
+			],
+			"Confluence": [
+				"connection0",
+				"connection1"
+			]
+		},
+		"Segment": {
+			"InNode": [
+				"connection0"
+			],
+			"Sink": [
+				"connection0"
+			],
+			"Segment": [
+				"connection0"
+			],
+			"Confluence": [
+				"connection0",
+				"connection1"
+			]
+		},
+		"Confluence": {
+			"InNode": [
+				"connection2",
+				"connection0"
+			],
+			"Sink": [
+				"connection2",
+				"connection0"
+			],
+			"Segment": [
+				"connection2",
+				"connection0"
+			],
+			"Confluence": [
+				"connection2",
+				"connection0",
+				"connection1"
+			]
+		}
+	},
+	"connectorTypes": {
+		"connection0": "visual",
+		"connection2": "visual",
+		"connection1": "visual"
+	},
+	"types2parentTypes": {
+		"InNode": [
+			"AnyNode"
+		],
+		"OutNode": [
+			"AnyNode"
+		],
+		"AnyNode": [],
+		"Shippable": [],
+		"Source": [
+			"AnyNode",
+			"OutNode"
+		],
+		"Sink": [
+			"AnyNode",
+			"InNode"
+		],
+		"Segment": [
+			"AnyNode",
+			"AnyNode",
+			"InNode",
+			"OutNode",
+			"Shippable"
+		],
+		"Confluence": [
+			"AnyNode",
+			"AnyNode",
+			"OutNode",
+			"InNode",
+			"Shippable"
+		],
+		"connection0": [],
+		"connection2": [],
+		"connection1": [],
+		"GC_sink_counters_positive": [],
+		"GC_source_counters_positive": [],
+		"GC_source_rates_positive": [],
+		"GC_source_cooldown_upperbound": [],
+		"GC_source_cooldown_lowerbound": [],
+		"GC_equal_sources_and_sinks": [],
+		"GC_no_watercraft_loss": [],
+		"GC_all_unique_ids": [],
+		"GC_all_nodes_connected": []
+	}
+}
