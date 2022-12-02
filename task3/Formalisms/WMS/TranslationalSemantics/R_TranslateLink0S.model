@@ -3770,7 +3770,7 @@
 			"0": {
 				"Condition": {
 					"type": "code",
-					"value": "# Grab the correct nodes to link\nnameNode4 = str(getAttr('pname','4'))\n\n# Checks\nresult = nameNode4.startswith('in0') "
+					"value": "# Grab the correct nodes to link\nnameNode4 = str(getAttr('pname','4'))\ntransition = str(getAttr('tname','11'))\n\n# Checks\nresult = nameNode4.startswith('in0') and transition.endswith(\"out\")"
 				},
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule/LHS"
 			},
