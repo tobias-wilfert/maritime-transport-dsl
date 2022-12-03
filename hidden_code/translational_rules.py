@@ -234,3 +234,44 @@ leftID = str(getAttr('pId','0'))
 rightID = str(getAttr('pId','1'))
 
 setAttr('tname', leftID + '_gtrans_' + rightID, '10')
+
+
+
+# O is biggest, 1 is smallest
+result = (getAttr('pId', '0') > getAttr('pId', '2')) and (getAttr('pId', '1') < getAttr('pId', '3'))
+
+
+print(f"{int(getAttr('pId', '2'))} : {int(getAttr('pId', '1'))}")
+result = int(getAttr('pId', '2')) < int(getAttr('pId', '1'))
+
+
+result = (int(getAttr('pId', '2')) < int(getAttr('pId', '1'))) and (int(getAttr('pId', '0')) < int(getAttr('pId', '3')))
+
+
+
+
+# Grab the correct nodes to link
+nameNode3 = str(getAttr('pname','3'))
+nameNode8 = str(getAttr('pname','8'))
+
+# Checks
+result  =  nameNode3.startswith('in0') and nameNode8.startswith('inG')
+
+
+
+
+rightID = str(getAttr('pId','1'))
+
+setAttr('tname', 'first_t1_' + rightID, '4')
+setAttr('tname', 'first_t2_' + rightID, '10')
+
+
+print(f"{getAttr('pId', '15')} : {getAttr('pId', '1')}")
+
+# If this is True the Rule is not applied
+result = getAttr('$type', '1') == '/Formalisms/WMS/WMS/Confluence' or (int(getAttr('pId', '15')) < int(getAttr('pId', '1'))) or (int(getAttr('pId', '17')) > int(getAttr('pId', '16')))
+
+result =  getAttr('$type', '1') == '/Formalisms/WMS/WMS/Confluence' or getAttr('$type', '0') == '/Formalisms/WMS/WMS/Source'
+
+
+result = getAttr('$type', '0') == '/Formalisms/WMS/WMS/Source'
