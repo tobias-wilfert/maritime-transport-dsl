@@ -132,3 +132,105 @@ setAttr('tname', cofluenceID + 'g4', '33')
 setAttr('tname', cofluenceID + 'g5', '34')
 setAttr('tname', cofluenceID + 'g6', '35')
 setAttr('tname', cofluenceID + 'g7', '36')
+
+
+# --  Guard Connnection Rule -- 
+# Grab the correct nodes to link
+nameNode2 = str(getAttr('pname','2'))
+nameNode3 = str(getAttr('pname','3'))
+nameNode8 = str(getAttr('pname','8'))
+
+# Also need to check that node0 has a PID of just smaller than node1 
+node0PID = int(getAttr('pId','0'))
+node1PID = int(getAttr('pId','1'))
+
+print("<Check>")
+print(f"NameNode2: {nameNode2}")
+print(f"NameNode3: {nameNode3}")
+print(f"NameNode8: {nameNode8}")
+print(f"node0PID: {node0PID}")
+print(f"node1PID: {node1PID}")
+print("</Check>")
+
+# Checks
+result  = (node0PID+1 == node1PID) and nameNode2.endswith('outG') and nameNode3.startswith('in0') and nameNode8.startswith('inG')
+
+
+
+
+# --  Guard Connnection Rule Confluence -- 
+# Grab the correct nodes to link
+nameNode2 = str(getAttr('pname','2'))
+nameNode3 = str(getAttr('pname','3'))
+nameNode8 = str(getAttr('pname','8'))
+nameNode12 = str(getAttr('pname','12'))
+
+# Also need to check that node0 has a PID of just smaller than node1 
+node0PID = int(getAttr('pId','0'))
+node1PID = int(getAttr('pId','1'))
+
+# Checks
+result  = (node0PID+1 == node1PID) and nameNode2.endswith('outG') and nameNode3.startswith('in0') and nameNode8.startswith('inG') and nameNode12.startswith('in1')
+
+
+leftID = str(getAttr('pId','0'))
+rightID = str(getAttr('pId','1'))
+
+setAttr('pname', leftID + '_ptrans_' + rightID, '14')
+setAttr('tname', leftID + '_g1trans_' + rightID, '15')
+setAttr('tname', leftID + '_g2trans_' + rightID, '16')
+
+
+# Grab the correct nodes to link
+nameNode2 = str(getAttr('pname','2'))
+nameNode3 = str(getAttr('pname','3'))
+nameNode8 = str(getAttr('pname','8'))
+nameNode12 = str(getAttr('pname','12'))
+
+# Also need to check that node0 has a PID of just smaller than node1 
+node0PID = int(getAttr('pId','0'))
+node1PID = int(getAttr('pId','1'))
+
+# Checks
+result  = (node0PID+1 == node1PID) and nameNode2.endswith('outG') and nameNode3.startswith('in0') and nameNode8.startswith('inG') and nameNode12.startswith('in1')
+
+
+
+# Check that there is no node with a smaller PID than the current
+# That has not yet stepped
+# print(f"Try to find blocing node {getAttr('pId', '0')} for node {getAttr('pId', '1')}")
+
+
+# Check to make sure 0 is the smallest node and 1 is the biggest node
+# False means it doesn't match
+result = (getAttr('pId', '0') > getAttr('pId', '2')) and (getAttr('pId', '1') < getAttr('pId', '3'))
+
+
+
+# Want False to not apply it
+# 1 should be the smallest
+# 0 should be the biggest
+result = (getAttr('pId', '0') < getAttr('pId', '2')) and (getAttr('pId', '1') > getAttr('pId', '3'))
+
+
+
+
+
+# Grab the correct nodes to link
+nameNode2 = str(getAttr('pname','2'))
+nameNode3 = str(getAttr('pname','3'))
+nameNode8 = str(getAttr('pname','8'))
+
+# Also need to check that node0 has a PID of just smaller than node1 
+node0PID = int(getAttr('pId','0'))
+node1PID = int(getAttr('pId','1'))
+
+# Checks
+result  = (node0PID+1 == node1PID) and nameNode2.endswith('outG') and nameNode3.startswith('in0') and nameNode8.startswith('inG')
+
+
+
+leftID = str(getAttr('pId','0'))
+rightID = str(getAttr('pId','1'))
+
+setAttr('tname', leftID + '_gtrans_' + rightID, '10')
