@@ -1890,7 +1890,7 @@
 			"1": {
 				"Action": {
 					"type": "code",
-					"value": "segmentID = str(getAttr('pId','0'))\n\n# Name the place related items\nsetAttr('pname', 'in0_' + segmentID,'1')\n\n# Name the guard related items\nsetAttr('pname', 'inG_' + segmentID + '_outG', '3')"
+					"value": "segmentID = str(getAttr('pId','0'))\n\n# Name the place related items\nsetAttr('pname', 'in0_ctr' + segmentID,'1')\n\n# Name the guard related items\nsetAttr('pname', 'inG_' + segmentID + '_outG', '3')"
 				},
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule/RHS"
 			},

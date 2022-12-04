@@ -1681,7 +1681,8 @@
 		"edges": [],
 		"metamodels": [
 			"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons",
-			"/Formalisms/PNS/PN.defaultIcons.pattern"
+			"/Formalisms/PNS/PN.defaultIcons.pattern",
+			"/Formalisms/__Transformations__/Transformation/MoTif.defaultIcons"
 		]
 	},
 	"asm": {
@@ -1908,7 +1909,8 @@
 		],
 		"metamodels": [
 			"/Formalisms/__Transformations__/TransformationRule/TransformationRule",
-			"/Formalisms/PNS/PN.pattern"
+			"/Formalisms/PNS/PN.pattern",
+			"/Formalisms/__Transformations__/Transformation/MoTif"
 		]
 	}
 }
