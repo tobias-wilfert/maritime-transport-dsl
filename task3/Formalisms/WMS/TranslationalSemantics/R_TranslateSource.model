@@ -7471,7 +7471,10 @@
 			"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons",
 			"/Formalisms/PNS/PN.defaultIcons.pattern",
 			"/Formalisms/WMS/WMS.defaultIcons.pattern",
-			"/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern"
+			"/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern",
+			"/Formalisms/WMS/WMS.defaultIcons",
+			"/Formalisms/GenericGraph/GenericGraph.defaultIcons",
+			"/Formalisms/PNS/PN.defaultIcons"
 		]
 	},
 	"asm": {
@@ -7486,7 +7489,7 @@
 			"1": {
 				"Action": {
 					"type": "code",
-					"value": "sourceRate = int(getAttr('rate', '0'))\nsourceID = str(getAttr('pId','0'))\n\n# Set the values related to the tile\nsetAttr('capacity',sourceRate, '2')\nsetAttr('weight',sourceRate, '7')\n\n# Name the transitions and places related related to the tile\nsetAttr('tname', sourceID+'spawn','1')\nsetAttr('pname', sourceID+'wait','2')\nsetAttr('tname', sourceID+'out','4')\n\n# Name the guard related\nsetAttr('pname', 'inG' + sourceID, '11')\nsetAttr('pname', sourceID + 'g', '12')\nsetAttr('pname', sourceID + 'outG', '13')\n\nsetAttr('tname', sourceID + 'g1', '18')\nsetAttr('tname', sourceID + 'g2', '19')\n\nsetAttr('pname', sourceID + '_counter', '6')\n"
+					"value": "sourceRate = int(getAttr('rate', '0'))\nsourceID = str(getAttr('pId','0'))\n\n# Set the values related to the tile\nsetAttr('capacity',sourceRate, '2')\nsetAttr('weight',sourceRate, '7')\n\n# Name the transitions and places related related to the tile\nsetAttr('tname', sourceID+'spawn','1')\nsetAttr('pname', sourceID+'wait','2')\nsetAttr('tname', sourceID+'out','4')\n\n# Name the guard related\nsetAttr('pname', 'inG' + sourceID, '11')\nsetAttr('pname', sourceID + 'g', '12')\nsetAttr('pname', sourceID + 'outG', '13')\n\nsetAttr('tname', sourceID + 'g1', '18')\nsetAttr('tname', sourceID + 'g2', '19')\n\nsetAttr('pname', sourceID + '_ctr', '6')\n"
 				},
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule/RHS"
 			},
@@ -8510,7 +8513,10 @@
 			"/Formalisms/__Transformations__/TransformationRule/TransformationRule",
 			"/Formalisms/PNS/PN.pattern",
 			"/Formalisms/WMS/WMS.pattern",
-			"/Formalisms/GenericGraph/GenericGraph.pattern"
+			"/Formalisms/GenericGraph/GenericGraph.pattern",
+			"/Formalisms/WMS/WMS",
+			"/Formalisms/GenericGraph/GenericGraph",
+			"/Formalisms/PNS/PN"
 		]
 	}
 }

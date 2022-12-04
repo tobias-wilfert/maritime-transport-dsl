@@ -1768,7 +1768,7 @@
 			"1": {
 				"Action": {
 					"type": "code",
-					"value": "segmentID = str(getAttr('pId','0'))\n\n# Name the place related items\nsetAttr('pname', 'in0_' + segmentID + '_out0', '1')\n\n# Name the guard related items\nsetAttr('pname', 'inG_' + segmentID + '_outG', '2')"
+					"value": "segmentID = str(getAttr('pId','0'))\n\n# Name the place related items\nsetAttr('pname', 'in0_' + segmentID + '_shipPos_out0', '1')\n\n# Name the guard related items\nsetAttr('pname', 'inG_' + segmentID + '_outG', '2')"
 				},
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule/RHS"
 			},
