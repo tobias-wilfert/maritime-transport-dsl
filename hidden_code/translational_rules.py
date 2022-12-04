@@ -287,3 +287,18 @@ setAttr('tname', leftID + '_g2trans_' + rightID, '16')
 # Change the name of 15 and 4
 setAttr('tname', 'first_t1_' + rightID, '4')
 setAttr('tname', 'first_t2_' + rightID, '15')
+
+
+
+# Translate Last order Rule
+# Need to find the biggest Node
+result = (int(getAttr('pId', '3')) > int(getAttr('pId', '1')))
+
+
+
+# Grab the correct node and transition
+nameNode = str(getAttr('pname','8'))
+transitionName = str(getAttr('tname','4'))
+
+# Checks
+result  = nameNode.endswith('outG') and transitionName.startswith('first')
