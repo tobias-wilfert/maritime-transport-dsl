@@ -275,3 +275,15 @@ result =  getAttr('$type', '1') == '/Formalisms/WMS/WMS/Confluence' or getAttr('
 
 
 result = getAttr('$type', '0') == '/Formalisms/WMS/WMS/Source'
+
+
+leftID = "-1"
+rightID = str(getAttr('pId','1'))
+
+setAttr('pname', leftID + '_ptrans_' + rightID, '14')
+setAttr('tname', leftID + '_g1trans_' + rightID, '15')
+setAttr('tname', leftID + '_g2trans_' + rightID, '16')
+
+# Change the name of 15 and 4
+setAttr('tname', 'first_t1_' + rightID, '4')
+setAttr('tname', 'first_t2_' + rightID, '15')
