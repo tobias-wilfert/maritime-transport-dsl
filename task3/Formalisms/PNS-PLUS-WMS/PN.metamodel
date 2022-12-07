@@ -1,0 +1,237 @@
+{
+	"types": {
+		"Place": [
+			{
+				"name": "tokens",
+				"type": "int",
+				"default": 0
+			},
+			{
+				"name": "pname",
+				"type": "string",
+				"default": "P_"
+			}
+		],
+		"Transition": [
+			{
+				"name": "tname",
+				"type": "string",
+				"default": "T_"
+			}
+		],
+		"PlaceToTransition": [
+			{
+				"name": "weight",
+				"type": "int",
+				"default": 1
+			}
+		],
+		"TransitionToPlace": [
+			{
+				"name": "weight",
+				"type": "int",
+				"default": 1
+			}
+		],
+		"ScheduledTransition": [
+			{
+				"name": "tname",
+				"type": "string",
+				"default": "T_"
+			},
+			{
+				"name": "isCurrent",
+				"type": "boolean",
+				"default": false
+			}
+		],
+		"Next": [],
+		"CapacityConstrainedPlace": [
+			{
+				"name": "capacity",
+				"type": "int",
+				"default": 1
+			},
+			{
+				"name": "tokens",
+				"type": "int",
+				"default": 0
+			},
+			{
+				"name": "pname",
+				"type": "string",
+				"default": "P_"
+			}
+		]
+	},
+	"constraints": [
+		{
+			"name": "GC_ExactlyOneFirstTransition",
+			"event": "validate",
+			"targetType": "*",
+			"code": "const allTs = getAllNodes(['/Formalisms/PNS/PN/ScheduledTransition']);\nconsole.log(\"allTs:\", allTs);\nconst allTsWithoutIncoming = allTs.filter(t => getNeighbors('in', '/Formalisms/PNS/PN/Next', t).length === 0);\nconsole.log(\"allTsWithoutIncoming:\", allTsWithoutIncoming);\nallTsWithoutIncoming.length === 1"
+		},
+		{
+			"name": "GC_ExactlyOneLastTransition",
+			"event": "validate",
+			"targetType": "*",
+			"code": "const allTs = getAllNodes(['/Formalisms/PNS/PN/ScheduledTransition']);\nconsole.log(\"allTs:\", allTs);\nconst allTsWithoutOutgoing = allTs.filter(t => getNeighbors('out', '/Formalisms/PNS/PN/Next', t).length === 0);\nconsole.log(\"allTsWithoutOutgoing:\", allTsWithoutOutgoing);\nallTsWithoutOutgoing.length === 1"
+		}
+	],
+	"actions": [],
+	"cardinalities": {
+		"Place": [
+			{
+				"dir": "out",
+				"type": "PlaceToTransition",
+				"min": "0",
+				"max": "Infinity"
+			},
+			{
+				"dir": "in",
+				"type": "TransitionToPlace",
+				"min": "0",
+				"max": "Infinity"
+			}
+		],
+		"Transition": [
+			{
+				"dir": "in",
+				"type": "PlaceToTransition",
+				"min": "0",
+				"max": "Infinity"
+			},
+			{
+				"dir": "out",
+				"type": "TransitionToPlace",
+				"min": "0",
+				"max": "Infinity"
+			}
+		],
+		"PlaceToTransition": [
+			{
+				"dir": "in",
+				"type": "Place",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "Transition",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "CapacityConstrainedPlace",
+				"min": "0",
+				"max": "1"
+			}
+		],
+		"TransitionToPlace": [
+			{
+				"dir": "in",
+				"type": "Transition",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "Place",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "CapacityConstrainedPlace",
+				"min": "0",
+				"max": "1"
+			}
+		],
+		"ScheduledTransition": [
+			{
+				"dir": "out",
+				"type": "Next",
+				"min": 0,
+				"max": 1
+			},
+			{
+				"dir": "in",
+				"type": "Next",
+				"min": 0,
+				"max": 1
+			}
+		],
+		"Next": [
+			{
+				"dir": "in",
+				"type": "ScheduledTransition",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "ScheduledTransition",
+				"min": "0",
+				"max": "1"
+			}
+		],
+		"CapacityConstrainedPlace": [
+			{
+				"dir": "out",
+				"type": "PlaceToTransition",
+				"min": "0",
+				"max": "Infinity"
+			},
+			{
+				"dir": "in",
+				"type": "TransitionToPlace",
+				"min": "0",
+				"max": "Infinity"
+			}
+		]
+	},
+	"legalConnections": {
+		"Place": {
+			"Transition": [
+				"PlaceToTransition"
+			]
+		},
+		"Transition": {
+			"Place": [
+				"TransitionToPlace"
+			],
+			"CapacityConstrainedPlace": [
+				"TransitionToPlace"
+			]
+		},
+		"ScheduledTransition": {
+			"ScheduledTransition": [
+				"Next"
+			]
+		},
+		"CapacityConstrainedPlace": {
+			"Transition": [
+				"PlaceToTransition"
+			]
+		}
+	},
+	"connectorTypes": {
+		"PlaceToTransition": "visual",
+		"TransitionToPlace": "visual",
+		"Next": "visual"
+	},
+	"types2parentTypes": {
+		"Place": [],
+		"Transition": [],
+		"PlaceToTransition": [],
+		"TransitionToPlace": [],
+		"ScheduledTransition": [],
+		"Next": [],
+		"GC_ExactlyOneFirstTransition": [],
+		"GC_ExactlyOneLastTransition": [],
+		"CapacityConstrainedPlace": [
+			"Place"
+		]
+	}
+}
