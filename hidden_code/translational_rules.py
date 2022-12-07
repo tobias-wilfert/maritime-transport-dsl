@@ -361,3 +361,47 @@ rightID = str(getAttr('pId','1'))
 
 # Give a unquie name to the new transition
 setAttr('tname', leftID + '_gtrans_' + rightID, '10')
+
+
+
+
+######## The order translation rules ########
+
+# Translate order (*) -|not Source|-> (Sink | Segement) 
+
+# - NAC: Make sure we are not a Confluence or a Source
+result =  getAttr('$type', '1') == '/Formalisms/WMS/WMS/Confluence' or getAttr('$type', '1') == '/Formalisms/WMS/WMS/Source'
+
+# - LHS: Make sure we get the correct transition
+# Grab the correct nodes to link
+nameNode2 = str(getAttr('pname','2'))
+nameNode3 = str(getAttr('pname','3'))
+nameNode8 = str(getAttr('pname','8'))
+nameTransition = str(getAttr('tname','4'))
+
+# Also need to check that node0 has a PID of just smaller than node1 
+node0PID = int(getAttr('pId','0'))
+node1PID = int(getAttr('pId','1'))
+
+# Checks
+result  = (node0PID+1 == node1PID) and nameNode2.endswith('outG') and nameNode8.startswith('inG') and nameNode3.startswith('in0') and (not nameTransition.endswith('out'))
+
+
+# Translate order (*) -|Source|-> (Sink | Segement)
+
+# - NAC: Make sure we are not a Confluence or a Source
+result =  getAttr('$type', '1') == '/Formalisms/WMS/WMS/Confluence' or getAttr('$type', '1') == '/Formalisms/WMS/WMS/Source'
+
+# - LHS: Make sure we get the correct transition
+# Grab the correct nodes to link
+nameNode2 = str(getAttr('pname','2'))
+nameNode3 = str(getAttr('pname','3'))
+nameNode8 = str(getAttr('pname','8'))
+nameTransition = str(getAttr('tname','4'))
+
+# Also need to check that node0 has a PID of just smaller than node1 
+node0PID = int(getAttr('pId','0'))
+node1PID = int(getAttr('pId','1'))
+
+# Checks
+result  = (node0PID+1 == node1PID) and nameNode2.endswith('outG') and nameNode8.startswith('inG') and nameNode3.startswith('in0') and nameTransition.endswith('out')
