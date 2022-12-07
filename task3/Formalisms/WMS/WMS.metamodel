@@ -439,10 +439,10 @@
 			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);\nvar allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);\nvar allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);\nvar allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);\n\nvar generatedCount = 0;\nfor(source of allSources){\n    generatedCount += parseInt(getAttr('counter',source));\n}\nprint('Generated watercraft: ' + generatedCount);\n\nvar destroyedCount = 0;\nfor(sink of allSinks){\n    destroyedCount += parseInt(getAttr('counter',sink));\n}\nprint('Destroyed watercraft: ' + destroyedCount);\n\nvar onTiles = 0;\nfor(segment of allSegments){\n    if(getAttr('got_watercraft',segment) == true){\n        onTiles += 1;\n    }\n}\n\nfor(confluence of allConfluences){\n    if(getAttr('got_watercraft',confluence) == true){\n        onTiles += 1;\n    }\n}\nprint('On tiles: ' + onTiles);\n\ngeneratedCount === destroyedCount + onTiles;"
 		},
 		{
-			"name": "GC_all_unique_ids",
+			"name": "GC_all_sequential_unique_ids",
 			"event": "validate",
 			"targetType": "*",
-			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);\nvar allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);\nvar allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);\nvar allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);\n\nvar allTiles = allSources.concat(allSinks,allSegments,allConfluences)\n// print(allTiles);\n\nvar seenIDs = new Set();\nvar onlyUnique = true;\nfor(tile of allTiles){\n    var id = getAttr('pId',tile);\n    if(seenIDs.has(id)){\n        onlyUnique = false;\n        print('Double entry on id ' + id)\n    }else{\n        seenIDs.add(id);\n    }\n}\n\nonlyUnique"
+			"code": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);\nvar allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);\nvar allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);\nvar allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);\n\nvar allTiles = allSources.concat(allSinks,allSegments,allConfluences)\nvar seenIDs = new Set();\nvar onlyUnique = true;\nfor(tile of allTiles){\n    var id = parseInt(getAttr('pId',tile));\n    if(seenIDs.has(id)){\n        onlyUnique = false;\n        print('Double entry on id ' + id)\n    }else{\n        seenIDs.add(id);\n    }\n}\n(seenIDs.size-1 == Math.max(...seenIDs) - Math.min(...seenIDs)) && onlyUnique "
 		},
 		{
 			"name": "GC_all_nodes_connected",
@@ -930,7 +930,7 @@
 		"GC_source_cooldown_lowerbound": [],
 		"GC_equal_sources_and_sinks": [],
 		"GC_no_watercraft_loss": [],
-		"GC_all_unique_ids": [],
+		"GC_all_sequential_unique_ids": [],
 		"GC_all_nodes_connected": []
 	}
 }

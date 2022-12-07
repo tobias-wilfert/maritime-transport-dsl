@@ -5516,7 +5516,7 @@
 							"11": {
 								"textContent": {
 									"type": "string",
-									"value": "check GC_all_unique_ids on validate"
+									"value": "check GC_all_sequential_unique_ids on validate"
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -6281,7 +6281,7 @@
 			"45": {
 				"name": {
 					"type": "string",
-					"value": "GC_all_unique_ids"
+					"value": "GC_all_sequential_unique_ids"
 				},
 				"event": {
 					"type": "$EVENT",
@@ -6289,7 +6289,7 @@
 				},
 				"code": {
 					"type": "code",
-					"value": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);\nvar allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);\nvar allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);\nvar allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);\n\nvar allTiles = allSources.concat(allSinks,allSegments,allConfluences)\n// print(allTiles);\n\nvar seenIDs = new Set();\nvar onlyUnique = true;\nfor(tile of allTiles){\n    var id = getAttr('pId',tile);\n    if(seenIDs.has(id)){\n        onlyUnique = false;\n        print('Double entry on id ' + id)\n    }else{\n        seenIDs.add(id);\n    }\n}\n\nonlyUnique"
+					"value": "var allSources = getAllNodes(['/Formalisms/WMS/WMS/Source']);\nvar allSinks = getAllNodes(['/Formalisms/WMS/WMS/Sink']);\nvar allSegments = getAllNodes(['/Formalisms/WMS/WMS/Segment']);\nvar allConfluences = getAllNodes(['/Formalisms/WMS/WMS/Confluence']);\n\nvar allTiles = allSources.concat(allSinks,allSegments,allConfluences)\nvar seenIDs = new Set();\nvar onlyUnique = true;\nfor(tile of allTiles){\n    var id = parseInt(getAttr('pId',tile));\n    if(seenIDs.has(id)){\n        onlyUnique = false;\n        print('Double entry on id ' + id)\n    }else{\n        seenIDs.add(id);\n    }\n}\n(seenIDs.size-1 == Math.max(...seenIDs) - Math.min(...seenIDs)) && onlyUnique "
 				},
 				"$type": "/Formalisms/__LanguageSyntax__/SimpleClassDiagram/SimpleClassDiagram/GlobalConstraint"
 			},
