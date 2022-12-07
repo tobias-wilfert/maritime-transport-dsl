@@ -302,3 +302,62 @@ transitionName = str(getAttr('tname','4'))
 
 # Checks
 result  = nameNode.endswith('outG') and transitionName.startswith('first')
+
+
+# Grab the relavant information
+sourceRate = int(getAttr('rate', '0'))
+sourceID = str(getAttr('pId','0'))
+
+# Set the values related the Source
+setAttr('capacity',sourceRate, '2')
+setAttr('weight',sourceRate, '7')
+
+# Name the transitions and places
+setAttr('pname', sourceID+'wait','2')
+setAttr('pname', sourceID + '_ctr', '6')
+setAttr('tname', sourceID+'spawn','1')
+setAttr('tname', sourceID+'out','4')
+
+
+# Name the guard related places and transitions
+setAttr('pname', 'inG' + sourceID, '11')
+setAttr('pname', sourceID + 'g', '12')
+setAttr('pname', sourceID + 'outG', '13')
+setAttr('tname', sourceID + 'g1', '18')
+setAttr('tname', sourceID + 'g2', '19')
+
+# Set the wieghts for the special guard logic
+setAttr('weight',sourceRate, '30')
+setAttr('weight',sourceRate, '31')
+
+
+# Grab the info from the nodes
+nameNode3 = str(getAttr('pname','3'))
+nameNode4 = str(getAttr('pname','4'))
+
+# Check they are the correct nodes
+result  = nameNode3.endswith('out0') and nameNode4.startswith('in0') 
+
+# - NAC
+# Ensure Segment0 is not a Source and Segement1 is not a Confluence
+result =  getAttr('$type', '1') == '/Formalisms/WMS/WMS/Confluence' or getAttr('$type', '0') == '/Formalisms/WMS/WMS/Source'
+
+# - LHS
+# Grab the names of the places
+nameNode2 = str(getAttr('pname','2'))
+nameNode3 = str(getAttr('pname','3'))
+nameNode8 = str(getAttr('pname','8'))
+
+# Grab the PIDs of the Segements
+node0PID = int(getAttr('pId','0'))
+node1PID = int(getAttr('pId','1'))
+
+# Ensure we get the correct places, transitions and Segements
+result  = (node0PID+1 == node1PID) and nameNode2.endswith('outG') and nameNode3.startswith('in0') and nameNode8.startswith('inG')
+
+# - RHS
+leftID = str(getAttr('pId','0'))
+rightID = str(getAttr('pId','1'))
+
+# Give a unquie name to the new transition
+setAttr('tname', leftID + '_gtrans_' + rightID, '10')

@@ -9,8 +9,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						768.4877506468891,
-						5
+						773.4877506468891,
+						217
 					]
 				},
 				"orientation": {
@@ -99,8 +99,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1435,
-						224
+						1386,
+						421
 					]
 				},
 				"orientation": {
@@ -189,8 +189,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						41,
-						218
+						63,
+						422
 					]
 				},
 				"orientation": {
@@ -331,8 +331,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1131,
-						556
+						1136,
+						768
 					]
 				},
 				"orientation": {
@@ -575,8 +575,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1025.0823973528968,
-						528.7498347214655
+						1030.0823973528968,
+						740.7498347214655
 					]
 				},
 				"orientation": {
@@ -612,8 +612,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/LHSIcon/0.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/54.instance": "M864.3022222222222,456L1025.0823973528968,528.7498347214657",
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/54.instance--/Formalisms/WMS/WMS.defaultIcons.pattern/__pAnyNodeIcon/52.instance": "M1025.0823973528968,528.7498347214657L1185.8625724835713,601.4996694429312"
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/LHSIcon/0.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/54.instance": "M869.3022222222223,668L1030.0823973528968,740.7498347214657",
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/54.instance--/Formalisms/WMS/WMS.defaultIcons.pattern/__pAnyNodeIcon/52.instance": "M1030.0823973528968,740.7498347214657L1190.8625724835713,813.4996694429312"
 					}
 				},
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink"
@@ -626,8 +626,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						948,
-						791
+						953,
+						1003
 					]
 				},
 				"orientation": {
@@ -890,8 +890,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1167,
-						793
+						1172,
+						1005
 					]
 				},
 				"orientation": {
@@ -1154,8 +1154,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1065,
-						796
+						1070,
+						1008
 					]
 				},
 				"orientation": {
@@ -1358,8 +1358,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						916.655993923611,
-						638.875
+						921.655993923611,
+						850.875
 					]
 				},
 				"orientation": {
@@ -1395,8 +1395,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/LHSIcon/0.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/58.instance": "M864.3022222222222,456L916.655993923611,638.875",
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/58.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/55.instance": "M916.6765946247181,638.9469595378232L969.0095699452409,821.7493164783588"
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/LHSIcon/0.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/58.instance": "M869.3022222222223,668L921.655993923611,850.875",
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/58.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/55.instance": "M921.6765946247181,850.9469595378232L974.0095699452409,1033.7493164783589"
 					}
 				},
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink"
@@ -1426,8 +1426,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1026.155993923611,
-						639.875
+						1031.155993923611,
+						851.875
 					]
 				},
 				"orientation": {
@@ -1463,8 +1463,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/LHSIcon/0.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/59.instance": "M864.3022222222222,456L1026.1559939236113,639.875",
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/59.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/56.instance": "M1026.2550470374595,639.9875299158459L1188.0091161843925,823.749262198894"
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/LHSIcon/0.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/59.instance": "M869.3022222222223,668L1031.1559939236113,851.875",
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/59.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/56.instance": "M1031.2550470374595,851.9875299158459L1193.0091161843925,1035.749262198894"
 					}
 				},
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink"
@@ -1494,8 +1494,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						975.905993923611,
-						641.875
+						980.905993923611,
+						853.875
 					]
 				},
 				"orientation": {
@@ -1531,8 +1531,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/LHSIcon/0.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/60.instance": "M864.3022222222222,456L975.905993923611,641.875",
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/60.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionIcon/57.instance": "M975.9445485916999,641.9392124259937L1087.5094443357502,827.7494648958682"
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/LHSIcon/0.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/60.instance": "M869.3022222222223,668L980.905993923611,853.875",
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/60.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionIcon/57.instance": "M980.9445485916999,853.9392124259937L1092.5094443357502,1039.7494648958682"
 					}
 				},
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink"
@@ -1562,8 +1562,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1180.5,
-						704.5
+						1185.5,
+						916.5
 					]
 				},
 				"orientation": {
@@ -1642,8 +1642,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/WMS/WMS.defaultIcons.pattern/__pAnyNodeIcon/52.instance--/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink/62.instance": "M1163,609L1180.5,704.5",
-						"/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink/62.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/56.instance": "M1180.5270060485018,704.6473758646796L1197.9998884814167,799.9993914271595"
+						"/Formalisms/WMS/WMS.defaultIcons.pattern/__pAnyNodeIcon/52.instance--/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink/62.instance": "M1168,821L1185.5,916.5",
+						"/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink/62.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/56.instance": "M1185.5270060485018,916.6473758646796L1202.9998884814167,1011.9993914271595"
 					}
 				},
 				"$type": "/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink"
@@ -1673,8 +1673,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1132,
-						824
+						1137,
+						1036
 					]
 				},
 				"orientation": {
@@ -1855,8 +1855,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionIcon/57.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionToPlaceLink/63.instance": "M1087,824L1132,824",
-						"/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionToPlaceLink/63.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/56.instance": "M1132.0765168211578,824L1176.9996669135803,824"
+						"/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionIcon/57.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionToPlaceLink/63.instance": "M1092,1036L1137,1036",
+						"/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionToPlaceLink/63.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/56.instance": "M1137.0765168211578,1036L1181.9996669135803,1036"
 					}
 				},
 				"$type": "/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionToPlaceLink"
@@ -1869,8 +1869,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1227,
-						822
+						1232,
+						1034
 					]
 				},
 				"orientation": {
@@ -2150,8 +2150,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1056.155993923611,
-						654.375
+						1061.155993923611,
+						866.375
 					]
 				},
 				"orientation": {
@@ -2187,8 +2187,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/LHSIcon/0.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/65.instance": "M864.3022222222222,456L1056.1559939236113,654.375",
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/65.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/64.instance": "M1056.2602240141605,654.4827729357587L1248.0091592683552,852.7493730329181"
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/LHSIcon/0.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/65.instance": "M869.3022222222223,668L1061.1559939236113,866.375",
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/65.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/64.instance": "M1061.2602240141605,866.4827729357587L1253.0091592683552,1064.7493730329181"
 					}
 				},
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink"
@@ -2218,8 +2218,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1218.538986774053,
-						718.145374411723
+						1223.538986774053,
+						930.145374411723
 					]
 				},
 				"orientation": {
@@ -2298,8 +2298,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/WMS/WMS.defaultIcons.pattern/__pAnyNodeIcon/52.instance--/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink/66.instance": "M1189,608L1218.538986774053,718.145374411723",
-						"/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink/66.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/64.instance": "M1218.538918074927,718.145118245491L1247.9998626823458,827.9994879680687"
+						"/Formalisms/WMS/WMS.defaultIcons.pattern/__pAnyNodeIcon/52.instance--/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink/66.instance": "M1194,820L1223.5389867740532,930.145374411723",
+						"/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink/66.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/64.instance": "M1223.538918074927,930.145118245491L1252.9998626823458,1039.9994879680687"
 					}
 				},
 				"$type": "/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink"
@@ -2312,8 +2312,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1998,
-						695
+						1949,
+						892
 					]
 				},
 				"orientation": {
@@ -2576,8 +2576,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1938,
-						612
+						1889,
+						809
 					]
 				},
 				"orientation": {
@@ -2840,8 +2840,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1836,
-						615
+						1787,
+						812
 					]
 				},
 				"orientation": {
@@ -3027,8 +3027,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1719,
-						610
+						1670,
+						807
 					]
 				},
 				"orientation": {
@@ -3291,8 +3291,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1902,
-						375
+						1853,
+						572
 					]
 				},
 				"orientation": {
@@ -3518,8 +3518,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1706,
-						373
+						1657,
+						570
 					]
 				},
 				"orientation": {
@@ -3762,8 +3762,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1951.5,
-						523.5
+						1902.5,
+						720.5
 					]
 				},
 				"orientation": {
@@ -3842,8 +3842,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/WMS/WMS.defaultIcons.pattern/__pAnyNodeIcon/71.instance--/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink/73.instance": "M1934,428L1951.5,523.5",
-						"/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink/73.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/68.instance": "M1951.5270060485016,523.6473758646796L1968.9998884814167,618.9993914271595"
+						"/Formalisms/WMS/WMS.defaultIcons.pattern/__pAnyNodeIcon/71.instance--/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink/73.instance": "M1885.0000000000005,625L1902.5,720.5",
+						"/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink/73.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/68.instance": "M1902.5270060485016,720.6473758646796L1919.9998884814167,815.9993914271595"
 					}
 				},
 				"$type": "/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink"
@@ -3873,8 +3873,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1746.5,
-						514
+						1697.5,
+						711
 					]
 				},
 				"orientation": {
@@ -3953,8 +3953,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/WMS/WMS.defaultIcons.pattern/__pAnyNodeIcon/72.instance--/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink/74.instance": "M1748,409L1746.5,514",
-						"/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink/74.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/70.instance": "M1746.4978612251339,514.1497142406215L1745.0000081580824,618.9994289342403"
+						"/Formalisms/WMS/WMS.defaultIcons.pattern/__pAnyNodeIcon/72.instance--/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink/74.instance": "M1699,606L1697.5,711",
+						"/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink/74.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/70.instance": "M1697.4978612251339,711.1497142406215L1696.0000081580824,815.9994289342403"
 					}
 				},
 				"$type": "/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink"
@@ -3984,8 +3984,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1989.499931341173,
-						563.9997439840344
+						1940.499931341173,
+						760.9997439840344
 					]
 				},
 				"orientation": {
@@ -4064,8 +4064,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/WMS/WMS.defaultIcons.pattern/__pAnyNodeIcon/71.instance--/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink/75.instance": "M1960,427L1989.499931341173,563.9997439840344",
-						"/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink/75.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/67.instance": "M1989.499931341173,563.9997439840344L2018.9998626823458,700.9994879680687"
+						"/Formalisms/WMS/WMS.defaultIcons.pattern/__pAnyNodeIcon/71.instance--/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink/75.instance": "M1911,624L1940.4999313411731,760.9997439840344",
+						"/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink/75.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/67.instance": "M1940.4999313411731,760.9997439840344L1969.999862682346,897.9994879680687"
 					}
 				},
 				"$type": "/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink"
@@ -4095,8 +4095,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1903,
-						643
+						1854,
+						840
 					]
 				},
 				"orientation": {
@@ -4152,7 +4152,7 @@
 								"position": {
 									"type": "list<double>",
 									"value": [
-										"0;-3.589110315837388,0%",
+										"0;-3.5891103158371607,0%",
 										"0;-19.5,0%"
 									]
 								},
@@ -4201,7 +4201,7 @@
 								"position": {
 									"type": "list<double>",
 									"value": [
-										"0;44.99966691358031,100%",
+										"0;44.99966691358077,100%",
 										"0;-4,0%"
 									]
 								},
@@ -4277,8 +4277,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionIcon/69.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionToPlaceLink/76.instance": "M1858,643L1903,643",
-						"/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionToPlaceLink/76.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/68.instance": "M1903.0765168211578,643L1947.9996669135803,643"
+						"/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionIcon/69.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionToPlaceLink/76.instance": "M1809,840L1854,840",
+						"/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionToPlaceLink/76.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/68.instance": "M1854.0765168211578,840L1898.9996669135808,840"
 					}
 				},
 				"$type": "/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionToPlaceLink"
@@ -4308,8 +4308,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1727.00461320305,
-						474.8747665460013
+						1678.00461320305,
+						671.8747665460013
 					]
 				},
 				"orientation": {
@@ -4345,8 +4345,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/RHSIcon/1.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/77.instance": "M1435,224L1727.00461320305,474.8747665460013",
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/77.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/67.instance": "M1727.00461320305,474.8747665460013L2019.0092264061,725.7495330920026"
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/RHSIcon/1.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/77.instance": "M1386,421L1678.0046132030498,671.8747665460014",
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/77.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/67.instance": "M1678.0046132030498,671.8747665460014L1970.0092264061,922.7495330920026"
 					}
 				},
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink"
@@ -4376,8 +4376,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1697.004592381992,
-						433.3747336700207
+						1648.004592381992,
+						630.3747336700208
 					]
 				},
 				"orientation": {
@@ -4413,8 +4413,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/RHSIcon/1.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/78.instance": "M1435,224L1697.004592381992,433.3747336700207",
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/78.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/68.instance": "M1697.004592381992,433.3747336700207L1959.0091847639842,642.7494673400414"
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/RHSIcon/1.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/78.instance": "M1386,421L1648.004592381992,630.3747336700208",
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/78.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/68.instance": "M1648.004592381992,630.3747336700208L1910.0091847639842,839.7494673400414"
 					}
 				},
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink"
@@ -4444,8 +4444,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1646.7545982262632,
-						435.3746605067069
+						1597.7545982262632,
+						632.374660506707
 					]
 				},
 				"orientation": {
@@ -4481,8 +4481,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/RHSIcon/1.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/79.instance": "M1435,224L1646.7545982262632,435.3746605067069",
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/79.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionIcon/69.instance": "M1646.7545982262632,435.3746605067069L1858.509196452526,646.7493210134138"
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/RHSIcon/1.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/79.instance": "M1386,421L1597.7545982262632,632.374660506707",
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/79.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionIcon/69.instance": "M1597.7545982262632,632.374660506707L1809.5091964525263,843.7493210134138"
 					}
 				},
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink"
@@ -4512,8 +4512,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1587.5047417053179,
-						432.3747486251609
+						1538.5047417053179,
+						629.3747486251609
 					]
 				},
 				"orientation": {
@@ -4549,8 +4549,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/RHSIcon/1.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/80.instance": "M1435,224L1587.5047417053179,432.3747486251609",
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/80.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/70.instance": "M1587.5047417053179,432.3747486251609L1740.009483410636,640.7494972503218"
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/RHSIcon/1.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/80.instance": "M1386,421L1538.5047417053179,629.3747486251609",
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/80.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/70.instance": "M1538.5047417053179,629.3747486251609L1691.0094834106362,837.7494972503218"
 					}
 				},
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink"
@@ -4580,8 +4580,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1695.9311830338634,
-						322.2498067595119
+						1646.9311830338634,
+						519.2498067595119
 					]
 				},
 				"orientation": {
@@ -4617,8 +4617,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/RHSIcon/1.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/81.instance": "M1435,224L1695.9311830338634,322.2498067595119",
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/81.instance--/Formalisms/WMS/WMS.defaultIcons.pattern/__pAnyNodeIcon/71.instance": "M1695.9311830338634,322.2498067595119L1956.8623660677265,420.4996135190238"
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/RHSIcon/1.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/81.instance": "M1386,421L1646.9311830338634,519.249806759512",
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/81.instance--/Formalisms/WMS/WMS.defaultIcons.pattern/__pAnyNodeIcon/71.instance": "M1646.9311830338634,519.249806759512L1907.8623660677267,617.4996135190238"
 					}
 				},
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink"
@@ -4648,8 +4648,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1597.9312932522234,
-						321.24974179254787
+						1548.9312932522234,
+						518.2497417925479
 					]
 				},
 				"orientation": {
@@ -4685,8 +4685,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/RHSIcon/1.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/82.instance": "M1435,224L1597.9312932522234,321.24974179254787",
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/82.instance--/Formalisms/WMS/WMS.defaultIcons.pattern/__pAnyNodeIcon/72.instance": "M1597.9312932522234,321.24974179254787L1760.862586504447,418.49948358509573"
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/RHSIcon/1.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/82.instance": "M1386,421L1548.9312932522234,518.2497417925479",
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/82.instance--/Formalisms/WMS/WMS.defaultIcons.pattern/__pAnyNodeIcon/72.instance": "M1548.9312932522234,518.2497417925479L1711.8625865044473,615.4994835850957"
 					}
 				},
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink"
@@ -4699,8 +4699,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1829,
-						718
+						1780,
+						915
 					]
 				},
 				"orientation": {
@@ -4903,8 +4903,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1643.2548828125,
-						486.875
+						1594.2548828125,
+						683.875
 					]
 				},
 				"orientation": {
@@ -4940,8 +4940,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/RHSIcon/1.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/84.instance": "M1435,224L1643.2548828125,486.875",
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/84.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionIcon/83.instance": "M1643.3479642525776,486.99249440507697L1851.509320436505,749.7494380495473"
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/RHSIcon/1.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/84.instance": "M1386,421L1594.2548828125,683.875",
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/84.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionIcon/83.instance": "M1594.3479642525776,683.992494405077L1802.5093204365055,946.7494380495473"
 					}
 				},
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink"
@@ -4971,8 +4971,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1793,
-						682
+						1744,
+						879
 					]
 				},
 				"orientation": {
@@ -5153,8 +5153,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/70.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceToTransitionLink/86.instance": "M1745,639L1793,682",
-						"/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceToTransitionLink/86.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionIcon/83.instance": "M1793.112148346803,682.1004662273442L1840.9992976074218,724.9993707733154"
+						"/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/70.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceToTransitionLink/86.instance": "M1696,836L1744,879",
+						"/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceToTransitionLink/86.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionIcon/83.instance": "M1744.1121483468032,879.1004662273442L1791.9992976074218,921.9993707733154"
 					}
 				},
 				"$type": "/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceToTransitionLink"
@@ -5184,8 +5184,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1930.499700713251,
-						733.0001310486357
+						1881.499700713251,
+						930.0001310486357
 					]
 				},
 				"orientation": {
@@ -5242,12 +5242,12 @@
 									"type": "list<double>",
 									"value": [
 										"0;-9.03091866670843,0%",
-										"0;-18.567334916356344,0%"
+										"0;-18.56733491635623,0%"
 									]
 								},
 								"orientation": {
 									"type": "double",
-									"value": "0;-6.749110842312869"
+									"value": "0;-6.749110842312833"
 								},
 								"scale": {
 									"type": "list<double>",
@@ -5290,13 +5290,13 @@
 								"position": {
 									"type": "list<double>",
 									"value": [
-										"0;84.02961276811811,99.30702808663885%",
-										"0;-13.972150074829983,-11.752198628321592%"
+										"0;84.02961276811811,99.30702808663884%",
+										"0;-13.972150074829983,-11.752198628321656%"
 									]
 								},
 								"orientation": {
 									"type": "double",
-									"value": "0;-6.749110842312945"
+									"value": "0;-6.749110842312981"
 								},
 								"scale": {
 									"type": "list<double>",
@@ -5366,8 +5366,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionIcon/83.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionToPlaceLink/87.instance": "M1846,743L1930.499700713251,733.0001310486357",
-						"/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionToPlaceLink/87.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/67.instance": "M1930.499700713251,733.0001310486357L2014.9994014265021,723.0002620972713"
+						"/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionIcon/83.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionToPlaceLink/87.instance": "M1797,940L1881.4997007132515,930.0001310486357",
+						"/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionToPlaceLink/87.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/67.instance": "M1881.4997007132515,930.0001310486357L1965.9994014265021,920.0002620972713"
 					}
 				},
 				"$type": "/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionToPlaceLink"
@@ -5380,8 +5380,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						106,
-						243
+						128,
+						447
 					]
 				},
 				"orientation": {
@@ -5623,8 +5623,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						206.499681578155,
-						362.92676423448074
+						228.499681578155,
+						566.9267642344807
 					]
 				},
 				"orientation": {
@@ -5660,8 +5660,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/NACIcon/2.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/90.instance": "M40.99999999999998,216.85412445648274L206.49968157815496,362.92676423448074",
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/90.instance--/Formalisms/WMS/WMS.defaultIcons.pattern/__pConfluenceIcon/89.instance": "M206.49968157815496,362.92676423448074L371.9993631563099,508.99940401247875"
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/NACIcon/2.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/90.instance": "M62.99999999999996,420.85412445648274L228.49968157815493,566.9267642344807",
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/90.instance--/Formalisms/WMS/WMS.defaultIcons.pattern/__pConfluenceIcon/89.instance": "M228.49968157815493,566.9267642344807L393.99936315630987,712.9994040124789"
 					}
 				},
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink"
@@ -5674,8 +5674,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						804,
-						42
+						809,
+						254
 					]
 				},
 				"orientation": {
@@ -6162,8 +6162,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						964.9008261565214,
-						379.99965840095757
+						969.9008261565214,
+						591.9996584009575
 					]
 				},
 				"orientation": {
@@ -6199,8 +6199,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/LHSIcon/0.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/97.instance": "M864.3022222222222,456L964.9008261565214,379.99965840095757",
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/97.instance--/Formalisms/WMS/WMS.defaultIcons.pattern/__pSourceIcon/96.instance": "M964.9008261565214,379.99965840095757L1065.4994300908206,303.99931680191514"
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/LHSIcon/0.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/97.instance": "M869.3022222222223,668L969.9008261565214,591.9996584009575",
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/97.instance--/Formalisms/WMS/WMS.defaultIcons.pattern/__pSourceIcon/96.instance": "M969.9008261565214,591.9996584009575L1070.4994300908206,515.9993168019153"
 					}
 				},
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink"
@@ -6230,8 +6230,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						981.992857143397,
-						590.1499999886621
+						986.992857143397,
+						802.1499999886621
 					]
 				},
 				"orientation": {
@@ -6310,8 +6310,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/WMS/WMS.defaultIcons.pattern/__pSourceIcon/96.instance--/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink/98.instance": "M992,380L981.992857143397,590.1499999886621",
-						"/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink/98.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/55.instance": "M981.9964387755772,590.0747857128806L972.0000305976677,799.9993574489796"
+						"/Formalisms/WMS/WMS.defaultIcons.pattern/__pSourceIcon/96.instance--/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink/98.instance": "M997,592L986.992857143397,802.1499999886621",
+						"/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink/98.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/55.instance": "M986.9964387755772,802.0747857128806L977.0000305976678,1011.9993574489797"
 					}
 				},
 				"$type": "/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink"
