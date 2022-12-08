@@ -1923,8 +1923,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1691,
-						838
+						2076,
+						828
 					]
 				},
 				"orientation": {
@@ -2638,8 +2638,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1754,
-						563
+						1756,
+						607
 					]
 				},
 				"orientation": {
@@ -3484,8 +3484,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1780.500004079041,
-						495.99971446712016
+						1781.500004079041,
+						517.9997144671202
 					]
 				},
 				"orientation": {
@@ -3564,8 +3564,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/WMS/WMS.defaultIcons.pattern/__pAnyNodeIcon/72.instance--/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink/74.instance": "M1780.9999999999995,420L1780.500004079041,495.99971446712016",
-						"/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink/74.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/70.instance": "M1780.500004079041,495.99971446712016L1780.0000081580824,571.9994289342403"
+						"/Formalisms/WMS/WMS.defaultIcons.pattern/__pAnyNodeIcon/72.instance--/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink/74.instance": "M1780.9999999999995,420L1781.500004079041,517.9997144671202",
+						"/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink/74.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/70.instance": "M1781.500004079041,517.9997144671202L1782.0000081580824,615.9994289342403"
 					}
 				},
 				"$type": "/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink"
@@ -3595,8 +3595,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1877.9999313411724,
-						639.9997439840344
+						2070.4999313411727,
+						634.9997439840344
 					]
 				},
 				"orientation": {
@@ -3675,8 +3675,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/WMS/WMS.defaultIcons.pattern/__pAnyNodeIcon/71.instance--/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink/75.instance": "M2043.9999999999998,436L1877.9999313411724,639.9997439840344",
-						"/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink/75.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/67.instance": "M1877.9999313411724,639.9997439840344L1711.999862682345,843.9994879680687"
+						"/Formalisms/WMS/WMS.defaultIcons.pattern/__pAnyNodeIcon/71.instance--/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink/75.instance": "M2043.9999999999998,436L2070.4999313411727,634.9997439840344",
+						"/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink/75.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/67.instance": "M2070.4999313411727,634.9997439840344L2096.9998626823453,833.9994879680687"
 					}
 				},
 				"$type": "/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink"
@@ -5738,7 +5738,7 @@
 				},
 				"$type": "/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern/__pGenericLinkLink"
 			},
-			"112": {
+			"113": {
 				"typename": {
 					"type": "string",
 					"value": "TransitionIcon"
@@ -5746,8 +5746,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1668,
-						636
+						1676,
+						788
 					]
 				},
 				"orientation": {
@@ -5894,7 +5894,7 @@
 								},
 								"textContent": {
 									"type": "string",
-									"value": "15"
+									"value": "16"
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -5921,11 +5921,11 @@
 				},
 				"$asuri": {
 					"type": "string",
-					"value": "/Formalisms/PNS/PN.pattern/__pTransition/112.instance"
+					"value": "/Formalisms/PNS/PN.pattern/__pTransition/113.instance"
 				},
 				"$type": "/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionIcon"
 			},
-			"119": {
+			"122": {
 				"link-style": {
 					"type": "map<string,string>",
 					"value": {
@@ -5945,13 +5945,13 @@
 				},
 				"typename": {
 					"type": "string",
-					"value": "PlaceToTransitionLink"
+					"value": "TransitionToPlaceLink"
 				},
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1728.8835296267048,
-						616.5970586444129
+						1896.9997325270897,
+						841.5001471444803
 					]
 				},
 				"orientation": {
@@ -5977,7 +5977,7 @@
 					"type": "map<string,*>",
 					"value": {
 						"nodes": {
-							"16": {
+							"19": {
 								"textContent": {
 									"type": "string",
 									"value": "weight"
@@ -6007,13 +6007,13 @@
 								"position": {
 									"type": "list<double>",
 									"value": [
-										"0;15.232094004254122,0%",
-										"0;12.689899776484936,0%"
+										"0;-13.790802252691265,0%",
+										"0;-20.96039074974226,0%"
 									]
 								},
 								"orientation": {
 									"type": "double",
-									"value": "0;140.19442890773462"
+									"value": "0;5.653044993072807"
 								},
 								"scale": {
 									"type": "list<double>",
@@ -6056,13 +6056,13 @@
 								"position": {
 									"type": "list<double>",
 									"value": [
-										"0;-30.322518194544045,-76.82212795973787%",
-										"0;30.47559827939085,64.01843996644764%"
+										"0;197.39374952336266,99.51366302752092%",
+										"0;15.51960062337946,9.85042490682589%"
 									]
 								},
 								"orientation": {
 									"type": "double",
-									"value": "0;140.19442890773507"
+									"value": "0;5.653044993072807"
 								},
 								"scale": {
 									"type": "list<double>",
@@ -6100,7 +6100,7 @@
 								},
 								"textContent": {
 									"type": "string",
-									"value": "20"
+									"value": "23"
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -6127,16 +6127,229 @@
 				},
 				"$asuri": {
 					"type": "string",
-					"value": "/Formalisms/PNS/PN.pattern/__pPlaceToTransition/119.instance"
+					"value": "/Formalisms/PNS/PN.pattern/__pTransitionToPlace/122.instance"
 				},
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/70.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceToTransitionLink/119.instance": "M1762,589L1728.8835296267048,616.5970586444129",
-						"/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceToTransitionLink/119.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionIcon/112.instance": "M1728.9419017567825,616.5484152026816L1696.000273833503,643.9997718054142"
+						"/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionIcon/113.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionToPlaceLink/122.instance": "M1700,822L1896.9997325270897,841.5001471444803",
+						"/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionToPlaceLink/122.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/67.instance": "M1896.9997325270897,841.5001471444803L2093.9994650541794,861.0002942889605"
 					}
 				},
-				"$type": "/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceToTransitionLink"
+				"$type": "/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionToPlaceLink"
+			},
+			"123": {
+				"link-style": {
+					"type": "map<string,string>",
+					"value": {
+						"stroke": "#000000",
+						"stroke-dasharray": "",
+						"stroke-opacity": 1,
+						"stroke-width": 2
+					}
+				},
+				"arrowHead": {
+					"type": "ENUM(circle-black,circle-black-large,circle-white,circle-white-large,diamond-black,diamond-black-large,diamond-white,diamond-white-large,triangle-black,triangle-black-large,triangle-white,triangle-white-large,arrow-black,arrow-black-large,arrow-empty,arrow-empty-large,custom)",
+					"value": "custom"
+				},
+				"arrowTail": {
+					"type": "ENUM(circle-black,circle-black-large,circle-white,circle-white-large,diamond-black,diamond-black-large,diamond-white,diamond-white-large,triangle-black,triangle-black-large,triangle-white,triangle-white-large,arrow-black,arrow-black-large,arrow-empty,arrow-empty-large,custom)",
+					"value": "arrow-black"
+				},
+				"typename": {
+					"type": "string",
+					"value": "TransitionToPlaceLink"
+				},
+				"position": {
+					"type": "list<double>",
+					"value": [
+						1995.5,
+						815
+					]
+				},
+				"orientation": {
+					"type": "double",
+					"value": 0
+				},
+				"scale": {
+					"type": "list<double>",
+					"value": [
+						1,
+						1
+					]
+				},
+				"mapper": {
+					"type": "code",
+					"value": "/* mapping and parsing code is disabled by default because pattern attribute values are code */"
+				},
+				"parser": {
+					"type": "code",
+					"value": "/* mapping and parsing code is disabled by default because pattern attribute values are code */"
+				},
+				"$contents": {
+					"type": "map<string,*>",
+					"value": {
+						"nodes": {
+							"19": {
+								"textContent": {
+									"type": "string",
+									"value": "weight"
+								},
+								"style": {
+									"type": "map<string,string>",
+									"value": {
+										"stroke": "#000000",
+										"stroke-dasharray": "",
+										"fill": "#ffffff",
+										"fill-opacity": 0.75,
+										"font-size": "15px",
+										"stroke-width": 1,
+										"arrow-start": "none",
+										"arrow-end": "none"
+									}
+								},
+								"mapper": {
+									"type": "code",
+									"value": "/* mapping and parsing code is disabled by default because pattern attribute values are code */"
+								},
+								"parser": {
+									"type": "code",
+									"value": "/* mapping and parsing code is disabled by default because pattern attribute values are code */"
+								},
+								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Text",
+								"position": {
+									"type": "list<double>",
+									"value": [
+										"0;-0.036343001968589306,0%",
+										"0;-20.952246517733556,0%"
+									]
+								},
+								"orientation": {
+									"type": "double",
+									"value": "0;21.35855237706048"
+								},
+								"scale": {
+									"type": "list<double>",
+									"value": [
+										1,
+										1
+									]
+								},
+								"$linkDecoratorInfo": {
+									"type": "map<string,double>",
+									"value": {
+										"xratio": 0.4601226993865031,
+										"yoffset": -19.5
+									}
+								}
+							},
+							"267": {
+								"segments": {
+									"type": "string",
+									"value": "m0,0 l10,4 l-10,4 l3,-4 z"
+								},
+								"style": {
+									"type": "map<string,string>",
+									"value": {
+										"stroke": "#000000",
+										"fill": "#000000",
+										"opacity": 1,
+										"stroke-width": 1
+									}
+								},
+								"mapper": {
+									"type": "code",
+									"value": "/* mapping and parsing code is disabled by default because pattern attribute values are code */"
+								},
+								"parser": {
+									"type": "code",
+									"value": "/* mapping and parsing code is disabled by default because pattern attribute values are code */"
+								},
+								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Path",
+								"position": {
+									"type": "list<double>",
+									"value": [
+										"0;90.95623038430017,93.1319523175943%",
+										"0;31.274494200952176,36.42031654878004%"
+									]
+								},
+								"orientation": {
+									"type": "double",
+									"value": "0;21.358552377060654"
+								},
+								"scale": {
+									"type": "list<double>",
+									"value": [
+										1,
+										1
+									]
+								},
+								"$linkDecoratorInfo": {
+									"type": "map<string,double>",
+									"value": {
+										"xratio": 1,
+										"yoffset": -4
+									}
+								}
+							},
+							"__pLabelText": {
+								"position": {
+									"type": "list<double>",
+									"value": [
+										0,
+										0
+									]
+								},
+								"orientation": {
+									"type": "double",
+									"value": 0
+								},
+								"scale": {
+									"type": "list<double>",
+									"value": [
+										1,
+										1
+									]
+								},
+								"textContent": {
+									"type": "string",
+									"value": "24"
+								},
+								"style": {
+									"type": "map<string,string>",
+									"value": {
+										"stroke": "#6000ff",
+										"fill": "#6000ff",
+										"font-size": "15px",
+										"opacity": "1"
+									}
+								},
+								"mapper": {
+									"type": "code",
+									"value": "({'textContent':getAttr('__pLabel')})"
+								},
+								"parser": {
+									"type": "code",
+									"value": "({'__pLabel':getAttr('textContent')})"
+								},
+								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Text"
+							}
+						},
+						"edges": []
+					}
+				},
+				"$asuri": {
+					"type": "string",
+					"value": "/Formalisms/PNS/PN.pattern/__pTransitionToPlace/123.instance"
+				},
+				"$segments": {
+					"type": "map<string,list<string>>",
+					"value": {
+						"/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionIcon/105.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionToPlaceLink/123.instance": "M1906,780L1995.5000000000005,815",
+						"/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionToPlaceLink/123.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/67.instance": "M1995.6395523585898,815.0545735480518L2084.999417722349,849.999772293656"
+					}
+				},
+				"$type": "/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionToPlaceLink"
 			},
 			"124": {
 				"link-style": {
@@ -6163,8 +6376,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1574.0046423870826,
-						546.3746939265161
+						1766.5046423870826,
+						541.3746939265161
 					]
 				},
 				"orientation": {
@@ -6200,8 +6413,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/RHSIcon/1.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/124.instance": "M1436,224L1574.0046423870826,546.3746939265161",
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/124.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/67.instance": "M1574.0046423870826,546.3746939265161L1712.009284774165,868.7493878530321"
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/RHSIcon/1.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/124.instance": "M1436,224L1766.5046423870826,541.3746939265161",
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/124.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/67.instance": "M1766.5046423870826,541.3746939265161L2097.0092847741653,858.7493878530321"
 					}
 				},
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink"
@@ -6367,8 +6580,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1605.5046761728365,
-						408.87462764708886
+						1606.5046761728365,
+						430.87462764708886
 					]
 				},
 				"orientation": {
@@ -6404,8 +6617,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/RHSIcon/1.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/127.instance": "M1436,224L1605.5046761728363,408.8746276470889",
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/127.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/70.instance": "M1605.5046761728363,408.8746276470889L1775.009352345673,593.7492552941777"
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/RHSIcon/1.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/127.instance": "M1436,224L1606.5046761728365,430.87462764708886",
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/127.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/70.instance": "M1606.5046761728365,430.87462764708886L1777.009352345673,637.7492552941777"
 					}
 				},
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink"
@@ -6682,7 +6895,7 @@
 				},
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink"
 			},
-			"133": {
+			"134": {
 				"link-style": {
 					"type": "map<string,string>",
 					"value": {
@@ -6707,8 +6920,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1563.2547556828767,
-						445.8746191339094
+						1567.2547497829603,
+						521.8745152239137
 					]
 				},
 				"orientation": {
@@ -6739,13 +6952,13 @@
 				},
 				"$asuri": {
 					"type": "string",
-					"value": "/Formalisms/__Transformations__/TransformationRule/TransformationRule/PatternContents/133.instance"
+					"value": "/Formalisms/__Transformations__/TransformationRule/TransformationRule/PatternContents/134.instance"
 				},
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/RHSIcon/1.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/133.instance": "M1436,224L1563.2547556828767,445.8746191339094",
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/133.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionIcon/112.instance": "M1563.2547556828767,445.8746191339094L1690.5095113657537,667.7492382678188"
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/RHSIcon/1.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/134.instance": "M1436,224L1567.2547497829603,521.8745152239137",
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/134.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionIcon/113.instance": "M1567.2547497829603,521.8745152239137L1698.5094995659206,819.7490304478273"
 					}
 				},
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink"
@@ -7244,7 +7457,7 @@
 				},
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink"
 			},
-			"142": {
+			"145": {
 				"link-style": {
 					"type": "map<string,string>",
 					"value": {
@@ -7264,13 +7477,13 @@
 				},
 				"typename": {
 					"type": "string",
-					"value": "TransitionToPlaceLink"
+					"value": "PlaceToTransitionLink"
 				},
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1700,
-						757.5
+						1739,
+						721
 					]
 				},
 				"orientation": {
@@ -7296,7 +7509,7 @@
 					"type": "map<string,*>",
 					"value": {
 						"nodes": {
-							"19": {
+							"16": {
 								"textContent": {
 									"type": "string",
 									"value": "weight"
@@ -7326,13 +7539,13 @@
 								"position": {
 									"type": "list<double>",
 									"value": [
-										"0;19.07016236290997,0%",
-										"0;-8.158534767516471,0%"
+										"0;20.75647409136627,0%",
+										"0;0.7718872983210758,0%"
 									]
 								},
 								"orientation": {
 									"type": "double",
-									"value": "0;86.76638787511213"
+									"value": "0;112.27589784825899"
 								},
 								"scale": {
 									"type": "list<double>",
@@ -7375,13 +7588,13 @@
 								"position": {
 									"type": "list<double>",
 									"value": [
-										"0;8.993593106181834,5.640722288838554%",
-										"0;88.27369365305367,99.84078451244362%"
+										"0;-30.298268478917635,-37.90669254844987%",
+										"0;84.51564646158931,92.5369259270984%"
 									]
 								},
 								"orientation": {
 									"type": "double",
-									"value": "0;86.76638787511217"
+									"value": "0;112.27589784825894"
 								},
 								"scale": {
 									"type": "list<double>",
@@ -7446,16 +7659,229 @@
 				},
 				"$asuri": {
 					"type": "string",
-					"value": "/Formalisms/PNS/PN.pattern/__pTransitionToPlace/142.instance"
+					"value": "/Formalisms/PNS/PN.pattern/__pPlaceToTransition/145.instance"
 				},
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionIcon/112.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionToPlaceLink/142.instance": "M1695,669L1700,757.5",
-						"/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionToPlaceLink/142.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/67.instance": "M1700.008455421104,757.6496609535423L1704.999961725684,845.9993225446073"
+						"/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/70.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceToTransitionLink/145.instance": "M1773,638L1739,721",
+						"/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceToTransitionLink/145.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionIcon/113.instance": "M1738.94314412018,721.1387952360307L1705.0002544839983,803.9993787596513"
 					}
 				},
-				"$type": "/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionToPlaceLink"
+				"$type": "/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceToTransitionLink"
+			},
+			"146": {
+				"link-style": {
+					"type": "map<string,string>",
+					"value": {
+						"stroke": "#000000",
+						"stroke-dasharray": "",
+						"stroke-opacity": 1,
+						"stroke-width": 2
+					}
+				},
+				"arrowHead": {
+					"type": "ENUM(circle-black,circle-black-large,circle-white,circle-white-large,diamond-black,diamond-black-large,diamond-white,diamond-white-large,triangle-black,triangle-black-large,triangle-white,triangle-white-large,arrow-black,arrow-black-large,arrow-empty,arrow-empty-large,custom)",
+					"value": "custom"
+				},
+				"arrowTail": {
+					"type": "ENUM(circle-black,circle-black-large,circle-white,circle-white-large,diamond-black,diamond-black-large,diamond-white,diamond-white-large,triangle-black,triangle-black-large,triangle-white,triangle-white-large,arrow-black,arrow-black-large,arrow-empty,arrow-empty-large,custom)",
+					"value": "arrow-black"
+				},
+				"typename": {
+					"type": "string",
+					"value": "PlaceToTransitionLink"
+				},
+				"position": {
+					"type": "list<double>",
+					"value": [
+						1842.5,
+						697
+					]
+				},
+				"orientation": {
+					"type": "double",
+					"value": 0
+				},
+				"scale": {
+					"type": "list<double>",
+					"value": [
+						1,
+						1
+					]
+				},
+				"mapper": {
+					"type": "code",
+					"value": "/* mapping and parsing code is disabled by default because pattern attribute values are code */"
+				},
+				"parser": {
+					"type": "code",
+					"value": "/* mapping and parsing code is disabled by default because pattern attribute values are code */"
+				},
+				"$contents": {
+					"type": "map<string,*>",
+					"value": {
+						"nodes": {
+							"16": {
+								"textContent": {
+									"type": "string",
+									"value": "weight"
+								},
+								"style": {
+									"type": "map<string,string>",
+									"value": {
+										"stroke": "#000000",
+										"stroke-dasharray": "",
+										"fill": "#ffffff",
+										"fill-opacity": 0.75,
+										"font-size": "15px",
+										"stroke-width": 1,
+										"arrow-start": "none",
+										"arrow-end": "none"
+									}
+								},
+								"mapper": {
+									"type": "code",
+									"value": "/* mapping and parsing code is disabled by default because pattern attribute values are code */"
+								},
+								"parser": {
+									"type": "code",
+									"value": "/* mapping and parsing code is disabled by default because pattern attribute values are code */"
+								},
+								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Text",
+								"position": {
+									"type": "list<double>",
+									"value": [
+										"0;9.816832497961286,0%",
+										"0;-18.17032236155046,0%"
+									]
+								},
+								"orientation": {
+									"type": "double",
+									"value": "0;47.61334627530924"
+								},
+								"scale": {
+									"type": "list<double>",
+									"value": [
+										1,
+										1
+									]
+								},
+								"$linkDecoratorInfo": {
+									"type": "map<string,double>",
+									"value": {
+										"xratio": 0.4601226993865031,
+										"yoffset": -19.5
+									}
+								}
+							},
+							"267": {
+								"segments": {
+									"type": "string",
+									"value": "m0,0 l10,4 l-10,4 l3,-4 z"
+								},
+								"style": {
+									"type": "map<string,string>",
+									"value": {
+										"stroke": "#000000",
+										"fill": "#000000",
+										"opacity": 1,
+										"stroke-width": 1
+									}
+								},
+								"mapper": {
+									"type": "code",
+									"value": "/* mapping and parsing code is disabled by default because pattern attribute values are code */"
+								},
+								"parser": {
+									"type": "code",
+									"value": "/* mapping and parsing code is disabled by default because pattern attribute values are code */"
+								},
+								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Path",
+								"position": {
+									"type": "list<double>",
+									"value": [
+										"0;60.453972426637165,67.41303561283306%",
+										"0;60.30295580243558,73.86123901927792%"
+									]
+								},
+								"orientation": {
+									"type": "double",
+									"value": "0;47.61334627530922"
+								},
+								"scale": {
+									"type": "list<double>",
+									"value": [
+										1,
+										1
+									]
+								},
+								"$linkDecoratorInfo": {
+									"type": "map<string,double>",
+									"value": {
+										"xratio": 1,
+										"yoffset": -4
+									}
+								}
+							},
+							"__pLabelText": {
+								"position": {
+									"type": "list<double>",
+									"value": [
+										0,
+										0
+									]
+								},
+								"orientation": {
+									"type": "double",
+									"value": 0
+								},
+								"scale": {
+									"type": "list<double>",
+									"value": [
+										1,
+										1
+									]
+								},
+								"textContent": {
+									"type": "string",
+									"value": "15"
+								},
+								"style": {
+									"type": "map<string,string>",
+									"value": {
+										"stroke": "#6000ff",
+										"fill": "#6000ff",
+										"font-size": "15px",
+										"opacity": "1"
+									}
+								},
+								"mapper": {
+									"type": "code",
+									"value": "({'textContent':getAttr('__pLabel')})"
+								},
+								"parser": {
+									"type": "code",
+									"value": "({'__pLabel':getAttr('textContent')})"
+								},
+								"$type": "/Formalisms/__LanguageSyntax__/ConcreteSyntax/ConcreteSyntax/Text"
+							}
+						},
+						"edges": []
+					}
+				},
+				"$asuri": {
+					"type": "string",
+					"value": "/Formalisms/PNS/PN.pattern/__pPlaceToTransition/146.instance"
+				},
+				"$segments": {
+					"type": "map<string,list<string>>",
+					"value": {
+						"/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/70.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceToTransitionLink/146.instance": "M1785,634L1842.5,697",
+						"/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceToTransitionLink/146.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionIcon/105.instance": "M1842.6012317874251,697.1109148279614L1899.999522865866,759.9994772269489"
+					}
+				},
+				"$type": "/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceToTransitionLink"
 			}
 		},
 		"edges": [],
@@ -7471,14 +7897,14 @@
 			"0": {
 				"Condition": {
 					"type": "code",
-					"value": "# Grab the correct nodes to link\nnameNode2 = str(getAttr('pname','2'))\nnameNode3 = str(getAttr('pname','3'))\nnameNode8 = str(getAttr('pname','8'))\nnameNode12 = str(getAttr('pname','12'))\nnameTransition4 = str(getAttr('tname','4'))\nnameTransition10 = str(getAttr('tname','10'))\n\n\n# Also need to check that node0 has a PID of just smaller than node1 \nnode0PID = int(getAttr('pId','0'))\nnode1PID = int(getAttr('pId','1'))\n\n# Checks That we need to guard both states\nresult  = (node0PID+1 == node1PID) and nameNode2.endswith('outG') and nameNode8.startswith('inG') and nameNode12.startswith('in1') and nameNode3.startswith('in0') and nameTransition4.endswith('out') and nameTransition10.endswith('out')\n"
+					"value": "# Grab the correct nodes to link\nnameNode2 = str(getAttr('pname','2'))\nnameNode3 = str(getAttr('pname','3'))\nnameNode8 = str(getAttr('pname','8'))\nnameNode12 = str(getAttr('pname','12'))\nnameTransition4 = str(getAttr('tname','4'))\nnameTransition10 = str(getAttr('tname','10'))\n\n\n# Also need to check that node0 has a PID of just smaller than node1 \nnode0PID = int(getAttr('pId','0'))\nnode1PID = int(getAttr('pId','1'))\n\n# Checks That we need to guard both states\nresult  = (node0PID+1 == node1PID) and nameNode2.endswith('outG') and nameNode8.startswith('inG') and nameNode12.startswith('in1') and nameNode3.startswith('in0') and nameTransition4.endswith('out') and (not nameTransition10.endswith('out'))\n"
 				},
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule/LHS"
 			},
 			"1": {
 				"Action": {
 					"type": "code",
-					"value": "leftID = str(getAttr('pId','0'))\nrightID = str(getAttr('pId','1'))\n\nsetAttr('tname', leftID + '_g1trans_' + rightID, '15')"
+					"value": "leftID = str(getAttr('pId','0'))\nrightID = str(getAttr('pId','1'))\n\nsetAttr('tname', leftID + '_g2trans_' + rightID, '16')"
 				},
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule/RHS"
 			},
@@ -8114,10 +8540,10 @@
 				},
 				"$type": "/Formalisms/GenericGraph/GenericGraph.pattern/__pGenericLink"
 			},
-			"112": {
+			"113": {
 				"__pLabel": {
 					"type": "string",
-					"value": "15"
+					"value": "16"
 				},
 				"__pPivotIn": {
 					"type": "string",
@@ -8136,10 +8562,10 @@
 				},
 				"$type": "/Formalisms/PNS/PN.pattern/__pTransition"
 			},
-			"119": {
+			"122": {
 				"__pLabel": {
 					"type": "string",
-					"value": "20"
+					"value": "23"
 				},
 				"__pPivotIn": {
 					"type": "string",
@@ -8156,7 +8582,29 @@
 					"type": "code",
 					"value": "result = getAttr()"
 				},
-				"$type": "/Formalisms/PNS/PN.pattern/__pPlaceToTransition"
+				"$type": "/Formalisms/PNS/PN.pattern/__pTransitionToPlace"
+			},
+			"123": {
+				"__pLabel": {
+					"type": "string",
+					"value": "24"
+				},
+				"__pPivotIn": {
+					"type": "string",
+					"value": ""
+				},
+				"__pPivotOut": {
+					"type": "string",
+					"value": ""
+				},
+				"__pMatchSubtypes": {
+					"type": "boolean"
+				},
+				"weight": {
+					"type": "code",
+					"value": "result = getAttr()"
+				},
+				"$type": "/Formalisms/PNS/PN.pattern/__pTransitionToPlace"
 			},
 			"124": {
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule/PatternContents"
@@ -8182,7 +8630,7 @@
 			"131": {
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule/PatternContents"
 			},
-			"133": {
+			"134": {
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule/PatternContents"
 			},
 			"136": {
@@ -8235,7 +8683,7 @@
 			"141": {
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule/PatternContents"
 			},
-			"142": {
+			"145": {
 				"__pLabel": {
 					"type": "string",
 					"value": "14"
@@ -8254,9 +8702,32 @@
 				},
 				"weight": {
 					"type": "code",
-					"value": "\"[PYTHON]\"\n\"Example:\t result = True\"\n\"Example:\t result = getAttr()\"\n\n\"[JAVASCRIPT]\"\n\"Example:\t true\"\n\"Example:\t getAttr()\""
+					"value": "result = getAttr()"
 				},
-				"$type": "/Formalisms/PNS/PN.pattern/__pTransitionToPlace"
+				"$type": "/Formalisms/PNS/PN.pattern/__pPlaceToTransition"
+			},
+			"146": {
+				"__pLabel": {
+					"type": "string",
+					"value": "15"
+				},
+				"__pPivotIn": {
+					"type": "string",
+					"value": ""
+				},
+				"__pPivotOut": {
+					"type": "string",
+					"value": ""
+				},
+				"__pMatchSubtypes": {
+					"type": "boolean",
+					"value": true
+				},
+				"weight": {
+					"type": "code",
+					"value": "result = getAttr()"
+				},
+				"$type": "/Formalisms/PNS/PN.pattern/__pPlaceToTransition"
 			}
 		},
 		"edges": [
@@ -8373,12 +8844,20 @@
 				"dest": "104"
 			},
 			{
-				"src": "70",
-				"dest": "119"
+				"src": "113",
+				"dest": "122"
 			},
 			{
-				"src": "119",
-				"dest": "112"
+				"src": "122",
+				"dest": "67"
+			},
+			{
+				"src": "105",
+				"dest": "123"
+			},
+			{
+				"src": "123",
+				"dest": "67"
 			},
 			{
 				"src": "1",
@@ -8446,11 +8925,11 @@
 			},
 			{
 				"src": "1",
-				"dest": "133"
+				"dest": "134"
 			},
 			{
-				"src": "133",
-				"dest": "112"
+				"src": "134",
+				"dest": "113"
 			},
 			{
 				"src": "0",
@@ -8501,12 +8980,20 @@
 				"dest": "55"
 			},
 			{
-				"src": "112",
-				"dest": "142"
+				"src": "70",
+				"dest": "145"
 			},
 			{
-				"src": "142",
-				"dest": "67"
+				"src": "145",
+				"dest": "113"
+			},
+			{
+				"src": "70",
+				"dest": "146"
+			},
+			{
+				"src": "146",
+				"dest": "105"
 			}
 		],
 		"metamodels": [

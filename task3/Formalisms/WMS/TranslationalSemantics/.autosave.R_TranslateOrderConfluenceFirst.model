@@ -8160,8 +8160,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1587,
-						756
+						1776,
+						479
 					]
 				},
 				"orientation": {
@@ -8441,8 +8441,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1522.048762853059,
-						505.5185586679332
+						1616.5047634651748,
+						366.87460954131296
 					]
 				},
 				"orientation": {
@@ -8478,8 +8478,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/RHSIcon/1.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/148.instance": "M1436,224L1522.048762853059,505.5185586679332",
-						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/148.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/147.instance": "M1522.048673301963,505.5182656910823L1608.0095269303497,786.7492190826259"
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/RHSIcon/1.instance--/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/148.instance": "M1436,224L1616.5047634651748,366.87460954131296",
+						"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink/148.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/147.instance": "M1616.5047634651748,366.87460954131296L1797.0095269303497,509.7492190826259"
 					}
 				},
 				"$type": "/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons/PatternContentsLink"
@@ -8509,8 +8509,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1656,
-						717
+						1750.5002947366756,
+						578.4995988306358
 					]
 				},
 				"orientation": {
@@ -8566,13 +8566,13 @@
 								"position": {
 									"type": "list<double>",
 									"value": [
-										"0;18.586132225614847,0%",
-										"0;7.637145827849281,0%"
+										"0;-20.98817865694832,0%",
+										"0;-3.5308409498168203,0%"
 									]
 								},
 								"orientation": {
 									"type": "double",
-									"value": "0;126.30449712257524"
+									"value": "0;-56.830098739681766"
 								},
 								"scale": {
 									"type": "list<double>",
@@ -8615,13 +8615,13 @@
 								"position": {
 									"type": "list<double>",
 									"value": [
-										"0;-32.77588327508488,-59.20764339606933%",
-										"0;51.36750339711443,80.58818128909404%"
+										"0;55.152087356457514,54.71235771659189%",
+										"0;-91.6888954780278,-83.70518450545156%"
 									]
 								},
 								"orientation": {
 									"type": "double",
-									"value": "0;126.30449712257536"
+									"value": "0;-56.830098739681766"
 								},
 								"scale": {
 									"type": "list<double>",
@@ -8691,8 +8691,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionIcon/112.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionToPlaceLink/149.instance": "M1692,668L1656,717",
-						"/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionToPlaceLink/149.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/147.instance": "M1655.9110389439463,717.1210858818507L1620.0005894733513,765.9991976612716"
+						"/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionIcon/112.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionToPlaceLink/149.instance": "M1692,668L1750.5002947366756,578.4995988306358",
+						"/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionToPlaceLink/149.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/147.instance": "M1750.5002947366756,578.4995988306358L1809.0005894733513,488.99919766127164"
 					}
 				},
 				"$type": "/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionToPlaceLink"
@@ -8722,8 +8722,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1751.36467393673,
-						714.0652173798891
+						1846.0004409609496,
+						575.499787488699
 					]
 				},
 				"orientation": {
@@ -8779,13 +8779,13 @@
 								"position": {
 									"type": "list<double>",
 									"value": [
-										"0;18.530947186181038,0%",
-										"0;12.715778500514602,0%"
+										"0;-15.822586382080999,0%",
+										"0;13.221850801222331,0%"
 									]
 								},
 								"orientation": {
 									"type": "double",
-									"value": "0;154.26929439846884"
+									"value": "0;-110.91480407252831"
 								},
 								"scale": {
 									"type": "list<double>",
@@ -8828,13 +8828,13 @@
 								"position": {
 									"type": "list<double>",
 									"value": [
-										"0;-122.62722432706323,-90.08444880292464%",
-										"0;63.53773554962572,43.414192194180565%"
+										"0;-33.73600811601955,-35.69793669820098%",
+										"0;-77.07229504337306,-93.41122692423666%"
 									]
 								},
 								"orientation": {
 									"type": "double",
-									"value": "0;154.2692943984688"
+									"value": "0;-110.91480407252816"
 								},
 								"scale": {
 									"type": "list<double>",
@@ -8904,8 +8904,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionIcon/69.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionToPlaceLink/150.instance": "M1876,654L1751.36467393673,714.0652173798891",
-						"/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionToPlaceLink/150.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/147.instance": "M1751.4326311465898,714.0324669173061L1627.0008819218995,773.9995749773979"
+						"/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionIcon/69.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionToPlaceLink/150.instance": "M1876,654L1846.0004409609496,575.499787488699",
+						"/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionToPlaceLink/150.instance--/Formalisms/PNS/PN.defaultIcons.pattern/__pPlaceIcon/147.instance": "M1846.0004409609496,575.499787488699L1816.0008819218995,496.99957497739786"
 					}
 				},
 				"$type": "/Formalisms/PNS/PN.defaultIcons.pattern/__pTransitionToPlaceLink"

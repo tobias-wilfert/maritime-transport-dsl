@@ -3719,7 +3719,7 @@
 				},
 				"tokens": {
 					"type": "code",
-					"value": "result = getAttr()"
+					"value": "result = 1"
 				},
 				"pname": {
 					"type": "code",

@@ -405,3 +405,41 @@ node1PID = int(getAttr('pId','1'))
 
 # Checks
 result  = (node0PID+1 == node1PID) and nameNode2.endswith('outG') and nameNode8.startswith('inG') and nameNode3.startswith('in0') and nameTransition.endswith('out')
+
+
+#  Translate order (*) -|S,S|-> (Confluence)
+
+# Grab the correct nodes to link
+nameNode2 = str(getAttr('pname','2'))
+nameNode3 = str(getAttr('pname','3'))
+nameNode8 = str(getAttr('pname','8'))
+nameNode12 = str(getAttr('pname','12'))
+nameTransition4 = str(getAttr('tname','4'))
+nameTransition10 = str(getAttr('tname','10'))
+
+
+# Also need to check that node0 has a PID of just smaller than node1 
+node0PID = int(getAttr('pId','0'))
+node1PID = int(getAttr('pId','1'))
+
+# Checks That we need to guard both states
+result  = (node0PID+1 == node1PID) and nameNode2.endswith('outG') and nameNode8.startswith('inG') and nameNode12.startswith('in1') and nameNode3.startswith('in0') and (not nameTransition4.endswith('out')) and (not nameTransition10.endswith('out'))
+
+
+
+
+# Grab the correct nodes to link
+nameNode2 = str(getAttr('pname','2'))
+nameNode3 = str(getAttr('pname','3'))
+nameNode8 = str(getAttr('pname','8'))
+nameNode12 = str(getAttr('pname','12'))
+nameTransition4 = str(getAttr('tname','4'))
+nameTransition10 = str(getAttr('tname','10'))
+
+
+# Also need to check that node0 has a PID of just smaller than node1 
+node0PID = int(getAttr('pId','0'))
+node1PID = int(getAttr('pId','1'))
+
+# Checks That we need to guard both states
+result  = (node0PID+1 == node1PID) and nameNode2.endswith('outG') and nameNode8.startswith('inG') and nameNode12.startswith('in1') and nameNode3.startswith('in0') and nameTransition4.endswith('out') and (not nameTransition10.endswith('out'))
