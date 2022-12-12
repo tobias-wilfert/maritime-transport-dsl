@@ -498,7 +498,7 @@
 							"100": {
 								"textContent": {
 									"type": "string",
-									"value": 1
+									"value": "0"
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -782,7 +782,7 @@
 							"102": {
 								"textContent": {
 									"type": "string",
-									"value": 1
+									"value": "0"
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -1492,7 +1492,7 @@
 							"2": {
 								"textContent": {
 									"type": "string",
-									"value": 1
+									"value": 0
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -2028,7 +2028,7 @@
 							"32": {
 								"textContent": {
 									"type": "string",
-									"value": 0
+									"value": 1
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -6241,7 +6241,7 @@
 							"2": {
 								"textContent": {
 									"type": "string",
-									"value": 1
+									"value": 0
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -6509,7 +6509,7 @@
 							"32": {
 								"textContent": {
 									"type": "string",
-									"value": 1
+									"value": 0
 								},
 								"style": {
 									"type": "map<string,string>",
@@ -9690,7 +9690,7 @@
 									"value": {
 										"stroke": "#000000",
 										"stroke-dasharray": "",
-										"fill": "#4287f5",
+										"fill": "#96bfff",
 										"fill-opacity": 1,
 										"font-size": "20px",
 										"stroke-width": 1,
@@ -10060,7 +10060,7 @@
 									"value": {
 										"stroke": "#000000",
 										"stroke-dasharray": "",
-										"fill": "#96bfff",
+										"fill": "#4287f5",
 										"fill-opacity": 1,
 										"font-size": "20px",
 										"stroke-width": 1,
@@ -10736,7 +10736,10 @@
 		"metamodels": [
 			"/Formalisms/WMS/WMS.defaultIcons",
 			"/Formalisms/PNS/PN.defaultIcons",
-			"/Formalisms/GenericGraph/GenericGraph.defaultIcons"
+			"/Formalisms/GenericGraph/GenericGraph.defaultIcons",
+			"/Formalisms/__Transformations__/Transformation/MoTif.defaultIcons",
+			"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons",
+			"/Formalisms/PNS/PN.defaultIcons.pattern"
 		]
 	},
 	"asm": {
@@ -10771,7 +10774,7 @@
 				},
 				"counter": {
 					"type": "int",
-					"value": 1
+					"value": "0"
 				},
 				"pId": {
 					"type": "int",
@@ -10786,7 +10789,7 @@
 			"112": {
 				"counter": {
 					"type": "int",
-					"value": 1
+					"value": "0"
 				},
 				"pId": {
 					"type": "int",
@@ -10821,7 +10824,7 @@
 			"170": {
 				"tokens": {
 					"type": "int",
-					"value": 1
+					"value": 0
 				},
 				"pname": {
 					"type": "string",
@@ -10851,7 +10854,7 @@
 				},
 				"tokens": {
 					"type": "int",
-					"value": 0
+					"value": 1
 				},
 				"pname": {
 					"type": "string",
@@ -11046,7 +11049,7 @@
 			"201": {
 				"tokens": {
 					"type": "int",
-					"value": 1
+					"value": 0
 				},
 				"pname": {
 					"type": "string",
@@ -11061,7 +11064,7 @@
 				},
 				"tokens": {
 					"type": "int",
-					"value": 1
+					"value": 0
 				},
 				"pname": {
 					"type": "string",
@@ -11205,7 +11208,7 @@
 				},
 				"isCurrent": {
 					"type": "boolean",
-					"value": false
+					"value": true
 				},
 				"$type": "/Formalisms/PNS/PN/ScheduledTransition"
 			},
@@ -11227,7 +11230,7 @@
 				},
 				"isCurrent": {
 					"type": "boolean",
-					"value": true
+					"value": false
 				},
 				"$type": "/Formalisms/PNS/PN/ScheduledTransition"
 			},
@@ -11585,7 +11588,10 @@
 		"metamodels": [
 			"/Formalisms/WMS/WMS",
 			"/Formalisms/PNS/PN",
-			"/Formalisms/GenericGraph/GenericGraph"
+			"/Formalisms/GenericGraph/GenericGraph",
+			"/Formalisms/__Transformations__/Transformation/MoTif",
+			"/Formalisms/__Transformations__/TransformationRule/TransformationRule",
+			"/Formalisms/PNS/PN.pattern"
 		]
 	}
 }

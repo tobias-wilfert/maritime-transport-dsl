@@ -6434,7 +6434,10 @@
 		"metamodels": [
 			"/Formalisms/WMS/WMS.defaultIcons",
 			"/Formalisms/PNS/PN.defaultIcons",
-			"/Formalisms/GenericGraph/GenericGraph.defaultIcons"
+			"/Formalisms/GenericGraph/GenericGraph.defaultIcons",
+			"/Formalisms/__Transformations__/Transformation/MoTif.defaultIcons",
+			"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons",
+			"/Formalisms/PNS/PN.defaultIcons.pattern"
 		]
 	},
 	"asm": {
@@ -6965,7 +6968,10 @@
 		"metamodels": [
 			"/Formalisms/WMS/WMS",
 			"/Formalisms/PNS/PN",
-			"/Formalisms/GenericGraph/GenericGraph"
+			"/Formalisms/GenericGraph/GenericGraph",
+			"/Formalisms/__Transformations__/Transformation/MoTif",
+			"/Formalisms/__Transformations__/TransformationRule/TransformationRule",
+			"/Formalisms/PNS/PN.pattern"
 		]
 	}
 }
