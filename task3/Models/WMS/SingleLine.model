@@ -9,8 +9,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						453,
-						194
+						406,
+						416
 					]
 				},
 				"orientation": {
@@ -438,8 +438,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						996,
-						142
+						1027,
+						384
 					]
 				},
 				"orientation": {
@@ -622,8 +622,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1548,
-						119
+						1661,
+						351
 					]
 				},
 				"orientation": {
@@ -907,8 +907,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1004.6499999773266,
-						432.50858585728804
+						996.4995457606367,
+						664.4999739997671
 					]
 				},
 				"orientation": {
@@ -960,13 +960,13 @@
 								"position": {
 									"type": "list<double>",
 									"value": [
-										"0;148.8062557085807,99.83658595313285%",
-										"0;0.5044352659955393,5.714552057923453%"
+										"0;188.28506558840934,99.51676884464004%",
+										"0;10.538632492195916,9.818997847157366%"
 									]
 								},
 								"orientation": {
 									"type": "double",
-									"value": "0;3.2759818132341576"
+									"value": "0;5.6349508971136135"
 								},
 								"scale": {
 									"type": "list<double>",
@@ -994,8 +994,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/WMS/WMS.defaultIcons/SourceIcon/32.instance--/Formalisms/WMS/WMS.defaultIcons/connection0Link/35.instance": "M856,424L1004.6499999773266,432.50858585728804",
-						"/Formalisms/WMS/WMS.defaultIcons/connection0Link/35.instance--/Formalisms/WMS/WMS.defaultIcons/SegmentIcon/33.instance": "M1004.574696966897,432.5042755839638L1152.9990915212734,440.9999479995342"
+						"/Formalisms/WMS/WMS.defaultIcons/SourceIcon/32.instance--/Formalisms/WMS/WMS.defaultIcons/connection0Link/35.instance": "M809,646L996.4995457606367,664.4999739997671",
+						"/Formalisms/WMS/WMS.defaultIcons/connection0Link/35.instance--/Formalisms/WMS/WMS.defaultIcons/SegmentIcon/33.instance": "M996.4995457606367,664.4999739997671L1183.9990915212734,682.9999479995342"
 					}
 				},
 				"$type": "/Formalisms/WMS/WMS.defaultIcons/connection0Link"
@@ -1025,8 +1025,8 @@
 				"position": {
 					"type": "list<double>",
 					"value": [
-						1557,
-						401.5
+						1628.9996210031657,
+						638.4999625285616
 					]
 				},
 				"orientation": {
@@ -1078,13 +1078,13 @@
 								"position": {
 									"type": "list<double>",
 									"value": [
-										"0;177.78636463920407,99.51479001323356%",
-										"0;9.538741856064462,9.839032910912945%"
+										"0;218.45758379367726,99.8360140449913%",
+										"0;4.513081404962236,5.724534881394208%"
 									]
 								},
 								"orientation": {
 									"type": "double",
-									"value": "0;5.646485998362683"
+									"value": "0;3.2817109283158183"
 								},
 								"scale": {
 									"type": "list<double>",
@@ -1112,8 +1112,8 @@
 				"$segments": {
 					"type": "map<string,list<string>>",
 					"value": {
-						"/Formalisms/WMS/WMS.defaultIcons/SegmentIcon/33.instance--/Formalisms/WMS/WMS.defaultIcons/connection0Link/36.instance": "M1380,384L1557,401.5",
-						"/Formalisms/WMS/WMS.defaultIcons/connection0Link/36.instance--/Formalisms/WMS/WMS.defaultIcons/SinkIcon/34.instance": "M1557.0745359234534,401.50736937096286L1733.999242006331,418.99992505712316"
+						"/Formalisms/WMS/WMS.defaultIcons/SegmentIcon/33.instance--/Formalisms/WMS/WMS.defaultIcons/connection0Link/36.instance": "M1411,626L1628.9996210031657,638.4999625285616",
+						"/Formalisms/WMS/WMS.defaultIcons/connection0Link/36.instance--/Formalisms/WMS/WMS.defaultIcons/SinkIcon/34.instance": "M1628.9996210031657,638.4999625285616L1846.9992420063313,650.9999250571232"
 					}
 				},
 				"$type": "/Formalisms/WMS/WMS.defaultIcons/connection0Link"
@@ -1121,7 +1121,11 @@
 		},
 		"edges": [],
 		"metamodels": [
-			"/Formalisms/WMS/WMS.defaultIcons"
+			"/Formalisms/WMS/WMS.defaultIcons",
+			"/Formalisms/__Transformations__/TransformationRule/TransformationRule.defaultIcons",
+			"/Formalisms/PNS/PN.defaultIcons.pattern",
+			"/Formalisms/WMS/WMS.defaultIcons.pattern",
+			"/Formalisms/GenericGraph/GenericGraph.defaultIcons.pattern"
 		]
 	},
 	"asm": {
@@ -1209,7 +1213,11 @@
 			}
 		],
 		"metamodels": [
-			"/Formalisms/WMS/WMS"
+			"/Formalisms/WMS/WMS",
+			"/Formalisms/__Transformations__/TransformationRule/TransformationRule",
+			"/Formalisms/PNS/PN.pattern",
+			"/Formalisms/WMS/WMS.pattern",
+			"/Formalisms/GenericGraph/GenericGraph.pattern"
 		]
 	}
 }
