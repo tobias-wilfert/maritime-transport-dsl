@@ -1,0 +1,920 @@
+{
+	"types": {
+		"Sea": [
+			{
+				"name": "name",
+				"type": "string",
+				"default": ""
+			}
+		],
+		"Anchorpoint": [
+			{
+				"name": "name",
+				"type": "string",
+				"default": ""
+			}
+		],
+		"Generator": [
+			{
+				"name": "name",
+				"type": "string",
+				"default": ""
+			}
+		],
+		"Waterway": [
+			{
+				"name": "length",
+				"type": "number",
+				"default": 1
+			},
+			{
+				"name": "name",
+				"type": "string",
+				"default": ""
+			}
+		],
+		"Canal": [
+			{
+				"name": "length",
+				"type": "number",
+				"default": 1
+			},
+			{
+				"name": "name",
+				"type": "string",
+				"default": ""
+			}
+		],
+		"Confluence": [
+			{
+				"name": "name",
+				"type": "string",
+				"default": ""
+			}
+		],
+		"Lock": [
+			{
+				"name": "washing_duration",
+				"type": "number",
+				"default": 20
+			},
+			{
+				"name": "lock_shift_interval",
+				"type": "number",
+				"default": 60
+			},
+			{
+				"name": "gate_open_close_duration",
+				"type": "number",
+				"default": 7
+			},
+			{
+				"name": "surface_area",
+				"type": "number",
+				"default": "62500"
+			},
+			{
+				"name": "name",
+				"type": "string",
+				"default": ""
+			}
+		],
+		"Dock": [
+			{
+				"name": "name",
+				"type": "string",
+				"default": ""
+			}
+		],
+		"ControlTower": [
+			{
+				"name": "name",
+				"type": "string",
+				"default": ""
+			}
+		],
+		"HasVesselIn": [
+			{
+				"name": "name",
+				"type": "string",
+				"default": ""
+			}
+		],
+		"HasVesselOut": [
+			{
+				"name": "name",
+				"type": "string",
+				"default": ""
+			}
+		],
+		"Vessel": [],
+		"PortEntryPermission": [],
+		"PortEntryRequest": [],
+		"PortDepartureRequest": [],
+		"HasTwoWayTraffic": [
+			{
+				"name": "name",
+				"type": "string",
+				"default": ""
+			}
+		],
+		"HasName": [
+			{
+				"name": "name",
+				"type": "string",
+				"default": ""
+			}
+		],
+		"HasOneWayTraffic": [
+			{
+				"name": "name",
+				"type": "string",
+				"default": ""
+			}
+		]
+	},
+	"constraints": [
+		{
+			"name": "noAbstractInstances",
+			"event": "pre-create",
+			"code": "false",
+			"targetType": "HasVesselIn"
+		},
+		{
+			"name": "noAbstractInstances",
+			"event": "pre-create",
+			"code": "false",
+			"targetType": "HasVesselOut"
+		},
+		{
+			"name": "noAbstractInstances",
+			"event": "pre-create",
+			"code": "false",
+			"targetType": "HasTwoWayTraffic"
+		},
+		{
+			"name": "noAbstractInstances",
+			"event": "pre-create",
+			"code": "false",
+			"targetType": "HasName"
+		},
+		{
+			"name": "noAbstractInstances",
+			"event": "pre-create",
+			"code": "false",
+			"targetType": "HasOneWayTraffic"
+		}
+	],
+	"actions": [],
+	"cardinalities": {
+		"Sea": [
+			{
+				"dir": "in",
+				"type": "Vessel",
+				"min": "0",
+				"max": "Infinity"
+			}
+		],
+		"Anchorpoint": [
+			{
+				"dir": "in",
+				"type": "PortEntryPermission",
+				"min": "0",
+				"max": "Infinity"
+			},
+			{
+				"dir": "out",
+				"type": "PortEntryRequest",
+				"min": "0",
+				"max": "Infinity"
+			},
+			{
+				"dir": "out",
+				"type": "Vessel",
+				"min": "0",
+				"max": "Infinity"
+			},
+			{
+				"dir": "in",
+				"type": "Vessel",
+				"min": "0",
+				"max": "Infinity"
+			}
+		],
+		"Generator": [
+			{
+				"dir": "out",
+				"type": "Vessel",
+				"min": "0",
+				"max": "Infinity"
+			}
+		],
+		"Waterway": [
+			{
+				"dir": "in",
+				"type": "Vessel",
+				"min": "0",
+				"max": "Infinity"
+			},
+			{
+				"dir": "out",
+				"type": "Vessel",
+				"min": "0",
+				"max": "Infinity"
+			}
+		],
+		"Canal": [
+			{
+				"dir": "in",
+				"type": "Vessel",
+				"min": "0",
+				"max": "Infinity"
+			},
+			{
+				"dir": "out",
+				"type": "Vessel",
+				"min": "0",
+				"max": "Infinity"
+			}
+		],
+		"Confluence": [
+			{
+				"dir": "out",
+				"type": "Vessel",
+				"min": "0",
+				"max": "Infinity"
+			},
+			{
+				"dir": "in",
+				"type": "Vessel",
+				"min": "0",
+				"max": "Infinity"
+			}
+		],
+		"Lock": [
+			{
+				"dir": "in",
+				"type": "Vessel",
+				"min": "0",
+				"max": "Infinity"
+			},
+			{
+				"dir": "out",
+				"type": "Vessel",
+				"min": "0",
+				"max": "Infinity"
+			}
+		],
+		"Dock": [
+			{
+				"dir": "out",
+				"type": "PortDepartureRequest",
+				"min": "0",
+				"max": "Infinity"
+			},
+			{
+				"dir": "out",
+				"type": "Vessel",
+				"min": "0",
+				"max": "Infinity"
+			},
+			{
+				"dir": "in",
+				"type": "Vessel",
+				"min": "0",
+				"max": "Infinity"
+			}
+		],
+		"ControlTower": [
+			{
+				"dir": "out",
+				"type": "PortEntryPermission",
+				"min": "0",
+				"max": "Infinity"
+			},
+			{
+				"dir": "in",
+				"type": "PortEntryRequest",
+				"min": "0",
+				"max": "Infinity"
+			},
+			{
+				"dir": "in",
+				"type": "PortDepartureRequest",
+				"min": "0",
+				"max": "Infinity"
+			}
+		],
+		"HasVesselIn": [
+			{
+				"dir": "in",
+				"type": "Vessel",
+				"min": "0",
+				"max": "Infinity"
+			}
+		],
+		"HasVesselOut": [
+			{
+				"dir": "out",
+				"type": "Vessel",
+				"min": "0",
+				"max": "Infinity"
+			}
+		],
+		"Vessel": [
+			{
+				"dir": "in",
+				"type": "HasVesselOut",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "HasVesselIn",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "Sea",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "Anchorpoint",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "Anchorpoint",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "Generator",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "Waterway",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "Waterway",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "Canal",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "Canal",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "Confluence",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "Confluence",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "Lock",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "Lock",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "Dock",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "Dock",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "HasTwoWayTraffic",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "HasTwoWayTraffic",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "in",
+				"type": "HasOneWayTraffic",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "HasOneWayTraffic",
+				"min": "0",
+				"max": "1"
+			}
+		],
+		"PortEntryPermission": [
+			{
+				"dir": "in",
+				"type": "ControlTower",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "Anchorpoint",
+				"min": "0",
+				"max": "1"
+			}
+		],
+		"PortEntryRequest": [
+			{
+				"dir": "in",
+				"type": "Anchorpoint",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "ControlTower",
+				"min": "0",
+				"max": "1"
+			}
+		],
+		"PortDepartureRequest": [
+			{
+				"dir": "in",
+				"type": "Dock",
+				"min": "0",
+				"max": "1"
+			},
+			{
+				"dir": "out",
+				"type": "ControlTower",
+				"min": "0",
+				"max": "1"
+			}
+		],
+		"HasTwoWayTraffic": [
+			{
+				"dir": "in",
+				"type": "Vessel",
+				"min": "0",
+				"max": "Infinity"
+			},
+			{
+				"dir": "out",
+				"type": "Vessel",
+				"min": "0",
+				"max": "Infinity"
+			}
+		],
+		"HasName": [],
+		"HasOneWayTraffic": [
+			{
+				"dir": "out",
+				"type": "Vessel",
+				"min": "0",
+				"max": "Infinity"
+			},
+			{
+				"dir": "in",
+				"type": "Vessel",
+				"min": "0",
+				"max": "Infinity"
+			}
+		]
+	},
+	"legalConnections": {
+		"Anchorpoint": {
+			"ControlTower": [
+				"PortEntryRequest"
+			],
+			"HasVesselIn": [
+				"Vessel"
+			],
+			"Sea": [
+				"Vessel"
+			],
+			"Anchorpoint": [
+				"Vessel"
+			],
+			"Waterway": [
+				"Vessel"
+			],
+			"Canal": [
+				"Vessel"
+			],
+			"Confluence": [
+				"Vessel"
+			],
+			"Lock": [
+				"Vessel"
+			],
+			"Dock": [
+				"Vessel"
+			],
+			"HasTwoWayTraffic": [
+				"Vessel"
+			],
+			"HasOneWayTraffic": [
+				"Vessel"
+			]
+		},
+		"Generator": {
+			"HasVesselIn": [
+				"Vessel"
+			],
+			"Sea": [
+				"Vessel"
+			],
+			"Anchorpoint": [
+				"Vessel"
+			],
+			"Waterway": [
+				"Vessel"
+			],
+			"Canal": [
+				"Vessel"
+			],
+			"Confluence": [
+				"Vessel"
+			],
+			"Lock": [
+				"Vessel"
+			],
+			"Dock": [
+				"Vessel"
+			],
+			"HasTwoWayTraffic": [
+				"Vessel"
+			],
+			"HasOneWayTraffic": [
+				"Vessel"
+			]
+		},
+		"Waterway": {
+			"HasVesselIn": [
+				"Vessel"
+			],
+			"Sea": [
+				"Vessel"
+			],
+			"Anchorpoint": [
+				"Vessel"
+			],
+			"Waterway": [
+				"Vessel"
+			],
+			"Canal": [
+				"Vessel"
+			],
+			"Confluence": [
+				"Vessel"
+			],
+			"Lock": [
+				"Vessel"
+			],
+			"Dock": [
+				"Vessel"
+			],
+			"HasTwoWayTraffic": [
+				"Vessel"
+			],
+			"HasOneWayTraffic": [
+				"Vessel"
+			]
+		},
+		"Canal": {
+			"HasVesselIn": [
+				"Vessel"
+			],
+			"Sea": [
+				"Vessel"
+			],
+			"Anchorpoint": [
+				"Vessel"
+			],
+			"Waterway": [
+				"Vessel"
+			],
+			"Canal": [
+				"Vessel"
+			],
+			"Confluence": [
+				"Vessel"
+			],
+			"Lock": [
+				"Vessel"
+			],
+			"Dock": [
+				"Vessel"
+			],
+			"HasTwoWayTraffic": [
+				"Vessel"
+			],
+			"HasOneWayTraffic": [
+				"Vessel"
+			]
+		},
+		"Confluence": {
+			"HasVesselIn": [
+				"Vessel"
+			],
+			"Sea": [
+				"Vessel"
+			],
+			"Anchorpoint": [
+				"Vessel"
+			],
+			"Waterway": [
+				"Vessel"
+			],
+			"Canal": [
+				"Vessel"
+			],
+			"Confluence": [
+				"Vessel"
+			],
+			"Lock": [
+				"Vessel"
+			],
+			"Dock": [
+				"Vessel"
+			],
+			"HasTwoWayTraffic": [
+				"Vessel"
+			],
+			"HasOneWayTraffic": [
+				"Vessel"
+			]
+		},
+		"Lock": {
+			"HasVesselIn": [
+				"Vessel"
+			],
+			"Sea": [
+				"Vessel"
+			],
+			"Anchorpoint": [
+				"Vessel"
+			],
+			"Waterway": [
+				"Vessel"
+			],
+			"Canal": [
+				"Vessel"
+			],
+			"Confluence": [
+				"Vessel"
+			],
+			"Lock": [
+				"Vessel"
+			],
+			"Dock": [
+				"Vessel"
+			],
+			"HasTwoWayTraffic": [
+				"Vessel"
+			],
+			"HasOneWayTraffic": [
+				"Vessel"
+			]
+		},
+		"Dock": {
+			"ControlTower": [
+				"PortDepartureRequest"
+			],
+			"HasVesselIn": [
+				"Vessel"
+			],
+			"Sea": [
+				"Vessel"
+			],
+			"Anchorpoint": [
+				"Vessel"
+			],
+			"Waterway": [
+				"Vessel"
+			],
+			"Canal": [
+				"Vessel"
+			],
+			"Confluence": [
+				"Vessel"
+			],
+			"Lock": [
+				"Vessel"
+			],
+			"Dock": [
+				"Vessel"
+			],
+			"HasTwoWayTraffic": [
+				"Vessel"
+			],
+			"HasOneWayTraffic": [
+				"Vessel"
+			]
+		},
+		"ControlTower": {
+			"Anchorpoint": [
+				"PortEntryPermission"
+			]
+		},
+		"HasVesselOut": {
+			"HasVesselIn": [
+				"Vessel"
+			],
+			"Sea": [
+				"Vessel"
+			],
+			"Anchorpoint": [
+				"Vessel"
+			],
+			"Waterway": [
+				"Vessel"
+			],
+			"Canal": [
+				"Vessel"
+			],
+			"Confluence": [
+				"Vessel"
+			],
+			"Lock": [
+				"Vessel"
+			],
+			"Dock": [
+				"Vessel"
+			],
+			"HasTwoWayTraffic": [
+				"Vessel"
+			],
+			"HasOneWayTraffic": [
+				"Vessel"
+			]
+		},
+		"HasTwoWayTraffic": {
+			"HasVesselIn": [
+				"Vessel"
+			],
+			"Sea": [
+				"Vessel"
+			],
+			"Anchorpoint": [
+				"Vessel"
+			],
+			"Waterway": [
+				"Vessel"
+			],
+			"Canal": [
+				"Vessel"
+			],
+			"Confluence": [
+				"Vessel"
+			],
+			"Lock": [
+				"Vessel"
+			],
+			"Dock": [
+				"Vessel"
+			],
+			"HasTwoWayTraffic": [
+				"Vessel"
+			],
+			"HasOneWayTraffic": [
+				"Vessel"
+			]
+		},
+		"HasOneWayTraffic": {
+			"HasVesselIn": [
+				"Vessel"
+			],
+			"Sea": [
+				"Vessel"
+			],
+			"Anchorpoint": [
+				"Vessel"
+			],
+			"Waterway": [
+				"Vessel"
+			],
+			"Canal": [
+				"Vessel"
+			],
+			"Confluence": [
+				"Vessel"
+			],
+			"Lock": [
+				"Vessel"
+			],
+			"Dock": [
+				"Vessel"
+			],
+			"HasTwoWayTraffic": [
+				"Vessel"
+			],
+			"HasOneWayTraffic": [
+				"Vessel"
+			]
+		}
+	},
+	"connectorTypes": {
+		"Vessel": "visual",
+		"PortEntryPermission": "visual",
+		"PortEntryRequest": "visual",
+		"PortDepartureRequest": "visual"
+	},
+	"types2parentTypes": {
+		"Sea": [
+			"HasName",
+			"HasVesselIn"
+		],
+		"Anchorpoint": [
+			"HasVesselOut",
+			"HasVesselIn",
+			"HasName",
+			"HasOneWayTraffic"
+		],
+		"Generator": [
+			"HasName",
+			"HasVesselOut"
+		],
+		"Waterway": [
+			"HasVesselIn",
+			"HasVesselOut",
+			"HasName",
+			"HasTwoWayTraffic"
+		],
+		"Canal": [
+			"HasVesselIn",
+			"HasVesselOut",
+			"HasName",
+			"HasTwoWayTraffic"
+		],
+		"Confluence": [
+			"HasName",
+			"HasVesselOut",
+			"HasVesselIn"
+		],
+		"Lock": [
+			"HasVesselIn",
+			"HasVesselOut",
+			"HasName",
+			"HasTwoWayTraffic"
+		],
+		"Dock": [
+			"HasVesselOut",
+			"HasVesselIn",
+			"HasName",
+			"HasOneWayTraffic"
+		],
+		"ControlTower": [
+			"HasName"
+		],
+		"HasVesselIn": [],
+		"HasVesselOut": [],
+		"Vessel": [],
+		"PortEntryPermission": [],
+		"PortEntryRequest": [],
+		"PortDepartureRequest": [],
+		"HasTwoWayTraffic": [
+			"HasVesselIn",
+			"HasVesselOut"
+		],
+		"HasName": [],
+		"HasOneWayTraffic": [
+			"HasVesselOut",
+			"HasVesselIn"
+		]
+	}
+}

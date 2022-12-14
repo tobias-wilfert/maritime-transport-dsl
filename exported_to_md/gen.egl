@@ -1,0 +1,153 @@
+[%
+/////// INITIALIZATION ////////
+
+// Maps every confluence C to another Map, which maps neighboring elements of C to a port number of C.
+// (In other words: it defines port numbers on every confluence)
+var globalPortMapping = new Map;
+
+// Maps every confluence C to another Map, which maps every Dock to a port number of C.
+// (In other words, it contains the routing information on every confluence)
+var globalRoutingMapping = new Map;
+
+// Initialize globalPortMapping
+for (con in Confluence.all()) {
+  var m = new Map;
+  globalPortMapping.put(con, m);
+
+  for (vcon in Vessel.all()) {
+    // All incoming and outgoing Vessel-links:
+    if (vcon.src == con) {
+      assignPortNumber(con, vcon.dst, m);
+    }
+    if (vcon.dst == con) {
+      assignPortNumber(con, vcon.src, m);
+    }
+  }
+}
+
+// Initialize globalRoutingMapping
+for (con in Confluence.all()) {
+  var m = new Map;
+  globalRoutingMapping.put(con, m);
+
+  for (dock in Dock.all()) {
+    var bestOption = whichWay(con, dock, globalPortMapping);
+    ('From ' + con.name + ' to ' + dock.name + ' via port ' + bestOption).println();
+    m.put(dock, bestOption);
+  }
+}
+
+//////// END OF INITIALIZATION /////////
+%]
+
+
+PUT YOUR TEMPLATE CODE HERE :)
+
+Here is an example of how to use EGL:
+
+Port info:
+[% for (con in Confluence.all()) { %]
+[%   for (neighbor in getNeighbors(con)) { %]
+  [%=con.name %] in-/out-port [%=getPortId(con,neighbor,globalPortMapping)%] -> [%=neighbor.name%]
+[%   } %]
+[% } %]
+
+
+Routing info:
+[% for (con in Confluence.all()) { %]
+[%   for (dock in Dock.all()) { %]
+  [%= con.name %] -> [%= dock.name %] via port [%= globalRoutingMapping.get(con).get(dock) %]
+[%   } %]
+[% } %]
+
+
+[%
+  // All operations must occur at the end of the file, otherwise EGL doesn't do anything
+  //
+  // FEEL FREE TO DEFINE ADDITIONAL OPERATIONS IN THIS SECTION
+  // 
+  // Also, it appears that it is not possible to create 'methods' on objects in EGL files.
+  // For instance, the following does NOT WORK:
+  // 
+  //    operation Confluence getName() {
+  //      return self.name;
+  //    }
+
+
+  // globalPortMapping is a parameter because otherwise this function cannot access it
+  // Pure function - safe to call
+  operation getPortCount(confluence, globalPortMapping) {
+    return globalPortMapping.get(confluence).size();
+  }
+
+  // globalPortMapping is a parameter because otherwise this function cannot access it
+  // Pure function - safe to call
+  operation getPortId(confluence, otherElement, globalPortMapping) {
+    return globalPortMapping.get(confluence).get(otherElement);
+  }
+
+  // Pure function - safe to call
+  operation getNeighbors(elem) {
+    return Vessel.all().select(v | v.src == elem).collect(v | v.dst);
+  }
+
+  // finds all paths to elementToFind, and returns the 'price' of the cheapest path
+  // Pure function - safe to call
+  operation minimumCostToReach(alreadyVisited, currentCost, currentElement, elementToFind) {
+    var costToReachCurrent = currentCost + getCost(currentElement);
+    if (currentElement == elementToFind) {
+      return costToReachCurrent;
+    }
+
+    // visit only neigbors that we haven't visited yet:
+    var neighborsToTry = getNeighbors(currentElement).select(n | not alreadyVisited.includes(n));
+
+    var cheapest = 10000000; // infinity would be better, but couldn't find this in EOL docs
+    for (neighbor in neighborsToTry) {
+      var newAlreadyVisited = alreadyVisited.including(neighbor); // = new collection with 'neighbor' added to it
+      var cost = minimumCostToReach(newAlreadyVisited, costToReachCurrent, neighbor, elementToFind);
+      if (cost < cheapest) {
+        cheapest = cost;
+      }
+    }
+    return cheapest;
+  }
+
+  // Pure function - safe to call
+  operation getCost(element) {
+    if (element.isTypeOf(Waterway) or element.isTypeOf(Canal)) {
+      return element.length;
+    }
+    return 0;
+  }
+
+  // globalPortMapping is a parameter because otherwise this function cannot access it
+  // Pure function - safe to call
+  operation whichWay(confluence, dockToFind, globalPortMapping) {
+    var cheapest = 10000000; // infinity would be better, but couldn't find this in EOL docs
+    var bestOption = -1;
+    for (n in getNeighbors(confluence)) {
+      var alreadyVisited = new Set;
+      alreadyVisited.add(confluence);
+      alreadyVisited.add(n);
+      var cost = minimumCostToReach(alreadyVisited, 0, n, dockToFind);
+      if (cost < cheapest) {
+        cheapest = cost;
+        bestOption = getPortId(confluence, n, globalPortMapping);
+      }
+    }
+    return bestOption; // could not find path to dockToFind
+  }
+
+
+
+  // Used by initialization, DO NOT CALL THIS FUNCTION YOURSELF
+  operation assignPortNumber(confluence, otherElement, mapping) {
+    if (not mapping.containsKey(otherElement)) {
+      var portnumber = mapping.size();
+      mapping.put(otherElement, portnumber);
+      (otherElement.name + ' <-> confluence ' + confluence.name + ' assigned port:' + portnumber).println();
+      // (canReach(new Set, confluence, otherElement)).println();
+    }
+  }
+%]

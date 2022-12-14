@@ -1,0 +1,49 @@
+Model WN2 {
+Node Link {
+src : Node;
+dst : Node;
+}
+Node HasName {
+name:String;
+}
+Node ControlTower: HasName{
+}
+Node HasVesselOut {
+}
+Node Generator: HasVesselOut, HasName{
+}
+Node HasVesselIn {
+}
+Node HasOneWayTraffic: HasVesselIn, HasVesselOut{
+}
+Node Dock: HasOneWayTraffic, HasName{
+}
+Node Anchorpoint: HasOneWayTraffic, HasName{
+}
+Node HasTwoWayTraffic: HasVesselOut, HasVesselIn{
+}
+Node Lock: HasTwoWayTraffic, HasName{
+washing_duration:int = 20;
+lock_shift_interval:int = 60;
+gate_open_close_duration:int = 7;
+surface_area:int = 62500;
+}
+Node Canal: HasTwoWayTraffic, HasName{
+length:double = 1;
+}
+Node Waterway: HasTwoWayTraffic, HasName{
+length:double = 1;
+}
+Node Confluence: HasVesselIn, HasVesselOut, HasName{
+}
+Node Sea: HasVesselIn, HasName{
+}
+Node PortDepartureRequest: Link{
+}
+Node PortEntryRequest: Link{
+}
+Node PortEntryPermission: Link{
+}
+Node Vessel: Link{
+}
+}

@@ -1,0 +1,12 @@
+[%
+	var basePath : String := URI + DIR;
+	var filename : String := 'exported.py';
+	var filepath : String := URI + filename;
+	var t : Template := TemplateFactory.load(basePath + 'gen.egl'); 
+	 
+	("Loading template...").println();
+	t.process();
+	
+	("Generating: " + filepath).println();
+	t.generate(filepath);
+%]
