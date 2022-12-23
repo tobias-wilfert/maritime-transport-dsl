@@ -1,0 +1,75 @@
+/usr/local/lib/DEVS2/bin/python /Users/tobiaswilfert/Desktop/DEVS/gen_experiment.py 
++------------------------------------------------------------+
+| Statistics:
++------------------------------------------------------------+
+| Avg. travel time for a vessel (in the port): 2602.380106280915 minutes
+| ... for CrudeOilTanker: 2643.6480872188476 minutes
+| ... for BulkCarrier: 2595.6669093432824 minutes
+| ... for TugBoat: 2562.8918103387828 minutes
+| ... for SmallCargoFreighter: 2628.5176660459183 minutes
++
+| Average waiting time for a vessel in the Anchorpoint: 4213.108673603162 minutes
++
+| Average number of vessels in the port.: 345.17667970138643
++
+| Idle time for Lock A: 1291.2322840000006 minutes
+| Avg. idle duration of Lock A: 86.08215226666671 minutes
+| Idle time for Lock B: 1227.9888270000001 minutes
+| Avg. idle duration of Lock B: 68.2216015 minutes
+| Idle time for Lock C: 1279.8884499999995 minutes
+| Avg. idle duration of Lock C: 34.591579729729716 minutes
++
+| Number of idle state changes Lock A: 21/168
+| Number of idle state changes Lock B: 27/224
+| Number of idle state changes Lock C: 41/336
++
++------------------------------------------------------------+
+| More statistics:
++------------------------------------------------------------+
+| The spawn probability per type [28%, 22%, 33%, 17%]
+| [0.2810673938449552, 0.21834826645890143, 0.3315932995714842, 0.16899104012465913]
++
+| The simulation time as seen by the generator: 10079.045967365697
+| The number of ships that the generator spawned: 25670
+| The number of ships consumed: 1221
++------------------------------------------------------------+
+
+Process finished with exit code 0
+
+/usr/local/lib/DEVS2/bin/python /Users/tobiaswilfert/Desktop/DEVS/experiment_Q6.py 
++------------------------------------------------------------+
+| Statistics:
++------------------------------------------------------------+
+| Avg. travel time for a vessel (in the port): 2602.380106280915 minutes
+| ... for CrudeOilTanker: 2643.6480872188476 minutes
+| ... for BulkCarrier: 2595.6669093432824 minutes
+| ... for TugBoat: 2562.8918103387828 minutes
+| ... for SmallCargoFreighter: 2628.5176660459183 minutes
++
+| Average waiting time for a vessel in the Anchorpoint: 4213.108673603162 minutes
++
+| Average number of vessels in the port.: 345.17667970138643
++
+| Idle time for Lock A: 1291.2322840000006 minutes
+| Avg. idle duration of Lock A: 86.08215226666671 minutes
+| Idle time for Lock B: 1227.9888270000001 minutes
+| Avg. idle duration of Lock B: 68.2216015 minutes
+| Idle time for Lock C: 1279.8884499999995 minutes
+| Avg. idle duration of Lock C: 34.591579729729716 minutes
++
+| Number of idle state changes Lock A: 21/168
+| Number of idle state changes Lock B: 27/224
+| Number of idle state changes Lock C: 41/336
++
++------------------------------------------------------------+
+| More statistics:
++------------------------------------------------------------+
+| The spawn probability per type [28%, 22%, 33%, 17%]
+| [0.2810673938449552, 0.21834826645890143, 0.3315932995714842, 0.16899104012465913]
++
+| The simulation time as seen by the generator: 10079.045967365697
+| The number of ships that the generator spawned: 25670
+| The number of ships consumed: 1221
++------------------------------------------------------------+
+
+Process finished with exit code 0

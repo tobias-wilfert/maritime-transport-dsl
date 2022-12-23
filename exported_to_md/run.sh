@@ -1,1 +1,1 @@
-java -jar metaDepth.jar
+java -jar metaDepth.jar < run.mdc

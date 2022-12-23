@@ -35,32 +35,252 @@ for (con in Confluence.all()) {
     ('From ' + con.name + ' to ' + dock.name + ' via port ' + bestOption).println();
     m.put(dock, bestOption);
   }
+  for (dock in Sea.all()) {
+    var bestOption = whichWay(con, dock, globalPortMapping);
+    ('From ' + con.name + ' to ' + dock.name + ' via port ' + bestOption).println();
+    m.put(dock, bestOption);
+  }
+}
+
+// --- Our new code ---
+  
+// Keep track which part of the port is connected to the Ocean and which is not
+// This is done to know what the low and the high side of the locks are
+var globalLevelMapping = new Map;
+
+// Initialize the map to all 0
+for(t in Waterway.all()) { globalLevelMapping.put(t, 0); }
+for(t in Canal.all()) { globalLevelMapping.put(t, 0); }
+
+// Start the BFS from the Anchhorpoint
+for(t in Anchorpoint.all()){
+  scanWaterLevel(t, globalLevelMapping);
+}
+
+// This is a super hacky way to make the conversion from single to double linked waterway/canals work
+var seenConnections = new Map; // Indicates if we seend the waterway/canal + componenet connection already
+var mapping = new Map; // Indicates if we saw the waterway/canal already
+
+// Initialize the map
+for(t in Waterway.all()) { seenConnections.put(t, 0); }
+for(t in Canal.all()) { seenConnections.put(t, 0); }
+
+for(t in Waterway.all()) {
+  var m = new Map;
+  for(t2 in Generator.all()) { m.put(t2, 0); }
+  for(t2 in Anchorpoint.all()) { m.put(t2, 0); }
+  for(t2 in Confluence.all()) { m.put(t2, 0); }
+  for(t2 in Lock.all()) { m.put(t2, 0); }
+  for(t2 in Sea.all()) { m.put(t2, 0); }
+  for(t2 in Dock.all()) { m.put(t2, 0); }
+  mapping.put(t,m);
+}
+
+for(t in Canal.all()) {
+  var m = new Map;
+  for(t2 in Generator.all()) { m.put(t2, 0); }
+  for(t2 in Anchorpoint.all()) { m.put(t2, 0); }
+  for(t2 in Confluence.all()) { m.put(t2, 0); }
+  for(t2 in Lock.all()) { m.put(t2, 0); }
+  for(t2 in Sea.all()) { m.put(t2, 0); }
+  for(t2 in Dock.all()) { m.put(t2, 0); }
+  mapping.put(t,m);
 }
 
 //////// END OF INITIALIZATION /////////
 %]
+from pypdevs.DEVS import CoupledDEVS
+# Our includes:
+from anchorpoint import Anchorpoint
+from canal import Canal
+from confluence import Confluence
+from controltower import ControlTower
+from cp import CP
+from dock import Dock
+from generator import Generator
+from lock import Lock
+from sea import Sea
+from waterway import Waterway
 
 
-PUT YOUR TEMPLATE CODE HERE :)
+class Network(CoupledDEVS):
+  """ A Coupled DEVS model of the network. """
 
-Here is an example of how to use EGL:
+  def __init__(self):
+    super(Network, self).__init__("Network")
 
-Port info:
-[% for (con in Confluence.all()) { %]
-[%   for (neighbor in getNeighbors(con)) { %]
-  [%=con.name %] in-/out-port [%=getPortId(con,neighbor,globalPortMapping)%] -> [%=neighbor.name%]
-[%   } %]
-[% } %]
+    # Make all the components
+    [* Static components *]
+    [% for (generator in Generator.all()) { %]
+    self.[%=generator%] = self.addSubModel(Generator())  # Note: Generator has a default name
+    [% } %]
+    [% for (anchorpoint in Anchorpoint.all()) { %]
+    self.[%=anchorpoint%] = self.addSubModel(Anchorpoint())  # Note: Anchorpoint has a default name
+    [% } %]
+    [% for (control_tower in ControlTower.all()) { %]
+    self.[%=control_tower%] = self.addSubModel(ControlTower())  # Note: ControlTower has a default name
+    [% } %]
+    [% for (sea in Sea.all()) { %]
+    self.[%=sea%] = self.addSubModel(Sea())  # Note: Sea has a default name
+    [% } %]
+    
+    # Docks
+    [% for (dock in Dock.all()) { %]
+    self.[%=dock%] = self.addSubModel(Dock(int("[%=dock.name%]"[-1])))
+    [% } %]
 
+    # Locks
+    # Also need to fix the naming here
+    [% for (lock in Lock.all()) { %]
+    self.[%=lock%] = self.addSubModel(Lock("Lock " + "[%=lock.name%]"[-1]))
+    [% } %]
 
-Routing info:
-[% for (con in Confluence.all()) { %]
-[%   for (dock in Dock.all()) { %]
-  [%= con.name %] -> [%= dock.name %] via port [%= globalRoutingMapping.get(con).get(dock) %]
-[%   } %]
-[% } %]
+    # Need to convert these values to meters
+    # Waterways (make 2 since they are only singly linked in our model)
+    [% for (ww in Waterway.all()) { %]
+    self.[%=ww%]_A = self.addSubModel(Waterway("[%=ww.name%]_A", [%=ww.length%]*1000))
+    self.[%=ww%]_B = self.addSubModel(Waterway("[%=ww.name%]_B", [%=ww.length%]*1000))
+    [% } %]
+      
+    # Canal (make 2 since they are only singly linked in our model)
+    [% for (ww in Canal.all()) { %]
+    self.[%=ww%]_A = self.addSubModel(Canal("[%=ww.name%]_A", [%=ww.length%]*1000))
+    self.[%=ww%]_B = self.addSubModel(Canal("[%=ww.name%]_B", [%=ww.length%]*1000))
+    [% } %]
+    
+    [* None static components *]
+    [% for (conf in Confluence.all()) { %]
+    [* The CP is its own component in our Model *]
+    [% if (conf.name == "CP") { %] [* Need to give the routing information which is the info to all Docks and the Sea *]
+    self.[%=conf%] = self.addSubModel(CP("[%=conf.name%]", [%=getNeighbors(conf).size() %], { 
+[% for (sea in Sea.all()) { %]0: [%= globalRoutingMapping.get(conf).get(sea) %], [% } %]
+    [% for (dock in Dock.all()) { %]
+int("[%=dock.name%]"[-1]):[%= globalRoutingMapping.get(conf).get(dock) %], [% } %]}))  # Note: this is a special case
+    [% }else{ %]
+    # Need to do some hacking here
+    [* This +1 is super hacking and we might want to fix this *]
+    self.[%=conf%] = self.addSubModel(Confluence("[%=conf.name%]", [%=getNeighbors(conf).size() %]+1, {
+[% for (sea in Sea.all()) { %]0: [%= globalRoutingMapping.get(conf).get(sea) %], [% } %]
+    [% for (dock in Dock.all()) { %]
+int("[%=dock.name%]"[-1]):[%= globalRoutingMapping.get(conf).get(dock) %], [% } %]}))
+    [% } %]
+    [% } %]
 
+    [* Connect the message ports *]
+    # Connect the PortDepartureRequests
+    [% for (dpr in PortDepartureRequest.all()) { %]
+    self.connectPorts(self.[%=dpr.src%].message_out ,self.[%=dpr.dst%].message_in)
+    [% } %]
+    # Connect the PortEntryRequest
+    [% for (per in PortEntryRequest.all()) { %]
+    self.connectPorts(self.[%=per.src%].message_out ,self.[%=per.dst%].message_in)
+    [% } %]
+    # Connect the PortEntryPermission
+    [% for (pep in PortEntryPermission.all()) { %]
+    self.connectPorts(self.[%=pep.src%].message_out ,self.[%=pep.dst%].message_in)
+    [% } %]
 
+    [* Connect all the ship ports *]
+    # Connect the Ship ports
+    [% for (vec in Vessel.all()) { %]
+    [% if (Waterway.all().includes(vec.src) or Canal.all().includes(vec.src)) {%][* Here need to know if we need to append _A and _B on the waterway/canal and which port is the correct one *]
+    self.connectPorts(self.[%=vec.src%]_[%=connection(vec.src, vec.dst, mapping, seenConnections, 1) %].[%=outPort(vec.src, vec.dst, globalPortMapping, globalLevelMapping) %] ,self.[%=vec.dst%].[%=inPort(vec.dst, vec.src, globalPortMapping, globalLevelMapping) %])
+    [% }else if(Waterway.all().includes(vec.dst) or Canal.all().includes(vec.dst)){ %]
+    self.connectPorts(self.[%=vec.src%].[%=outPort(vec.src, vec.dst, globalPortMapping, globalLevelMapping) %] ,self.[%=vec.dst%]_[%=connection(vec.dst, vec.src, mapping, seenConnections, 2) %].[%=inPort(vec.dst, vec.src, globalPortMapping, globalLevelMapping) %])
+    [% }else{ %]
+    self.connectPorts(self.[%=vec.src%].[%=outPort(vec.src, vec.dst, globalPortMapping, globalLevelMapping) %] ,self.[%=vec.dst%].[%=inPort(vec.dst, vec.src, globalPortMapping, globalLevelMapping) %])
+    [% } %]
+    [% } %]
+
+[%
+  // BFS Wrapper, needed since the already_seen doesn't need to be a global variable
+  operation scanWaterLevel(start_point, globalLevelMapping){
+   var already_seen = new Set; // All the components already seen on the BFS
+    BFS(start_point, globalLevelMapping, already_seen); // Do the initial BFS
+  }
+
+  // BFS To check which part of the port is reachable without going thru a locks
+  operation BFS(start_point, globalLevelMapping, already_seen){
+    // Invariant: start_point is never a lock and always reachable from the ocean without passing a lock, and has not yet been visited
+    already_seen.add(start_point); // Mark the current commponent as already seen
+    globalLevelMapping.put(start_point, 1); // Mark the current component as reachable from the ocean without passing a lock
+
+    // Do BFS on all the viable neighbours (not seen, not lock)
+    for (nei in getNeighbors(start_point).select(n | not already_seen.includes(n)).select(n | not Lock.all().includes(n))){
+      BFS(nei, globalLevelMapping, already_seen);
+    }
+  }
+
+  // Return the correct connectciton to use
+  // dir indicates the direction of the connection:  1 if w -> c / 2 if c -> w 
+  // component should always be a chanal or a lock
+  // mapping keeps track of all the waterways/canals already seen
+  //--
+  /* The 4 arrows indicate the different connections this can be callsed on, we want to use _A on one row and _B on the other
+  C_1 ->  W  ->  C_2
+  C_1 <-  W  <-  C_2
+  Since:
+  C1 -A-> W <-A- C_2
+  C1 <-A- W -A-> C_2
+  Would both yield a none functional system
+  */
+  operation connection(component, neighbour, mapping, seenConnections, dir){
+    // If we never saw the waterway and canal before
+    if(seenConnections.get(component) == 0){
+      mapping.get(component).put(neighbour, 1); // Mark the waterway/canal as seen
+      seenConnections.put(component, dir); // Keep track of the direction of the connection
+      return "A"; // First connection get _A mark
+    }else{
+      // We already seen the waterway, but not the component yet
+      if((mapping.get(component).get(neighbour) == 0)){
+        if(seenConnections.get(component) == dir){ // If the direction of this connection matches the one of the first seen one then it needs to be B
+          return "B";
+        }else{
+          return "A";
+        }
+      }else{
+        return "B";
+      }
+    }
+  }
+
+  // Returns the correct output port given the component
+  operation outPort(component, neighbour, globalPortMapping, globalLevelMapping){
+    // Base case just return "ship_out"
+    if( Waterway.all().includes(component) or Canal.all().includes(component) or Anchorpoint.all().includes(component) or Dock.all().includes(component) or Generator.all().includes(component) or Sea.all().includes(component) ){
+      return "ship_out";
+    }else if( Confluence.all().includes(component) ){
+      return ("ship_out[" + getPortId(component, neighbour, globalPortMapping) + "]");
+    }else if( Lock.all().includes(component) ){
+      if(globalLevelMapping.get(neighbour) == 0){
+        return "ship_out_high";
+      }else{
+        return "ship_out_low";
+      }
+    }else {
+      return "ERROR";
+    }
+  }
+
+// Returns the correct input port given the component
+  operation inPort(component, neighbour, globalPortMapping, globalLevelMapping){
+    // Base case just return "ship_out"
+    if( Waterway.all().includes(component) or Canal.all().includes(component) or Anchorpoint.all().includes(component) or Dock.all().includes(component) or Generator.all().includes(component) or Sea.all().includes(component)){
+      return "ship_in";
+    }else if( Confluence.all().includes(component) ){
+      return ("ship_in[" + getPortId(component, neighbour, globalPortMapping) + "]");
+    }else if( Lock.all().includes(component) ){
+      if(globalLevelMapping.get(neighbour) == 0){
+        return "ship_in_high";
+      }else{
+        return "ship_in_low";
+      }
+    }else {
+      return "ERROR";
+    }
+  }
+
+%]
 [%
   // All operations must occur at the end of the file, otherwise EGL doesn't do anything
   //
