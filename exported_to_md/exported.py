@@ -1,3 +1,5 @@
+
+
 from pypdevs.DEVS import CoupledDEVS
 # Our includes:
 from anchorpoint import Anchorpoint
@@ -149,7 +151,7 @@ class Network(CoupledDEVS):
     self.connectPorts(self.Confluence_123.ship_out[0] ,self.Canal_125_B.ship_in)
     self.connectPorts(self.Confluence_45.ship_out[1] ,self.Waterway_25_B.ship_in)
     self.connectPorts(self.Confluence_122.ship_out[0] ,self.Canal_125_A.ship_in)
-    self.connectPorts(self.Waterway_17_A.ship_out ,self.Confluence_45.ship_in[2])
+    self.connectPorts(self.Waterway_17_A.ship_out ,self.Confluence_45.ship_in[2]) # This here is what causes the issue
     self.connectPorts(self.Canal_125_B.ship_out ,self.Confluence_122.ship_in[0])
     self.connectPorts(self.Confluence_80.ship_out[2] ,self.Canal_81_B.ship_in)
     self.connectPorts(self.Anchorpoint_42.ship_out ,self.Waterway_17_A.ship_in)
