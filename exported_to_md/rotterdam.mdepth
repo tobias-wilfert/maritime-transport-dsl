@@ -1,0 +1,351 @@
+load "WN2"
+
+Model Metamodel imports WN2 {} 
+
+Metamodel exported {
+ControlTower ControlTower_3 {
+name = "T";
+}
+Sea Sea_4 {
+name = "S";
+}
+Generator Generator_14 {
+name = "gen";
+}
+Waterway Waterway_17 {
+length = 10;
+name = "w_K_c1";
+}
+Waterway Waterway_18 {
+length = 10;
+name = "w_c1_S";
+}
+Vessel Vessel_20 {
+src = Waterway_18;
+dst = Sea_4;
+}
+Waterway Waterway_25 {
+length = 6.85;
+name = "w_c1_CP";
+}
+Anchorpoint Anchorpoint_42 {
+name = "K";
+}
+Vessel Vessel_43 {
+src = Generator_14;
+dst = Anchorpoint_42;
+}
+Vessel Vessel_44 {
+src = Anchorpoint_42;
+dst = Waterway_17;
+}
+Confluence Confluence_45 {
+name = "CP";
+}
+Vessel Vessel_47 {
+src = Waterway_17;
+dst = Confluence_45;
+}
+Vessel Vessel_48 {
+src = Confluence_45;
+dst = Waterway_25;
+}
+Vessel Vessel_49 {
+src = Waterway_25;
+dst = Confluence_45;
+}
+Vessel Vessel_50 {
+src = Confluence_45;
+dst = Waterway_18;
+}
+PortEntryRequest PortEntryRequest_51 {
+src = Anchorpoint_42;
+dst = ControlTower_3;
+}
+PortEntryPermission PortEntryPermission_52 {
+src = ControlTower_3;
+dst = Anchorpoint_42;
+}
+Lock Lock_160 {
+washing_duration = 20;
+lock_shift_interval = 60;
+gate_open_close_duration = 7;
+surface_area = 62500;
+name = "LA";
+}
+Vessel Vessel_161 {
+src = Waterway_25;
+dst = Lock_160;
+}
+Vessel Vessel_162 {
+src = Lock_160;
+dst = Waterway_25;
+}
+Canal Canal_163 {
+length = 1;
+name = "c_LA_c1";
+}
+Confluence Confluence_164 {
+name = "c1";
+}
+Vessel Vessel_166 {
+src = Lock_160;
+dst = Canal_163;
+}
+Vessel Vessel_167 {
+src = Canal_163;
+dst = Lock_160;
+}
+Vessel Vessel_169 {
+src = Canal_163;
+dst = Confluence_164;
+}
+Vessel Vessel_170 {
+src = Confluence_164;
+dst = Canal_163;
+}
+Dock Dock_171 {
+name = "d1";
+}
+Dock Dock_172 {
+name = "d2";
+}
+Dock Dock_173 {
+name = "d3";
+}
+Dock Dock_174 {
+name = "d4";
+}
+Vessel Vessel_175 {
+src = Confluence_164;
+dst = Dock_174;
+}
+Vessel Vessel_176 {
+src = Dock_174;
+dst = Confluence_164;
+}
+Vessel Vessel_177 {
+src = Confluence_164;
+dst = Dock_173;
+}
+Vessel Vessel_178 {
+src = Dock_173;
+dst = Confluence_164;
+}
+Vessel Vessel_179 {
+src = Confluence_164;
+dst = Dock_172;
+}
+Vessel Vessel_180 {
+src = Dock_172;
+dst = Confluence_164;
+}
+Vessel Vessel_181 {
+src = Confluence_164;
+dst = Dock_171;
+}
+Vessel Vessel_182 {
+src = Dock_171;
+dst = Confluence_164;
+}
+PortDepartureRequest PortDepartureRequest_183 {
+src = Dock_174;
+dst = ControlTower_3;
+}
+PortDepartureRequest PortDepartureRequest_184 {
+src = Dock_171;
+dst = ControlTower_3;
+}
+PortDepartureRequest PortDepartureRequest_185 {
+src = Dock_172;
+dst = ControlTower_3;
+}
+PortDepartureRequest PortDepartureRequest_186 {
+src = Dock_173;
+dst = ControlTower_3;
+}
+Waterway Waterway_187 {
+length = 9.8;
+name = "w_CP_c2";
+}
+Confluence Confluence_188 {
+name = "c2";
+}
+Dock Dock_189 {
+name = "d5";
+}
+Dock Dock_190 {
+name = "d6";
+}
+Vessel Vessel_191 {
+src = Confluence_45;
+dst = Waterway_187;
+}
+Vessel Vessel_192 {
+src = Waterway_187;
+dst = Confluence_45;
+}
+Vessel Vessel_193 {
+src = Waterway_187;
+dst = Confluence_188;
+}
+Vessel Vessel_194 {
+src = Confluence_188;
+dst = Waterway_187;
+}
+Vessel Vessel_195 {
+src = Dock_189;
+dst = Confluence_188;
+}
+Vessel Vessel_196 {
+src = Confluence_188;
+dst = Dock_189;
+}
+Vessel Vessel_197 {
+src = Confluence_188;
+dst = Dock_190;
+}
+Vessel Vessel_198 {
+src = Dock_190;
+dst = Confluence_188;
+}
+Canal Canal_199 {
+length = 4.3;
+name = "c_C2_C3";
+}
+Vessel Vessel_200 {
+src = Confluence_188;
+dst = Canal_199;
+}
+Vessel Vessel_201 {
+src = Canal_199;
+dst = Confluence_188;
+}
+Confluence Confluence_202 {
+name = "c3";
+}
+Vessel Vessel_203 {
+src = Canal_199;
+dst = Confluence_202;
+}
+Vessel Vessel_204 {
+src = Confluence_202;
+dst = Canal_199;
+}
+Canal Canal_205 {
+length = 1.2;
+name = "c_d10";
+}
+Canal Canal_206 {
+length = 1.4;
+name = "c_d9";
+}
+Canal Canal_207 {
+length = 1.6;
+name = "c_d8";
+}
+Canal Canal_208 {
+length = 1;
+name = "c_d7";
+}
+Vessel Vessel_209 {
+src = Canal_208;
+dst = Confluence_202;
+}
+Vessel Vessel_210 {
+src = Confluence_202;
+dst = Canal_208;
+}
+Vessel Vessel_211 {
+src = Confluence_202;
+dst = Canal_207;
+}
+Vessel Vessel_212 {
+src = Canal_207;
+dst = Confluence_202;
+}
+Vessel Vessel_213 {
+src = Confluence_202;
+dst = Canal_206;
+}
+Vessel Vessel_214 {
+src = Canal_206;
+dst = Confluence_202;
+}
+Vessel Vessel_215 {
+src = Confluence_202;
+dst = Canal_205;
+}
+Vessel Vessel_216 {
+src = Canal_205;
+dst = Confluence_202;
+}
+Dock Dock_217 {
+name = "d10";
+}
+Dock Dock_218 {
+name = "d9";
+}
+Dock Dock_219 {
+name = "d8";
+}
+Dock Dock_220 {
+name = "d7";
+}
+Vessel Vessel_221 {
+src = Canal_205;
+dst = Dock_217;
+}
+Vessel Vessel_222 {
+src = Dock_217;
+dst = Canal_205;
+}
+Vessel Vessel_223 {
+src = Canal_208;
+dst = Dock_220;
+}
+Vessel Vessel_224 {
+src = Dock_220;
+dst = Canal_208;
+}
+Vessel Vessel_225 {
+src = Canal_207;
+dst = Dock_219;
+}
+Vessel Vessel_226 {
+src = Dock_219;
+dst = Canal_207;
+}
+Vessel Vessel_227 {
+src = Canal_206;
+dst = Dock_218;
+}
+Vessel Vessel_228 {
+src = Dock_218;
+dst = Canal_206;
+}
+PortDepartureRequest PortDepartureRequest_229 {
+src = Dock_189;
+dst = ControlTower_3;
+}
+PortDepartureRequest PortDepartureRequest_230 {
+src = Dock_190;
+dst = ControlTower_3;
+}
+PortDepartureRequest PortDepartureRequest_231 {
+src = Dock_220;
+dst = ControlTower_3;
+}
+PortDepartureRequest PortDepartureRequest_232 {
+src = Dock_219;
+dst = ControlTower_3;
+}
+PortDepartureRequest PortDepartureRequest_233 {
+src = Dock_218;
+dst = ControlTower_3;
+}
+PortDepartureRequest PortDepartureRequest_234 {
+src = Dock_217;
+dst = ControlTower_3;
+}
+}

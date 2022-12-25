@@ -126,7 +126,7 @@ class Network(CoupledDEVS):
     
     # Docks
     [% for (dock in Dock.all()) { %]
-    self.[%=dock%] = self.addSubModel(Dock(int("[%=dock.name%]"[-1])))
+    self.[%=dock%] = self.addSubModel(Dock(int("[%=dock.name%]"[1:])))
     [% } %]
 
     # Locks
@@ -152,17 +152,17 @@ class Network(CoupledDEVS):
     [% for (conf in Confluence.all()) { %]
     [* The CP is its own component in our Model *]
     [% if (conf.name == "CP") { %] [* Need to give the routing information which is the info to all Docks and the Sea *]
-    self.[%=conf%] = self.addSubModel(CP("[%=conf.name%]", [%=getNeighbors(conf).size() %], { 
+    self.[%=conf%] = self.addSubModel(CP("[%=conf.name%]", [%=getNeighbors(conf).size() %]+1, { 
 [% for (sea in Sea.all()) { %]0: [%= globalRoutingMapping.get(conf).get(sea) %], [% } %]
     [% for (dock in Dock.all()) { %]
-int("[%=dock.name%]"[-1]):[%= globalRoutingMapping.get(conf).get(dock) %], [% } %]}))  # Note: this is a special case
+int("[%=dock.name%]"[1:]):[%= globalRoutingMapping.get(conf).get(dock) %], [% } %]}))  # Note: this is a special case
     [% }else{ %]
     # Need to do some hacking here
     [* This +1 is super hacking and we might want to fix this *]
     self.[%=conf%] = self.addSubModel(Confluence("[%=conf.name%]", [%=getNeighbors(conf).size() %]+1, {
 [% for (sea in Sea.all()) { %]0: [%= globalRoutingMapping.get(conf).get(sea) %], [% } %]
     [% for (dock in Dock.all()) { %]
-int("[%=dock.name%]"[-1]):[%= globalRoutingMapping.get(conf).get(dock) %], [% } %]}))
+int("[%=dock.name%]"[1:]):[%= globalRoutingMapping.get(conf).get(dock) %], [% } %]}))
     [% } %]
     [% } %]
 

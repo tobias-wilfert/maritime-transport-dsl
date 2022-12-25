@@ -1,0 +1,28 @@
++------------------------------------------------------------+
+| Statistics:
++------------------------------------------------------------+
+| Avg. travel time for a vessel (in the port): 2427.628214769548 minutes
+| ... for CrudeOilTanker: 2442.294780479594 minutes
+| ... for BulkCarrier: 2523.402176438485 minutes
+| ... for TugBoat: 2370.964103437872 minutes
+| ... for SmallCargoFreighter: 2397.128482694216 minutes
++
+| Average waiting time for a vessel in the Anchorpoint: 4172.233843359464 minutes
++
+| Average number of vessels in the port.: 383.69840793030943
++
+| Idle time for Lock A: 600.0 minutes
+| Avg. idle duration of Lock A: 66.66666666666667 minutes
++
+| Number of idle state changes Lock A: 10/168
++
++------------------------------------------------------------+
+| More statistics:
++------------------------------------------------------------+
+| The spawn probability per type [28%, 22%, 33%, 17%]
+| [0.2810673938449552, 0.21834826645890143, 0.3315932995714842, 0.16899104012465913]
++
+| The simulation time as seen by the generator: 10079.045967365697
+| The number of ships that the generator spawned: 25670
+| The number of ships consumed: 1458
++------------------------------------------------------------+
