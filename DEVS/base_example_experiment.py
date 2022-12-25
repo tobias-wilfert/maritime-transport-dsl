@@ -2,7 +2,7 @@ from pypdevs.simulator import Simulator
 import matplotlib.pyplot as plt
 import random
 # Our includes
-from gen_network import Network
+from base_example import Network
 from vessel_names import vessel_names
 from events import Vessel
 
