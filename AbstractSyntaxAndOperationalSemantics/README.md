@@ -1,4 +1,4 @@
-### Abstract Syntax and Operational semantics in metaDepth
+# Abstract Syntax and Operational semantics in metaDepth
 
 ### Goal
 Our goal was to design a meta-model for our domain-specific
@@ -19,7 +19,6 @@ A visual representation of our Abstract Syntax can be seen below.
 
 ### Files
 - [AbstractSyntax](/AbstractSyntaxAndOperationalSemantics/AbstractSyntax.png): A visual representation of the Abstract Syntax
-- [metaDepth.jar](/AbstractSyntaxAndOperationalSemantics/metaDepth.jar): A textual modelling tool, more information about it can be found at [MetaDepth main page](http://metadepth.org). (**Note:** We did not code this ourself)
 - [README.md](/AbstractSyntaxAndOperationalSemantics/README.md): This file.
 - [run.sh](/AbstractSyntaxAndOperationalSemantics/run.sh): Script file to start the MetaDepth tool.
 - [Models/](/AbstractSyntaxAndOperationalSemantics/Models): A collection of valid and invalid models that have been used for testing
