@@ -1,0 +1,24 @@
+WMS WMS_TEST {
+    Source source0 {
+        rate = 2;
+        out0 = segment0;
+    }
+
+    Segment segment0 {
+        in0 = source0;
+        out0 = segment1;
+    }
+
+    Segment segment1 {
+        in0 = segment0;
+        out0 = sink0;
+    }
+
+    Sink sink0 {
+        in0 = segment1;
+    }
+
+    Schedule schedule {
+        list = [sink0, segment1, segment0, source0];
+    }
+}

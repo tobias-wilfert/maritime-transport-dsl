@@ -1,0 +1,24 @@
+// correct count for sinks and sources, but 2 wrongly linked ones 
+WMS WMS_TEST {
+    Source source0 {
+        rate = 1;
+        out0 = sink0;
+    }
+
+    Sink sink0 {
+        in0 = source0;
+    }
+
+    Sink sink1 {
+        in0 = source0;
+    }
+
+    Source source1 {
+        rate = 2;
+        out0 = sink0;
+    }
+
+    Schedule schedule {
+        list = [sink1, sink0, source1, source0];
+    }
+}

@@ -1,0 +1,19 @@
+// invalid count for sinks and sources + invalid rate for source + in-out mismatch
+WMS WMS_TEST {
+    Source source0 {
+        rate = -1;
+        out0 = sink0;
+    }
+
+    Sink sink0 {
+        in0 = source0;
+    }
+
+    Sink sink1 {
+        in0 = source0;
+    }
+
+    Schedule schedule {
+        list = [sink0, sink1, source0];
+    }
+}
