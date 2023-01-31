@@ -1,6 +1,14 @@
 ### Abstract Syntax and Operational semantics in metaDepth
 
-TODOs:
+### Goal
+Our goal was to design a meta-model for our domain-specific
+(modelling) language (DSL), specify operational semantics for the language, create instances of this meta-model and verify conformance between (instance) model and meta-model. While using the textual modelling tool [MetaDepth](http://metadepth.org) and its action&constraint language EOL.
+
+### Outcome
+A visual representation of our Abstract Syntax can be seen below.
+![A visual representation of our Abstract Syntax](/AbstractSyntaxAndOperationalSemantics/AbstractSyntax.png)
+
+### TODOs
 - Mention:
     - What we did
     - Why we did it 
@@ -9,10 +17,7 @@ TODOs:
     - What the final result is
     - Render the graph using: http://www.plantuml.com/plantuml/uml/
 
-
-![A visual representation of our Abstract Syntax](/AbstractSyntaxAndOperationalSemantics/AbstractSyntax.png)
-
-### Files:
+### Files
 - [AbstractSyntax](/AbstractSyntaxAndOperationalSemantics/AbstractSyntax.png): A visual representation of the Abstract Syntax
 - [metaDepth.jar](/AbstractSyntaxAndOperationalSemantics/metaDepth.jar): A textual modelling tool, more information about it can be found at [MetaDepth main page](http://metadepth.org). (**Note:** We did not code this ourself)
 - [README.md](/AbstractSyntaxAndOperationalSemantics/README.md): This file.
