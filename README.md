@@ -1,6 +1,6 @@
 # Waterway DSL
 
-## Goal 
+## Goal
 TODO: Make this visually appealing and flashy (insert images and possibly video) 
 
 ## Outcome

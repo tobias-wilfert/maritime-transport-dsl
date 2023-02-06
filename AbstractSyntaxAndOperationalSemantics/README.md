@@ -8,14 +8,6 @@ Our goal was to design a meta-model for our domain-specific
 A visual representation of our Abstract Syntax can be seen below.
 ![A visual representation of our Abstract Syntax](/AbstractSyntaxAndOperationalSemantics/AbstractSyntax.png)
 
-### TODOs
-- Mention:
-    - What we did
-    - Why we did it 
-    - How to run it 
-    - Where to find what
-    - What the final result is
-    - Render the graph using: http://www.plantuml.com/plantuml/uml/
 
 ### Files
 - [AbstractSyntax](/AbstractSyntaxAndOperationalSemantics/AbstractSyntax.png): A visual representation of the Abstract Syntax
