@@ -1,4 +1,4 @@
-# Waterway DSL
+# Maritime transport Domain Specific Language
 
 ## Goal
 TODO: Make this visually appealing and flashy (insert images and possibly video) 

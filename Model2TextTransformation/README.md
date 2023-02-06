@@ -1,7 +1,7 @@
 # Template Based Model-to-Text Transformation using EGL
 
 ### Goal
-Our goal was to design to generate [Python PDEVS](https://msdl.uantwerpen.be/documentation/PythonPDEVS/) code from a Waterway Network Model. By exporting a model in [AToMPM](https://atompm.github.io) to [MetaDepth](http://metadepth.org) and then running an EGL transformation to generate the Python code.
+Our goal was to design to generate [Python PDEVS](https://msdl.uantwerpen.be/documentation/PythonPDEVS/) code from a Maritime transport Model. By exporting a model in [AToMPM](https://atompm.github.io) to [MetaDepth](http://metadepth.org) and then running an EGL transformation to generate the Python code.
 
 ### Outcome
 

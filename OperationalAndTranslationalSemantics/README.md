@@ -3,7 +3,7 @@
 ### Goal
 Our goal was twofold:
 1- Build a rule-based transformation for executing
-the operational semantics of our Waterway Network modelling language in the visual modelling tool [AToMPM](https://atompm.github.io).
+the operational semantics of our Maritime transport Domain Specific Language in the visual modelling tool [AToMPM](https://atompm.github.io).
 2- Implement translational semantics from our Language to Petri-Nets to allow for safety analysis.
 
 ### Outcome
